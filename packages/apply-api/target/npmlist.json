@@ -1,0 +1,1 @@
+{"version":"1.0.0","name":"apply-api","dependencies":{"encender":{"version":"0.2.0"},"fastify":{"version":"3.25.0"},"pino-pretty":{"version":"7.3.0"}}}
