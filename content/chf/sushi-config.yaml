@@ -1,0 +1,21 @@
+id: hl7.fhir.uv.cpg
+canonical: http://hl7.org/fhir/uv/cpg
+fhirVersion: 4.0.1
+copyrightYear: 2021+
+releaseLabel: ci-build
+name: UvCPG
+status: draft
+version: 1.0.0
+applyExtensionMetadataToRoot: false
+parameters:
+  path-binary: ./input/cql
+dependencies:
+  hl7.fhir.uv.cpg: 1.0.0
+
+
+# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
+# │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+menu:
+  Home: index.html
+  Artifacts: artifacts.html
