@@ -1,0 +1,4 @@
+[submodule "packages/encender"]
+  path = packages/encender
+  url = https://github.com/Vermonster/encender.git
+  branch = add-experimental-options

@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+/fsh-generated
+/input-cache
+/docs
+/temp
+/template
+/output
+!/output/Bundle-chf-bundle.json
+
