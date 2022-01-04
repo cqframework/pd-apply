@@ -4,16 +4,20 @@ Test cases for PlanDefinition Apply Semantics
 This Repo contains FHIR Implementation Guides and links to other Implementation
 Guides in order to test PlanDefinition $apply semantics
 
-
-## Layout
-
-This repo has the following structure:
+## Setup
 
 Make sure to init submodules:
 
 ```
-> git submodule init
+> git submodule init && git submodule update
 ```
+
+Then in each of `packages/encender` and `packages/apply-api`, make sure to run `npm install`.
+
+
+## Layout
+
+This repo has the following structure:
 
 * content: Implementation guide(s) used to create CPG bundles
 * examples: Example output of $apply
