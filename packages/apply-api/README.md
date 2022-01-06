@@ -12,13 +12,19 @@ content:
 > RESOLVER_INPUT=../../content/chf/output/Bundle-chf-bundle.json npm run start npm run start
 ```
 
+NOTE: If you are having problems with `npm run start`, you can try this:
+```
+> npm run build
+> RESOLVER_INPUT=../../content/chf/output/Bundle-chf-bundle.json node dist/index.js
+```
+
 ## Running
 
 Run the following CURL or Postman requests:
 
 ```
 > curl localhost:9000/chf-pathway/$apply?subject=Patient/ExamplePatient
-> curl localhost:9000/chf-pathway/$apply?subject=Patient/ExamplePatient&mergeNestedCareplans=1
+> curl localhost:9000/chf-pathway/$apply?subject=Patient/ExamplePatient&mergeNestedCarePlans=1
 > curl localhost:9000/chf-pathway/$apply?subject=Patient/ExamplePatient&requestGroupsOnly=1
 ```
 
