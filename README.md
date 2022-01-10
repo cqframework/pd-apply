@@ -30,4 +30,4 @@ To run the local API, see [apply-api README](./packages/apply-api/README.md)
 ## To try running these PD-Apply operations in a web UI
 Go to https://smart-on-fhir-17eef.web.app/ with the feature accessible by the "$apply custom PlanDefinition..." button at the bottom. Here you can add a transaction FHIR bundle with PlanDefinitions, ActivityDefinitions, Library, and ValueSets in order to test the RequestGroup implementation using Encender. Note: your Library will need to have a JSON ELM in it. 
 
-To connect it to an EHR, we've been using https://smart-on-fhir-17eef.web.app/launch.html as the launch url, which directs us to a page to select which EHR we launched from. E.g. launch.smarthealthit.org/
+To connect it to an EHR, we've been using https://smart-on-fhir-17eef.web.app/launch.html as the launch url, which directs us to a page to select which EHR we launched from. E.g. https://launch.smarthealthit.org/
