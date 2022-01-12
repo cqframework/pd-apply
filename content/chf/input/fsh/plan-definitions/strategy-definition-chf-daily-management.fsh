@@ -34,7 +34,6 @@ Usage: #definition
 * action[=].input.type = #Observation
 * action[=].input.profile = Canonical(CHFBodyWeightChange)
 * action[=].condition.kind = #applicability
-/** action[=].condition.expression.language = #text/cql-identifier*/
-/** action[=].condition.expression.expression = "Is Increasing Body Weight"*/
-/** action[=].condition.expression.reference = Canonical(CHF)*/
+* action[=].condition.expression.language = #text/cql-identifier
+* action[=].condition.expression.expression = "Is Increasing Body Weight"
 * action[=].definitionCanonical = "http://hl7.org/fhir/uv/cpg-example-chf/PlanDefinition/chf-lifestyle-modification-recommendationdefinition"
