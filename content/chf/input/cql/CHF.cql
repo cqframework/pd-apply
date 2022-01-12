@@ -76,6 +76,9 @@ define "Body Weight Change":
       }
     }
 
+define "Is Increasing Body Weight":
+  Last("Body Weight Change Assertion").value as FHIR.Quantity > 0 'kg'
+
 define "Daily Body Weight":
   (expand Encounter.period per day) Date
     let maxWeight: Max("Body Weight" WT where WT.issued same day as Date return WT.value as FHIR.Quantity)

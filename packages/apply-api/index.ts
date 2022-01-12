@@ -26,7 +26,7 @@ server.get<{
   const { planDefinitionId } = req.params as IParams
 
   const planDefinitions = resolver(`/PlanDefinition/${planDefinitionId}`)
-
+  console.log("Plan defs", planDefinitions)
   const { query } = req
   const { subject, mergeNestedCarePlans, requestGroupsOnly } = query
 

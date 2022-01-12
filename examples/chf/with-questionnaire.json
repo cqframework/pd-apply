@@ -1,0 +1,748 @@
+[
+  {
+    "resourceType": "RequestGroup",
+    "id": "60",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "instantiatesCanonical": "http://hl7.org/fhir/uv/cpg-example-chf/PlanDefinition/chf-pathway",
+    "intent": "proposal",
+    "status": "draft",
+    "action": [
+      {
+        "id": "61",
+        "title": "CHF Daily Management",
+        "description": "Daily Management strategy for Congestive Heart Failure",
+        "resource": "RequestGroup/63"
+      },
+      {
+        "id": "85",
+        "title": "CHF Hypervolemia",
+        "description": "Hypervolemia strategy for Congestive Heart Failure",
+        "resource": "RequestGroup/87"
+      }
+    ]
+  },
+  {
+    "resourceType": "RequestGroup",
+    "id": "63",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "instantiatesCanonical": "http://hl7.org/fhir/uv/cpg-example-chf/PlanDefinition/chf-daily-management",
+    "intent": "proposal",
+    "status": "option",
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-adaptiveQuestionnaire",
+        "valueReference": {
+          "reference": "Questionnaire/ClinicalDrivers"
+        }
+      }
+    ],
+    "action": [
+      {
+        "id": "82",
+        "title": "Lifestyle Modifications",
+        "description": "Behavioral weight control, includes 3 primary components: diet, exercise, and behavior therapy",
+        "resource": "RequestGroup/84"
+      },
+      {
+        "id": "64",
+        "title": "Weight",
+        "description": "Measure weight daily",
+        "resource": "RequestGroup/66"
+      },
+      {
+        "id": "70",
+        "title": "Weight Change",
+        "description": "Manage weight change",
+        "resource": "RequestGroup/72"
+      },
+      {
+        "id": "76",
+        "title": "Urine Output",
+        "description": "Measure urine output daily",
+        "resource": "RequestGroup/78"
+      }
+    ]
+  },
+  {
+    "resourceType": "RequestGroup",
+    "id": "84",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "instantiatesCanonical": "http://hl7.org/fhir/uv/cpg-example-chf/PlanDefinition/chf-lifestyle-modification-recommendationdefinition",
+    "intent": "proposal",
+    "status": "option",
+    "action": [
+      {
+        "id": "diet",
+        "title": "Diet change",
+        "textEquivalent": "Obese individuals can lose weight by following reducing diets that vary widely\nin macronutrient composition. Caloric restriction, however, rather than\nmacronutrient composition, is the key determinant of weight loss. A successful\nreducing diet is one that an individual can adhere to for several months to\nlose 5% to 10% of initial weight"
+      },
+      {
+        "id": "exercise",
+        "title": "Exercise",
+        "textEquivalent": "Overweight and obese individuals initially should be encouraged to walk an\nextra 2000 steps per day, which would expend ≈100 kcal more"
+      },
+      {
+        "id": "behavior",
+        "title": "Behavior Therapy",
+        "textEquivalent": "Since its introduction in 1967, behavioral treatment has evolved into a\npackage that includes several components in addition to diet, exercise, and\nself-monitoring. These components include slowing the rate of eating, stimulus\ncontrol, problem solving, cognitive restructuring, and relapse prevention\ntraining. Detailed descriptions of this approach have been provided."
+      }
+    ]
+  },
+  {
+    "resourceType": "RequestGroup",
+    "id": "66",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "instantiatesCanonical": "http://hl7.org/fhir/uv/cpg-example-chf/PlanDefinition/chf-bodyweight-recommendationdefinition",
+    "intent": "proposal",
+    "status": "option",
+    "action": [
+      {
+        "id": "weight",
+        "title": "Weight",
+        "description": "Measure weight daily",
+        "resource": "ServiceRequest/67"
+      },
+      {
+        "id": "68",
+        "title": "Report Weight",
+        "description": "Report weight metric daily",
+        "resource": "Task/69"
+      }
+    ]
+  },
+  {
+    "id": "67",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "resourceType": "ServiceRequest",
+    "status": "option",
+    "code": {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+          "code": "order-service",
+          "display": "Order a service"
+        }
+      ]
+    },
+    "doNotPerform": false
+  },
+  {
+    "id": "69",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "resourceType": "Task",
+    "status": "option",
+    "code": {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+          "code": "generate-report",
+          "display": "Generate a metric or case report"
+        }
+      ]
+    },
+    "doNotPerform": false
+  },
+  {
+    "resourceType": "RequestGroup",
+    "id": "72",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "instantiatesCanonical": "http://hl7.org/fhir/uv/cpg-example-chf/PlanDefinition/chf-bodyweight-change-recommendationdefinition",
+    "intent": "proposal",
+    "status": "option",
+    "action": [
+      {
+        "id": "weight-change",
+        "title": "Weight change",
+        "description": "Measure weight change daily",
+        "resource": "Task/73"
+      },
+      {
+        "id": "74",
+        "title": "Report Weight Change",
+        "description": "Report weight change metric daily",
+        "resource": "Task/75"
+      }
+    ]
+  },
+  {
+    "id": "73",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "resourceType": "Task",
+    "status": "option",
+    "code": {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+          "code": "record-inference",
+          "display": "Record an inference"
+        }
+      ]
+    },
+    "doNotPerform": false
+  },
+  {
+    "id": "75",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "resourceType": "Task",
+    "status": "option",
+    "code": {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+          "code": "generate-report",
+          "display": "Generate a metric or case report"
+        }
+      ]
+    },
+    "doNotPerform": false
+  },
+  {
+    "resourceType": "RequestGroup",
+    "id": "78",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "instantiatesCanonical": "http://hl7.org/fhir/uv/cpg-example-chf/PlanDefinition/chf-urine-out-recommendationdefinition",
+    "intent": "proposal",
+    "status": "option",
+    "action": [
+      {
+        "id": "urine-out",
+        "title": "Urine Out",
+        "description": "Measure urine output daily",
+        "resource": "ServiceRequest/79"
+      },
+      {
+        "id": "80",
+        "title": "Report Urine Out",
+        "description": "Report urine output metric daily",
+        "resource": "Task/81"
+      }
+    ]
+  },
+  {
+    "id": "79",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "resourceType": "ServiceRequest",
+    "status": "option",
+    "code": {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+          "code": "order-service",
+          "display": "Order a service"
+        }
+      ]
+    },
+    "doNotPerform": false
+  },
+  {
+    "id": "81",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "resourceType": "Task",
+    "status": "option",
+    "code": {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+          "code": "generate-report",
+          "display": "Generate a metric or case report"
+        }
+      ]
+    },
+    "doNotPerform": false
+  },
+  {
+    "resourceType": "RequestGroup",
+    "id": "87",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "instantiatesCanonical": "http://hl7.org/fhir/uv/cpg-example-chf/PlanDefinition/chf-hypervolemia",
+    "intent": "proposal",
+    "status": "option",
+    "action": [
+      {
+        "id": "88",
+        "title": "JVP",
+        "description": "Measure JVP daily",
+        "resource": "RequestGroup/90"
+      },
+      {
+        "id": "92",
+        "title": "O2 Sat",
+        "description": "Monitor O2 Sat",
+        "resource": "RequestGroup/94"
+      },
+      {
+        "id": "96",
+        "title": "Potassium",
+        "description": "Monitor Potassium",
+        "resource": "RequestGroup/98"
+      },
+      {
+        "id": "100",
+        "title": "Creatinine",
+        "description": "Monitor Creatinine",
+        "resource": "RequestGroup/102"
+      },
+      {
+        "id": "104",
+        "title": "eGFR",
+        "description": "Monitor eGFR",
+        "resource": "RequestGroup/106"
+      },
+      {
+        "id": "108",
+        "title": "LASIX",
+        "description": "LASIX",
+        "resource": "RequestGroup/110"
+      },
+      {
+        "id": "113",
+        "title": "Cardiology Consultation",
+        "description": "Cardiology Consultation within 24 hours",
+        "resource": "RequestGroup/115"
+      }
+    ]
+  },
+  {
+    "resourceType": "RequestGroup",
+    "id": "90",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "instantiatesCanonical": "http://hl7.org/fhir/uv/cpg-example-chf/PlanDefinition/chf-jvp-recommendationdefinition",
+    "intent": "proposal",
+    "status": "option",
+    "action": [
+      {
+        "id": "jvp",
+        "title": "JVP",
+        "description": "Measure JVP daily",
+        "resource": "ServiceRequest/91"
+      }
+    ]
+  },
+  {
+    "id": "91",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "resourceType": "ServiceRequest",
+    "status": "option",
+    "code": {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+          "code": "order-service",
+          "display": "Order a service"
+        }
+      ]
+    },
+    "doNotPerform": false
+  },
+  {
+    "resourceType": "RequestGroup",
+    "id": "94",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "instantiatesCanonical": "http://hl7.org/fhir/uv/cpg-example-chf/PlanDefinition/chf-o2-sat-recommendationdefinition",
+    "intent": "proposal",
+    "status": "option",
+    "action": [
+      {
+        "id": "o2-sat",
+        "title": "O2 Sat",
+        "description": "Monitor oxygen saturation",
+        "resource": "ServiceRequest/95"
+      }
+    ]
+  },
+  {
+    "id": "95",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "resourceType": "ServiceRequest",
+    "status": "option",
+    "code": {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+          "code": "order-service",
+          "display": "Order a service"
+        }
+      ]
+    },
+    "doNotPerform": false
+  },
+  {
+    "resourceType": "RequestGroup",
+    "id": "98",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "instantiatesCanonical": "http://hl7.org/fhir/uv/cpg-example-chf/PlanDefinition/chf-potassium-recommendationdefinition",
+    "intent": "proposal",
+    "status": "option",
+    "action": [
+      {
+        "id": "potassium",
+        "title": "Potassium",
+        "description": "Monitor potassium",
+        "resource": "ServiceRequest/99"
+      }
+    ]
+  },
+  {
+    "id": "99",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "resourceType": "ServiceRequest",
+    "status": "option",
+    "code": {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+          "code": "order-service",
+          "display": "Order a service"
+        }
+      ]
+    },
+    "doNotPerform": false
+  },
+  {
+    "resourceType": "RequestGroup",
+    "id": "102",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "instantiatesCanonical": "http://hl7.org/fhir/uv/cpg-example-chf/PlanDefinition/chf-creatinine-recommendationdefinition",
+    "intent": "proposal",
+    "status": "option",
+    "action": [
+      {
+        "id": "creatinine",
+        "title": "Creatinine",
+        "description": "Monitor creatinine",
+        "resource": "ServiceRequest/103"
+      }
+    ]
+  },
+  {
+    "id": "103",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "resourceType": "ServiceRequest",
+    "status": "option",
+    "code": {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+          "code": "order-service",
+          "display": "Order a service"
+        }
+      ]
+    },
+    "doNotPerform": false
+  },
+  {
+    "resourceType": "RequestGroup",
+    "id": "106",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "instantiatesCanonical": "http://hl7.org/fhir/uv/cpg-example-chf/PlanDefinition/chf-egfr-recommendationdefinition",
+    "intent": "proposal",
+    "status": "option",
+    "action": [
+      {
+        "id": "egfr",
+        "title": "eGFR",
+        "description": "Monitor eGFR",
+        "resource": "ServiceRequest/107"
+      }
+    ]
+  },
+  {
+    "id": "107",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "resourceType": "ServiceRequest",
+    "status": "option",
+    "code": {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+          "code": "order-service",
+          "display": "Order a service"
+        }
+      ]
+    },
+    "doNotPerform": false
+  },
+  {
+    "resourceType": "RequestGroup",
+    "id": "110",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "instantiatesCanonical": "http://hl7.org/fhir/uv/cpg-example-chf/PlanDefinition/chf-lasix-recommendationdefinition",
+    "intent": "proposal",
+    "status": "option",
+    "action": [
+      {
+        "id": "lasix-iv",
+        "title": "LASIX IV",
+        "description": "Administer LASIX IV",
+        "resource": "MedicationRequest/111"
+      },
+      {
+        "id": "lasix-po",
+        "title": "LASIX PO",
+        "description": "Administer LASIX PO",
+        "resource": "MedicationRequest/112"
+      }
+    ]
+  },
+  {
+    "id": "111",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "resourceType": "MedicationRequest",
+    "status": "option",
+    "code": {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+          "code": "order-medication",
+          "display": "Order a medication"
+        }
+      ]
+    },
+    "doNotPerform": false,
+    "dosage": [
+      {
+        "sequence": 1,
+        "text": "40mg",
+        "timing": {
+          "repeat": {
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "d"
+          }
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "47625008",
+              "display": "Intravenous Route (qualifier value)"
+            }
+          ]
+        },
+        "doseAndRate": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                  "code": "ordered",
+                  "display": "Ordered"
+                }
+              ]
+            },
+            "doseQuantity": {
+              "value": 40,
+              "unit": "mg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "112",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "resourceType": "MedicationRequest",
+    "status": "option",
+    "code": {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+          "code": "order-medication",
+          "display": "Order a medication"
+        }
+      ]
+    },
+    "doNotPerform": false,
+    "dosage": [
+      {
+        "sequence": 1,
+        "text": "40mg",
+        "timing": {
+          "repeat": {
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "d"
+          }
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "26643006",
+              "display": "Oral Route (qualifier value)"
+            }
+          ]
+        },
+        "doseAndRate": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                  "code": "ordered",
+                  "display": "Ordered"
+                }
+              ]
+            },
+            "doseQuantity": {
+              "value": 40,
+              "unit": "mg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "RequestGroup",
+    "id": "115",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "instantiatesCanonical": "http://hl7.org/fhir/uv/cpg-example-chf/PlanDefinition/chf-cardiology-consultation-recommendationdefinition",
+    "intent": "proposal",
+    "status": "option",
+    "action": [
+      {
+        "id": "cardiology-consultation",
+        "title": "Cardiology Consultation",
+        "description": "Cardiology Consultation",
+        "resource": "ServiceRequest/116"
+      }
+    ]
+  },
+  {
+    "id": "116",
+    "subject": {
+      "reference": "Patient/ExamplePatient",
+      "display": ""
+    },
+    "resourceType": "ServiceRequest",
+    "status": "option",
+    "code": {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+          "code": "order-service",
+          "display": "Order a service"
+        }
+      ]
+    },
+    "doNotPerform": false
+  },
+  {
+    "resourceType": "Questionnaire",
+    "id": "ClinicalDrivers",
+    "url": "http://hl7.org/fhir/uv/cpg-example-chf/Questionnaire/ClinicalDrivers",
+    "title": "Clinical Drivers",
+    "status": "draft",
+    "item": [
+      {
+        "linkId": "1",
+        "text": "Body Weight Change",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+            "valueBoolean": true
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+            "valueCoding": {
+              "system": "http://unitsofmeasure.org",
+              "code": "kg"
+            }
+          }
+        ],
+        "code": {
+          "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/chf-codes",
+          "value": "body-weight-chang"
+        },
+        "type": "quantity"
+      }
+    ]
+  }
+]

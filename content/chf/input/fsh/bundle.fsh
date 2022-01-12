@@ -53,4 +53,6 @@ InstanceOf: Bundle
 * entry[+].resource = chf-report-urine-out-computableactivity
 * entry[+].resource = chf-urine-out-computableactivity
 
-// * entry[+].resource = CHF
+* entry[+].resource = chf-lifestyle-modification-recommendationdefinition
+
+// * entry[+].resource = CHF // NOTE: Have to do this manually after Publisher converts to ELM

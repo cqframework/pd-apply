@@ -10,9 +10,14 @@ Alias: $cpg-computablelibrary = http://hl7.org/fhir/uv/cpg/StructureDefinition/c
 Alias: $cpg-pathwaydefinition = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-pathwaydefinition
 Alias: $cpg-recommendationdefinition = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition
 Alias: $cpg-strategydefinition = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-strategydefinition
+Alias: $cpg-servicerequest = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-servicerequest
+Alias: $cpg-procedure = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-procedure
+Alias: $cpg-medicationadministration = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationadministration
+Alias: $cpg-medicationrequest = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequest
 
 Alias: $sct = http://snomed.info/sct
 Alias: $m49.htm = http://unstats.un.org/unsd/methods/m49/m49.htm
 Alias: $loinc = http://loinc.org
 
 Alias: $chf-codes = http://hl7.org/fhir/uv/cpg/CodeSystem/chf-codes
+Alias: $vitalsigns = http://hl7.org/fhir/StructureDefinition/vitalsigns

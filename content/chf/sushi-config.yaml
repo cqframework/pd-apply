@@ -1,5 +1,5 @@
-id: hl7.fhir.uv.cpg
-canonical: http://hl7.org/fhir/uv/cpg
+id: hl7.fhir.uv.cpg-example-chf
+canonical: http://hl7.org/fhir/uv/cpg-example-chf
 fhirVersion: 4.0.1
 copyrightYear: 2021+
 releaseLabel: ci-build

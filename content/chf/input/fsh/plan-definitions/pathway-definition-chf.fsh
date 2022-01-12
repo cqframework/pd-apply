@@ -9,9 +9,9 @@ Usage: #definition
 * action[+].title = "CHF Daily Management"
 * action[=].description = "Daily Management strategy for Congestive Heart Failure"
 * action[=].code = $cpg-common-process#guideline-based-care
-* action[=].definitionCanonical = "http://hl7.org/fhir/uv/cpg/PlanDefinition/chf-daily-management"
+* action[=].definitionCanonical = "http://hl7.org/fhir/uv/cpg-example-chf/PlanDefinition/chf-daily-management"
 
 * action[+].title = "CHF Hypervolemia"
 * action[=].description = "Hypervolemia strategy for Congestive Heart Failure"
 * action[=].code = $cpg-common-process#guideline-based-care
-* action[=].definitionCanonical = "http://hl7.org/fhir/uv/cpg/PlanDefinition/chf-hypervolemia"
+* action[=].definitionCanonical = "http://hl7.org/fhir/uv/cpg-example-chf/PlanDefinition/chf-hypervolemia"
