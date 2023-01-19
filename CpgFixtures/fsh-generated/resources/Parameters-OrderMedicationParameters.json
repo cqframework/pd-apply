@@ -1,0 +1,181 @@
+{
+  "resourceType": "Parameters",
+  "id": "OrderMedicationParameters",
+  "parameter": [
+    {
+      "name": "subject",
+      "valueString": "Patient/Patient1"
+    },
+    {
+      "name": "practitioner",
+      "valueString": "Practitioner/Practitioner1"
+    },
+    {
+      "name": "encounter",
+      "valueString": "Encounter/Encounter1"
+    },
+    {
+      "name": "activityDefinition",
+      "resource": {
+        "resourceType": "ActivityDefinition",
+        "id": "OrderMedicationActivity",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequestactivity"
+          ]
+        },
+        "kind": "MedicationRequest",
+        "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequest",
+        "intent": "proposal",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+            "valueCode": "publishable"
+          },
+          {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+            "valueCode": "structured"
+          }
+        ],
+        "url": "http://example.com/ActivityDefinition/OrderMedicationActivity",
+        "name": "OrderMedicationActivity",
+        "title": "ActivityDefinition OrderMedicationActivity",
+        "status": "draft",
+        "experimental": true,
+        "publisher": "Example",
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "code": "001",
+                "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+                "display": "World"
+              }
+            ]
+          }
+        ],
+        "version": "0.1.0",
+        "description": "Order a medication activity",
+        "code": {
+          "coding": [
+            {
+              "code": "order-medication",
+              "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+              "display": "Order a medication"
+            }
+          ]
+        },
+        "priority": "routine",
+        "doNotPerform": false,
+        "productCodeableConcept": {
+          "coding": [
+            {
+              "code": "376988009",
+              "system": "http://snomed.info/sct",
+              "display": "Levothyroxine sodium 75 microgram oral tablet"
+            }
+          ]
+        },
+        "dosage": [
+          {
+            "sequence": 1,
+            "text": "75mcg daily",
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "route": {
+              "coding": [
+                {
+                  "code": "26643006",
+                  "system": "http://snomed.info/sct",
+                  "display": "Oral Route (qualifier value)"
+                }
+              ]
+            },
+            "doseAndRate": [
+              {
+                "type": {
+                  "coding": [
+                    {
+                      "code": "ordered",
+                      "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                      "display": "Ordered"
+                    }
+                  ]
+                },
+                "doseQuantity": {
+                  "value": 75,
+                  "code": "ug",
+                  "system": "http://unitsofmeasure.org",
+                  "unit": "mcg"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "data",
+      "resource": {
+        "resourceType": "Bundle",
+        "id": "PatientTestBundle1",
+        "type": "collection",
+        "entry": [
+          {
+            "resource": {
+              "resourceType": "Patient",
+              "id": "Patient1"
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Encounter",
+              "id": "Encounter1",
+              "status": "in-progress",
+              "class": {
+                "code": "AMB",
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+              },
+              "subject": {
+                "reference": "Patient/Patient1"
+              },
+              "participant": [
+                {
+                  "individual": {
+                    "reference": "Practitioner/Practitioner1"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Practitioner",
+              "id": "Practitioner1"
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "MedicationRequest",
+              "id": "PastMedicationRequest",
+              "status": "active",
+              "intent": "order",
+              "authoredOn": "2023-01-01",
+              "medicationCodeableConcept": {
+                "text": "Some medication"
+              },
+              "subject": {
+                "reference": "Patient/Patient1"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

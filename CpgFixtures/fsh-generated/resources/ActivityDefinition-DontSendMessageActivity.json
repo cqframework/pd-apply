@@ -1,0 +1,53 @@
+{
+  "resourceType": "ActivityDefinition",
+  "id": "DontSendMessageActivity",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+      "valueCode": "publishable"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+      "valueCode": "structured"
+    }
+  ],
+  "url": "http://example.com/ActivityDefinition/DontSendMessageActivity",
+  "name": "DontSendMessageActivity",
+  "title": "ActivityDefinition DontSendMessageActivity",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "Example",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "001",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "World"
+        }
+      ]
+    }
+  ],
+  "version": "0.1.0",
+  "kind": "CommunicationRequest",
+  "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest",
+  "code": {
+    "coding": [
+      {
+        "code": "send-message",
+        "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+        "display": "Send a message"
+      }
+    ]
+  },
+  "doNotPerform": true,
+  "dynamicValue": [
+    {
+      "path": "status",
+      "expression": {
+        "language": "text/fhirpath",
+        "expression": "'active'"
+      }
+    }
+  ]
+}

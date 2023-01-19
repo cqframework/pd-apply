@@ -1,0 +1,150 @@
+{
+  "resourceType": "Parameters",
+  "id": "CollectInformationParameters",
+  "parameter": [
+    {
+      "name": "subject",
+      "valueString": "Patient/Patient1"
+    },
+    {
+      "name": "practitioner",
+      "valueString": "Practitioner/Practitioner1"
+    },
+    {
+      "name": "encounter",
+      "valueString": "Encounter/Encounter1"
+    },
+    {
+      "name": "activityDefinition",
+      "resource": {
+        "resourceType": "ActivityDefinition",
+        "id": "CollectionInformationActivity",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableactivity"
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+            "valueCode": "publishable"
+          },
+          {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+            "valueCode": "structured"
+          },
+          {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith",
+            "valueCanonical": "http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation"
+          }
+        ],
+        "url": "http://example.com/ActivityDefinition/CollectionInformationActivity",
+        "name": "CollectionInformationActivity",
+        "title": "ActivityDefinition CollectionInformationActivity",
+        "status": "draft",
+        "experimental": true,
+        "publisher": "Example",
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "code": "001",
+                "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+                "display": "World"
+              }
+            ]
+          }
+        ],
+        "version": "0.1.0",
+        "description": "Example Activity Definition for a recommendation to collect information",
+        "kind": "Task",
+        "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask",
+        "code": {
+          "coding": [
+            {
+              "code": "collect-information",
+              "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+              "display": "Collect information"
+            }
+          ]
+        },
+        "doNotPerform": false,
+        "intent": "proposal",
+        "dynamicValue": [
+          {
+            "path": "input[0].type",
+            "expression": {
+              "language": "text/fhirpath",
+              "expression": "code"
+            }
+          },
+          {
+            "path": "input[0].valueCanonical",
+            "expression": {
+              "language": "text/fhirpath",
+              "expression": "extension('http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith').value"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "data",
+      "resource": {
+        "resourceType": "Bundle",
+        "id": "PatientTestBundle1",
+        "type": "collection",
+        "entry": [
+          {
+            "resource": {
+              "resourceType": "Patient",
+              "id": "Patient1"
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Encounter",
+              "id": "Encounter1",
+              "status": "in-progress",
+              "class": {
+                "code": "AMB",
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+              },
+              "subject": {
+                "reference": "Patient/Patient1"
+              },
+              "participant": [
+                {
+                  "individual": {
+                    "reference": "Practitioner/Practitioner1"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Practitioner",
+              "id": "Practitioner1"
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "MedicationRequest",
+              "id": "PastMedicationRequest",
+              "status": "active",
+              "intent": "order",
+              "authoredOn": "2023-01-01",
+              "medicationCodeableConcept": {
+                "text": "Some medication"
+              },
+              "subject": {
+                "reference": "Patient/Patient1"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "resourceType": "Task",
+  "id": "CollectInformationExpected",
+  "status": "draft",
+  "intent": "proposal",
+  "instantiatesCanonical": "http://example.com/ActivityDefinition/CollectionInformationActivity|0.1.0",
+  "code": {
+    "coding": [
+      {
+        "code": "collect-information",
+        "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type"
+      }
+    ]
+  },
+  "input": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "collect-information",
+            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type"
+          }
+        ]
+      },
+      "valueCanonical": "http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation"
+    }
+  ]
+}

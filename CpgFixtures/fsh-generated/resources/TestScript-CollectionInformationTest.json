@@ -1,0 +1,67 @@
+{
+  "resourceType": "TestScript",
+  "id": "CollectionInformationTest",
+  "url": "http://example.com/TestScript/CollectionInformationTest",
+  "name": "CollectionInformationTest",
+  "title": "TestScript CollectionInformationTest",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "Example",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "001",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "World"
+        }
+      ]
+    }
+  ],
+  "version": "0.1.0",
+  "fixture": [
+    {
+      "id": "fixture-1",
+      "autocreate": true,
+      "autodelete": true,
+      "resource": {
+        "reference": "Parameters/CollectInformationParameters"
+      }
+    }
+  ],
+  "test": [
+    {
+      "action": [
+        {
+          "operation": {
+            "type": {
+              "code": "apply",
+              "system": "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
+            },
+            "description": "Call Apply for CollectInformationActivity",
+            "encodeRequestUrl": true,
+            "requestId": "fixture-1"
+          }
+        },
+        {
+          "assert": {
+            "description": "Should be a CommunicationRequest",
+            "warningOnly": false,
+            "path": "resourceType",
+            "operator": "equals",
+            "value": "CommunicationRequest"
+          }
+        },
+        {
+          "assert": {
+            "description": "Should be draft",
+            "warningOnly": false,
+            "path": "status",
+            "operator": "equals",
+            "value": "draft"
+          }
+        }
+      ]
+    }
+  ]
+}

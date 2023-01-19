@@ -1,0 +1,196 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "fhir.example",
+  "url": "http://example.org/ImplementationGuide/fhir.example",
+  "version": "0.1.0",
+  "name": "CpgFixtures",
+  "status": "draft",
+  "publisher": "Example Publisher",
+  "contact": [
+    {
+      "name": "Example Publisher",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://example.org/example-publisher"
+        }
+      ]
+    }
+  ],
+  "packageId": "fhir.example",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "hl7.fhir.uv.cpg",
+      "version": "1.0.0",
+      "uri": "http://hl7.org/fhir/uv/cpg/ImplementationGuide/hl7.fhir.uv.cpg",
+      "id": "hl7_fhir_uv_cpg"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "Task/CollectInformationExpected"
+        },
+        "name": "CollectInformationExpected",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Parameters/CollectInformationParameters"
+        },
+        "name": "CollectInformationParameters",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ActivityDefinition/CollectionInformationActivity"
+        },
+        "name": "CollectionInformationActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/CollectionInformationTest"
+        },
+        "name": "CollectionInformationTest",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ActivityDefinition/DispenseMedicationActivity"
+        },
+        "name": "DispenseMedicationActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Library/DispenseMedicationLibrary"
+        },
+        "name": "DispenseMedicationLibrary",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Parameters/DispenseMedicationParameters"
+        },
+        "name": "DispenseMedicationParameters",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ActivityDefinition/DontSendMessageActivity"
+        },
+        "name": "DontSendMessageActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "CommunicationRequest/DontSendMessageExpected"
+        },
+        "name": "DontSendMessageExpected",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Parameters/DontSendMessageParameters"
+        },
+        "name": "DontSendMessageParameters",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Library/FHIRHelpers"
+        },
+        "name": "FHIRHelpers",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ActivityDefinition/OrderMedicationActivity"
+        },
+        "name": "OrderMedicationActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/OrderMedicationExpected"
+        },
+        "name": "OrderMedicationExpected",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Parameters/OrderMedicationParameters"
+        },
+        "name": "OrderMedicationParameters",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Bundle/PatientTestBundle1"
+        },
+        "name": "PatientTestBundle1",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ActivityDefinition/SendMessageActivity"
+        },
+        "name": "SendMessageActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "CommunicationRequest/SendMessageExpected"
+        },
+        "name": "SendMessageExpected",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Parameters/SendMessageParameters"
+        },
+        "name": "SendMessageParameters",
+        "exampleBoolean": true
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2023+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "ci-build"
+      },
+      {
+        "code": "path-binary",
+        "value": "./input/cql"
+      },
+      {
+        "code": "generation-off",
+        "value": "true"
+      },
+      {
+        "code": "no-narrative",
+        "value": "*/*"
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "resourceType": "CommunicationRequest",
+  "id": "DontSendMessageExpected",
+  "status": "active",
+  "doNotPerform": true
+}

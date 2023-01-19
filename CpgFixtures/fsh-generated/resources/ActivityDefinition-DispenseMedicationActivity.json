@@ -1,0 +1,63 @@
+{
+  "resourceType": "ActivityDefinition",
+  "id": "DispenseMedicationActivity",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+      "valueCode": "publishable"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+      "valueCode": "structured"
+    }
+  ],
+  "url": "http://example.com/ActivityDefinition/DispenseMedicationActivity",
+  "name": "DispenseMedicationActivity",
+  "title": "ActivityDefinition DispenseMedicationActivity",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "Example",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "001",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "World"
+        }
+      ]
+    }
+  ],
+  "version": "0.1.0",
+  "description": "Dispense medication activity",
+  "kind": "Task",
+  "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationtask",
+  "code": {
+    "coding": [
+      {
+        "code": "dispense-medication",
+        "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+        "display": "Dispense a medication"
+      }
+    ]
+  },
+  "intent": "proposal",
+  "doNotPerform": false,
+  "dynamicValue": [
+    {
+      "path": "input[0].type",
+      "expression": {
+        "language": "text/fhirpath",
+        "expression": "code"
+      }
+    },
+    {
+      "path": "input[0].valueReference",
+      "expression": {
+        "language": "text/cql-identifier",
+        "expression": "Medication Proposal Reference",
+        "reference": "http://example.com/Library/DispenseMedicationLibrary"
+      }
+    }
+  ]
+}

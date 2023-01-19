@@ -1,0 +1,11 @@
+{
+  "resourceType": "CommunicationRequest",
+  "id": "SendMessageExpected",
+  "status": "draft",
+  "doNotPerform": false,
+  "payload": [
+    {
+      "contentString": "Hello!"
+    }
+  ]
+}
