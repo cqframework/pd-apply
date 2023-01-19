@@ -1,0 +1,379 @@
+{
+	"info": {
+		"_postman_id": "b3f008ce-a89a-44da-a417-5786f8efe3fa",
+		"name": "CPB Unit Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25403373"
+	},
+	"item": [
+		{
+			"name": "ActivityDefinition-CollectInfomrationParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"    \"resourceType\": \"Task\",",
+							"    \"status\": \"draft\",",
+							"    \"doNotPerform\": false,",
+							"    \"intent\": \"proposal\",",
+							"    \"instantiatesCanonical\": \"http://example.com/ActivityDefinition/CollectionInformationActivity|0.1.0\",",
+							"    \"code\": {",
+							"        \"coding\": [",
+							"            {",
+							"                \"code\": \"collect-information\",",
+							"                \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"                \"display\": \"Collect information\"",
+							"            }",
+							"        ]",
+							"    },",
+							"    \"input\": [",
+							"        {",
+							"            \"type\": {",
+							"                \"coding\": [",
+							"                    {",
+							"                        \"code\": \"collect-information\",",
+							"                        \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"                        \"display\": \"Collect information\"",
+							"                    }",
+							"                ]",
+							"            }",
+							"        }",
+							"    ]",
+							"}",
+							"",
+							"pm.test(\"ActivityDefinition: Collection Information $apply\", function () {",
+							"    const response = _.testPrepare(pm.response.json());",
+							"    pm.expect(response).to.deep.equal(expected);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"CollectInformationParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"CollectionInformationActivity\",\n        \"meta\": {\n          \"profile\": [\n            \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableactivity\"\n          ]\n        },\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith\",\n            \"valueCanonical\": \"http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/CollectionInformationActivity\",\n        \"name\": \"CollectionInformationActivity\",\n        \"title\": \"ActivityDefinition CollectionInformationActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"description\": \"Example Activity Definition for a recommendation to collect information\",\n        \"kind\": \"Task\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"collect-information\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Collect information\"\n            }\n          ]\n        },\n        \"doNotPerform\": false,\n        \"intent\": \"proposal\",\n        \"dynamicValue\": [\n          {\n            \"path\": \"input[0].type\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"code\"\n            }\n          },\n          {\n            \"path\": \"input[0].valueCanonical\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"extension('http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith').value\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}\n"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityDefinition-DispenseMedicationParameters",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"DispenseMedicationParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"DispenseMedicationActivity\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/DispenseMedicationActivity\",\n        \"name\": \"DispenseMedicationActivity\",\n        \"title\": \"ActivityDefinition DispenseMedicationActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"description\": \"Dispense medication activity\",\n        \"kind\": \"Task\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationtask\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"dispense-medication\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Dispense a medication\"\n            }\n          ]\n        },\n        \"intent\": \"proposal\",\n        \"doNotPerform\": false,\n        \"dynamicValue\": [\n          {\n            \"path\": \"input[0].type\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"code\"\n            }\n          },\n          {\n            \"path\": \"input[0].valueReference\",\n            \"expression\": {\n              \"language\": \"text/cql-identifier\",\n              \"expression\": \"Medication Proposal Reference\",\n              \"reference\": \"http://example.com/Library/DispenseMedicationLibrary\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}\n"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityDefinition-DontSendMessageParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"    \"resourceType\": \"CommunicationRequest\",",
+							"    \"status\": \"active\",",
+							"    \"doNotPerform\": true",
+							"}",
+							"",
+							"pm.test(\"ActivityDefinition: Don't Send Message $apply\", function () {",
+							"    const response = _.testPrepare(pm.response.json());",
+							"    pm.expect(response).to.deep.equal(expected);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"DontSendMessageParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"DontSendMessageActivity\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/DontSendMessageActivity\",\n        \"name\": \"DontSendMessageActivity\",\n        \"title\": \"ActivityDefinition DontSendMessageActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"kind\": \"CommunicationRequest\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"send-message\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Send a message\"\n            }\n          ]\n        },\n        \"doNotPerform\": true,\n        \"dynamicValue\": [\n          {\n            \"path\": \"status\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"'active'\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityDefinition-OrderMedicationParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"    \"resourceType\": \"MedicationRequest\",",
+							"    \"status\": \"draft\",",
+							"    \"doNotPerform\": false,",
+							"    \"intent\": \"proposal\",",
+							"    \"instantiatesCanonical\": [",
+							"        \"http://example.com/ActivityDefinition/OrderMedicationActivity|0.1.0\"",
+							"    ],",
+							"    \"medicationCodeableConcept\": {",
+							"        \"coding\": [",
+							"            {",
+							"                \"code\": \"376988009\",",
+							"                \"system\": \"http://snomed.info/sct\",",
+							"                \"display\": \"Levothyroxine sodium 75 microgram oral tablet\"",
+							"            }",
+							"        ]",
+							"    },",
+							"    \"dosageInstruction\": [",
+							"        {",
+							"            \"sequence\": 1,",
+							"            \"text\": \"75mcg daily\",",
+							"            \"timing\": {",
+							"                \"repeat\": {",
+							"                    \"frequency\": 1,",
+							"                    \"period\": 1,",
+							"                    \"periodUnit\": \"d\"",
+							"                }",
+							"            },",
+							"            \"route\": {",
+							"                \"coding\": [",
+							"                    {",
+							"                        \"code\": \"26643006\",",
+							"                        \"system\": \"http://snomed.info/sct\",",
+							"                        \"display\": \"Oral Route (qualifier value)\"",
+							"                    }",
+							"                ]",
+							"            },",
+							"            \"doseAndRate\": [",
+							"                {",
+							"                    \"type\": {",
+							"                        \"coding\": [",
+							"                            {",
+							"                                \"code\": \"ordered\",",
+							"                                \"system\": \"http://terminology.hl7.org/CodeSystem/dose-rate-type\",",
+							"                                \"display\": \"Ordered\"",
+							"                            }",
+							"                        ]",
+							"                    },",
+							"                    \"doseQuantity\": {",
+							"                        \"value\": 75,",
+							"                        \"code\": \"ug\",",
+							"                        \"system\": \"http://unitsofmeasure.org\",",
+							"                        \"unit\": \"mcg\"",
+							"                    }",
+							"                }",
+							"            ]",
+							"        }",
+							"    ]",
+							"}",
+							"",
+							"pm.test(\"ActivityDefinition: Order Medication $apply\", function() {",
+							"    const response = _.testPrepare(pm.response.json());",
+							"    // delete response.id;",
+							"    // delete response.meta;",
+							"    pm.expect(response).to.deep.equal(expected);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"OrderMedicationParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"OrderMedicationActivity\",\n        \"meta\": {\n          \"profile\": [\n            \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequestactivity\"\n          ]\n        },\n        \"kind\": \"MedicationRequest\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequest\",\n        \"intent\": \"proposal\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/OrderMedicationActivity\",\n        \"name\": \"OrderMedicationActivity\",\n        \"title\": \"ActivityDefinition OrderMedicationActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"description\": \"Order a medication activity\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"order-medication\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Order a medication\"\n            }\n          ]\n        },\n        \"priority\": \"routine\",\n        \"doNotPerform\": false,\n        \"productCodeableConcept\": {\n          \"coding\": [\n            {\n              \"code\": \"376988009\",\n              \"system\": \"http://snomed.info/sct\",\n              \"display\": \"Levothyroxine sodium 75 microgram oral tablet\"\n            }\n          ]\n        },\n        \"dosage\": [\n          {\n            \"sequence\": 1,\n            \"text\": \"75mcg daily\",\n            \"timing\": {\n              \"repeat\": {\n                \"frequency\": 1,\n                \"period\": 1,\n                \"periodUnit\": \"d\"\n              }\n            },\n            \"route\": {\n              \"coding\": [\n                {\n                  \"code\": \"26643006\",\n                  \"system\": \"http://snomed.info/sct\",\n                  \"display\": \"Oral Route (qualifier value)\"\n                }\n              ]\n            },\n            \"doseAndRate\": [\n              {\n                \"type\": {\n                  \"coding\": [\n                    {\n                      \"code\": \"ordered\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/dose-rate-type\",\n                      \"display\": \"Ordered\"\n                    }\n                  ]\n                },\n                \"doseQuantity\": {\n                  \"value\": 75,\n                  \"code\": \"ug\",\n                  \"system\": \"http://unitsofmeasure.org\",\n                  \"unit\": \"mcg\"\n                }\n              }\n            ]\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityDefinition-SendMessageParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"    \"resourceType\": \"CommunicationRequest\",",
+							"    \"status\": \"draft\",",
+							"    \"doNotPerform\": false,",
+							"    \"payload\": {",
+							"        \"contentString\": \"Hello!\"",
+							"    }",
+							"}",
+							"",
+							"pm.test(\"ActivityDefinition: Send Message $apply\", function() {",
+							"    const response = _.testPrepare(pm.response.json());",
+							"    pm.expect(response).to.deep.equal(response);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"SendMessageParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"SendMessageActivity\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/SendMessageActivity\",\n        \"name\": \"SendMessageActivity\",\n        \"title\": \"ActivityDefinition SendMessageActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"kind\": \"CommunicationRequest\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"send-message\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Send a message\"\n            }\n          ]\n        },\n        \"doNotPerform\": false,\n        \"dynamicValue\": [\n          {\n            \"path\": \"payload.contentString\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"'Hello!'\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"/**",
+					" * Delete the id and meta as this can vary per request",
+					" */",
+					"Object.prototype.testPrepare = function testPrepare(resource) {",
+					"    delete resource.id;",
+					"    delete resource.meta;",
+					"",
+					"    return resource;",
+					"}"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "cpgServer",
+			"value": "http://localhost:9001",
+			"type": "string"
+		},
+		{
+			"key": "contentEndpointAddress",
+			"value": "http://hapi.fhir.org/baseR4",
+			"type": "string"
+		},
+		{
+			"key": "contentEndpointType",
+			"value": "hl7-fhir-rest",
+			"type": "string"
+		},
+		{
+			"key": "terminologyEndpointAddress",
+			"value": "http://hapi.fhir.org/baseR4",
+			"type": "string"
+		},
+		{
+			"key": "terminologyEndpointType",
+			"value": "hl7-fhir-rest",
+			"type": "string"
+		},
+		{
+			"key": "dataEndpointAddress",
+			"value": "http://hapi.fhir.org/baseR4",
+			"type": "string"
+		},
+		{
+			"key": "dataEndpointType",
+			"value": "hl7-fhir-rest",
+			"type": "string"
+		}
+	]
+}
