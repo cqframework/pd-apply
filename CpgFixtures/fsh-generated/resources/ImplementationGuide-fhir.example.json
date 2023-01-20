@@ -82,6 +82,13 @@
       },
       {
         "reference": {
+          "reference": "Library/DocumentMedicationLibrary"
+        },
+        "name": "DocumentMedicationLibrary",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "ActivityDefinition/DontSendMessageActivity"
         },
         "name": "DontSendMessageActivity",
@@ -155,6 +162,13 @@
           "reference": "Parameters/SendMessageParameters"
         },
         "name": "SendMessageParameters",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ActivityDefinition/activity-example-documentmedication"
+        },
+        "name": "activity-example-documentmedication",
         "exampleBoolean": true
       }
     ],
