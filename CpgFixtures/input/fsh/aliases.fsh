@@ -7,5 +7,8 @@ Alias: $cpg-computablelibrary = http://hl7.org/fhir/uv/cpg/StructureDefinition/c
 Alias: $cpg-medicationrequestactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequestactivity
 Alias: $cpg-dispensemedicationactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationactivity
 Alias: $cpg-documentmedicationactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-documentmedicationactivity
+Alias: $cpg-administermedicationactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-administermedication
+Alias: $cpg-recommendimmunization = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-immunizationrecommendation
+
 
 Alias: $cpg-activity-type = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type

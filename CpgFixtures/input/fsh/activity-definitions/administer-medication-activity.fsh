@@ -1,0 +1,21 @@
+Instance: AdministerMedicationActivity
+InstanceOf: $cpg-administermedicationactivity
+Usage: #example
+* insert KnowledgeArtifactDefinitionMetadata(AdministerMedicationActivity, ActivityDefinition)
+* date = "2021-02-11T20:43:58+00:00"
+* description = "Example Activity Definition for a recommendation to administer a medication"
+* kind = #Task
+* profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-administermedicationtask"
+* code = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type#administer-medication "Administer a medication"
+* intent = #proposal
+* doNotPerform = false
+* dynamicValue[0]
+  * path = "input.type"
+  * expression
+    * language = #text/cql
+    * expression = "code"
+  * path = "input.value"
+  * expression
+    * language = #text/cql
+    * expression = "Medication Proposal"
+    * reference = "http://hl7.org/fhir/uv/cpg/Library/AdministerMedication"

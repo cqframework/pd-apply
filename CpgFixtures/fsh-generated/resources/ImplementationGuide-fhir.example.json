@@ -33,6 +33,13 @@
     "resource": [
       {
         "reference": {
+          "reference": "ActivityDefinition/AdministerMedicationActivity"
+        },
+        "name": "AdministerMedicationActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Task/CollectInformationExpected"
         },
         "name": "CollectInformationExpected",
@@ -85,6 +92,13 @@
           "reference": "Library/DocumentMedicationLibrary"
         },
         "name": "DocumentMedicationLibrary",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ActivityDefinition/DontCollectInformationActivity"
+        },
+        "name": "DontCollectInformationActivity",
         "exampleBoolean": true
       },
       {
