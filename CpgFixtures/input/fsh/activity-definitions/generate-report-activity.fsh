@@ -2,10 +2,7 @@ Instance: GenerateReportActivity
 InstanceOf: $cpg-generatereportactivity
 Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(GenerateReportActivity, ActivityDefinition)
-* extension[+]
-  * url = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportWith"
-  * valueCanonical = "http://hl7.org/fhir/uv/cpg/Measure/activity-example-generatereport"
-* date = "2021-02-11T20:43:58+00:00"
+* extension[reportWith].valueCanonical = "http://hl7.org/fhir/uv/cpg/Measure/activity-example-generatereport"
 * description = "Example Activity Definition for a recommendation to generate a report"
 * kind = #Task
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-generatereporttask"

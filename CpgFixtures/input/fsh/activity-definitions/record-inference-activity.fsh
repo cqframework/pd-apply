@@ -2,7 +2,6 @@ Instance: RecordInferenceActivity
 InstanceOf: $cpg-recordinferenceactivity
 Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(RecordInferenceActivity, ActivityDefinition)
-* date = "2021-02-11T20:43:58+00:00"
 * description = "Example Activity Definition for a recommendation to record an inference"
 * kind = #Task
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recordinferencetask"
@@ -13,8 +12,8 @@ Usage: #example
   * expression
     * language = #text/cql-expression
     * expression = "code"
-* dynamicValue[+]
-    * path = "input.value"
-    * expression
-      * language = #text/cql-expression
-      * expression = "Observation { id: 'inference', status: 'final', code: \"Inference\", subject: Patient, issued: Now() }"
+* dynamicValue[+]   
+  * path = "input.value" 
+  * expression  
+    * language = #text/cql-expression
+    * expression = "Observation { id: 'inference', status: 'final', code: \"Inference\", subject: Patient, issued: Now() }" 

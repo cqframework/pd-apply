@@ -1,6 +1,14 @@
 {
   "resourceType": "ActivityDefinition",
   "id": "DontCollectInformationActivity",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectinformationactivity"
+    ]
+  },
+  "kind": "Task",
+  "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask",
+  "intent": "proposal",
   "extension": [
     {
       "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
@@ -30,8 +38,6 @@
   ],
   "version": "0.1.0",
   "description": "Example Activity Definition for a recommendation not to collect information",
-  "kind": "Task",
-  "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask",
   "code": {
     "coding": [
       {
@@ -43,6 +49,13 @@
   },
   "doNotPerform": true,
   "dynamicValue": [
+    {
+      "path": "input.type",
+      "expression": {
+        "language": "text/cql",
+        "expression": "code"
+      }
+    },
     {
       "path": "input.value",
       "expression": {

@@ -1,13 +1,13 @@
 {
   "resourceType": "ActivityDefinition",
-  "id": "SendMessageActivity",
+  "id": "activity-example-recommendimmunization",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationactivity"
+      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-immunizationactivity"
     ]
   },
-  "kind": "CommunicationRequest",
-  "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest",
+  "kind": "ImmunizationRecommendation",
+  "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-immunizationrecommendation",
   "intent": "proposal",
   "extension": [
     {
@@ -19,9 +19,9 @@
       "valueCode": "structured"
     }
   ],
-  "url": "http://example.com/ActivityDefinition/SendMessageActivity",
-  "name": "SendMessageActivity",
-  "title": "ActivityDefinition SendMessageActivity",
+  "url": "http://example.com/ActivityDefinition/RecommendImmuniztionActivity",
+  "name": "RecommendImmuniztionActivity",
+  "title": "ActivityDefinition RecommendImmuniztionActivity",
   "status": "draft",
   "experimental": true,
   "publisher": "Example",
@@ -37,24 +37,25 @@
     }
   ],
   "version": "0.1.0",
-  "description": "Example Activity Definition for a recommendation not to send a message",
+  "description": "Example Activity Definition for a recommendation to provide an immunization",
   "code": {
     "coding": [
       {
-        "code": "send-message",
+        "code": "recommend-immunization",
         "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
-        "display": "Send a message"
+        "display": "Recommend an immunization"
       }
     ]
   },
+  "priority": "routine",
   "doNotPerform": false,
-  "dynamicValue": [
-    {
-      "path": "payload.contentString",
-      "expression": {
-        "language": "text/fhirpath",
-        "expression": "'Hello!'"
+  "productCodeableConcept": {
+    "coding": [
+      {
+        "code": "14745005",
+        "system": "http://snomed.info/sct",
+        "display": "Hepatitis A vaccine"
       }
-    }
-  ]
+    ]
+  }
 }

@@ -1,13 +1,13 @@
 {
   "resourceType": "ActivityDefinition",
-  "id": "DispenseMedicationActivity",
+  "id": "GenerateReportActivity",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationactivity"
+      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-generatereportactivity"
     ]
   },
   "kind": "Task",
-  "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationtask",
+  "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-generatereporttask",
   "intent": "proposal",
   "extension": [
     {
@@ -17,11 +17,15 @@
     {
       "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
       "valueCode": "structured"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportWith",
+      "valueCanonical": "http://hl7.org/fhir/uv/cpg/Measure/activity-example-generatereport"
     }
   ],
-  "url": "http://example.com/ActivityDefinition/DispenseMedicationActivity",
-  "name": "DispenseMedicationActivity",
-  "title": "ActivityDefinition DispenseMedicationActivity",
+  "url": "http://example.com/ActivityDefinition/GenerateReportActivity",
+  "name": "GenerateReportActivity",
+  "title": "ActivityDefinition GenerateReportActivity",
   "status": "draft",
   "experimental": true,
   "publisher": "Example",
@@ -37,31 +41,30 @@
     }
   ],
   "version": "0.1.0",
-  "description": "Dispense medication activity",
+  "description": "Example Activity Definition for a recommendation to generate a report",
   "code": {
     "coding": [
       {
-        "code": "dispense-medication",
+        "code": "generate-report",
         "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
-        "display": "Dispense a medication"
+        "display": "Generate a metric or case report"
       }
     ]
   },
   "doNotPerform": false,
   "dynamicValue": [
     {
-      "path": "input[0].type",
+      "path": "input.type",
       "expression": {
-        "language": "text/fhirpath",
+        "language": "text/cql",
         "expression": "code"
       }
     },
     {
-      "path": "input[0].valueReference",
+      "path": "input.value",
       "expression": {
-        "language": "text/cql-identifier",
-        "expression": "Medication Proposal Reference",
-        "reference": "http://example.com/Library/DispenseMedicationLibrary"
+        "language": "text/cql",
+        "expression": "extension('http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportWith').value"
       }
     }
   ]

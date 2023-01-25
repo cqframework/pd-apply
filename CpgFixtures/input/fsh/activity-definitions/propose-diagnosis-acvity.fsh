@@ -2,7 +2,6 @@ Instance: ProposeDiagnosisActivity
 InstanceOf: $cpg-proposediagnosisactivity
 Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(ProposeDiagnosisActivity, ActivityDefinition)
-* date = "2021-02-11T20:43:58+00:00"
 * description = "Example Activity Definition for a recommendation to propose a diagnosis"
 * kind = #Task
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-proposediagnosistask"

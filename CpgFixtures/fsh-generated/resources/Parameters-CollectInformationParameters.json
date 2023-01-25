@@ -21,9 +21,12 @@
         "id": "CollectionInformationActivity",
         "meta": {
           "profile": [
-            "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableactivity"
+            "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectinformationactivity"
           ]
         },
+        "kind": "Task",
+        "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask",
+        "intent": "proposal",
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
@@ -57,8 +60,6 @@
         ],
         "version": "0.1.0",
         "description": "Example Activity Definition for a recommendation to collect information",
-        "kind": "Task",
-        "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask",
         "code": {
           "coding": [
             {
@@ -69,7 +70,6 @@
           ]
         },
         "doNotPerform": false,
-        "intent": "proposal",
         "dynamicValue": [
           {
             "path": "input[0].type",

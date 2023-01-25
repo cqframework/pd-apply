@@ -2,13 +2,10 @@ Instance: EnrollPatientActivity
 InstanceOf: $cpg-enrollmentactivity
 Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(EnrollPatientActivity, ActivityDefinition)
-* extension[+]
-  * url = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollIn"
-  * valueCanonical = "http://hl7.org/fhir/uv/cpg/PlanDefinition/activity-example-pathway"
+* extension[enrollIn].valueCanonical = "http://hl7.org/fhir/uv/cpg/PlanDefinition/activity-example-pathway"
 * modifierExtension
   * url = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-isUnenrollment"
   * valueBoolean = false
-* date = "2021-02-11T20:43:58+00:00"
 * description = "Example Activity Definition for a recommendation to enroll a patient in a pathway"
 * kind = #Task
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollmenttask"

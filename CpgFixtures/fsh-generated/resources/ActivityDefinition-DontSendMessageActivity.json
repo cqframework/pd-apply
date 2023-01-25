@@ -1,6 +1,14 @@
 {
   "resourceType": "ActivityDefinition",
   "id": "DontSendMessageActivity",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationactivity"
+    ]
+  },
+  "kind": "CommunicationRequest",
+  "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest",
+  "intent": "proposal",
   "extension": [
     {
       "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
@@ -29,8 +37,7 @@
     }
   ],
   "version": "0.1.0",
-  "kind": "CommunicationRequest",
-  "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest",
+  "description": "Example Activity Definition for a recommendation not to send a message",
   "code": {
     "coding": [
       {

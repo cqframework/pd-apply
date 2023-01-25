@@ -37,7 +37,6 @@
     }
   ],
   "version": "0.1.0",
-  "date": "2021-02-11T20:43:58+00:00",
   "description": "Example Activity Definition for a recommendation to administer a medication",
   "code": {
     "coding": [
@@ -50,6 +49,13 @@
   },
   "doNotPerform": false,
   "dynamicValue": [
+    {
+      "path": "input.type",
+      "expression": {
+        "language": "text/cql",
+        "expression": "code"
+      }
+    },
     {
       "path": "input.value",
       "expression": {

@@ -1,13 +1,13 @@
 {
   "resourceType": "ActivityDefinition",
-  "id": "activity-example-documentmedication",
+  "id": "EnrollPatientActivity",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-documentmedicationactivity"
+      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollmentactivity"
     ]
   },
   "kind": "Task",
-  "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationtask",
+  "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollmenttask",
   "intent": "proposal",
   "extension": [
     {
@@ -17,11 +17,15 @@
     {
       "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
       "valueCode": "structured"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollIn",
+      "valueCanonical": "http://hl7.org/fhir/uv/cpg/PlanDefinition/activity-example-pathway"
     }
   ],
-  "url": "http://example.com/ActivityDefinition/CollectionInformationActivity",
-  "name": "CollectionInformationActivity",
-  "title": "ActivityDefinition CollectionInformationActivity",
+  "url": "http://example.com/ActivityDefinition/EnrollPatientActivity",
+  "name": "EnrollPatientActivity",
+  "title": "ActivityDefinition EnrollPatientActivity",
   "status": "draft",
   "experimental": true,
   "publisher": "Example",
@@ -37,13 +41,19 @@
     }
   ],
   "version": "0.1.0",
-  "description": "Example Activity Definition for a recommendation to document a medication",
+  "modifierExtension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-isUnenrollment",
+      "valueBoolean": false
+    }
+  ],
+  "description": "Example Activity Definition for a recommendation to enroll a patient in a pathway",
   "code": {
     "coding": [
       {
-        "code": "document-medication",
+        "code": "enrollment",
         "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
-        "display": "Document a medication"
+        "display": "Enroll in a pathway or strategy"
       }
     ]
   },
@@ -52,16 +62,15 @@
     {
       "path": "input.type",
       "expression": {
-        "language": "text/fhirpath",
+        "language": "text/cql",
         "expression": "code"
       }
     },
     {
       "path": "input.value",
       "expression": {
-        "language": "text/cql-indentifier",
-        "expression": "Medication Proposal Reference",
-        "reference": "http://example.com/Library/DocumentMedicationLibrary"
+        "language": "text/cql",
+        "expression": "extension('http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollIn').value"
       }
     }
   ]

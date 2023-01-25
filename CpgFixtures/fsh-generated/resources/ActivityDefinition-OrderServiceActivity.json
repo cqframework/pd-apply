@@ -1,13 +1,13 @@
 {
   "resourceType": "ActivityDefinition",
-  "id": "DispenseMedicationActivity",
+  "id": "OrderServiceActivity",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationactivity"
+      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-servicerequestactivity"
     ]
   },
-  "kind": "Task",
-  "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationtask",
+  "kind": "ServiceRequest",
+  "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-servicerequest",
   "intent": "proposal",
   "extension": [
     {
@@ -19,9 +19,9 @@
       "valueCode": "structured"
     }
   ],
-  "url": "http://example.com/ActivityDefinition/DispenseMedicationActivity",
-  "name": "DispenseMedicationActivity",
-  "title": "ActivityDefinition DispenseMedicationActivity",
+  "url": "http://example.com/ActivityDefinition/OrderServiceActivity",
+  "name": "OrderServiceActivity",
+  "title": "ActivityDefinition OrderServiceActivity",
   "status": "draft",
   "experimental": true,
   "publisher": "Example",
@@ -37,31 +37,23 @@
     }
   ],
   "version": "0.1.0",
-  "description": "Dispense medication activity",
+  "description": "Example Activity Definition for a recommendation to order a service",
   "code": {
     "coding": [
       {
-        "code": "dispense-medication",
+        "code": "order-service",
         "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
-        "display": "Dispense a medication"
+        "display": "Order a service"
       }
     ]
   },
   "doNotPerform": false,
   "dynamicValue": [
     {
-      "path": "input[0].type",
+      "path": "status",
       "expression": {
-        "language": "text/fhirpath",
-        "expression": "code"
-      }
-    },
-    {
-      "path": "input[0].valueReference",
-      "expression": {
-        "language": "text/cql-identifier",
-        "expression": "Medication Proposal Reference",
-        "reference": "http://example.com/Library/DispenseMedicationLibrary"
+        "language": "text/cql",
+        "expression": "'draft'"
       }
     }
   ]

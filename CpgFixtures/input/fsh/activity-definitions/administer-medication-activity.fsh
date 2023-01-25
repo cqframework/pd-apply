@@ -2,7 +2,6 @@ Instance: AdministerMedicationActivity
 InstanceOf: $cpg-administermedication
 Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(AdministerMedicationActivity, ActivityDefinition)
-* date = "2021-02-11T20:43:58+00:00"
 * description = "Example Activity Definition for a recommendation to administer a medication"
 * kind = #Task
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-administermedicationtask"
@@ -19,4 +18,4 @@ Usage: #example
   * expression
     * language = #text/cql
     * expression = "Medication Proposal"
-    * reference = "http://hl7.org/fhir/uv/cpg/Library/AdministerMedication"
+    * reference = Canonical(AdministerMedicationLibrary)

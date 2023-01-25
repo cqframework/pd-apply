@@ -33,6 +33,13 @@
     "resource": [
       {
         "reference": {
+          "reference": "Library/AdministerMedication"
+        },
+        "name": "AdministerMedication",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "ActivityDefinition/AdministerMedicationActivity"
         },
         "name": "AdministerMedicationActivity",
@@ -124,9 +131,23 @@
       },
       {
         "reference": {
+          "reference": "ActivityDefinition/EnrollPatientActivity"
+        },
+        "name": "EnrollPatientActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Library/FHIRHelpers"
         },
         "name": "FHIRHelpers",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ActivityDefinition/GenerateReportActivity"
+        },
+        "name": "GenerateReportActivity",
         "exampleBoolean": true
       },
       {
@@ -152,9 +173,44 @@
       },
       {
         "reference": {
+          "reference": "ActivityDefinition/OrderServiceActivity"
+        },
+        "name": "OrderServiceActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Bundle/PatientTestBundle1"
         },
         "name": "PatientTestBundle1",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ActivityDefinition/ProposeDiagnosisActivity"
+        },
+        "name": "ProposeDiagnosisActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ActivityDefinition/RecordDetectedIssueActivity"
+        },
+        "name": "RecordDetectedIssueActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ActivityDefinition/RecordInferenceActivity"
+        },
+        "name": "RecordInferenceActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ActivityDefinition/ReportFlagActivity"
+        },
+        "name": "ReportFlagActivity",
         "exampleBoolean": true
       },
       {
@@ -183,6 +239,13 @@
           "reference": "ActivityDefinition/activity-example-documentmedication"
         },
         "name": "activity-example-documentmedication",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ActivityDefinition/activity-example-recommendimmunization"
+        },
+        "name": "activity-example-recommendimmunization",
         "exampleBoolean": true
       }
     ],

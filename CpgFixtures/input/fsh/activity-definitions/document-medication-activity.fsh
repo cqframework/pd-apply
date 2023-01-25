@@ -1,4 +1,4 @@
-Instance: activity-example-documentmedication
+Instance: DocumentMedicationActivity
 InstanceOf: $cpg-documentmedicationactivity
 Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(CollectionInformationActivity, ActivityDefinition)

@@ -1,13 +1,13 @@
 {
   "resourceType": "ActivityDefinition",
-  "id": "DispenseMedicationActivity",
+  "id": "RecordDetectedIssueActivity",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationactivity"
+      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recorddetectedissueactivity"
     ]
   },
   "kind": "Task",
-  "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationtask",
+  "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recorddetectedissuetask",
   "intent": "proposal",
   "extension": [
     {
@@ -19,9 +19,9 @@
       "valueCode": "structured"
     }
   ],
-  "url": "http://example.com/ActivityDefinition/DispenseMedicationActivity",
-  "name": "DispenseMedicationActivity",
-  "title": "ActivityDefinition DispenseMedicationActivity",
+  "url": "http://example.com/ActivityDefinition/RecordDetectedIssueActivity",
+  "name": "RecordDetectedIssueActivity",
+  "title": "ActivityDefinition RecordDetectedIssueActivity",
   "status": "draft",
   "experimental": true,
   "publisher": "Example",
@@ -37,31 +37,30 @@
     }
   ],
   "version": "0.1.0",
-  "description": "Dispense medication activity",
+  "description": "Example Activity Definition for a recommendation to record a detected issue",
   "code": {
     "coding": [
       {
-        "code": "dispense-medication",
+        "code": "record-detected-issue",
         "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
-        "display": "Dispense a medication"
+        "display": "Record a detected issue"
       }
     ]
   },
   "doNotPerform": false,
   "dynamicValue": [
     {
-      "path": "input[0].type",
+      "path": "input.type",
       "expression": {
-        "language": "text/fhirpath",
+        "language": "text/cql-expression",
         "expression": "code"
       }
     },
     {
-      "path": "input[0].valueReference",
+      "path": "input.value",
       "expression": {
-        "language": "text/cql-identifier",
-        "expression": "Medication Proposal Reference",
-        "reference": "http://example.com/Library/DispenseMedicationLibrary"
+        "language": "text/cql-expression",
+        "expression": "DetectedIssue { id: 'detected-issue', status: 'final', code: \"Time-related Detected Issue\", severity: 'high', patient: Patient, identified: Today() }"
       }
     }
   ]

@@ -2,7 +2,6 @@ Instance: activity-example-recommendimmunization
 InstanceOf: $cpg-immunizationactivity
 Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(RecommendImmuniztionActivity, ActivityDefinition)
-* date = "2021-02-11T20:43:58+00:00"
 * description = "Example Activity Definition for a recommendation to provide an immunization"
 * kind = #ImmunizationRecommendation
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-immunizationrecommendation"
