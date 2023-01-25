@@ -1,5 +1,5 @@
 Instance: CollectionInformationActivity
-InstanceOf: $cpg-computableactivity
+InstanceOf: $cpg-collectinformationactivity
 Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(CollectionInformationActivity, ActivityDefinition)
 * extension[cpg-collectWith].valueCanonical = "http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation"

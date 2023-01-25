@@ -1,5 +1,5 @@
 Instance: activity-example-recommendimmunization
-InstanceOf: $cpg-recommendimmunization
+InstanceOf: $cpg-immunizationactivity
 Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(RecommendImmuniztionActivity, ActivityDefinition)
 * date = "2021-02-11T20:43:58+00:00"

@@ -1,5 +1,5 @@
 Instance: AdministerMedicationActivity
-InstanceOf: $cpg-administermedicationactivity
+InstanceOf: $cpg-administermedication
 Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(AdministerMedicationActivity, ActivityDefinition)
 * date = "2021-02-11T20:43:58+00:00"
@@ -9,11 +9,12 @@ Usage: #example
 * code = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type#administer-medication "Administer a medication"
 * intent = #proposal
 * doNotPerform = false
-* dynamicValue[0]
+* dynamicValue[+]
   * path = "input.type"
   * expression
     * language = #text/cql
     * expression = "code"
+* dynamicValue[+]
   * path = "input.value"
   * expression
     * language = #text/cql

@@ -4,11 +4,20 @@ Alias: $cpg-knowledgeCapability = http://hl7.org/fhir/uv/cpg/StructureDefinition
 Alias: $cpg-knowledgeRepresentationLevel = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel
 
 Alias: $cpg-computablelibrary = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary
+
 Alias: $cpg-medicationrequestactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequestactivity
 Alias: $cpg-dispensemedicationactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationactivity
 Alias: $cpg-documentmedicationactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-documentmedicationactivity
-Alias: $cpg-administermedicationactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-administermedication
-Alias: $cpg-recommendimmunization = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-immunizationrecommendation
-
+Alias: $cpg-administermedication = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-administermedication
+Alias: $cpg-immunizationactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-immunizationactivity
+Alias: $cpg-communicationactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationactivity
+Alias: $cpg-collectinformationactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectinformationactivity
+Alias: $cpg-servicerequestactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-servicerequestactivity
+Alias: $cpg-enrollmentactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollmentactivity
+Alias: $cpg-generatereportactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-generatereportactivity
+Alias: $cpg-proposediagnosisactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-proposediagnosisactivity
+Alias: $cpg-recorddetectedissueactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recorddetectedissueactivity
+Alias: $cpg-recordinferenceactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recordinferenceactivity
+Alias: $cpg-reportflagactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportflagactivity
 
 Alias: $cpg-activity-type = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type

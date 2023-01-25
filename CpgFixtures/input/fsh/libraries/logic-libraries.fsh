@@ -7,6 +7,12 @@ InstanceOf: Library
 
 Instance: DocumentMedicationLibrary
 InstanceOf: Library
-* insert KnowledgeArtifactDefinitionMetadata(DispenseMedicationLibrary, Library)
+* insert KnowledgeArtifactDefinitionMetadata(DocumentMedicationLibrary, Library)
 * type = http://terminology.hl7.org/CodeSystem/library-type#logic-library
 * content.id = "ig-loader-DocumentMedicationLibrary.cql"
+
+Instance: AdministerMedication
+InstanceOf: Library
+* insert KnowledgeArtifactDefinitionMetadata(AdministerMedication, Library)
+* type = http://terminology.hl7.org/CodeSystem/library-type#logic-library
+* content.id = 

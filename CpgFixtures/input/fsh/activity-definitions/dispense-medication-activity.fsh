@@ -1,5 +1,5 @@
 Instance: DispenseMedicationActivity
-InstanceOf: ActivityDefinition // $cpg-dispensemedicationactivity
+InstanceOf: $cpg-dispensemedicationactivity
 Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(DispenseMedicationActivity, ActivityDefinition)
 * description = "Dispense medication activity"

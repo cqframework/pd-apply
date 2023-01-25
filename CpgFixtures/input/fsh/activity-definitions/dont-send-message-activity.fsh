@@ -1,5 +1,5 @@
 Instance: DontSendMessageActivity
-InstanceOf: ActivityDefinition
+InstanceOf: $cpg-communicationactivity
 Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(DontSendMessageActivity, ActivityDefinition)
 * kind = #CommunicationRequest
