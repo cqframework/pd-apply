@@ -5,7 +5,7 @@ Usage: #example
 * description = "Example Activity Definition for a recommendation to record a detected issue"
 * kind = #Task
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recorddetectedissuetask"
-* code = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type#record-detected-issue "Record a detected issue"
+* code = $cpg-activity-type#record-detected-issue "Record a detected issue"
 * doNotPerform = false
 * dynamicValue[+]
   * path = "input.type"

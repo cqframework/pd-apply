@@ -1,6 +1,6 @@
 {
   "resourceType": "Library",
-  "id": "AdministerMedication",
+  "id": "AdministerMedicationLibrary",
   "extension": [
     {
       "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
@@ -11,9 +11,9 @@
       "valueCode": "structured"
     }
   ],
-  "url": "http://example.com/Library/AdministerMedication",
-  "name": "AdministerMedication",
-  "title": "Library AdministerMedication",
+  "url": "http://example.com/Library/AdministerMedicationLibrary",
+  "name": "AdministerMedicationLibrary",
+  "title": "Library AdministerMedicationLibrary",
   "status": "draft",
   "experimental": true,
   "publisher": "Example",

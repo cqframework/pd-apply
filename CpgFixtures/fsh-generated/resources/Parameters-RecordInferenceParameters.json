@@ -1,6 +1,6 @@
 {
   "resourceType": "Parameters",
-  "id": "SendMessageParameters",
+  "id": "RecordInferenceParameters",
   "parameter": [
     {
       "name": "subject",
@@ -18,14 +18,14 @@
       "name": "activityDefinition",
       "resource": {
         "resourceType": "ActivityDefinition",
-        "id": "SendMessageActivity",
+        "id": "RecordInferenceActivity",
         "meta": {
           "profile": [
-            "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationactivity"
+            "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recordinferenceactivity"
           ]
         },
-        "kind": "CommunicationRequest",
-        "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest",
+        "kind": "Task",
+        "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recordinferencetask",
         "intent": "proposal",
         "extension": [
           {
@@ -37,9 +37,9 @@
             "valueCode": "structured"
           }
         ],
-        "url": "http://example.com/ActivityDefinition/SendMessageActivity",
-        "name": "SendMessageActivity",
-        "title": "ActivityDefinition SendMessageActivity",
+        "url": "http://example.com/ActivityDefinition/RecordInferenceActivity",
+        "name": "RecordInferenceActivity",
+        "title": "ActivityDefinition RecordInferenceActivity",
         "status": "draft",
         "experimental": true,
         "publisher": "Example",
@@ -55,23 +55,30 @@
           }
         ],
         "version": "0.1.0",
-        "description": "Example Activity Definition for a recommendation to send a message",
+        "description": "Example Activity Definition for a recommendation to record an inference",
         "code": {
           "coding": [
             {
-              "code": "send-message",
+              "code": "record-inference",
               "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
-              "display": "Send a message"
+              "display": "Record an inference"
             }
           ]
         },
         "doNotPerform": false,
         "dynamicValue": [
           {
-            "path": "payload.contentString",
+            "path": "input.type",
             "expression": {
-              "language": "text/fhirpath",
-              "expression": "'Hello!'"
+              "language": "text/cql-expression",
+              "expression": "code"
+            }
+          },
+          {
+            "path": "input.value",
+            "expression": {
+              "language": "text/cql-expression",
+              "expression": "Observation { id: 'inference', status: 'final', code: \"Inference\", subject: Patient, issued: Now() }"
             }
           }
         ]

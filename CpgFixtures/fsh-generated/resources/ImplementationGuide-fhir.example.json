@@ -33,16 +33,23 @@
     "resource": [
       {
         "reference": {
-          "reference": "Library/AdministerMedication"
+          "reference": "ActivityDefinition/AdministerMedicationActivity"
         },
-        "name": "AdministerMedication",
+        "name": "AdministerMedicationActivity",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "ActivityDefinition/AdministerMedicationActivity"
+          "reference": "Library/AdministerMedicationLibrary"
         },
-        "name": "AdministerMedicationActivity",
+        "name": "AdministerMedicationLibrary",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Parameters/AdministerMedicationParameters"
+        },
+        "name": "AdministerMedicationParameters",
         "exampleBoolean": true
       },
       {
@@ -96,6 +103,13 @@
       },
       {
         "reference": {
+          "reference": "ActivityDefinition/DocumentMedicationActivity"
+        },
+        "name": "DocumentMedicationActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Library/DocumentMedicationLibrary"
         },
         "name": "DocumentMedicationLibrary",
@@ -103,9 +117,23 @@
       },
       {
         "reference": {
+          "reference": "Parameters/DocumentMedicationParameters"
+        },
+        "name": "DocumentMedicationParameters",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "ActivityDefinition/DontCollectInformationActivity"
         },
         "name": "DontCollectInformationActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Parameters/DontCollectInformationParameters"
+        },
+        "name": "DontCollectInformationParameters",
         "exampleBoolean": true
       },
       {
@@ -138,6 +166,13 @@
       },
       {
         "reference": {
+          "reference": "Parameters/EnrollPatientParameters"
+        },
+        "name": "EnrollPatientParameters",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Library/FHIRHelpers"
         },
         "name": "FHIRHelpers",
@@ -148,6 +183,13 @@
           "reference": "ActivityDefinition/GenerateReportActivity"
         },
         "name": "GenerateReportActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Parameters/GenerateReportParameters"
+        },
+        "name": "GenerateReportParameters",
         "exampleBoolean": true
       },
       {
@@ -180,6 +222,13 @@
       },
       {
         "reference": {
+          "reference": "Parameters/OrderServiceParameters"
+        },
+        "name": "OrderServiceParameters",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Bundle/PatientTestBundle1"
         },
         "name": "PatientTestBundle1",
@@ -194,9 +243,37 @@
       },
       {
         "reference": {
+          "reference": "Parameters/ProposeDiagnosisParameters"
+        },
+        "name": "ProposeDiagnosisParameters",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ActivityDefinition/RecommendImmuniztionActivity"
+        },
+        "name": "RecommendImmuniztionActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Parameters/RecommendImmuniztionParameters"
+        },
+        "name": "RecommendImmuniztionParameters",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "ActivityDefinition/RecordDetectedIssueActivity"
         },
         "name": "RecordDetectedIssueActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Parameters/RecordDetectedIssueParameters"
+        },
+        "name": "RecordDetectedIssueParameters",
         "exampleBoolean": true
       },
       {
@@ -208,9 +285,23 @@
       },
       {
         "reference": {
+          "reference": "Parameters/RecordInferenceParameters"
+        },
+        "name": "RecordInferenceParameters",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "ActivityDefinition/ReportFlagActivity"
         },
         "name": "ReportFlagActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Parameters/ReportFlagParameters"
+        },
+        "name": "ReportFlagParameters",
         "exampleBoolean": true
       },
       {
@@ -232,20 +323,6 @@
           "reference": "Parameters/SendMessageParameters"
         },
         "name": "SendMessageParameters",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "ActivityDefinition/activity-example-documentmedication"
-        },
-        "name": "activity-example-documentmedication",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "ActivityDefinition/activity-example-recommendimmunization"
-        },
-        "name": "activity-example-recommendimmunization",
         "exampleBoolean": true
       }
     ],

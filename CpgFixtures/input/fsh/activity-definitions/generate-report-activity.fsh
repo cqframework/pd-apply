@@ -6,7 +6,7 @@ Usage: #example
 * description = "Example Activity Definition for a recommendation to generate a report"
 * kind = #Task
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-generatereporttask"
-* code = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type#generate-report "Generate a metric or case report"
+* code = $cpg-activity-type#generate-report "Generate a metric or case report"
 * doNotPerform = false
 * dynamicValue[+]
   * path = "input.type"

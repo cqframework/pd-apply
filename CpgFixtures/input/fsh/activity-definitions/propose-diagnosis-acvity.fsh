@@ -5,7 +5,7 @@ Usage: #example
 * description = "Example Activity Definition for a recommendation to propose a diagnosis"
 * kind = #Task
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-proposediagnosistask"
-* code = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type#propose-diagnosis "Propose a diagnosis"
+* code = $cpg-activity-type#propose-diagnosis "Propose a diagnosis"
 * doNotPerform = false
 * dynamicValue[+]
   * path = "input.type"

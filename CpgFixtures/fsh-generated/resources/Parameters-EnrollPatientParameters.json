@@ -1,6 +1,6 @@
 {
   "resourceType": "Parameters",
-  "id": "SendMessageParameters",
+  "id": "EnrollPatientParameters",
   "parameter": [
     {
       "name": "subject",
@@ -18,14 +18,14 @@
       "name": "activityDefinition",
       "resource": {
         "resourceType": "ActivityDefinition",
-        "id": "SendMessageActivity",
+        "id": "EnrollPatientActivity",
         "meta": {
           "profile": [
-            "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationactivity"
+            "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollmentactivity"
           ]
         },
-        "kind": "CommunicationRequest",
-        "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest",
+        "kind": "Task",
+        "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollmenttask",
         "intent": "proposal",
         "extension": [
           {
@@ -35,11 +35,15 @@
           {
             "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
             "valueCode": "structured"
+          },
+          {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollIn",
+            "valueCanonical": "http://hl7.org/fhir/uv/cpg/PlanDefinition/activity-example-pathway"
           }
         ],
-        "url": "http://example.com/ActivityDefinition/SendMessageActivity",
-        "name": "SendMessageActivity",
-        "title": "ActivityDefinition SendMessageActivity",
+        "url": "http://example.com/ActivityDefinition/EnrollPatientActivity",
+        "name": "EnrollPatientActivity",
+        "title": "ActivityDefinition EnrollPatientActivity",
         "status": "draft",
         "experimental": true,
         "publisher": "Example",
@@ -55,23 +59,36 @@
           }
         ],
         "version": "0.1.0",
-        "description": "Example Activity Definition for a recommendation to send a message",
+        "modifierExtension": [
+          {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-isUnenrollment",
+            "valueBoolean": false
+          }
+        ],
+        "description": "Example Activity Definition for a recommendation to enroll a patient in a pathway",
         "code": {
           "coding": [
             {
-              "code": "send-message",
+              "code": "enrollment",
               "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
-              "display": "Send a message"
+              "display": "Enroll in a pathway or strategy"
             }
           ]
         },
         "doNotPerform": false,
         "dynamicValue": [
           {
-            "path": "payload.contentString",
+            "path": "input.type",
             "expression": {
-              "language": "text/fhirpath",
-              "expression": "'Hello!'"
+              "language": "text/cql",
+              "expression": "code"
+            }
+          },
+          {
+            "path": "input.value",
+            "expression": {
+              "language": "text/cql",
+              "expression": "extension('http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollIn').value"
             }
           }
         ]

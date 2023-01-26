@@ -1,6 +1,6 @@
 {
   "resourceType": "Parameters",
-  "id": "SendMessageParameters",
+  "id": "GenerateReportParameters",
   "parameter": [
     {
       "name": "subject",
@@ -18,14 +18,14 @@
       "name": "activityDefinition",
       "resource": {
         "resourceType": "ActivityDefinition",
-        "id": "SendMessageActivity",
+        "id": "GenerateReportActivity",
         "meta": {
           "profile": [
-            "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationactivity"
+            "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-generatereportactivity"
           ]
         },
-        "kind": "CommunicationRequest",
-        "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest",
+        "kind": "Task",
+        "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-generatereporttask",
         "intent": "proposal",
         "extension": [
           {
@@ -35,11 +35,15 @@
           {
             "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
             "valueCode": "structured"
+          },
+          {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportWith",
+            "valueCanonical": "http://hl7.org/fhir/uv/cpg/Measure/activity-example-generatereport"
           }
         ],
-        "url": "http://example.com/ActivityDefinition/SendMessageActivity",
-        "name": "SendMessageActivity",
-        "title": "ActivityDefinition SendMessageActivity",
+        "url": "http://example.com/ActivityDefinition/GenerateReportActivity",
+        "name": "GenerateReportActivity",
+        "title": "ActivityDefinition GenerateReportActivity",
         "status": "draft",
         "experimental": true,
         "publisher": "Example",
@@ -55,23 +59,30 @@
           }
         ],
         "version": "0.1.0",
-        "description": "Example Activity Definition for a recommendation to send a message",
+        "description": "Example Activity Definition for a recommendation to generate a report",
         "code": {
           "coding": [
             {
-              "code": "send-message",
+              "code": "generate-report",
               "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
-              "display": "Send a message"
+              "display": "Generate a metric or case report"
             }
           ]
         },
         "doNotPerform": false,
         "dynamicValue": [
           {
-            "path": "payload.contentString",
+            "path": "input.type",
             "expression": {
-              "language": "text/fhirpath",
-              "expression": "'Hello!'"
+              "language": "text/cql",
+              "expression": "code"
+            }
+          },
+          {
+            "path": "input.value",
+            "expression": {
+              "language": "text/cql",
+              "expression": "extension('http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportWith').value"
             }
           }
         ]

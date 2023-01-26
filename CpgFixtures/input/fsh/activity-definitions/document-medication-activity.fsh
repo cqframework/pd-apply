@@ -4,6 +4,7 @@ Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(CollectionInformationActivity, ActivityDefinition)
 * description = "Example Activity Definition for a recommendation to document a medication"
 * kind = #Task
+* profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationtask"
 * code = $cpg-activity-type#document-medication "Document a medication"
 * intent = #proposal
 * doNotPerform = false

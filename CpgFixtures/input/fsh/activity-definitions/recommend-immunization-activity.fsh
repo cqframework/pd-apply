@@ -1,11 +1,11 @@
-Instance: activity-example-recommendimmunization
+Instance: RecommendImmuniztionActivity
 InstanceOf: $cpg-immunizationactivity
 Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(RecommendImmuniztionActivity, ActivityDefinition)
 * description = "Example Activity Definition for a recommendation to provide an immunization"
 * kind = #ImmunizationRecommendation
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-immunizationrecommendation"
-* code = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type#recommend-immunization "Recommend an immunization"
+* code = $cpg-activity-type#recommend-immunization "Recommend an immunization"
 * intent = #proposal
 * priority = #routine
 * doNotPerform = false

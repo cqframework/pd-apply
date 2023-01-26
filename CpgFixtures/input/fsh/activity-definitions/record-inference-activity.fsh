@@ -5,7 +5,7 @@ Usage: #example
 * description = "Example Activity Definition for a recommendation to record an inference"
 * kind = #Task
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recordinferencetask"
-* code = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type#record-inference "Record an inference"
+* code = $cpg-activity-type#record-inference "Record an inference"
 * doNotPerform = false
 * dynamicValue[+]
   * path = "input.type"

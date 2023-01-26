@@ -5,7 +5,7 @@ Usage: #example
 * description = "Example Activity Definition for a recommendation to report a flag"
 * kind = #Task
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportflagtask"
-* code = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type#report-flag "Report a flag"
+* code = $cpg-activity-type#report-flag "Report a flag"
 * doNotPerform = false
 * dynamicValue[+]
   * path = "input.type"

@@ -61,7 +61,7 @@
       "expression": {
         "language": "text/cql",
         "expression": "Medication Proposal",
-        "reference": "http://hl7.org/fhir/uv/cpg/Library/AdministerMedication"
+        "reference": "http://example.com/Library/AdministerMedicationLibrary"
       }
     }
   ]

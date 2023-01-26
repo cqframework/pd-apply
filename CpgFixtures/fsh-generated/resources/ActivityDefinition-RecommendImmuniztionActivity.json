@@ -1,6 +1,6 @@
 {
   "resourceType": "ActivityDefinition",
-  "id": "activity-example-recommendimmunization",
+  "id": "RecommendImmuniztionActivity",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-immunizationactivity"

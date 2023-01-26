@@ -5,7 +5,7 @@ Usage: #example
 * description = "Example Activity Definition for a recommendation not to collect information"
 * kind = #Task
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask"
-* code = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type#collect-information "Collect information"
+* code = $cpg-activity-type#collect-information "Collect information"
 * doNotPerform = true
 * dynamicValue[+]
   * path = "input.type"

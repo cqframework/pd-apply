@@ -5,7 +5,7 @@ Usage: #example
 * description = "Example Activity Definition for a recommendation not to send a message"
 * kind = #CommunicationRequest
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest"
-* code = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type#send-message "Send a message"
+* code = $cpg-activity-type#send-message "Send a message"
 * doNotPerform = true
 * dynamicValue 
   * path = "status"

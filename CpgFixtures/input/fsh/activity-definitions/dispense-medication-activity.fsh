@@ -5,7 +5,7 @@ Usage: #example
 * description = "Dispense medication activity"
 * kind = #Task
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationtask"
-* code = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type#dispense-medication "Dispense a medication"
+* code = $cpg-activity-type#dispense-medication "Dispense a medication"
 * intent = #proposal
 * doNotPerform = false
 * dynamicValue[+]
