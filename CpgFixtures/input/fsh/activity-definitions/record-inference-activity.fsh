@@ -8,12 +8,12 @@ Usage: #example
 * code = $cpg-activity-type#record-inference "Record an inference"
 * doNotPerform = false
 * dynamicValue[+]
-  * path = "input.type"
+  * path = "input[0].type"
   * expression
-    * language = #text/cql-expression
+    * language = #text/fhirpath
     * expression = "code"
 * dynamicValue[+]   
-  * path = "input.value" 
+  * path = "input[0].value" 
   * expression  
-    * language = #text/cql-expression
+    * language = #text/fhirpath
     * expression = "Observation { id: 'inference', status: 'final', code: \"Inference\", subject: Patient, issued: Now() }" 

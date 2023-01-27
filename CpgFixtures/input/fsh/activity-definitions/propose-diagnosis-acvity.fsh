@@ -8,12 +8,12 @@ Usage: #example
 * code = $cpg-activity-type#propose-diagnosis "Propose a diagnosis"
 * doNotPerform = false
 * dynamicValue[+]
-  * path = "input.type"
+  * path = "input[0].type"
   * expression
-    * language = #text/cql-expression
+    * language = #text/fhirpath
     * expression = "code"
 * dynamicValue[+]
-  * path = "input.value"
+  * path = "input[0].value"
   * expression
-    * language = #text/cql-expression
+    * language = #text/fhirpath
     * expression = "Condition { clinicalStatus: \"Active Condition\", verificationStatus: \"Provisional Condition\", category: \"Problem-list Item\", code: \"Ischemic Stroke\", subject: Patient, onset: Today() }"

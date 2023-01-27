@@ -8,12 +8,12 @@ Usage: #example
 * code = $cpg-activity-type#record-detected-issue "Record a detected issue"
 * doNotPerform = false
 * dynamicValue[+]
-  * path = "input.type"
+  * path = "input[0].type"
   * expression
-    * language = #text/cql-expression
+    * language = #text/fhirpath
     * expression = "code"
 * dynamicValue[+]
-  * path = "input.value"
+  * path = "input[0].value"
   * expression
-    * language = #text/cql-expression
+    * language = #text/fhirpath
     * expression = "DetectedIssue { id: 'detected-issue', status: 'final', code: \"Time-related Detected Issue\", severity: 'high', patient: Patient, identified: Today() }"

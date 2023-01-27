@@ -12,12 +12,12 @@ Usage: #example
 * code = $cpg-activity-type#enrollment "Enroll in a pathway or strategy"
 * doNotPerform = false
 * dynamicValue[+]
-  * path = "input.type"
+  * path = "input[0].type"
   * expression
-    * language = #text/cql
+    * language = #text/fhirpath
     * expression = "code"
 * dynamicValue[+]
-  * path = "input.value"
+  * path = "input[0].value"
   * expression
-    * language = #text/cql
-    * expression = "extension('http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollIn').value"
+    * language = #text/fhirpath
+    * expression = "extension.where(url='http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollIn').value"

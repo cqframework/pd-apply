@@ -37,9 +37,9 @@
             "valueCode": "structured"
           }
         ],
-        "url": "http://example.com/ActivityDefinition/CollectionInformationActivity",
-        "name": "CollectionInformationActivity",
-        "title": "ActivityDefinition CollectionInformationActivity",
+        "url": "http://example.com/ActivityDefinition/DocumentMedicationActivity",
+        "name": "DocumentMedicationActivity",
+        "title": "ActivityDefinition DocumentMedicationActivity",
         "status": "draft",
         "experimental": true,
         "publisher": "Example",
@@ -68,14 +68,14 @@
         "doNotPerform": false,
         "dynamicValue": [
           {
-            "path": "input.type",
+            "path": "input[0].type",
             "expression": {
               "language": "text/fhirpath",
               "expression": "code"
             }
           },
           {
-            "path": "input.value",
+            "path": "input[0].value",
             "expression": {
               "language": "text/cql-indentifier",
               "expression": "Medication Proposal Reference",

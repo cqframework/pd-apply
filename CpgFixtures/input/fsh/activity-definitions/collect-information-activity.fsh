@@ -18,4 +18,4 @@ Usage: #example
   * path = "input[0].valueCanonical"
   * expression
     * language = #text/fhirpath
-    * expression = "extension('http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith').value"
+    * expression = "extension.where(url='http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith').value"

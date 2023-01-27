@@ -9,12 +9,12 @@ Usage: #example
 * code = $cpg-activity-type#generate-report "Generate a metric or case report"
 * doNotPerform = false
 * dynamicValue[+]
-  * path = "input.type"
+  * path = "input[0].type"
   * expression
-    * language = #text/cql
+    * language = #text/fhirpath
     * expression = "code"
 * dynamicValue[+]
-  * path = "input.value"
+  * path = "input[0].value"
   * expression
-    * language = #text/cql
-    * expression = "extension('http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportWith').value"
+    * language = #text/fhirpath
+    * expression = "extension.where(url='http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportWith').value"

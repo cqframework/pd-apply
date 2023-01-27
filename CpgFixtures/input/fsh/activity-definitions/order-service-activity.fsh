@@ -11,5 +11,5 @@ Usage: #example
 * dynamicValue
   * path = "status"
   * expression
-    * language = #text/cql
+    * language = #text/fhirpath
     * expression = "'draft'"

@@ -9,13 +9,13 @@ Usage: #example
 * intent = #proposal
 * doNotPerform = false
 * dynamicValue[+]
-  * path = "input.type"
+  * path = "input[0].type"
   * expression
-    * language = #text/cql
+    * language = #text/fhirpath
     * expression = "code"
 * dynamicValue[+]
-  * path = "input.value"
+  * path = "input[0].value"
   * expression
-    * language = #text/cql
+    * language = #text/cql-identifier
     * expression = "Medication Proposal"
     * reference = Canonical(AdministerMedicationLibrary)
