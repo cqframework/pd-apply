@@ -81,6 +81,14 @@
               "expression": "Medication Proposal Reference",
               "reference": "http://example.com/Library/DispenseMedicationLibrary"
             }
+          },
+          {
+            "path": "for",
+            "expression": {
+              "language": "text/cql-identifier",
+              "expression": "Patient Reference",
+              "reference": "http://example.com/Library/DispenseMedicationLibrary"
+            }
           }
         ]
       }

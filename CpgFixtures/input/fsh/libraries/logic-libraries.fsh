@@ -15,4 +15,4 @@ Instance: AdministerMedicationLibrary
 InstanceOf: Library
 * insert KnowledgeArtifactDefinitionMetadata(AdministerMedicationLibrary, Library)
 * type = http://terminology.hl7.org/CodeSystem/library-type#logic-library
-* content.id = "ig-loader-AdministerMedication"
+* content.id = "ig-loader-AdministerMedication.cql"

@@ -1,0 +1,29 @@
+{
+  "resourceType": "Task",
+  "id": "EnrollPatientExpected",
+  "status": "draft",
+  "intent": "proposal",
+  "instantiatesCanonical": "http://example.com/ActivityDefinition/EnrollPatientActivity|0.1.0",
+  "code": {
+    "coding": [
+      {
+        "code": "enrollment",
+        "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+        "display": "Enroll in a pathway or strategy"
+      }
+    ]
+  },
+  "input": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "enrollment",
+            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+            "display": "Enroll in a pathway or strategy"
+          }
+        ]
+      }
+    }
+  ]
+}

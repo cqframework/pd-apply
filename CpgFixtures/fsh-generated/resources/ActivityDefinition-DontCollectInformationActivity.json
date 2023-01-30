@@ -17,6 +17,10 @@
     {
       "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
       "valueCode": "structured"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith",
+      "valueCanonical": "http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation"
     }
   ],
   "url": "http://example.com/ActivityDefinition/DontCollectInformationActivity",
@@ -47,5 +51,21 @@
       }
     ]
   },
-  "doNotPerform": true
+  "doNotPerform": true,
+  "dynamicValue": [
+    {
+      "path": "input[0].type",
+      "expression": {
+        "language": "text/fhirpath",
+        "expression": "code"
+      }
+    },
+    {
+      "path": "input[0].value",
+      "expression": {
+        "language": "text/fhirpath",
+        "expression": "extension.where(url='http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith').value"
+      }
+    }
+  ]
 }

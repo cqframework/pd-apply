@@ -40,6 +40,13 @@
       },
       {
         "reference": {
+          "reference": "Task/AdministerMedicationExpected"
+        },
+        "name": "AdministerMedicationExpected",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Library/AdministerMedicationLibrary"
         },
         "name": "AdministerMedicationLibrary",
@@ -89,6 +96,13 @@
       },
       {
         "reference": {
+          "reference": "Task/DispenseMedicationExpected"
+        },
+        "name": "DispenseMedicationExpected",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Library/DispenseMedicationLibrary"
         },
         "name": "DispenseMedicationLibrary",
@@ -110,6 +124,13 @@
       },
       {
         "reference": {
+          "reference": "Task/DocumentMedicationExpected"
+        },
+        "name": "DocumentMedicationExpected",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Library/DocumentMedicationLibrary"
         },
         "name": "DocumentMedicationLibrary",
@@ -127,6 +148,13 @@
           "reference": "ActivityDefinition/DontCollectInformationActivity"
         },
         "name": "DontCollectInformationActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Task/DontCollectInformationExpected"
+        },
+        "name": "DontCollectInformationExpected",
         "exampleBoolean": true
       },
       {
@@ -162,6 +190,13 @@
           "reference": "ActivityDefinition/EnrollPatientActivity"
         },
         "name": "EnrollPatientActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Task/EnrollPatientExpected"
+        },
+        "name": "EnrollPatientExpected",
         "exampleBoolean": true
       },
       {

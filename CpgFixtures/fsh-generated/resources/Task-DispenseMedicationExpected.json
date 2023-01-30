@@ -1,0 +1,32 @@
+{
+  "resourceType": "Task",
+  "id": "DispenseMedicationExpected",
+  "status": "draft",
+  "intent": "proposal",
+  "instantiatesCanonical": "http://example.com/ActivityDefintion/DispenseMedicaitonActivity|0.1.0",
+  "code": {
+    "coding": [
+      {
+        "code": "dispensemedication",
+        "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+        "display": "Dispense a Medication"
+      }
+    ]
+  },
+  "input": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "dispensemedication",
+            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+            "display": "Dispense a Medication"
+          }
+        ]
+      },
+      "valueReference": {
+        "reference": "MedicationRequest/PastMedicationRequest"
+      }
+    }
+  ]
+}

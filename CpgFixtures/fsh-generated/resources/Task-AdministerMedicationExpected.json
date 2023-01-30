@@ -1,0 +1,32 @@
+{
+  "resourceType": "Task",
+  "id": "AdministerMedicationExpected",
+  "status": "draft",
+  "intent": "proposal",
+  "instantiatesCanonical": "http://example.com/ActivityDefinition/AdministerMedicationActivity|0.1.0",
+  "code": {
+    "coding": [
+      {
+        "code": "administer-medication",
+        "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+        "display": "Administer a medication"
+      }
+    ]
+  },
+  "input": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "administer-medication",
+            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+            "display": "Administer a medication"
+          }
+        ]
+      },
+      "valueReference": {
+        "reference": "MedicationRequest/PastMedicationRequest"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "resourceType": "Task",
+  "id": "DontCollectInformationExpected",
+  "status": "draft",
+  "intent": "proposal",
+  "instantiatesCanonical": "http://example.com/ActivityDefinition/DontCollectInformationActivity|0.1.0",
+  "code": {
+    "coding": [
+      {
+        "code": "collect-information",
+        "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+        "display": "Collect information"
+      }
+    ]
+  }
+}

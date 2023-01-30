@@ -17,5 +17,5 @@ Usage: #example
   * path = "input[0].value"
   * expression
     * language = #text/cql-identifier
-    * expression = "Medication Proposal"
+    * expression = "Medication Proposal Reference"
     * reference = Canonical(AdministerMedicationLibrary)

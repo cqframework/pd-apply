@@ -3,4 +3,5 @@ InstanceOf: CommunicationRequest
 Usage: #example
 * status = #draft
 * doNotPerform = false
-* payload.contentString = "Hello!"
+* payload
+  * contentString = "Hello!"

@@ -1,0 +1,32 @@
+{
+  "resourceType": "Task",
+  "id": "DocumentMedicationExpected",
+  "status": "draft",
+  "intent": "proposal",
+  "instantiatesCanonical": "http://example.com/ActivityDefinition/DocumentMedicationActivity|0.1.0",
+  "code": {
+    "coding": [
+      {
+        "code": "document-medication",
+        "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+        "display": "Document a medication"
+      }
+    ]
+  },
+  "input": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "document-medication",
+            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+            "display": "Document a medication"
+          }
+        ]
+      },
+      "valueReference": {
+        "reference": "MedicationRequest/PastMedicationRequest"
+      }
+    }
+  ]
+}
