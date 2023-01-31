@@ -1,15 +1,15 @@
 {
   "resourceType": "Task",
-  "id": "EnrollPatientExpected",
+  "id": "ProposeDiagnosisExpected",
   "status": "draft",
   "intent": "proposal",
-  "instantiatesCanonical": "http://example.com/ActivityDefinition/EnrollPatientActivity|0.1.0",
+  "instantiatesCanonical": "http://example.com/ActivityDefinition/ProposeDiagnosisActivity|0.1.0",
   "code": {
     "coding": [
       {
-        "code": "enrollment",
+        "code": "propose-diagnosis",
         "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
-        "display": "Enroll in a pathway or strategy"
+        "display": "Propose a diagnosis"
       }
     ]
   },
@@ -18,13 +18,15 @@
       "type": {
         "coding": [
           {
-            "code": "enrollment",
+            "code": "propose-diagnosis",
             "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
-            "display": "Enroll in a pathway or strategy"
+            "display": "Propose a diagnosis"
           }
         ]
       },
-      "valueCanonical": "http://hl7.org/fhir/uv/cpg/PlanDefinition/activity-example-pathway"
+      "valueReference": {
+        "reference": "Condition/Condition1"
+      }
     }
   ]
 }

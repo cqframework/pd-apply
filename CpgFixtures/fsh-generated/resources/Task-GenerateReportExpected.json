@@ -1,0 +1,30 @@
+{
+  "resourceType": "Task",
+  "id": "GenerateReportExpected",
+  "status": "draft",
+  "intent": "proposal",
+  "instantiatesCanonical": "http://example.com/ActivityDefinition/GenerateReportActivity|0.1.0",
+  "code": {
+    "coding": [
+      {
+        "code": "generate-report",
+        "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+        "display": "Generate a metric or case report"
+      }
+    ]
+  },
+  "input": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "generate-report",
+            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+            "display": "Generate a metric or case report"
+          }
+        ]
+      },
+      "valueCanonical": "http://hl7.org/fhir/uv/cpg/Measure/activity-example-generatereport"
+    }
+  ]
+}

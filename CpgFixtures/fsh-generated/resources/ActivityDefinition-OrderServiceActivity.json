@@ -47,14 +47,5 @@
       }
     ]
   },
-  "doNotPerform": false,
-  "dynamicValue": [
-    {
-      "path": "status",
-      "expression": {
-        "language": "text/fhirpath",
-        "expression": "'draft'"
-      }
-    }
-  ]
+  "doNotPerform": false
 }

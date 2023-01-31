@@ -222,6 +222,13 @@
       },
       {
         "reference": {
+          "reference": "Task/GenerateReportExpected"
+        },
+        "name": "GenerateReportExpected",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Parameters/GenerateReportParameters"
         },
         "name": "GenerateReportParameters",
@@ -257,6 +264,13 @@
       },
       {
         "reference": {
+          "reference": "ServiceRequest/OrderServiceExpected"
+        },
+        "name": "OrderServiceExpected",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Parameters/OrderServiceParameters"
         },
         "name": "OrderServiceParameters",
@@ -274,6 +288,13 @@
           "reference": "ActivityDefinition/ProposeDiagnosisActivity"
         },
         "name": "ProposeDiagnosisActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Task/ProposeDiagnosisExpected"
+        },
+        "name": "ProposeDiagnosisExpected",
         "exampleBoolean": true
       },
       {

@@ -2,7 +2,6 @@ Instance: EnrollPatientExpected
 InstanceOf: Task
 Usage: #example
 * status = #draft
-* doNotPerform = false
 * intent = #proposal
 * instantiatesCanonical = "http://example.com/ActivityDefinition/EnrollPatientActivity|0.1.0"
 * code = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type#enrollment "Enroll in a pathway or strategy"

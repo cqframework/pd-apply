@@ -8,8 +8,3 @@ Usage: #example
 * code = $cpg-activity-type#order-service "Order a service"
 * intent = #proposal
 * doNotPerform = false
-* dynamicValue
-  * path = "status"
-  * expression
-    * language = #text/fhirpath
-    * expression = "'draft'"

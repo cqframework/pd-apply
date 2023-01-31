@@ -15,5 +15,5 @@ Usage: #example
 * dynamicValue[+]
   * path = "input[0].value"
   * expression
-    * language = #text/fhirpath
-    * expression = "Condition { clinicalStatus: \"Active Condition\", verificationStatus: \"Provisional Condition\", category: \"Problem-list Item\", code: \"Ischemic Stroke\", subject: Patient, onset: Today() }"
+    * language = #text/cql-expression
+    * expression = "Condition { id: \"condition1\", clinicalStatus: \"Active Condition\", verificationStatus: \"Provisional Condition\", category: \"Problem-list Item\", code: \"Ischemic Stroke\", subject: Patient, onset: Today() }"

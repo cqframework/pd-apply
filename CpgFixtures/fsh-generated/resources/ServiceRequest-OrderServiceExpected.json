@@ -1,0 +1,22 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "OrderServiceExpected",
+  "status": "draft",
+  "doNotPerform": false,
+  "intent": "proposal",
+  "instantiatesCanonical": [
+    "http://example.com/ActivityDefinition/OrderServiceActivity|0.1.0"
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "order-service",
+        "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+        "display": "Order a service"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/Patient1"
+  }
+}
