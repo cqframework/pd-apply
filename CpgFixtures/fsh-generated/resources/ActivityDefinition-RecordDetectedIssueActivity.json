@@ -59,8 +59,8 @@
     {
       "path": "input[0].value",
       "expression": {
-        "language": "text/fhirpath",
-        "expression": "DetectedIssue { id: 'detected-issue', status: 'final', code: \"Time-related Detected Issue\", severity: 'high', patient: Patient, identified: Today() }"
+        "language": "text/cql-epression",
+        "expression": "DetectedIssue { id: 'DetectedIssue1', status: 'final', code: \"Time-related Detected Issue\", severity: 'high', patient: Patient, identified: Today() }"
       }
     }
   ]

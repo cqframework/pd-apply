@@ -59,8 +59,8 @@
     {
       "path": "input[0].value",
       "expression": {
-        "language": "text/fhirpath",
-        "expression": "Observation { id: 'inference', status: 'final', code: \"Inference\", subject: Patient, issued: Now() }"
+        "language": "text/cql-expression",
+        "expression": "Observation { id: 'Inference1', status: 'final', code: \"Inference\", subject: Patient1, issued: Now() }"
       }
     }
   ]

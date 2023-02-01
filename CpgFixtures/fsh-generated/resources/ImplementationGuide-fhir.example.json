@@ -313,6 +313,13 @@
       },
       {
         "reference": {
+          "reference": "ImmunizationRecommendation/RecommendImmuniztionExpected"
+        },
+        "name": "RecommendImmuniztionExpected",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Parameters/RecommendImmuniztionParameters"
         },
         "name": "RecommendImmuniztionParameters",
@@ -323,6 +330,13 @@
           "reference": "ActivityDefinition/RecordDetectedIssueActivity"
         },
         "name": "RecordDetectedIssueActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Task/RecordDetectedIssueExpected"
+        },
+        "name": "RecordDetectedIssueExpected",
         "exampleBoolean": true
       },
       {
@@ -344,6 +358,13 @@
           "reference": "Parameters/RecordInferenceParameters"
         },
         "name": "RecordInferenceParameters",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Task/RecoredInferanceExpected"
+        },
+        "name": "RecoredInferanceExpected",
         "exampleBoolean": true
       },
       {

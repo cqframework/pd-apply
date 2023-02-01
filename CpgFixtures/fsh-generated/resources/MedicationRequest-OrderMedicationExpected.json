@@ -10,9 +10,6 @@
   "subject": {
     "reference": "Patient/Patient1"
   },
-  "requester": {
-    "reference": "Practitioner/Practitioner1"
-  },
   "medicationCodeableConcept": {
     "coding": [
       {

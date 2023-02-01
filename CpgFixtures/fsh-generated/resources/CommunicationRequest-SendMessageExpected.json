@@ -3,6 +3,9 @@
   "id": "SendMessageExpected",
   "status": "draft",
   "doNotPerform": false,
+  "subject": {
+    "reference": "Patient/Patient1"
+  },
   "payload": [
     {
       "contentString": "Hello!"

@@ -70,7 +70,7 @@
           {
             "path": "input[0].type",
             "expression": {
-              "language": "text/cql-expression",
+              "language": "text/fhirpath",
               "expression": "code"
             }
           },

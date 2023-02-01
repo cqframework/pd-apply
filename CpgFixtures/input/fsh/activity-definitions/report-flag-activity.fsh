@@ -6,6 +6,7 @@ Usage: #example
 * kind = #Task
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportflagtask"
 * code = $cpg-activity-type#report-flag "Report a flag"
+* intent = #proposal
 * doNotPerform = false
 * dynamicValue[+]
   * path = "input[0].type"
@@ -15,5 +16,5 @@ Usage: #example
 * dynamicValue[+]
   * path = "input[0].value"
   * expression
-    * language = #text/fhirpath
-    * expression = "Flag { id: 'flag', status: 'active', code: \"Flag\", subject: Patient }"
+    * language = #text/cql-expression
+    * expression = "Flag { id: 'Flag1', status: 'active', code: \"Flag\", subject: Patient1 }"

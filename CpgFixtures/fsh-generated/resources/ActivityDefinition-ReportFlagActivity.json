@@ -59,8 +59,8 @@
     {
       "path": "input[0].value",
       "expression": {
-        "language": "text/fhirpath",
-        "expression": "Flag { id: 'flag', status: 'active', code: \"Flag\", subject: Patient }"
+        "language": "text/cql-expression",
+        "expression": "Flag { id: 'Flag1', status: 'active', code: \"Flag\", subject: Patient1 }"
       }
     }
   ]

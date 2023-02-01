@@ -1,0 +1,32 @@
+{
+  "resourceType": "Task",
+  "id": "RecoredInferanceExpected",
+  "status": "draft",
+  "intent": "proposal",
+  "instantiatesCanonical": "http://example.com/ActivityDefinition/RecordInferenceActivity|0.1.0",
+  "code": {
+    "coding": [
+      {
+        "code": "record-inference",
+        "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+        "display": "Record an inference"
+      }
+    ]
+  },
+  "input": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "record-inference",
+            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+            "display": "Record an inference"
+          }
+        ]
+      },
+      "valueReference": {
+        "reference": "Observation/Inference1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "resourceType": "Task",
+  "id": "RecordDetectedIssueExpected",
+  "status": "draft",
+  "intent": "proposal",
+  "instantiatesCanonical": "http://example.com/ActivityDefinition/RecordDetectedIssueActivity|0.1.0",
+  "code": {
+    "coding": [
+      {
+        "code": "record-detected-issue",
+        "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+        "display": "Record a detected issue"
+      }
+    ]
+  },
+  "input": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "record-detected-issue",
+            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+            "display": "Record a detected issue"
+          }
+        ]
+      },
+      "valueReference": {
+        "reference": "DetectedIssue/DetectedIssue1"
+      }
+    }
+  ]
+}
