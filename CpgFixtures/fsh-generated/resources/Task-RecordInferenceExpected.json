@@ -1,6 +1,6 @@
 {
   "resourceType": "Task",
-  "id": "RecoredInferanceExpected",
+  "id": "RecordInferenceExpected",
   "status": "draft",
   "intent": "proposal",
   "instantiatesCanonical": "http://example.com/ActivityDefinition/RecordInferenceActivity|0.1.0",

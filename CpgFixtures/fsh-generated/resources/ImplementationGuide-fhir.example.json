@@ -355,16 +355,16 @@
       },
       {
         "reference": {
-          "reference": "Parameters/RecordInferenceParameters"
+          "reference": "Task/RecordInferenceExpected"
         },
-        "name": "RecordInferenceParameters",
+        "name": "RecordInferenceExpected",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "Task/RecoredInferanceExpected"
+          "reference": "Parameters/RecordInferenceParameters"
         },
-        "name": "RecoredInferanceExpected",
+        "name": "RecordInferenceParameters",
         "exampleBoolean": true
       },
       {

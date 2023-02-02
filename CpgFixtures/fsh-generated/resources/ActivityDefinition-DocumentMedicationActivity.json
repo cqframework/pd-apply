@@ -59,7 +59,7 @@
     {
       "path": "input[0].value",
       "expression": {
-        "language": "text/cql-indentifier",
+        "language": "text/cql-identifier",
         "expression": "Medication Proposal Reference",
         "reference": "http://example.com/Library/DocumentMedicationLibrary"
       }

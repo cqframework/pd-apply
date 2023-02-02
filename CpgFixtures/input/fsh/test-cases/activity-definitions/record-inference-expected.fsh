@@ -1,4 +1,4 @@
-Instance: RecoredInferanceExpected
+Instance: RecordInferenceExpected
 InstanceOf: Task
 Usage: #example
 * status = #draft

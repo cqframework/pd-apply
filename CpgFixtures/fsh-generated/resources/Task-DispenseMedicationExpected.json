@@ -7,7 +7,7 @@
   "code": {
     "coding": [
       {
-        "code": "dispensemedication",
+        "code": "dispense-medication",
         "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
         "display": "Dispense a Medication"
       }
@@ -18,7 +18,7 @@
       "type": {
         "coding": [
           {
-            "code": "dispensemedication",
+            "code": "dispense-medication",
             "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
             "display": "Dispense a Medication"
           }

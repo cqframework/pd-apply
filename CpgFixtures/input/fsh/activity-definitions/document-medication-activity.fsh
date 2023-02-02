@@ -16,6 +16,6 @@ Usage: #example
 * dynamicValue[+]
   * path = "input[0].value"
   * expression
-    * language = #text/cql-indentifier
+    * language = #text/cql-identifier
     * expression = "Medication Proposal Reference"
     * reference = Canonical(DocumentMedicationLibrary)

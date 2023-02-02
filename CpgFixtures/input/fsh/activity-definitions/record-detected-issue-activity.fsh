@@ -16,5 +16,5 @@ Usage: #example
 * dynamicValue[+]
   * path = "input[0].value"
   * expression
-    * language = #text/cql-epression
+    * language = #text/cql-expression
     * expression = "DetectedIssue { id: 'DetectedIssue1', status: 'final', code: \"Time-related Detected Issue\", severity: 'high', patient: Patient1 }"
