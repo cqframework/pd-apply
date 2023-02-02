@@ -1,0 +1,32 @@
+{
+  "resourceType": "Task",
+  "id": "ReportFlagExpected",
+  "status": "draft",
+  "intent": "proposal",
+  "instantiatesCanonical": "http://example.com/ActivityDefinition/ReportFlagActivity|0.1.0",
+  "code": {
+    "coding": [
+      {
+        "code": "report-flag",
+        "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+        "display": "Report a flag"
+      }
+    ]
+  },
+  "input": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "report-flag",
+            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+            "display": "Report a flag"
+          }
+        ]
+      },
+      "valueReference": {
+        "reference": "Flag/Flag1"
+      }
+    }
+  ]
+}

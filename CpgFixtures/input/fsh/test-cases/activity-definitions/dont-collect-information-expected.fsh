@@ -4,4 +4,7 @@ Usage: #example
 * status = #draft
 * intent = #proposal
 * instantiatesCanonical = "http://example.com/ActivityDefinition/DontCollectInformationActivity|0.1.0"
-* code = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type#collect-information "Collect information"
+* code = $cpg-activity-type#collect-information "Collect information"
+* input
+  * type = $cpg-activity-type#collect-information "Collect information"
+  * valueCanonical = "http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation"

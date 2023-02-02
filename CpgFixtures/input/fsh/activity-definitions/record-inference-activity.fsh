@@ -17,4 +17,4 @@ Usage: #example
   * path = "input[0].value" 
   * expression  
     * language = #text/cql-expression
-    * expression = "Observation { id: 'Inference1', status: 'final', code: \"Inference\", subject: Patient1, issued: Now() }" 
+    * expression = "Observation { id: 'Inference1', status: 'final', code: \"Inference\", subject: Patient1 }" 

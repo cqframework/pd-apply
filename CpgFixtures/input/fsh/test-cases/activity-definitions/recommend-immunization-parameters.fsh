@@ -1,4 +1,4 @@
-Instance: RecommendImmuniztionParameters
+Instance: RecommendImmunizationParameters
 InstanceOf: Parameters
 Usage: #example
 * parameter[+]
@@ -12,7 +12,7 @@ Usage: #example
   * valueString = "Encounter/Encounter1"
 * parameter[+]
   * name = "activityDefinition"
-  * resource = RecommendImmuniztionActivity
+  * resource = RecommendImmunizationActivity
 * parameter[+]
   * name = "data"
   * resource = PatientTestBundle1

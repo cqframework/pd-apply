@@ -3,12 +3,13 @@
   "id": "CollectInformationExpected",
   "status": "draft",
   "intent": "proposal",
-  "instantiatesCanonical": "http://example.com/ActivityDefinition/CollectionInformationActivity|0.1.0",
+  "instantiatesCanonical": "http://example.com/ActivityDefinition/CollectInformationActivity|0.1.0",
   "code": {
     "coding": [
       {
         "code": "collect-information",
-        "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type"
+        "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+        "display": "Collect information"
       }
     ]
   },

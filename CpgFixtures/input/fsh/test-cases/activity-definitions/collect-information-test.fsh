@@ -1,6 +1,6 @@
-Instance: CollectionInformationTest
+Instance: CollectInformationTest
 InstanceOf: TestScript
-* insert DefinitionMetadata(CollectionInformationTest, TestScript)
+* insert DefinitionMetadata(CollectInformationTest, TestScript)
 * fixture
   * id = "fixture-1"
   * autocreate = true

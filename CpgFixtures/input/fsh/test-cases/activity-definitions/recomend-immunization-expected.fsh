@@ -1,7 +1,6 @@
-Instance: RecommendImmuniztionExpected
+Instance: RecommendImmunizationExpected
 InstanceOf: ImmunizationRecommendation
 Usage: #example
-* doNotPerform: false
 * patient = Reference(Patient/Patient1)
 * date = "2020-12-22"
 * recommendation 

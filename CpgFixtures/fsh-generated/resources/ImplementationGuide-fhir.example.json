@@ -61,6 +61,13 @@
       },
       {
         "reference": {
+          "reference": "ActivityDefinition/CollectInformationActivity"
+        },
+        "name": "CollectInformationActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Task/CollectInformationExpected"
         },
         "name": "CollectInformationExpected",
@@ -75,16 +82,9 @@
       },
       {
         "reference": {
-          "reference": "ActivityDefinition/CollectionInformationActivity"
+          "reference": "TestScript/CollectInformationTest"
         },
-        "name": "CollectionInformationActivity",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/CollectionInformationTest"
-        },
-        "name": "CollectionInformationTest",
+        "name": "CollectInformationTest",
         "exampleBoolean": true
       },
       {
@@ -306,23 +306,23 @@
       },
       {
         "reference": {
-          "reference": "ActivityDefinition/RecommendImmuniztionActivity"
+          "reference": "ActivityDefinition/RecommendImmunizationActivity"
         },
-        "name": "RecommendImmuniztionActivity",
+        "name": "RecommendImmunizationActivity",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "ImmunizationRecommendation/RecommendImmuniztionExpected"
+          "reference": "ImmunizationRecommendation/RecommendImmunizationExpected"
         },
-        "name": "RecommendImmuniztionExpected",
+        "name": "RecommendImmunizationExpected",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "Parameters/RecommendImmuniztionParameters"
+          "reference": "Parameters/RecommendImmunizationParameters"
         },
-        "name": "RecommendImmuniztionParameters",
+        "name": "RecommendImmunizationParameters",
         "exampleBoolean": true
       },
       {
@@ -372,6 +372,13 @@
           "reference": "ActivityDefinition/ReportFlagActivity"
         },
         "name": "ReportFlagActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Task/ReportFlagExpected"
+        },
+        "name": "ReportFlagExpected",
         "exampleBoolean": true
       },
       {

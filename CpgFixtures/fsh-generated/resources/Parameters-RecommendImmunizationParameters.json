@@ -1,6 +1,6 @@
 {
   "resourceType": "Parameters",
-  "id": "RecommendImmuniztionParameters",
+  "id": "RecommendImmunizationParameters",
   "parameter": [
     {
       "name": "subject",
@@ -18,7 +18,7 @@
       "name": "activityDefinition",
       "resource": {
         "resourceType": "ActivityDefinition",
-        "id": "RecommendImmuniztionActivity",
+        "id": "RecommendImmunizationActivity",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-immunizationactivity"
@@ -37,9 +37,9 @@
             "valueCode": "structured"
           }
         ],
-        "url": "http://example.com/ActivityDefinition/RecommendImmuniztionActivity",
-        "name": "RecommendImmuniztionActivity",
-        "title": "ActivityDefinition RecommendImmuniztionActivity",
+        "url": "http://example.com/ActivityDefinition/RecommendImmunizationActivity",
+        "name": "RecommendImmunizationActivity",
+        "title": "ActivityDefinition RecommendImmunizationActivity",
         "status": "draft",
         "experimental": true,
         "publisher": "Example",

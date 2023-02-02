@@ -1,9 +1,9 @@
 {
   "resourceType": "TestScript",
-  "id": "CollectionInformationTest",
-  "url": "http://example.com/TestScript/CollectionInformationTest",
-  "name": "CollectionInformationTest",
-  "title": "TestScript CollectionInformationTest",
+  "id": "CollectInformationTest",
+  "url": "http://example.com/TestScript/CollectInformationTest",
+  "name": "CollectInformationTest",
+  "title": "TestScript CollectInformationTest",
   "status": "draft",
   "experimental": true,
   "publisher": "Example",

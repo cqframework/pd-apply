@@ -17,4 +17,4 @@ Usage: #example
   * path = "input[0].value"
   * expression
     * language = #text/cql-epression
-    * expression = "DetectedIssue { id: 'DetectedIssue1', status: 'final', code: \"Time-related Detected Issue\", severity: 'high', patient: Patient, identified: Today() }"
+    * expression = "DetectedIssue { id: 'DetectedIssue1', status: 'final', code: \"Time-related Detected Issue\", severity: 'high', patient: Patient1 }"

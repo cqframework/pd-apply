@@ -1,6 +1,6 @@
 {
   "resourceType": "ActivityDefinition",
-  "id": "CollectionInformationActivity",
+  "id": "CollectInformationActivity",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectinformationactivity"
@@ -23,9 +23,9 @@
       "valueCanonical": "http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation"
     }
   ],
-  "url": "http://example.com/ActivityDefinition/CollectionInformationActivity",
-  "name": "CollectionInformationActivity",
-  "title": "ActivityDefinition CollectionInformationActivity",
+  "url": "http://example.com/ActivityDefinition/CollectInformationActivity",
+  "name": "CollectInformationActivity",
+  "title": "ActivityDefinition CollectInformationActivity",
   "status": "draft",
   "experimental": true,
   "publisher": "Example",

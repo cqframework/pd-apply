@@ -12,5 +12,19 @@
         "display": "Collect information"
       }
     ]
-  }
+  },
+  "input": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "collect-information",
+            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+            "display": "Collect information"
+          }
+        ]
+      },
+      "valueCanonical": "http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation"
+    }
+  ]
 }
