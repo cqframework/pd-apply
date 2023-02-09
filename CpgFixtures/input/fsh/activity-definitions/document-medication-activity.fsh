@@ -6,8 +6,8 @@ Usage: #example
 * kind = #Task
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationtask" //Sushi error when using StuctureDefinitioncpg-documentmedicationtask 'a different canonical is already assigned: "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationtask"'
 * code = $cpg-activity-type#document-medication "Document a medication"
-* intent = #proposal
 * doNotPerform = false
+* intent = #proposal
 * dynamicValue[+]
   * path = "input[0].type"
   * expression

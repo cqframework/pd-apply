@@ -8,6 +8,7 @@ Usage: #example
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-generatereporttask"
 * code = $cpg-activity-type#generate-report "Generate a metric or case report"
 * doNotPerform = false
+* intent = #proposal
 * dynamicValue[+]
   * path = "input[0].type"
   * expression

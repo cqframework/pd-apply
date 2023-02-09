@@ -7,6 +7,7 @@ Usage: #example
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-proposediagnosistask"
 * code = $cpg-activity-type#propose-diagnosis "Propose a diagnosis"
 * doNotPerform = false
+* intent = #proposal
 * dynamicValue[+]
   * path = "input[0].type"
   * expression

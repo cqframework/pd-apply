@@ -6,5 +6,5 @@ Usage: #example
 * kind = #ServiceRequest
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-servicerequest"
 * code = $cpg-activity-type#order-service "Order a service"
-* intent = #proposal
 * doNotPerform = false
+* intent = #proposal

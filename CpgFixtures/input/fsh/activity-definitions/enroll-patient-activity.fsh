@@ -11,6 +11,7 @@ Usage: #example
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollmenttask"
 * code = $cpg-activity-type#enrollment "Enroll in a pathway or strategy"
 * doNotPerform = false
+* intent = #proposal
 * dynamicValue[+]
   * path = "input[0].type"
   * expression

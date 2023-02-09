@@ -6,8 +6,8 @@ Usage: #example
 * kind = #Task
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportflagtask"
 * code = $cpg-activity-type#report-flag "Report a flag"
-* intent = #proposal
 * doNotPerform = false
+* intent = #proposal
 * dynamicValue[+]
   * path = "input[0].type"
   * expression

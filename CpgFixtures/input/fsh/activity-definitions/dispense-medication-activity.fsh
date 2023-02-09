@@ -6,8 +6,8 @@ Usage: #example
 * kind = #Task
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationtask"
 * code = $cpg-activity-type#dispense-medication "Dispense a medication"
-* intent = #proposal
 * doNotPerform = false
+* intent = #proposal
 * dynamicValue[+]
   * path = "input[0].type"
   * expression

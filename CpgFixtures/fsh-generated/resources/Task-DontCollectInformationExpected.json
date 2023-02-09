@@ -1,6 +1,12 @@
 {
   "resourceType": "Task",
   "id": "DontCollectInformationExpected",
+  "modifierExtension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/request-doNotPerform",
+      "valueBoolean": true
+    }
+  ],
   "status": "draft",
   "intent": "proposal",
   "instantiatesCanonical": "http://example.com/ActivityDefinition/DontCollectInformationActivity|0.1.0",

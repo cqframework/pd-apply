@@ -6,9 +6,9 @@ Usage: #example
 * kind = #MedicationRequest
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequest"
 * code = $cpg-activity-type#order-medication "Order a medication"
-* intent = #proposal
 * priority = #routine
 * doNotPerform = false
+* intent = #proposal
 * productCodeableConcept = http://snomed.info/sct#376988009 "Levothyroxine sodium 75 microgram oral tablet"
 * dosage
   * sequence = 1

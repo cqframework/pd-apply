@@ -8,6 +8,7 @@ Usage: #example
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask"
 * code = $cpg-activity-type#collect-information "Collect information"
 * doNotPerform = true
+* intent = #proposal
 * dynamicValue[+]
   * path = "input[0].type"
   * expression
