@@ -1,14 +1,25 @@
 {
   "resourceType": "CommunicationRequest",
   "id": "SendMessageExpected",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest"
+    ]
+  },
   "status": "draft",
   "doNotPerform": false,
   "subject": {
     "reference": "Patient/Patient1"
   },
+  "encounter": {
+    "reference": "Encounter/Encounter1"
+  },
+  "requester": {
+    "reference": "Practitioner/Practitioner1"
+  },
   "payload": [
     {
-      "contentString": "Hello!"
+      "contentString": "Hello! Example Activity Definition for a recommendation to send a message"
     }
   ]
 }

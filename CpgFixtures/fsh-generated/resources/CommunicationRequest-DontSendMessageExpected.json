@@ -1,6 +1,20 @@
 {
   "resourceType": "CommunicationRequest",
   "id": "DontSendMessageExpected",
-  "status": "active",
-  "doNotPerform": true
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest"
+    ]
+  },
+  "status": "draft",
+  "doNotPerform": true,
+  "subject": {
+    "reference": "Patient/Patient1"
+  },
+  "encounter": {
+    "reference": "Encounter/Encounter1"
+  },
+  "requester": {
+    "reference": "Practitioner/Practitioner1"
+  }
 }

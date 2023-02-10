@@ -1,6 +1,11 @@
 {
   "resourceType": "Task",
   "id": "CollectInformationExpected",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask"
+    ]
+  },
   "status": "draft",
   "intent": "proposal",
   "instantiatesCanonical": "http://example.com/ActivityDefinition/CollectInformationActivity|0.1.0",
@@ -13,13 +18,23 @@
       }
     ]
   },
+  "for": {
+    "reference": "Patient/Patient1"
+  },
+  "encounter": {
+    "reference": "Encounter/Encounter1"
+  },
+  "requester": {
+    "reference": "Practitioner/Practitioner1"
+  },
   "input": [
     {
       "type": {
         "coding": [
           {
             "code": "collect-information",
-            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type"
+            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+            "display": "Collect information"
           }
         ]
       },

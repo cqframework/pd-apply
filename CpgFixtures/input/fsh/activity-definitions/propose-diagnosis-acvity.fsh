@@ -17,4 +17,4 @@ Usage: #example
   * path = "input[0].value"
   * expression
     * language = #text/cql-expression
-    * expression = "Condition { id: \"condition1\", clinicalStatus: \"Active Condition\", verificationStatus: \"Provisional Condition\", category: \"Problem-list Item\", code: \"Ischemic Stroke\", subject: Patient }"
+    * expression = "Condition { id: \"condition1\", clinicalStatus: \"Active Condition\", verificationStatus: \"Provisional Condition\", category: \"Problem-list Item\", code: \"Ischemic Stroke\", subject: Patient1 }"

@@ -8,8 +8,3 @@ Usage: #example
 * code = $cpg-activity-type#send-message "Send a message"
 * doNotPerform = true
 * intent = #proposal
-* dynamicValue 
-  * path = "status"
-  * expression
-    * language = #text/fhirpath
-    * expression = "'active'"

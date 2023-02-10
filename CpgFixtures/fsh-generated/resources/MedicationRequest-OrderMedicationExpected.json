@@ -1,6 +1,11 @@
 {
   "resourceType": "MedicationRequest",
   "id": "OrderMedicationExpected",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequest"
+    ]
+  },
   "status": "draft",
   "doNotPerform": false,
   "intent": "proposal",
@@ -9,6 +14,12 @@
   ],
   "subject": {
     "reference": "Patient/Patient1"
+  },
+  "encounter": {
+    "reference": "Encounter/Encounter1"
+  },
+  "requester": {
+    "reference": "Practitioner/Practitioner1"
   },
   "medicationCodeableConcept": {
     "coding": [

@@ -1,11 +1,14 @@
 Instance: OrderMedicationExpected
 InstanceOf: MedicationRequest
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequest"
 * status = #draft
 * doNotPerform = false
 * intent = #proposal
 * instantiatesCanonical = "http://example.com/ActivityDefinition/OrderMedicationActivity|0.1.0"
 * subject = Reference(Patient1)
+* encounter = Reference(Encounter1)
+* requester = Reference(Practitioner1)
 * medicationCodeableConcept = http://snomed.info/sct#376988009 "Levothyroxine sodium 75 microgram oral tablet"
 * dosageInstruction
   * sequence = 1

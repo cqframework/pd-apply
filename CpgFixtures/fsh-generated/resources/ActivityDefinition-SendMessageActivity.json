@@ -50,10 +50,10 @@
   "doNotPerform": false,
   "dynamicValue": [
     {
-      "path": "payload.contentString",
+      "path": "payload[0].contentString",
       "expression": {
         "language": "text/fhirpath",
-        "expression": "'Hello!'"
+        "expression": "'Hello! ' + description"
       }
     }
   ]
