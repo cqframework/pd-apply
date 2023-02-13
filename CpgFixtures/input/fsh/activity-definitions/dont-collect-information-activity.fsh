@@ -15,7 +15,7 @@ Usage: #example
     * language = #text/fhirpath
     * expression = "code"
 * dynamicValue[+]
-  * path = "input[0].value"
+  * path = "input[0].valueCanonical"
   * expression
     * language = #text/fhirpath
     * expression = "extension.where(url='http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith').value"

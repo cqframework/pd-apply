@@ -57,10 +57,11 @@
       }
     },
     {
-      "path": "input[0].value",
+      "path": "input[0].valueReference",
       "expression": {
-        "language": "text/cql-expression",
-        "expression": "Observation { id: 'Inference1', status: 'final', code: \"Inference\", subject: Patient1 }"
+        "language": "text/cql-identifier",
+        "expression": "Record Inference Reference",
+        "reference": "http://example.com/Library/RecordInferenceLibrary"
       }
     }
   ]

@@ -14,7 +14,8 @@ Usage: #example
     * language = #text/fhirpath
     * expression = "code"
 * dynamicValue[+]
-  * path = "input[0].value"
+  * path = "input[0].valueReference"
   * expression
-    * language = #text/cql-expression
-    * expression = "DetectedIssue { id: 'DetectedIssue1', status: 'final', code: \"Time-related Detected Issue\", severity: 'high', patient: Patient1 }"
+    * language = #text/cql-identifier
+    * expression = "Record Detected Issue Reference"
+    * reference = Canonical(RecordDetectedIssueLibrary)

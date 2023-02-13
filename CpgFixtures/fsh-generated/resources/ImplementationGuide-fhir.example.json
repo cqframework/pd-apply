@@ -299,6 +299,13 @@
       },
       {
         "reference": {
+          "reference": "Library/ProposeDiagnosisLibrary"
+        },
+        "name": "ProposeDiagnosisLibrary",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Parameters/ProposeDiagnosisParameters"
         },
         "name": "ProposeDiagnosisParameters",
@@ -341,6 +348,13 @@
       },
       {
         "reference": {
+          "reference": "Library/RecordDetectedIssueLibrary"
+        },
+        "name": "RecordDetectedIssueLibrary",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Parameters/RecordDetectedIssueParameters"
         },
         "name": "RecordDetectedIssueParameters",
@@ -362,6 +376,13 @@
       },
       {
         "reference": {
+          "reference": "Library/RecordInferenceLibrary"
+        },
+        "name": "RecordInferenceLibrary",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Parameters/RecordInferenceParameters"
         },
         "name": "RecordInferenceParameters",
@@ -379,6 +400,13 @@
           "reference": "Task/ReportFlagExpected"
         },
         "name": "ReportFlagExpected",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Library/ReportFlagLibrary"
+        },
+        "name": "ReportFlagLibrary",
         "exampleBoolean": true
       },
       {

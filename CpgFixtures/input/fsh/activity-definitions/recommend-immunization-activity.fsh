@@ -9,5 +9,7 @@ Usage: #example
 * priority = #routine
 * doNotPerform = false
 * intent = #proposal
-* date = 2023-02-11T20:43:58+00:00
+* date = 2023-02-11T20:43:58+00:00  //this is when AD was last published, so does not translate to Task.date?
 * productCodeableConcept = http://snomed.info/sct#14745005 "Hepatitis A vaccine"
+* timingDateTime = 2023-02-11T20:43:58+00:00
+//what maps to forecastStatus? required on immunization recommendation

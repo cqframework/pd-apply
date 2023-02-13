@@ -1,6 +1,11 @@
 {
   "resourceType": "ImmunizationRecommendation",
   "id": "RecommendImmunizationExpected",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-immunizationrecommendation"
+    ]
+  },
   "patient": {
     "reference": "Patient/Patient1"
   },

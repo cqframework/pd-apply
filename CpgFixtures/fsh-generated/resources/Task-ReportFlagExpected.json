@@ -1,6 +1,11 @@
 {
   "resourceType": "Task",
   "id": "ReportFlagExpected",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportflagtask"
+    ]
+  },
   "status": "draft",
   "intent": "proposal",
   "instantiatesCanonical": "http://example.com/ActivityDefinition/ReportFlagActivity|0.1.0",
@@ -12,6 +17,15 @@
         "display": "Report a flag"
       }
     ]
+  },
+  "for": {
+    "reference": "Patient/Patient1"
+  },
+  "encounter": {
+    "reference": "Encounter/Encounter1"
+  },
+  "requester": {
+    "reference": "Practitioner/Practitioner1"
   },
   "input": [
     {

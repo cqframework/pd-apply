@@ -47,5 +47,14 @@
       }
     ]
   },
-  "doNotPerform": true
+  "doNotPerform": true,
+  "dynamicValue": [
+    {
+      "path": "payload[0].contentString",
+      "expression": {
+        "language": "text/fhirpath",
+        "expression": "'Hello! ' + description"
+      }
+    }
+  ]
 }

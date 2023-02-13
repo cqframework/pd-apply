@@ -14,7 +14,7 @@ Usage: #example
     * language = #text/fhirpath
     * expression = "code"
 * dynamicValue[+]
-  * path = "input[0].value"
+  * path = "input[0].valueReference"
   * expression
     * language = #text/cql-identifier
     * expression = "Medication Proposal Reference"

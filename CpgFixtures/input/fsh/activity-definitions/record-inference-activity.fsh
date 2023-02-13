@@ -13,8 +13,9 @@ Usage: #example
   * expression
     * language = #text/fhirpath
     * expression = "code"
-* dynamicValue[+]   
-  * path = "input[0].value" 
-  * expression  
-    * language = #text/cql-expression
-    * expression = "Observation { id: 'Inference1', status: 'final', code: \"Inference\", subject: Patient1 }" 
+* dynamicValue[+]
+  * path = "input[0].valueReference"
+  * expression
+    * language = #text/cql-identifier
+    * expression = "Record Inference Reference"
+    * reference = Canonical(RecordInferenceLibrary)

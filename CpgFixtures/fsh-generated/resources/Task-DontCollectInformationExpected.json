@@ -1,6 +1,11 @@
 {
   "resourceType": "Task",
   "id": "DontCollectInformationExpected",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask"
+    ]
+  },
   "modifierExtension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/request-doNotPerform",
@@ -18,6 +23,15 @@
         "display": "Collect information"
       }
     ]
+  },
+  "for": {
+    "reference": "Patient/Patient1"
+  },
+  "encounter": {
+    "reference": "Encounter/Encounter1"
+  },
+  "requester": {
+    "reference": "Practitioner/Practitioner1"
   },
   "input": [
     {

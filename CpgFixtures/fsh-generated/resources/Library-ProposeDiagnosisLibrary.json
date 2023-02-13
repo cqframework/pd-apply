@@ -1,0 +1,45 @@
+{
+  "resourceType": "Library",
+  "id": "ProposeDiagnosisLibrary",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+      "valueCode": "publishable"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+      "valueCode": "structured"
+    }
+  ],
+  "url": "http://example.com/Library/ProposeDiagnosisLibrary",
+  "name": "ProposeDiagnosisLibrary",
+  "title": "Library ProposeDiagnosisLibrary",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "Example",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "001",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "World"
+        }
+      ]
+    }
+  ],
+  "version": "0.1.0",
+  "type": {
+    "coding": [
+      {
+        "code": "logic-library",
+        "system": "http://terminology.hl7.org/CodeSystem/library-type"
+      }
+    ]
+  },
+  "content": [
+    {
+      "id": "ig-loader-ProposeDiagnosis.cql"
+    }
+  ]
+}

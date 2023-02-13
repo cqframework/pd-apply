@@ -16,5 +16,6 @@ Usage: #example
 * dynamicValue[+]
   * path = "input[0].value"
   * expression
-    * language = #text/cql-expression
-    * expression = "Flag { id: 'Flag1', status: 'active', code: \"Flag\", subject: Patient1 }"
+    * language = #text/cql-identifier
+    * expression = "Report Flag Reference"
+    * reference = Canonical(ReportFlagLibrary)

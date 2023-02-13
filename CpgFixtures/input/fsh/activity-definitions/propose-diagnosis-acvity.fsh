@@ -14,7 +14,8 @@ Usage: #example
     * language = #text/fhirpath
     * expression = "code"
 * dynamicValue[+]
-  * path = "input[0].value"
+  * path = "input[0].valueReference"
   * expression
-    * language = #text/cql-expression
-    * expression = "Condition { id: \"condition1\", clinicalStatus: \"Active Condition\", verificationStatus: \"Provisional Condition\", category: \"Problem-list Item\", code: \"Ischemic Stroke\", subject: Patient1 }"
+    * language = #text/cql-identifier
+    * expression = "Propose Diagnosis Reference"
+    * reference = Canonical(ProposeDiagnosisLibrary)

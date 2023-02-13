@@ -1,6 +1,11 @@
 {
   "resourceType": "Task",
   "id": "RecordDetectedIssueExpected",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recorddetectedissuetask"
+    ]
+  },
   "status": "draft",
   "intent": "proposal",
   "instantiatesCanonical": "http://example.com/ActivityDefinition/RecordDetectedIssueActivity|0.1.0",
@@ -12,6 +17,15 @@
         "display": "Record a detected issue"
       }
     ]
+  },
+  "for": {
+    "reference": "Patient/Patient1"
+  },
+  "encounter": {
+    "reference": "Encounter/Encounter1"
+  },
+  "requester": {
+    "reference": "Practitioner/Practitioner1"
   },
   "input": [
     {

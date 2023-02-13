@@ -39,6 +39,10 @@
           {
             "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollIn",
             "valueCanonical": "http://hl7.org/fhir/uv/cpg/PlanDefinition/activity-example-pathway"
+          },
+          {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-isUnenrollment",
+            "valueBoolean": false
           }
         ],
         "url": "http://example.com/ActivityDefinition/EnrollPatientActivity",
@@ -59,12 +63,6 @@
           }
         ],
         "version": "0.1.0",
-        "modifierExtension": [
-          {
-            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-isUnenrollment",
-            "valueBoolean": false
-          }
-        ],
         "description": "Example Activity Definition for a recommendation to enroll a patient in a pathway",
         "code": {
           "coding": [
@@ -85,7 +83,7 @@
             }
           },
           {
-            "path": "input[0].value",
+            "path": "input[0].valueCanonical",
             "expression": {
               "language": "text/fhirpath",
               "expression": "extension.where(url='http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollIn').value"
@@ -146,6 +144,114 @@
               },
               "subject": {
                 "reference": "Patient/Patient1"
+              }
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "DetectedIssue",
+              "id": "DetectedIssue1",
+              "status": "final",
+              "code": {
+                "coding": [
+                  {
+                    "code": "TIME",
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                    "display": "Time-related Detected Issue"
+                  }
+                ]
+              },
+              "severity": "high",
+              "patient": {
+                "reference": "Patient/Patient1"
+              },
+              "identifiedDateTime": "2023-01-01"
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Condition",
+              "id": "Condition1",
+              "clinicalStatus": {
+                "coding": [
+                  {
+                    "code": "active",
+                    "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
+                  }
+                ]
+              },
+              "verificationStatus": {
+                "coding": [
+                  {
+                    "code": "provisional",
+                    "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status"
+                  }
+                ]
+              },
+              "category": [
+                {
+                  "coding": [
+                    {
+                      "code": "problem-list-item",
+                      "system": "http://terminology.hl7.org/CodeSystem/condition-category"
+                    }
+                  ]
+                }
+              ],
+              "code": {
+                "coding": [
+                  {
+                    "code": "422504002",
+                    "system": "http://snomed.info/sct",
+                    "display": "Ischemic stroke (disorder)"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "Patient/Patient1"
+              },
+              "recordedDate": "2023-01-01"
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Observation",
+              "id": "Inference1",
+              "status": "final",
+              "code": {
+                "text": "Inference"
+              },
+              "subject": {
+                "reference": "Paitent/Patient1"
+              },
+              "effectiveDateTime": "2023-01-01"
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Flag",
+              "id": "Flag1",
+              "status": "active",
+              "category": [
+                {
+                  "coding": [
+                    {
+                      "code": "admin",
+                      "system": "http://terminology.hl7.org/CodeSystem/flag-category",
+                      "display": "Administrative"
+                    }
+                  ]
+                }
+              ],
+              "code": {
+                "text": "Flag"
+              },
+              "subject": {
+                "reference": "Patient/Patient1"
+              },
+              "period": {
+                "start": "2023-01-01",
+                "end": "2024-01-01"
               }
             }
           }
