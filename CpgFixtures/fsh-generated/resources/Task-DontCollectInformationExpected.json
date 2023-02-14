@@ -6,6 +6,20 @@
       "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask"
     ]
   },
+  "input": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+            "code": "collect-information",
+            "display": "Collect information"
+          }
+        ]
+      },
+      "valueCanonical": "http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation"
+    }
+  ],
   "modifierExtension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/request-doNotPerform",
@@ -32,19 +46,5 @@
   },
   "requester": {
     "reference": "Practitioner/Practitioner1"
-  },
-  "input": [
-    {
-      "type": {
-        "coding": [
-          {
-            "code": "collect-information",
-            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
-            "display": "Collect information"
-          }
-        ]
-      },
-      "valueCanonical": "http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation"
-    }
-  ]
+  }
 }

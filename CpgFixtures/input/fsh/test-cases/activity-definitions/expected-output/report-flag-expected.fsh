@@ -1,7 +1,6 @@
 Instance: ReportFlagExpected
-InstanceOf: Task
+InstanceOf: $cpg-reportflagtask
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportflagtask"
 * status = #draft
 * intent = #proposal
 * instantiatesCanonical = "http://example.com/ActivityDefinition/ReportFlagActivity|0.1.0"

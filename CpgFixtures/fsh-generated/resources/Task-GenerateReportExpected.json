@@ -6,6 +6,20 @@
       "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-generatereporttask"
     ]
   },
+  "input": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+            "code": "generate-report",
+            "display": "Generate a metric or case report"
+          }
+        ]
+      },
+      "valueCanonical": "http://hl7.org/fhir/uv/cpg/Measure/activity-example-generatereport"
+    }
+  ],
   "status": "draft",
   "intent": "proposal",
   "instantiatesCanonical": "http://example.com/ActivityDefinition/GenerateReportActivity|0.1.0",
@@ -26,19 +40,5 @@
   },
   "requester": {
     "reference": "Practitioner/Practitioner1"
-  },
-  "input": [
-    {
-      "type": {
-        "coding": [
-          {
-            "code": "generate-report",
-            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
-            "display": "Generate a metric or case report"
-          }
-        ]
-      },
-      "valueCanonical": "http://hl7.org/fhir/uv/cpg/Measure/activity-example-generatereport"
-    }
-  ]
+  }
 }

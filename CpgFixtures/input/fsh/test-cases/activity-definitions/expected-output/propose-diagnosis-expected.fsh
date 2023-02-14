@@ -1,7 +1,6 @@
 Instance: ProposeDiagnosisExpected
-InstanceOf: Task
+InstanceOf: $cpg-proposediagnosistask
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-proposediagnosistask"
 * status = #draft
 * intent = #proposal
 * instantiatesCanonical = "http://example.com/ActivityDefinition/ProposeDiagnosisActivity|0.1.0"

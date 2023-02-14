@@ -1,7 +1,6 @@
 Instance: RecordDetectedIssueExpected
-InstanceOf: Task
+InstanceOf: $cpg-recorddetectedissuetask
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recorddetectedissuetask"
 * status = #draft
 * intent = #proposal
 * instantiatesCanonical = "http://example.com/ActivityDefinition/RecordDetectedIssueActivity|0.1.0"

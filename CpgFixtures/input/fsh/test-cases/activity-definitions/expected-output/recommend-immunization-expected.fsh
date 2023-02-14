@@ -1,7 +1,6 @@
 Instance: RecommendImmunizationExpected
-InstanceOf: ImmunizationRecommendation
+InstanceOf: $cpg-immunizationrecommendation
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-immunizationrecommendation"
 * patient = Reference(Patient/Patient1)
 * date = "2020-12-22"
 * recommendation

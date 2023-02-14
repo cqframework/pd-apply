@@ -1,7 +1,6 @@
 Instance: DontSendMessageExpected
-InstanceOf: CommunicationRequest
+InstanceOf: $cpg-communicationrequest
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest"
 * status = #draft
 * doNotPerform = true
 * subject = Reference(Patient1)

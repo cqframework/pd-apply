@@ -1,11 +1,10 @@
 Instance: DocumentMedicationActivity
-InstanceOf: $cpg-documentmedicationactivity
+InstanceOf: FixedCPGComputableActivityDefinition
 Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(DocumentMedicationActivity, ActivityDefinition)
 * description = "Example Activity Definition for a recommendation to document a medication"
 * kind = #Task
 * profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-documentmedicationtask"
-// Sushi error: Cannot assign "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-documentmedicationtask" to this element; a different canonical is already assigned: "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationtask".
 * code = $cpg-activity-type#document-medication "Document a medication"
 * doNotPerform = false
 * intent = #proposal

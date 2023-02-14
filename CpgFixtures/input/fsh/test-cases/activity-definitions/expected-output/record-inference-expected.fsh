@@ -1,7 +1,6 @@
 Instance: RecordInferenceExpected
-InstanceOf: Task
+InstanceOf: $cpg-recordinferencetask
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recordinferencetask"
 * status = #draft
 * intent = #proposal
 * instantiatesCanonical = "http://example.com/ActivityDefinition/RecordInferenceActivity|0.1.0"

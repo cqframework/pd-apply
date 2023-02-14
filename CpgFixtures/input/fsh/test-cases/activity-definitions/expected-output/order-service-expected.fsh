@@ -1,7 +1,6 @@
 Instance: OrderServiceExpected
-InstanceOf: ServiceRequest
+InstanceOf: S$cpg-servicerequest
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-servicerequest"
 * status = #draft
 * doNotPerform = false
 * intent = #proposal

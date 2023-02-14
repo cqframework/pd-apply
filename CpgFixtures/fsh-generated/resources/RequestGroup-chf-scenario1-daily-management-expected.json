@@ -1,0 +1,231 @@
+{
+  "resourceType": "RequestGroup",
+  "id": "chf-scenario1-daily-management-expected",
+  "instantiatesCanonical": [
+    "http://hl7.org/fhir/uv/cpg/PlanDefinition/chf-daily-management"
+  ],
+  "status": "draft",
+  "intent": "plan",
+  "subject": {
+    "reference": "Patient/chf-scenario1"
+  },
+  "encounter": {
+    "reference": "Encounter/chf-scenario1"
+  },
+  "action": [
+    {
+      "title": "Weight",
+      "description": "Measure weight daily",
+      "code": [
+        {
+          "coding": [
+            {
+              "code": "diagnostic-testing",
+              "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process"
+            }
+          ]
+        }
+      ],
+      "action": [
+        {
+          "id": "weight",
+          "title": "Weight",
+          "description": "Measure weight daily",
+          "code": [
+            {
+              "coding": [
+                {
+                  "code": "diagnostic-testing",
+                  "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process"
+                }
+              ]
+            }
+          ],
+          "timingTiming": {
+            "repeat": {
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "d"
+            }
+          }
+        },
+        {
+          "title": "Report Weight",
+          "description": "Report weight metric daily",
+          "code": [
+            {
+              "coding": [
+                {
+                  "code": "diagnostic-testing",
+                  "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process"
+                }
+              ]
+            }
+          ],
+          "relatedAction": [
+            {
+              "actionId": "weight",
+              "relationship": "after-end"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Weight Change",
+      "description": "Manage weight change",
+      "code": [
+        {
+          "coding": [
+            {
+              "code": "diagnostic-testing",
+              "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process"
+            }
+          ]
+        }
+      ],
+      "action": [
+        {
+          "id": "weight-change",
+          "title": "Weight change",
+          "description": "Measure weight change daily",
+          "code": [
+            {
+              "coding": [
+                {
+                  "code": "diagnostic-testing",
+                  "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process"
+                }
+              ]
+            }
+          ],
+          "timingTiming": {
+            "repeat": {
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "d"
+            }
+          },
+          "action": [
+            {
+              "title": "Report Weight Change",
+              "description": "Report weight change metric daily",
+              "code": [
+                {
+                  "coding": [
+                    {
+                      "code": "diagnostic-testing",
+                      "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process"
+                    }
+                  ]
+                }
+              ],
+              "relatedAction": [
+                {
+                  "actionId": "weight-change",
+                  "relationship": "after-end"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Urine Output",
+      "description": "Measure urine output daily",
+      "code": [
+        {
+          "coding": [
+            {
+              "code": "diagnostic-testing",
+              "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process"
+            }
+          ]
+        }
+      ],
+      "action": [
+        {
+          "id": "urine-out",
+          "title": "Urine Out",
+          "description": "Measure urine output daily",
+          "code": [
+            {
+              "coding": [
+                {
+                  "code": "diagnostic-testing",
+                  "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process"
+                }
+              ]
+            }
+          ],
+          "timingTiming": {
+            "repeat": {
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "d"
+            }
+          }
+        },
+        {
+          "title": "Report Urine Out",
+          "description": "Report urine output metric daily",
+          "code": [
+            {
+              "coding": [
+                {
+                  "code": "diagnostic-testing",
+                  "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process"
+                }
+              ]
+            }
+          ],
+          "relatedAction": [
+            {
+              "actionId": "urine-out",
+              "relationship": "after-end"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Net I/Os",
+      "description": "Measure net intake/output daily",
+      "code": [
+        {
+          "coding": [
+            {
+              "code": "diagnostic-testing",
+              "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process"
+            }
+          ]
+        }
+      ],
+      "action": [
+        {
+          "id": "net-io",
+          "title": "Net IOs",
+          "description": "Measure net intake/output daily",
+          "code": [
+            {
+              "coding": [
+                {
+                  "code": "diagnostic-testing",
+                  "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process"
+                }
+              ]
+            }
+          ],
+          "timingTiming": {
+            "repeat": {
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "d"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

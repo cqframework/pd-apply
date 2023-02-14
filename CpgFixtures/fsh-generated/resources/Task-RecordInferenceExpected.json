@@ -6,6 +6,22 @@
       "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recordinferencetask"
     ]
   },
+  "input": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+            "code": "record-inference",
+            "display": "Record an inference"
+          }
+        ]
+      },
+      "valueReference": {
+        "reference": "Observation/Inference1"
+      }
+    }
+  ],
   "status": "draft",
   "intent": "proposal",
   "instantiatesCanonical": "http://example.com/ActivityDefinition/RecordInferenceActivity|0.1.0",
@@ -26,21 +42,5 @@
   },
   "requester": {
     "reference": "Practitioner/Practitioner1"
-  },
-  "input": [
-    {
-      "type": {
-        "coding": [
-          {
-            "code": "record-inference",
-            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
-            "display": "Record an inference"
-          }
-        ]
-      },
-      "valueReference": {
-        "reference": "Observation/Inference1"
-      }
-    }
-  ]
+  }
 }

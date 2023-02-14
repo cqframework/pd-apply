@@ -6,6 +6,22 @@
       "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-proposediagnosistask"
     ]
   },
+  "input": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+            "code": "propose-diagnosis",
+            "display": "Propose a diagnosis"
+          }
+        ]
+      },
+      "valueReference": {
+        "reference": "Condition/Condition1"
+      }
+    }
+  ],
   "status": "draft",
   "intent": "proposal",
   "instantiatesCanonical": "http://example.com/ActivityDefinition/ProposeDiagnosisActivity|0.1.0",
@@ -26,21 +42,5 @@
   },
   "requester": {
     "reference": "Practitioner/Practitioner1"
-  },
-  "input": [
-    {
-      "type": {
-        "coding": [
-          {
-            "code": "propose-diagnosis",
-            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
-            "display": "Propose a diagnosis"
-          }
-        ]
-      },
-      "valueReference": {
-        "reference": "Condition/Condition1"
-      }
-    }
-  ]
+  }
 }

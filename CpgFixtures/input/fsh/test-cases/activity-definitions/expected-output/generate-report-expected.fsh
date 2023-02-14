@@ -1,7 +1,6 @@
 Instance: GenerateReportExpected
-InstanceOf: Task
+InstanceOf: $cpg-generatereporttask
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-generatereporttask"
 * status = #draft
 * intent = #proposal
 * instantiatesCanonical = "http://example.com/ActivityDefinition/GenerateReportActivity|0.1.0"

@@ -1,7 +1,5 @@
 Instance: CollectInformationExpected
-InstanceOf: Task
-Usage: #example
-* meta.profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask"
+InstanceOf: $cpg-questionnairetask
 * status = #draft
 * intent = #proposal
 * instantiatesCanonical = "http://example.com/ActivityDefinition/CollectInformationActivity|0.1.0"

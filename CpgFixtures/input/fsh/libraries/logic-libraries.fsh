@@ -14,28 +14,28 @@ Instance: AdministerMedicationLibrary
 InstanceOf: Library
 * insert KnowledgeArtifactDefinitionMetadata(AdministerMedicationLibrary, Library)
 * type = http://terminology.hl7.org/CodeSystem/library-type#logic-library
-* content.id = "ig-loader-AdministerMedication.cql"
+* content.id = "ig-loader-AdministerMedicationLibrary.cql"
 
 Instance: RecordDetectedIssueLibrary
 InstanceOf: Library
 * insert KnowledgeArtifactDefinitionMetadata(RecordDetectedIssueLibrary, Library)
 * type = http://terminology.hl7.org/CodeSystem/library-type#logic-library
-* content.id = "ig-loader-RecordDetectedIssue.cql"
+* content.id = "ig-loader-RecordDetectedIssueLibrary.cql"
 
 Instance: ProposeDiagnosisLibrary
 InstanceOf: Library
 * insert KnowledgeArtifactDefinitionMetadata(ProposeDiagnosisLibrary, Library)
 * type = http://terminology.hl7.org/CodeSystem/library-type#logic-library
-* content.id = "ig-loader-ProposeDiagnosis.cql"
+* content.id = "ig-loader-ProposeDiagnosisLibrary.cql"
 
 Instance: RecordInferenceLibrary
 InstanceOf: Library
 * insert KnowledgeArtifactDefinitionMetadata(RecordInferenceLibrary, Library)
 * type = http://terminology.hl7.org/CodeSystem/library-type#logic-library
-* content.id = "ig-loader-RecordInference.cql"
+* content.id = "ig-loader-RecordInferenceLibrary.cql"
 
 Instance: ReportFlagLibrary
 InstanceOf: Library
 * insert KnowledgeArtifactDefinitionMetadata(ReportFlagLibrary, Library)
 * type = http://terminology.hl7.org/CodeSystem/library-type#logic-library
-* content.id = "ig-loader-ReportFlag.cql"
+* content.id = "ig-loader-ReportFlagLibrary.cql"

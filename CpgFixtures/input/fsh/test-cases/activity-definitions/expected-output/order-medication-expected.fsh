@@ -1,7 +1,6 @@
 Instance: OrderMedicationExpected
-InstanceOf: MedicationRequest
+InstanceOf: $cpg-medicationrequest
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequest"
 * status = #draft
 * doNotPerform = false
 * intent = #proposal

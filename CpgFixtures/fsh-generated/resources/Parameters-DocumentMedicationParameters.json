@@ -21,11 +21,10 @@
         "id": "DocumentMedicationActivity",
         "meta": {
           "profile": [
-            "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-documentmedicationactivity"
+            "http://example.org/StructureDefinition/FixedCPGComputableActivityDefinition"
           ]
         },
         "kind": "Task",
-        "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationtask",
         "intent": "proposal",
         "extension": [
           {
@@ -56,6 +55,7 @@
         ],
         "version": "0.1.0",
         "description": "Example Activity Definition for a recommendation to document a medication",
+        "profile": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-documentmedicationtask",
         "code": {
           "coding": [
             {

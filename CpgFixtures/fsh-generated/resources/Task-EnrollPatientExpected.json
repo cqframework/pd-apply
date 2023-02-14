@@ -6,6 +6,26 @@
       "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollmenttask"
     ]
   },
+  "input": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+            "code": "enrollment",
+            "display": "Enroll in a pathway or strategy"
+          }
+        ]
+      },
+      "valueCanonical": "http://hl7.org/fhir/uv/cpg/PlanDefinition/activity-example-pathway"
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-isUnenrollment",
+      "valueBoolean": false
+    }
+  ],
   "status": "draft",
   "intent": "proposal",
   "instantiatesCanonical": "http://example.com/ActivityDefinition/EnrollPatientActivity|0.1.0",
@@ -26,19 +46,5 @@
   },
   "requester": {
     "reference": "Practitioner/Practitioner1"
-  },
-  "input": [
-    {
-      "type": {
-        "coding": [
-          {
-            "code": "enrollment",
-            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
-            "display": "Enroll in a pathway or strategy"
-          }
-        ]
-      },
-      "valueCanonical": "http://hl7.org/fhir/uv/cpg/PlanDefinition/activity-example-pathway"
-    }
-  ]
+  }
 }

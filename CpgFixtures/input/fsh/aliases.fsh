@@ -20,4 +20,21 @@ Alias: $cpg-recorddetectedissueactivity = http://hl7.org/fhir/uv/cpg/StructureDe
 Alias: $cpg-recordinferenceactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recordinferenceactivity
 Alias: $cpg-reportflagactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportflagactivity
 
+Alias: $cpg-documentmedicationtask = 	http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-documentmedicationtask
+Alias: $cpg-adminstermedicationtask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-administermedicationtask
+Alias: $cpg-questionnairetask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask
+Alias: $cpg-dispensemeidcationtask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationtask
+Alias: $cpg-documentmedicationtask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-documentmedicationtask
+Alias: $cpg-communicationrequest = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest
+Alias: $cpg-generatereporttask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-generatereporttask
+Alias: $cpg-medicationrequest = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequest
+Alias: $cpg-servicerequest = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-servicerequest
+Alias: $cpg-proposediagnosistask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-proposediagnosistask
+Alias: $cpg-enrollmenttask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollmenttask
+Alias: $cpg-immunizationrecommendation = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-immunizationrecommendation
+Alias: $cpg-recorddetectedissuetask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recorddetectedissuetask
+Alias: $cpg-recordinferencetask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recordinferencetask
+Alias: $cpg-reportflagtask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportflagtask
+
+
 Alias: $cpg-activity-type = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type

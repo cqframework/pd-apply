@@ -1,7 +1,6 @@
 Instance: DontCollectInformationExpected
-InstanceOf: Task
+InstanceOf: $cpg-questionnairetask
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask"
 * status = #draft
 * intent = #proposal
 * modifierExtension[doNotPerform]

@@ -1,7 +1,6 @@
 Instance: DispenseMedicationExpected
-InstanceOf: Task
+InstanceOf: $cpg-dispensemedicationtask
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationtask"
 * status = #draft
 * intent = #proposal
 * instantiatesCanonical = "http://example.com/ActivityDefintion/DispenseMedicaitonActivity|0.1.0"

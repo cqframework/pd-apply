@@ -33,16 +33,17 @@
     "resource": [
       {
         "reference": {
-          "reference": "ActivityDefinition/AdministerMedicationActivity"
+          "reference": "StructureDefinition/FixedCPGComputableActivityDefinition"
         },
-        "name": "AdministerMedicationActivity",
-        "exampleBoolean": true
+        "name": "FixedCPGComputableActivityDefinition",
+        "description": "fixes problem in cpg spec",
+        "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "Task/AdministerMedicationExpected"
+          "reference": "ActivityDefinition/AdministerMedicationActivity"
         },
-        "name": "AdministerMedicationExpected",
+        "name": "AdministerMedicationActivity",
         "exampleBoolean": true
       },
       {
@@ -57,6 +58,20 @@
           "reference": "Parameters/AdministerMedicationParameters"
         },
         "name": "AdministerMedicationParameters",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "PlanDefinition/CHFDailyManagement"
+        },
+        "name": "CHFDailyManagement",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Parameters/ChfDailyManagementParameters"
+        },
+        "name": "ChfDailyManagementParameters",
         "exampleBoolean": true
       },
       {
@@ -96,13 +111,6 @@
       },
       {
         "reference": {
-          "reference": "Task/DispenseMedicationExpected"
-        },
-        "name": "DispenseMedicationExpected",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
           "reference": "Library/DispenseMedicationLibrary"
         },
         "name": "DispenseMedicationLibrary",
@@ -120,7 +128,7 @@
           "reference": "ActivityDefinition/DocumentMedicationActivity"
         },
         "name": "DocumentMedicationActivity",
-        "exampleBoolean": true
+        "exampleCanonical": "http://example.org/StructureDefinition/FixedCPGComputableActivityDefinition"
       },
       {
         "reference": {
@@ -260,13 +268,6 @@
           "reference": "ActivityDefinition/OrderServiceActivity"
         },
         "name": "OrderServiceActivity",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "ServiceRequest/OrderServiceExpected"
-        },
-        "name": "OrderServiceExpected",
         "exampleBoolean": true
       },
       {
@@ -435,6 +436,13 @@
           "reference": "Parameters/SendMessageParameters"
         },
         "name": "SendMessageParameters",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "RequestGroup/chf-scenario1-daily-management-expected"
+        },
+        "name": "chf-scenario1-daily-management-expected",
         "exampleBoolean": true
       }
     ],

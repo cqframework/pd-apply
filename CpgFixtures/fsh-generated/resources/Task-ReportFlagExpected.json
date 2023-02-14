@@ -6,6 +6,22 @@
       "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportflagtask"
     ]
   },
+  "input": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+            "code": "report-flag",
+            "display": "Report a flag"
+          }
+        ]
+      },
+      "valueReference": {
+        "reference": "Flag/Flag1"
+      }
+    }
+  ],
   "status": "draft",
   "intent": "proposal",
   "instantiatesCanonical": "http://example.com/ActivityDefinition/ReportFlagActivity|0.1.0",
@@ -26,21 +42,5 @@
   },
   "requester": {
     "reference": "Practitioner/Practitioner1"
-  },
-  "input": [
-    {
-      "type": {
-        "coding": [
-          {
-            "code": "report-flag",
-            "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
-            "display": "Report a flag"
-          }
-        ]
-      },
-      "valueReference": {
-        "reference": "Flag/Flag1"
-      }
-    }
-  ]
+  }
 }
