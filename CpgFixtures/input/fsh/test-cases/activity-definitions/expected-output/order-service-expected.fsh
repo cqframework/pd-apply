@@ -1,5 +1,5 @@
 Instance: OrderServiceExpected
-InstanceOf: S$cpg-servicerequest
+InstanceOf: $cpg-servicerequest
 Usage: #example
 * status = #draft
 * doNotPerform = false

@@ -3,7 +3,7 @@
   "id": "DocumentMedicationActivity",
   "meta": {
     "profile": [
-      "http://example.org/StructureDefinition/FixedCPGComputableActivityDefinition"
+      "http://example.org/StructureDefinition/FixedCPGComputableActivityDefinitionDocumentMedication"
     ]
   },
   "kind": "Task",

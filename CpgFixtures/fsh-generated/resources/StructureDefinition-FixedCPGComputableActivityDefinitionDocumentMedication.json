@@ -1,9 +1,9 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "FixedCPGComputableActivityDefinition",
-  "url": "http://example.org/StructureDefinition/FixedCPGComputableActivityDefinition",
+  "id": "FixedCPGComputableActivityDefinitionDocumentMedication",
+  "url": "http://example.org/StructureDefinition/FixedCPGComputableActivityDefinitionDocumentMedication",
   "version": "0.1.0",
-  "name": "FixedCPGComputableActivityDefinition",
+  "name": "FixedCPGComputableActivityDefinitionDocumentMedication",
   "status": "active",
   "description": "fixes problem in cpg spec",
   "fhirVersion": "4.0.1",

@@ -7,6 +7,6 @@ InstanceOf: $cpg-questionnairetask
 * for = Reference(Patient1)
 * encounter = Reference(Encounter1)
 * requester = Reference(Practitioner1)
-* input
+* input[questionnaire]
   * type = $cpg-activity-type#collect-information "Collect information"
   * valueCanonical = "http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation"

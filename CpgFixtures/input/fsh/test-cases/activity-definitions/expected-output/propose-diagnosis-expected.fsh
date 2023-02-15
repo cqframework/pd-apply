@@ -8,6 +8,6 @@ Usage: #example
 * for = Reference(Patient1)
 * encounter = Reference(Encounter1)
 * requester = Reference(Practitioner1)
-* input
+* input[diagnosis]
   * type = $cpg-activity-type#propose-diagnosis "Propose a diagnosis"
   * valueReference =  Reference(Condition1)

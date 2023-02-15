@@ -8,6 +8,6 @@ Usage: #example
 * for = Reference(Patient1)
 * encounter = Reference(Encounter1)
 * requester = Reference(Practitioner1)
-* input
+* input[definition]
   * type = $cpg-activity-type#generate-report "Generate a metric or case report"
   * valueCanonical = "http://hl7.org/fhir/uv/cpg/Measure/activity-example-generatereport"

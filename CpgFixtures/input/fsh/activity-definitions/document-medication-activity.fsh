@@ -1,5 +1,5 @@
 Instance: DocumentMedicationActivity
-InstanceOf: FixedCPGComputableActivityDefinition
+InstanceOf: FixedCPGComputableActivityDefinitionDocumentMedication
 Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(DocumentMedicationActivity, ActivityDefinition)
 * description = "Example Activity Definition for a recommendation to document a medication"

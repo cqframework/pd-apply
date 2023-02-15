@@ -33,9 +33,9 @@
     "resource": [
       {
         "reference": {
-          "reference": "StructureDefinition/FixedCPGComputableActivityDefinition"
+          "reference": "StructureDefinition/FixedCPGComputableActivityDefinitionDocumentMedication"
         },
-        "name": "FixedCPGComputableActivityDefinition",
+        "name": "FixedCPGComputableActivityDefinitionDocumentMedication",
         "description": "fixes problem in cpg spec",
         "exampleBoolean": false
       },
@@ -44,6 +44,13 @@
           "reference": "ActivityDefinition/AdministerMedicationActivity"
         },
         "name": "AdministerMedicationActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Task/AdministerMedicationExpected"
+        },
+        "name": "AdministerMedicationExpected",
         "exampleBoolean": true
       },
       {
@@ -111,6 +118,13 @@
       },
       {
         "reference": {
+          "reference": "Task/DispenseMedicationExpected"
+        },
+        "name": "DispenseMedicationExpected",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Library/DispenseMedicationLibrary"
         },
         "name": "DispenseMedicationLibrary",
@@ -128,7 +142,7 @@
           "reference": "ActivityDefinition/DocumentMedicationActivity"
         },
         "name": "DocumentMedicationActivity",
-        "exampleCanonical": "http://example.org/StructureDefinition/FixedCPGComputableActivityDefinition"
+        "exampleCanonical": "http://example.org/StructureDefinition/FixedCPGComputableActivityDefinitionDocumentMedication"
       },
       {
         "reference": {
@@ -268,6 +282,13 @@
           "reference": "ActivityDefinition/OrderServiceActivity"
         },
         "name": "OrderServiceActivity",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/OrderServiceExpected"
+        },
+        "name": "OrderServiceExpected",
         "exampleBoolean": true
       },
       {

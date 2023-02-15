@@ -21,9 +21,9 @@ Alias: $cpg-recordinferenceactivity = http://hl7.org/fhir/uv/cpg/StructureDefini
 Alias: $cpg-reportflagactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportflagactivity
 
 Alias: $cpg-documentmedicationtask = 	http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-documentmedicationtask
-Alias: $cpg-adminstermedicationtask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-administermedicationtask
+Alias: $cpg-administermedicationtask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-administermedicationtask
 Alias: $cpg-questionnairetask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask
-Alias: $cpg-dispensemeidcationtask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationtask
+Alias: $cpg-dispensemedicationtask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationtask
 Alias: $cpg-documentmedicationtask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-documentmedicationtask
 Alias: $cpg-communicationrequest = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest
 Alias: $cpg-generatereporttask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-generatereporttask

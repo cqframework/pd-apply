@@ -1,9 +1,9 @@
 {
   "resourceType": "Task",
-  "id": "DocumentMedicationExpected",
+  "id": "AdministerMedicationExpected",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-documentmedicationtask"
+      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-administermedicationtask"
     ]
   },
   "input": [
@@ -23,13 +23,13 @@
   ],
   "status": "draft",
   "intent": "proposal",
-  "instantiatesCanonical": "http://example.com/ActivityDefinition/DocumentMedicationActivity|0.1.0",
+  "instantiatesCanonical": "http://example.com/ActivityDefinition/AdministerMedicationActivity|0.1.0",
   "code": {
     "coding": [
       {
-        "code": "document-medication",
+        "code": "administer-medication",
         "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
-        "display": "Document a medication"
+        "display": "Administer a medication"
       }
     ]
   },
