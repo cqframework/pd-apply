@@ -3,7 +3,7 @@
   "id": "DocumentMedicationExpected",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-documentmedicationtask"
+      "http://example.org/StructureDefinition/FixedCPGTaskDocumentMedication"
     ]
   },
   "input": [
@@ -11,8 +11,9 @@
       "type": {
         "coding": [
           {
+            "code": "document-medication",
             "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
-            "code": "order-medication"
+            "display": "Document a medication"
           }
         ]
       },

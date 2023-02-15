@@ -1,5 +1,5 @@
 Instance: AdministerMedicationExpected
-InstanceOf: $cpg-administermedicationtask
+InstanceOf: FixedCPGTaskAdministerMedication
 Usage: #example
 * status = #draft
 * intent = #proposal

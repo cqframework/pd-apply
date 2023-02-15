@@ -3,7 +3,7 @@
   "id": "DispenseMedicationExpected",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationtask"
+      "http://example.org/StructureDefinition/FixedCPGTaskDispenseMedication"
     ]
   },
   "input": [
@@ -11,8 +11,9 @@
       "type": {
         "coding": [
           {
+            "code": "dispense-medication",
             "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
-            "code": "order-medication"
+            "display": "Dispense a Medication"
           }
         ]
       },

@@ -1,5 +1,5 @@
 Instance: DispenseMedicationExpected
-InstanceOf: $cpg-dispensemedicationtask
+InstanceOf: FixedCPGTaskDispenseMedication
 Usage: #example
 * status = #draft
 * intent = #proposal

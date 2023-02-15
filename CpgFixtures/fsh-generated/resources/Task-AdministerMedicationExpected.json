@@ -3,7 +3,7 @@
   "id": "AdministerMedicationExpected",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-administermedicationtask"
+      "http://example.org/StructureDefinition/FixedCPGTaskAdministerMedication"
     ]
   },
   "input": [
@@ -11,8 +11,9 @@
       "type": {
         "coding": [
           {
+            "code": "administer-medication",
             "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
-            "code": "order-medication"
+            "display": "Administer a medication"
           }
         ]
       },

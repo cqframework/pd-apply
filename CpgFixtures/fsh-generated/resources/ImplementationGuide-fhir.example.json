@@ -41,6 +41,30 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/FixedCPGTaskAdministerMedication"
+        },
+        "name": "FixedCPGTaskAdministerMedication",
+        "description": "fixes problem in cpg spec",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/FixedCPGTaskDispenseMedication"
+        },
+        "name": "FixedCPGTaskDispenseMedication",
+        "description": "fixes problem in cpg spec",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/FixedCPGTaskDocumentMedication"
+        },
+        "name": "FixedCPGTaskDocumentMedication",
+        "description": "fixes problem in cpg spec",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ActivityDefinition/AdministerMedicationActivity"
         },
         "name": "AdministerMedicationActivity",
@@ -51,7 +75,7 @@
           "reference": "Task/AdministerMedicationExpected"
         },
         "name": "AdministerMedicationExpected",
-        "exampleBoolean": true
+        "exampleCanonical": "http://example.org/StructureDefinition/FixedCPGTaskAdministerMedication"
       },
       {
         "reference": {
@@ -121,7 +145,7 @@
           "reference": "Task/DispenseMedicationExpected"
         },
         "name": "DispenseMedicationExpected",
-        "exampleBoolean": true
+        "exampleCanonical": "http://example.org/StructureDefinition/FixedCPGTaskDispenseMedication"
       },
       {
         "reference": {
@@ -149,7 +173,7 @@
           "reference": "Task/DocumentMedicationExpected"
         },
         "name": "DocumentMedicationExpected",
-        "exampleBoolean": true
+        "exampleCanonical": "http://example.org/StructureDefinition/FixedCPGTaskDocumentMedication"
       },
       {
         "reference": {
