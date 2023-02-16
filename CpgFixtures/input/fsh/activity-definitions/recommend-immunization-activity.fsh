@@ -10,3 +10,9 @@ Usage: #example
 * doNotPerform = false
 * intent = #proposal
 * productCodeableConcept = http://snomed.info/sct#14745005 "Hepatitis A vaccine"
+
+//should we test reutn of tuple on target resource using cql like this?
+// * dynamicValue[+]
+//   * path = "recommendation.forecastStatus"
+//   * expression = "Forecast Status" (returns code tuple)
+//   * reference = Canonical(RecommendImmunizationLibrary)
