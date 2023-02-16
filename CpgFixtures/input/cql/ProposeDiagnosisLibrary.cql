@@ -13,6 +13,6 @@ define "Condition":
 
 define "Propose Diagnosis Reference":
   if "Condition" is not null then
-    Reference { reference: string { value: 'Condition/' + "Condition".id } }
+    Tuple { reference: 'Condition/' + "Condition".id }
   else
-    Reference { reference: string { value: 'Condition/unknown' } }
+    Tuple { reference: 'Condition/unknown' }

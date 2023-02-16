@@ -12,4 +12,4 @@ Usage: #example
   * path = "payload[0].contentString"
   * expression
     * language = #text/fhirpath
-    * expression = "'Hello! ' + %subject + description" //testing %subject expression--returns error "Cannot [\"Hello! \"] + [{}]"
+    * expression = "'Patient Greeting: Hello, ' + %subject.name.given + ' Activity Definition Description: ' + description + ' Practinioner's given name: ' + %practioner.name.given"

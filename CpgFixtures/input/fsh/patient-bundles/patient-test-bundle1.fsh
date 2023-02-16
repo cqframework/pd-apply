@@ -1,10 +1,14 @@
 Instance: Patient1
 InstanceOf: Patient
 Usage: #inline
+* name
+  * given = "Alice"
 
 Instance: Practitioner1
 InstanceOf: Practitioner
 Usage: #inline
+* name
+  * given = "Michael"
 
 Instance: Encounter1
 InstanceOf: Encounter
@@ -48,7 +52,7 @@ Usage: #inline
 * status = #final
 * code
   * text = "Inference"
-* subject = Reference(Paitent/Patient1)
+* subject = Reference(Patient/Patient1)
 * effectiveDateTime = "2023-01-01"
 
 Instance: Flag1

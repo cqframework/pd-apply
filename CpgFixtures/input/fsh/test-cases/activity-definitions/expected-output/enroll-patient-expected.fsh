@@ -1,7 +1,6 @@
 Instance: EnrollPatientExpected
 InstanceOf: $cpg-enrollmenttask
 Usage: #example
-* extension[isUnenrollment].valueBoolean = false
 * status = #draft
 * intent = #proposal
 * instantiatesCanonical = Canonical(EnrollPatientActivity|0.1.0)

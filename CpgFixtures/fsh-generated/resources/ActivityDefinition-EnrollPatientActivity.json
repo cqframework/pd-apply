@@ -21,10 +21,6 @@
     {
       "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollIn",
       "valueCanonical": "http://hl7.org/fhir/uv/cpg/PlanDefinition/activity-example-pathway"
-    },
-    {
-      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-isUnenrollment",
-      "valueBoolean": false
     }
   ],
   "url": "http://example.com/ActivityDefinition/EnrollPatientActivity",

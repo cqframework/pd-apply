@@ -98,7 +98,14 @@
           {
             "resource": {
               "resourceType": "Patient",
-              "id": "Patient1"
+              "id": "Patient1",
+              "name": [
+                {
+                  "given": [
+                    "Alice"
+                  ]
+                }
+              ]
             }
           },
           {
@@ -125,7 +132,14 @@
           {
             "resource": {
               "resourceType": "Practitioner",
-              "id": "Practitioner1"
+              "id": "Practitioner1",
+              "name": [
+                {
+                  "given": [
+                    "Michael"
+                  ]
+                }
+              ]
             }
           },
           {
@@ -218,7 +232,7 @@
                 "text": "Inference"
               },
               "subject": {
-                "reference": "Paitent/Patient1"
+                "reference": "Patient/Patient1"
               },
               "effectiveDateTime": "2023-01-01"
             }

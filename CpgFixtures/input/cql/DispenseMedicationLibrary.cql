@@ -19,6 +19,6 @@ define "Medication Proposal":
 
 define "Medication Proposal Reference":
   if "Medication Proposal" is not null then
-    Reference { reference: string { value: 'MedicationRequest/' + "Medication Proposal".id } }
+    Tuple { reference: 'MedicationRequest/' + "Medication Proposal".id }
   else
-    Reference { reference: string { value: 'MedicationRequest/unknown' } }
+    Tuple { reference: 'MedicationRequest/unknown' }

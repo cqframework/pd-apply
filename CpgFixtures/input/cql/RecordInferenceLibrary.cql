@@ -13,6 +13,6 @@ define "Inference":
 
 define "Record Inference Reference":
   if "Inference" is not null then
-    Reference { reference: string { value: 'Observation/' + "Inference".id } }
+    Tuple { reference: 'Observation/' + "Inference".id }
   else
-    Reference { reference: string { value: 'Observation/unknown' } }
+    Tuple { reference: 'Observation/unknown' }

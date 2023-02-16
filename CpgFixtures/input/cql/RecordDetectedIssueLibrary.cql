@@ -13,6 +13,6 @@ define "Detected Issue":
 
 define "Record Detected Issue Reference":
   if "Detected Issue" is not null then
-    Reference { reference: string { value: 'DetectedIssue/' + "Detected Issue".id } }
+    Tuple { reference: 'DetectedIssue/' + "Detected Issue".id }
   else
-    Reference { reference: string { value: 'DetectedIssue/unknown' } }
+    Tuple { reference: 'DetectedIssue/unknown' }

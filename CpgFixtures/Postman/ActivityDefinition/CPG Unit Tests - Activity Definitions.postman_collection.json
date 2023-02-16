@@ -1,0 +1,1646 @@
+{
+	"info": {
+		"_postman_id": "b3f008ce-a89a-44da-a417-5786f8efe3fa",
+		"name": "CPG Unit Tests - Activity Definitions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25403373"
+	},
+	"item": [
+		{
+			"name": "ActivityDefinition-DocumentMedicationParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"  \"resourceType\": \"Task\",",
+							"  \"id\": \"DocumentMedicationExpected\",",
+							"  \"meta\": {",
+							"    \"profile\": [",
+							"      \"http://example.org/StructureDefinition/FixedCPGTaskDocumentMedication\"",
+							"    ]",
+							"  },",
+							"  \"input\": [",
+							"    {",
+							"      \"type\": {",
+							"        \"coding\": [",
+							"          {",
+							"            \"code\": \"document-medication\",",
+							"            \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"            \"display\": \"Document a medication\"",
+							"          }",
+							"        ]",
+							"      },",
+							"      \"valueReference\": {",
+							"        \"reference\": \"MedicationRequest/PastMedicationRequest\"",
+							"      }",
+							"    }",
+							"  ],",
+							"  \"status\": \"draft\",",
+							"  \"intent\": \"proposal\",",
+							"  \"instantiatesCanonical\": \"http://example.com/ActivityDefinition/DocumentMedicationActivity|0.1.0\",",
+							"  \"code\": {",
+							"    \"coding\": [",
+							"      {",
+							"        \"code\": \"document-medication\",",
+							"        \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"        \"display\": \"Document a medication\"",
+							"      }",
+							"    ]",
+							"  },",
+							"  \"for\": {",
+							"    \"reference\": \"Patient/Patient1\"",
+							"  },",
+							"  \"encounter\": {",
+							"    \"reference\": \"Encounter/Encounter1\"",
+							"  },",
+							"  \"requester\": {",
+							"    \"reference\": \"Practitioner/Practitioner1\"",
+							"  }",
+							"}",
+							"",
+							"//profiles do not match because of profile edits",
+							"",
+							"const response = _.testPrepare(pm.response.json())",
+							"",
+							"pm.test(\"ActivityDefinition: Document Medication Activity $apply\", function () {",
+							"    pm.response.to.have.status(200)",
+							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"DocumentMedicationParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"DocumentMedicationActivity\",\n        \"meta\": {\n          \"profile\": [\n            \"http://example.org/StructureDefinition/FixedCPGComputableActivityDefinitionDocumentMedication\"\n          ]\n        },\n        \"kind\": \"Task\",\n        \"intent\": \"proposal\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/DocumentMedicationActivity\",\n        \"name\": \"DocumentMedicationActivity\",\n        \"title\": \"ActivityDefinition DocumentMedicationActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"description\": \"Example Activity Definition for a recommendation to document a medication\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-documentmedicationtask\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"document-medication\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Document a medication\"\n            }\n          ]\n        },\n        \"doNotPerform\": false,\n        \"dynamicValue\": [\n          {\n            \"path\": \"input[0].type\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"code\"\n            }\n          },\n          {\n            \"path\": \"input[0].valueReference\",\n            \"expression\": {\n              \"language\": \"text/cql-identifier\",\n              \"expression\": \"Medication Proposal Reference\",\n              \"reference\": \"http://example.com/Library/DocumentMedicationLibrary\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\",\n              \"name\": [\n                {\n                  \"given\": [\n                    \"Alice\"\n                  ]\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\",\n              \"name\": [\n                {\n                  \"given\": [\n                    \"Michael\"\n                  ]\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"DetectedIssue\",\n              \"id\": \"DetectedIssue1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"TIME\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\n                    \"display\": \"Time-related Detected Issue\"\n                  }\n                ]\n              },\n              \"severity\": \"high\",\n              \"patient\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"identifiedDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Condition\",\n              \"id\": \"Condition1\",\n              \"clinicalStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"active\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-clinical\"\n                  }\n                ]\n              },\n              \"verificationStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"provisional\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-ver-status\"\n                  }\n                ]\n              },\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"problem-list-item\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/condition-category\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"422504002\",\n                    \"system\": \"http://snomed.info/sct\",\n                    \"display\": \"Ischemic stroke (disorder)\"\n                  }\n                ]\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"recordedDate\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Observation\",\n              \"id\": \"Inference1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"text\": \"Inference\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"effectiveDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Flag\",\n              \"id\": \"Flag1\",\n              \"status\": \"active\",\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"admin\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/flag-category\",\n                      \"display\": \"Administrative\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"text\": \"Flag\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"period\": {\n                \"start\": \"2023-01-01\",\n                \"end\": \"2024-01-01\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityDefinition-AdministerMedicationParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"  \"resourceType\": \"Task\",",
+							"  \"id\": \"AdministerMedicationExpected\",",
+							"  \"meta\": {",
+							"    \"profile\": [",
+							"      \"http://example.org/StructureDefinition/FixedCPGTaskAdministerMedication\"",
+							"    ]",
+							"  },",
+							"  \"input\": [",
+							"    {",
+							"      \"type\": {",
+							"        \"coding\": [",
+							"          {",
+							"            \"code\": \"administer-medication\",",
+							"            \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"            \"display\": \"Administer a medication\"",
+							"          }",
+							"        ]",
+							"      },",
+							"      \"valueReference\": {",
+							"        \"reference\": \"MedicationRequest/PastMedicationRequest\"",
+							"      }",
+							"    }",
+							"  ],",
+							"  \"status\": \"draft\",",
+							"  \"intent\": \"proposal\",",
+							"  \"instantiatesCanonical\": \"http://example.com/ActivityDefinition/AdministerMedicationActivity|0.1.0\",",
+							"  \"code\": {",
+							"    \"coding\": [",
+							"      {",
+							"        \"code\": \"administer-medication\",",
+							"        \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"        \"display\": \"Administer a medication\"",
+							"      }",
+							"    ]",
+							"  },",
+							"  \"for\": {",
+							"    \"reference\": \"Patient/Patient1\"",
+							"  },",
+							"  \"encounter\": {",
+							"    \"reference\": \"Encounter/Encounter1\"",
+							"  },",
+							"  \"requester\": {",
+							"    \"reference\": \"Practitioner/Practitioner1\"",
+							"  }",
+							"}",
+							"",
+							"//profiles do not match because of profile edits",
+							"",
+							"const response = _.testPrepare(pm.response.json())",
+							"",
+							"pm.test(\"ActivityDefinition: Administer Medication Activity $apply\", function() {",
+							"    pm.response.to.have.status(200)",
+							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"AdministerMedicationParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"AdministerMedicationActivity\",\n        \"meta\": {\n          \"profile\": [\n            \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-administermedication\"\n          ]\n        },\n        \"kind\": \"Task\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-administermedicationtask\",\n        \"intent\": \"proposal\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/AdministerMedicationActivity\",\n        \"name\": \"AdministerMedicationActivity\",\n        \"title\": \"ActivityDefinition AdministerMedicationActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"description\": \"Example Activity Definition for a recommendation to administer a medication\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"administer-medication\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Administer a medication\"\n            }\n          ]\n        },\n        \"doNotPerform\": false,\n        \"dynamicValue\": [\n          {\n            \"path\": \"input[0].type\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"code\"\n            }\n          },\n          {\n            \"path\": \"input[0].valueReference\",\n            \"expression\": {\n              \"language\": \"text/cql-identifier\",\n              \"expression\": \"Medication Proposal Reference\",\n              \"reference\": \"http://example.com/Library/AdministerMedicationLibrary\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\",\n              \"name\": [\n                {\n                  \"given\": [\n                    \"Alice\"\n                  ]\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\",\n              \"name\": [\n                {\n                  \"given\": [\n                    \"Michael\"\n                  ]\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"DetectedIssue\",\n              \"id\": \"DetectedIssue1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"TIME\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\n                    \"display\": \"Time-related Detected Issue\"\n                  }\n                ]\n              },\n              \"severity\": \"high\",\n              \"patient\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"identifiedDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Condition\",\n              \"id\": \"Condition1\",\n              \"clinicalStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"active\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-clinical\"\n                  }\n                ]\n              },\n              \"verificationStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"provisional\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-ver-status\"\n                  }\n                ]\n              },\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"problem-list-item\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/condition-category\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"422504002\",\n                    \"system\": \"http://snomed.info/sct\",\n                    \"display\": \"Ischemic stroke (disorder)\"\n                  }\n                ]\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"recordedDate\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Observation\",\n              \"id\": \"Inference1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"text\": \"Inference\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"effectiveDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Flag\",\n              \"id\": \"Flag1\",\n              \"status\": \"active\",\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"admin\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/flag-category\",\n                      \"display\": \"Administrative\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"text\": \"Flag\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"period\": {\n                \"start\": \"2023-01-01\",\n                \"end\": \"2024-01-01\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityDefinition-CollectInformationParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"  \"resourceType\": \"Task\",",
+							"  \"id\": \"CollectInformationExpected\",",
+							"  \"meta\": {",
+							"    \"profile\": [",
+							"      \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask\"",
+							"    ]",
+							"  },",
+							"  \"input\": [",
+							"    {",
+							"      \"type\": {",
+							"        \"coding\": [",
+							"          {",
+							"            \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"            \"code\": \"collect-information\",",
+							"            \"display\": \"Collect information\"",
+							"          }",
+							"        ]",
+							"      },",
+							"      \"valueCanonical\": \"http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation\"",
+							"    }",
+							"  ],",
+							"  \"status\": \"draft\",",
+							"  \"intent\": \"proposal\",",
+							"  \"instantiatesCanonical\": \"http://example.com/ActivityDefinition/CollectInformationActivity|0.1.0\",",
+							"  \"code\": {",
+							"    \"coding\": [",
+							"      {",
+							"        \"code\": \"collect-information\",",
+							"        \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"        \"display\": \"Collect information\"",
+							"      }",
+							"    ]",
+							"  },",
+							"  \"for\": {",
+							"    \"reference\": \"Patient/Patient1\"",
+							"  },",
+							"  \"encounter\": {",
+							"    \"reference\": \"Encounter/Encounter1\"",
+							"  },",
+							"  \"requester\": {",
+							"    \"reference\": \"Practitioner/Practitioner1\"",
+							"  }",
+							"}",
+							"",
+							"const response = _.testPrepare(pm.response.json())",
+							"",
+							"pm.test(\"ActivityDefinition: Collect Information Activity $apply\", function () {",
+							"    pm.response.to.have.status(200)",
+							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"CollectInformationParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"CollectInformationActivity\",\n        \"meta\": {\n          \"profile\": [\n            \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectinformationactivity\"\n          ]\n        },\n        \"kind\": \"Task\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask\",\n        \"intent\": \"proposal\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith\",\n            \"valueCanonical\": \"http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/CollectInformationActivity\",\n        \"name\": \"CollectInformationActivity\",\n        \"title\": \"ActivityDefinition CollectInformationActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"description\": \"Example Activity Definition for a recommendation to collect information\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"collect-information\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Collect information\"\n            }\n          ]\n        },\n        \"doNotPerform\": false,\n        \"dynamicValue\": [\n          {\n            \"path\": \"input[0].type\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"code\"\n            }\n          },\n          {\n            \"path\": \"input[0].valueCanonical\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"extension.where(url='http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith').value\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityDefinition-DispenseMedicationParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"  \"resourceType\": \"Task\",",
+							"  \"id\": \"DispenseMedicationExpected\",",
+							"  \"meta\": {",
+							"    \"profile\": [",
+							"      \"http://example.org/StructureDefinition/FixedCPGTaskDispenseMedication\"",
+							"    ]",
+							"  },",
+							"  \"input\": [",
+							"    {",
+							"      \"type\": {",
+							"        \"coding\": [",
+							"          {",
+							"            \"code\": \"dispense-medication\",",
+							"            \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"            \"display\": \"Dispense a Medication\"",
+							"          }",
+							"        ]",
+							"      },",
+							"      \"valueReference\": {",
+							"        \"reference\": \"MedicationRequest/PastMedicationRequest\"",
+							"      }",
+							"    }",
+							"  ],",
+							"  \"status\": \"draft\",",
+							"  \"intent\": \"proposal\",",
+							"  \"instantiatesCanonical\": \"http://example.com/ActivityDefintion/DispenseMedicaitonActivity|0.1.0\",",
+							"  \"code\": {",
+							"    \"coding\": [",
+							"      {",
+							"        \"code\": \"dispense-medication\",",
+							"        \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"        \"display\": \"Dispense a Medication\"",
+							"      }",
+							"    ]",
+							"  },",
+							"  \"for\": {",
+							"    \"reference\": \"Patient/Patient1\"",
+							"  },",
+							"  \"encounter\": {",
+							"    \"reference\": \"Encounter/Encounter1\"",
+							"  },",
+							"  \"requester\": {",
+							"    \"reference\": \"Practitioner/Practitioner1\"",
+							"  }",
+							"}",
+							"",
+							"//profiles do not match because of profile edits",
+							"",
+							"const response = _.testPrepare(pm.response.json())",
+							"",
+							"pm.test(\"ActivityDefinition: Dispense Medication Activity $apply\", function () {",
+							"    pm.response.to.have.status(200)",
+							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"DispenseMedicationParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"DispenseMedicationActivity\",\n        \"meta\": {\n          \"profile\": [\n            \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationactivity\"\n          ]\n        },\n        \"kind\": \"Task\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationtask\",\n        \"intent\": \"proposal\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/DispenseMedicationActivity\",\n        \"name\": \"DispenseMedicationActivity\",\n        \"title\": \"ActivityDefinition DispenseMedicationActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"description\": \"Dispense medication activity\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"dispense-medication\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Dispense a medication\"\n            }\n          ]\n        },\n        \"doNotPerform\": false,\n        \"dynamicValue\": [\n          {\n            \"path\": \"input[0].type\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"code\"\n            }\n          },\n          {\n            \"path\": \"input[0].valueReference\",\n            \"expression\": {\n              \"language\": \"text/cql-identifier\",\n              \"expression\": \"Medication Proposal Reference\",\n              \"reference\": \"http://example.com/Library/DispenseMedicationLibrary\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\",\n              \"name\": [\n                {\n                  \"given\": [\n                    \"Alice\"\n                  ]\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\",\n              \"name\": [\n                {\n                  \"given\": [\n                    \"Michael\"\n                  ]\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"DetectedIssue\",\n              \"id\": \"DetectedIssue1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"TIME\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\n                    \"display\": \"Time-related Detected Issue\"\n                  }\n                ]\n              },\n              \"severity\": \"high\",\n              \"patient\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"identifiedDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Condition\",\n              \"id\": \"Condition1\",\n              \"clinicalStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"active\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-clinical\"\n                  }\n                ]\n              },\n              \"verificationStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"provisional\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-ver-status\"\n                  }\n                ]\n              },\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"problem-list-item\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/condition-category\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"422504002\",\n                    \"system\": \"http://snomed.info/sct\",\n                    \"display\": \"Ischemic stroke (disorder)\"\n                  }\n                ]\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"recordedDate\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Observation\",\n              \"id\": \"Inference1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"text\": \"Inference\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"effectiveDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Flag\",\n              \"id\": \"Flag1\",\n              \"status\": \"active\",\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"admin\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/flag-category\",\n                      \"display\": \"Administrative\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"text\": \"Flag\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"period\": {\n                \"start\": \"2023-01-01\",\n                \"end\": \"2024-01-01\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityDefinition-DontSendMessageParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"  \"resourceType\": \"CommunicationRequest\",",
+							"  \"id\": \"DontSendMessageExpected\",",
+							"  \"meta\": {",
+							"    \"profile\": [",
+							"      \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest\"",
+							"    ]",
+							"  },",
+							"  \"status\": \"draft\",",
+							"  \"doNotPerform\": true,",
+							"  \"subject\": {",
+							"    \"reference\": \"Patient/Patient1\"",
+							"  },",
+							"  \"encounter\": {",
+							"    \"reference\": \"Encounter/Encounter1\"",
+							"  },",
+							"  \"requester\": {",
+							"    \"reference\": \"Practitioner/Practitioner1\"",
+							"  },",
+							"  \"payload\": [",
+							"    {",
+							"      \"contentString\": \"Hello! Example Activity Definition for a recommendation not to send a message\"",
+							"    }",
+							"  ]",
+							"}",
+							"",
+							"const response = _.testPrepare(pm.response.json())",
+							"",
+							"pm.test(\"ActivityDefinition: Don't Send Message Activity $apply\", function () {",
+							"    pm.response.to.have.status(200)",
+							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"DontSendMessageParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"DontSendMessageActivity\",\n        \"meta\": {\n          \"profile\": [\n            \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationactivity\"\n          ]\n        },\n        \"kind\": \"CommunicationRequest\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest\",\n        \"intent\": \"proposal\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/DontSendMessageActivity\",\n        \"name\": \"DontSendMessageActivity\",\n        \"title\": \"ActivityDefinition DontSendMessageActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"description\": \"Example Activity Definition for a recommendation not to send a message\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"send-message\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Send a message\"\n            }\n          ]\n        },\n        \"doNotPerform\": true,\n        \"dynamicValue\": [\n          {\n            \"path\": \"payload[0].contentString\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"'Hello! ' + description\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"DetectedIssue\",\n              \"id\": \"DetectedIssue1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"TIME\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\n                    \"display\": \"Time-related Detected Issue\"\n                  }\n                ]\n              },\n              \"severity\": \"high\",\n              \"patient\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"identifiedDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Condition\",\n              \"id\": \"Condition1\",\n              \"clinicalStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"active\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-clinical\"\n                  }\n                ]\n              },\n              \"verificationStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"provisional\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-ver-status\"\n                  }\n                ]\n              },\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"problem-list-item\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/condition-category\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"422504002\",\n                    \"system\": \"http://snomed.info/sct\",\n                    \"display\": \"Ischemic stroke (disorder)\"\n                  }\n                ]\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"recordedDate\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Observation\",\n              \"id\": \"Inference1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"text\": \"Inference\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"effectiveDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Flag\",\n              \"id\": \"Flag1\",\n              \"status\": \"active\",\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"admin\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/flag-category\",\n                      \"display\": \"Administrative\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"text\": \"Flag\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"period\": {\n                \"start\": \"2023-01-01\",\n                \"end\": \"2024-01-01\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityDefinition-SendMessageParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"  \"resourceType\": \"CommunicationRequest\",",
+							"  \"id\": \"SendMessageExpected\",",
+							"  \"meta\": {",
+							"    \"profile\": [",
+							"      \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest\"",
+							"    ]",
+							"  },",
+							"  \"status\": \"draft\",",
+							"  \"doNotPerform\": false,",
+							"  \"subject\": {",
+							"    \"reference\": \"Patient/Patient1\"",
+							"  },",
+							"  \"encounter\": {",
+							"    \"reference\": \"Encounter/Encounter1\"",
+							"  },",
+							"  \"requester\": {",
+							"    \"reference\": \"Practitioner/Practitioner1\"",
+							"  },",
+							"  \"payload\": [",
+							"    {",
+							"      \"contentString\": \"Hello! Example Activity Definition for a recommendation to send a message\"",
+							"    }",
+							"  ]",
+							"}",
+							"",
+							"const response = _.testPrepare(pm.response.json())",
+							"",
+							"pm.test(\"ActivityDefinition: Send Message Activity $apply\", function() {",
+							"    pm.response.to.have.status(200)",
+							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"SendMessageParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"SendMessageActivity\",\n        \"meta\": {\n          \"profile\": [\n            \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationactivity\"\n          ]\n        },\n        \"kind\": \"CommunicationRequest\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest\",\n        \"intent\": \"proposal\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/SendMessageActivity\",\n        \"name\": \"SendMessageActivity\",\n        \"title\": \"ActivityDefinition SendMessageActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"description\": \"Example Activity Definition for a recommendation to send a message\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"send-message\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Send a message\"\n            }\n          ]\n        },\n        \"doNotPerform\": false,\n        \"dynamicValue\": [\n          {\n            \"path\": \"payload[0].contentString\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"'Hello! '+ %subject + description\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityDefinition-OrderMedicationParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"  \"resourceType\": \"MedicationRequest\",",
+							"  \"id\": \"OrderMedicationExpected\",",
+							"  \"meta\": {",
+							"    \"profile\": [",
+							"      \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequest\"",
+							"    ]",
+							"  },",
+							"  \"status\": \"draft\",",
+							"  \"doNotPerform\": false,",
+							"  \"intent\": \"proposal\",",
+							"  \"instantiatesCanonical\": [",
+							"    \"http://example.com/ActivityDefinition/OrderMedicationActivity|0.1.0\"",
+							"  ],",
+							"  \"subject\": {",
+							"    \"reference\": \"Patient/Patient1\"",
+							"  },",
+							"  \"encounter\": {",
+							"    \"reference\": \"Encounter/Encounter1\"",
+							"  },",
+							"  \"requester\": {",
+							"    \"reference\": \"Practitioner/Practitioner1\"",
+							"  },",
+							"  \"medicationCodeableConcept\": {",
+							"    \"coding\": [",
+							"      {",
+							"        \"code\": \"376988009\",",
+							"        \"system\": \"http://snomed.info/sct\",",
+							"        \"display\": \"Levothyroxine sodium 75 microgram oral tablet\"",
+							"      }",
+							"    ]",
+							"  },",
+							"  \"dosageInstruction\": [",
+							"    {",
+							"      \"sequence\": 1,",
+							"      \"text\": \"75mcg daily\",",
+							"      \"timing\": {",
+							"        \"repeat\": {",
+							"          \"frequency\": 1,",
+							"          \"period\": 1,",
+							"          \"periodUnit\": \"d\"",
+							"        }",
+							"      },",
+							"      \"route\": {",
+							"        \"coding\": [",
+							"          {",
+							"            \"code\": \"26643006\",",
+							"            \"system\": \"http://snomed.info/sct\",",
+							"            \"display\": \"Oral Route (qualifier value)\"",
+							"          }",
+							"        ]",
+							"      },",
+							"      \"doseAndRate\": [",
+							"        {",
+							"          \"type\": {",
+							"            \"coding\": [",
+							"              {",
+							"                \"code\": \"ordered\",",
+							"                \"system\": \"http://terminology.hl7.org/CodeSystem/dose-rate-type\",",
+							"                \"display\": \"Ordered\"",
+							"              }",
+							"            ]",
+							"          },",
+							"          \"doseQuantity\": {",
+							"            \"value\": 75,",
+							"            \"code\": \"ug\",",
+							"            \"system\": \"http://unitsofmeasure.org\",",
+							"            \"unit\": \"mcg\"",
+							"          }",
+							"        }",
+							"      ]",
+							"    }",
+							"  ]",
+							"}",
+							"",
+							"const response = _.testPrepare(pm.response.json())",
+							"",
+							"pm.test(\"ActivityDefinition: Order Medication $apply\", function() {",
+							"    pm.response.to.have.status(200)",
+							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"OrderMedicationParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"OrderMedicationActivity\",\n        \"meta\": {\n          \"profile\": [\n            \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequestactivity\"\n          ]\n        },\n        \"kind\": \"MedicationRequest\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequest\",\n        \"intent\": \"proposal\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/OrderMedicationActivity\",\n        \"name\": \"OrderMedicationActivity\",\n        \"title\": \"ActivityDefinition OrderMedicationActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"description\": \"Order a medication activity\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"order-medication\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Order a medication\"\n            }\n          ]\n        },\n        \"priority\": \"routine\",\n        \"doNotPerform\": false,\n        \"productCodeableConcept\": {\n          \"coding\": [\n            {\n              \"code\": \"376988009\",\n              \"system\": \"http://snomed.info/sct\",\n              \"display\": \"Levothyroxine sodium 75 microgram oral tablet\"\n            }\n          ]\n        },\n        \"dosage\": [\n          {\n            \"sequence\": 1,\n            \"text\": \"75mcg daily\",\n            \"timing\": {\n              \"repeat\": {\n                \"frequency\": 1,\n                \"period\": 1,\n                \"periodUnit\": \"d\"\n              }\n            },\n            \"route\": {\n              \"coding\": [\n                {\n                  \"code\": \"26643006\",\n                  \"system\": \"http://snomed.info/sct\",\n                  \"display\": \"Oral Route (qualifier value)\"\n                }\n              ]\n            },\n            \"doseAndRate\": [\n              {\n                \"type\": {\n                  \"coding\": [\n                    {\n                      \"code\": \"ordered\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/dose-rate-type\",\n                      \"display\": \"Ordered\"\n                    }\n                  ]\n                },\n                \"doseQuantity\": {\n                  \"value\": 75,\n                  \"code\": \"ug\",\n                  \"system\": \"http://unitsofmeasure.org\",\n                  \"unit\": \"mcg\"\n                }\n              }\n            ]\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityDefinition-DontCollectInformationParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"  \"resourceType\": \"Task\",",
+							"  \"id\": \"DontCollectInformationExpected\",",
+							"  \"meta\": {",
+							"    \"profile\": [",
+							"      \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask\"",
+							"    ]",
+							"  },",
+							"  \"input\": [",
+							"    {",
+							"      \"type\": {",
+							"        \"coding\": [",
+							"          {",
+							"            \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"            \"code\": \"collect-information\",",
+							"            \"display\": \"Collect information\"",
+							"          }",
+							"        ]",
+							"      },",
+							"      \"valueCanonical\": \"http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation\"",
+							"    }",
+							"  ],",
+							"  \"modifierExtension\": [",
+							"    {",
+							"      \"url\": \"http://hl7.org/fhir/StructureDefinition/request-doNotPerform\",",
+							"      \"valueBoolean\": true",
+							"    }",
+							"  ],",
+							"  \"status\": \"draft\",",
+							"  \"intent\": \"proposal\",",
+							"  \"instantiatesCanonical\": \"http://example.com/ActivityDefinition/DontCollectInformationActivity|0.1.0\",",
+							"  \"code\": {",
+							"    \"coding\": [",
+							"      {",
+							"        \"code\": \"collect-information\",",
+							"        \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"        \"display\": \"Collect information\"",
+							"      }",
+							"    ]",
+							"  },",
+							"  \"for\": {",
+							"    \"reference\": \"Patient/Patient1\"",
+							"  },",
+							"  \"encounter\": {",
+							"    \"reference\": \"Encounter/Encounter1\"",
+							"  },",
+							"  \"requester\": {",
+							"    \"reference\": \"Practitioner/Practitioner1\"",
+							"  }",
+							"}",
+							"",
+							"const response = _.testPrepare(pm.response.json())",
+							"",
+							"pm.test(\"ActivityDefinition: Don't Collect Information Activity $apply\", function () {",
+							"    pm.response.to.have.status(200)",
+							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"DontCollectInformationParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"DontCollectInformationActivity\",\n        \"meta\": {\n          \"profile\": [\n            \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectinformationactivity\"\n          ]\n        },\n        \"kind\": \"Task\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask\",\n        \"intent\": \"proposal\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith\",\n            \"valueCanonical\": \"http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/DontCollectInformationActivity\",\n        \"name\": \"DontCollectInformationActivity\",\n        \"title\": \"ActivityDefinition DontCollectInformationActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"description\": \"Example Activity Definition for a recommendation not to collect information\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"collect-information\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Collect information\"\n            }\n          ]\n        },\n        \"doNotPerform\": true,\n        \"dynamicValue\": [\n          {\n            \"path\": \"input[0].type\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"code\"\n            }\n          },\n          {\n            \"path\": \"input[0].valueCanonical\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"extension.where(url='http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith').value\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityDefinition-EnrollPatientParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"  \"resourceType\": \"Task\",",
+							"  \"id\": \"EnrollPatientExpected\",",
+							"  \"meta\": {",
+							"    \"profile\": [",
+							"      \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollmenttask\"",
+							"    ]",
+							"  },",
+							"  \"input\": [",
+							"    {",
+							"      \"type\": {",
+							"        \"coding\": [",
+							"          {",
+							"            \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"            \"code\": \"enrollment\",",
+							"            \"display\": \"Enroll in a pathway or strategy\"",
+							"          }",
+							"        ]",
+							"      },",
+							"      \"valueCanonical\": \"http://hl7.org/fhir/uv/cpg/PlanDefinition/activity-example-pathway\"",
+							"    }",
+							"  ],",
+							"  \"status\": \"draft\",",
+							"  \"intent\": \"proposal\",",
+							"  \"instantiatesCanonical\": \"http://example.com/ActivityDefinition/EnrollPatientActivity|0.1.0\",",
+							"  \"code\": {",
+							"    \"coding\": [",
+							"      {",
+							"        \"code\": \"enrollment\",",
+							"        \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"        \"display\": \"Enroll in a pathway or strategy\"",
+							"      }",
+							"    ]",
+							"  },",
+							"  \"for\": {",
+							"    \"reference\": \"Patient/Patient1\"",
+							"  },",
+							"  \"encounter\": {",
+							"    \"reference\": \"Encounter/Encounter1\"",
+							"  },",
+							"  \"requester\": {",
+							"    \"reference\": \"Practitioner/Practitioner1\"",
+							"  }",
+							"}",
+							"",
+							"const response = _.testPrepare(pm.response.json())",
+							"",
+							"pm.test(\"ActivityDefinition: Enroll Patient Activity $apply\", function () {",
+							"    pm.response.to.have.status(200)",
+							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"EnrollPatientParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"EnrollPatientActivity\",\n        \"meta\": {\n          \"profile\": [\n            \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollmentactivity\"\n          ]\n        },\n        \"kind\": \"Task\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollmenttask\",\n        \"intent\": \"proposal\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollIn\",\n            \"valueCanonical\": \"http://hl7.org/fhir/uv/cpg/PlanDefinition/activity-example-pathway\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/EnrollPatientActivity\",\n        \"name\": \"EnrollPatientActivity\",\n        \"title\": \"ActivityDefinition EnrollPatientActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"description\": \"Example Activity Definition for a recommendation to enroll a patient in a pathway\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"enrollment\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Enroll in a pathway or strategy\"\n            }\n          ]\n        },\n        \"doNotPerform\": false,\n        \"dynamicValue\": [\n          {\n            \"path\": \"input[0].type\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"code\"\n            }\n          },\n          {\n            \"path\": \"input[0].valueCanonical\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"extension.where(url='http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollIn').value\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"DetectedIssue\",\n              \"id\": \"DetectedIssue1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"TIME\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\n                    \"display\": \"Time-related Detected Issue\"\n                  }\n                ]\n              },\n              \"severity\": \"high\",\n              \"patient\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"identifiedDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Condition\",\n              \"id\": \"Condition1\",\n              \"clinicalStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"active\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-clinical\"\n                  }\n                ]\n              },\n              \"verificationStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"provisional\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-ver-status\"\n                  }\n                ]\n              },\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"problem-list-item\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/condition-category\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"422504002\",\n                    \"system\": \"http://snomed.info/sct\",\n                    \"display\": \"Ischemic stroke (disorder)\"\n                  }\n                ]\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"recordedDate\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Observation\",\n              \"id\": \"Inference1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"text\": \"Inference\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"effectiveDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Flag\",\n              \"id\": \"Flag1\",\n              \"status\": \"active\",\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"admin\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/flag-category\",\n                      \"display\": \"Administrative\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"text\": \"Flag\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"period\": {\n                \"start\": \"2023-01-01\",\n                \"end\": \"2024-01-01\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityDefinition-GenerateReportParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"  \"resourceType\": \"Task\",",
+							"  \"id\": \"GenerateReportExpected\",",
+							"  \"meta\": {",
+							"    \"profile\": [",
+							"      \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-generatereporttask\"",
+							"    ]",
+							"  },",
+							"  \"input\": [",
+							"    {",
+							"      \"type\": {",
+							"        \"coding\": [",
+							"          {",
+							"            \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"            \"code\": \"generate-report\",",
+							"            \"display\": \"Generate a metric or case report\"",
+							"          }",
+							"        ]",
+							"      },",
+							"      \"valueCanonical\": \"http://hl7.org/fhir/uv/cpg/Measure/activity-example-generatereport\"",
+							"    }",
+							"  ],",
+							"  \"status\": \"draft\",",
+							"  \"intent\": \"proposal\",",
+							"  \"instantiatesCanonical\": \"http://example.com/ActivityDefinition/GenerateReportActivity|0.1.0\",",
+							"  \"code\": {",
+							"    \"coding\": [",
+							"      {",
+							"        \"code\": \"generate-report\",",
+							"        \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"        \"display\": \"Generate a metric or case report\"",
+							"      }",
+							"    ]",
+							"  },",
+							"  \"for\": {",
+							"    \"reference\": \"Patient/Patient1\"",
+							"  },",
+							"  \"encounter\": {",
+							"    \"reference\": \"Encounter/Encounter1\"",
+							"  },",
+							"  \"requester\": {",
+							"    \"reference\": \"Practitioner/Practitioner1\"",
+							"  }",
+							"}",
+							"",
+							"const response = _.testPrepare(pm.response.json())",
+							"",
+							"pm.test(\"ActivityDefinition: Generate Report Activity $apply\", function () {",
+							"    pm.response.to.have.status(200)",
+							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"GenerateReportParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"GenerateReportActivity\",\n        \"meta\": {\n          \"profile\": [\n            \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-generatereportactivity\"\n          ]\n        },\n        \"kind\": \"Task\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-generatereporttask\",\n        \"intent\": \"proposal\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportWith\",\n            \"valueCanonical\": \"http://hl7.org/fhir/uv/cpg/Measure/activity-example-generatereport\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/GenerateReportActivity\",\n        \"name\": \"GenerateReportActivity\",\n        \"title\": \"ActivityDefinition GenerateReportActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"description\": \"Example Activity Definition for a recommendation to generate a report\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"generate-report\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Generate a metric or case report\"\n            }\n          ]\n        },\n        \"doNotPerform\": false,\n        \"dynamicValue\": [\n          {\n            \"path\": \"input[0].type\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"code\"\n            }\n          },\n          {\n            \"path\": \"input[0].valueCanonical\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"extension.where(url='http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportWith').value\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityDefinition-OrderMedicationParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"  \"resourceType\": \"MedicationRequest\",",
+							"  \"id\": \"OrderMedicationExpected\",",
+							"  \"meta\": {",
+							"    \"profile\": [",
+							"      \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequest\"",
+							"    ]",
+							"  },",
+							"  \"status\": \"draft\",",
+							"  \"doNotPerform\": false,",
+							"  \"intent\": \"proposal\",",
+							"  \"instantiatesCanonical\": [",
+							"    \"http://example.com/ActivityDefinition/OrderMedicationActivity|0.1.0\"",
+							"  ],",
+							"  \"subject\": {",
+							"    \"reference\": \"Patient/Patient1\"",
+							"  },",
+							"  \"encounter\": {",
+							"    \"reference\": \"Encounter/Encounter1\"",
+							"  },",
+							"  \"requester\": {",
+							"    \"reference\": \"Practitioner/Practitioner1\"",
+							"  },",
+							"  \"medicationCodeableConcept\": {",
+							"    \"coding\": [",
+							"      {",
+							"        \"code\": \"376988009\",",
+							"        \"system\": \"http://snomed.info/sct\",",
+							"        \"display\": \"Levothyroxine sodium 75 microgram oral tablet\"",
+							"      }",
+							"    ]",
+							"  },",
+							"  \"dosageInstruction\": [",
+							"    {",
+							"      \"sequence\": 1,",
+							"      \"text\": \"75mcg daily\",",
+							"      \"timing\": {",
+							"        \"repeat\": {",
+							"          \"frequency\": 1,",
+							"          \"period\": 1,",
+							"          \"periodUnit\": \"d\"",
+							"        }",
+							"      },",
+							"      \"route\": {",
+							"        \"coding\": [",
+							"          {",
+							"            \"code\": \"26643006\",",
+							"            \"system\": \"http://snomed.info/sct\",",
+							"            \"display\": \"Oral Route (qualifier value)\"",
+							"          }",
+							"        ]",
+							"      },",
+							"      \"doseAndRate\": [",
+							"        {",
+							"          \"type\": {",
+							"            \"coding\": [",
+							"              {",
+							"                \"code\": \"ordered\",",
+							"                \"system\": \"http://terminology.hl7.org/CodeSystem/dose-rate-type\",",
+							"                \"display\": \"Ordered\"",
+							"              }",
+							"            ]",
+							"          },",
+							"          \"doseQuantity\": {",
+							"            \"value\": 75,",
+							"            \"code\": \"ug\",",
+							"            \"system\": \"http://unitsofmeasure.org\",",
+							"            \"unit\": \"mcg\"",
+							"          }",
+							"        }",
+							"      ]",
+							"    }",
+							"  ]",
+							"}",
+							"",
+							"const response = _.testPrepare(pm.response.json())",
+							"",
+							"pm.test(\"ActivityDefinition: Order Medication Activity $apply\", function () {",
+							"    pm.response.to.have.status(200)",
+							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"OrderMedicationParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"OrderMedicationActivity\",\n        \"meta\": {\n          \"profile\": [\n            \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequestactivity\"\n          ]\n        },\n        \"kind\": \"MedicationRequest\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequest\",\n        \"intent\": \"proposal\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/OrderMedicationActivity\",\n        \"name\": \"OrderMedicationActivity\",\n        \"title\": \"ActivityDefinition OrderMedicationActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"description\": \"Order a medication activity\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"order-medication\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Order a medication\"\n            }\n          ]\n        },\n        \"priority\": \"routine\",\n        \"doNotPerform\": false,\n        \"productCodeableConcept\": {\n          \"coding\": [\n            {\n              \"code\": \"376988009\",\n              \"system\": \"http://snomed.info/sct\",\n              \"display\": \"Levothyroxine sodium 75 microgram oral tablet\"\n            }\n          ]\n        },\n        \"dosage\": [\n          {\n            \"sequence\": 1,\n            \"text\": \"75mcg daily\",\n            \"timing\": {\n              \"repeat\": {\n                \"frequency\": 1,\n                \"period\": 1,\n                \"periodUnit\": \"d\"\n              }\n            },\n            \"route\": {\n              \"coding\": [\n                {\n                  \"code\": \"26643006\",\n                  \"system\": \"http://snomed.info/sct\",\n                  \"display\": \"Oral Route (qualifier value)\"\n                }\n              ]\n            },\n            \"doseAndRate\": [\n              {\n                \"type\": {\n                  \"coding\": [\n                    {\n                      \"code\": \"ordered\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/dose-rate-type\",\n                      \"display\": \"Ordered\"\n                    }\n                  ]\n                },\n                \"doseQuantity\": {\n                  \"value\": 75,\n                  \"code\": \"ug\",\n                  \"system\": \"http://unitsofmeasure.org\",\n                  \"unit\": \"mcg\"\n                }\n              }\n            ]\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityDefinition-OrderServiceParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"  \"resourceType\": \"ServiceRequest\",",
+							"  \"id\": \"OrderServiceExpected\",",
+							"  \"meta\": {",
+							"    \"profile\": [",
+							"      \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-servicerequest\"",
+							"    ]",
+							"  },",
+							"  \"status\": \"draft\",",
+							"  \"doNotPerform\": false,",
+							"  \"intent\": \"proposal\",",
+							"  \"instantiatesCanonical\": [",
+							"    \"http://example.com/ActivityDefinition/OrderServiceActivity|0.1.0\"",
+							"  ],",
+							"  \"code\": {",
+							"    \"coding\": [",
+							"      {",
+							"        \"code\": \"order-service\",",
+							"        \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"        \"display\": \"Order a service\"",
+							"      }",
+							"    ]",
+							"  },",
+							"  \"subject\": {",
+							"    \"reference\": \"Patient/Patient1\"",
+							"  },",
+							"  \"encounter\": {",
+							"    \"reference\": \"Encounter/Encounter1\"",
+							"  },",
+							"  \"requester\": {",
+							"    \"reference\": \"Practitioner/Practitioner1\"",
+							"  }",
+							"}",
+							"",
+							"const response = _.testPrepare(pm.response.json())",
+							"",
+							"pm.test(\"ActivityDefinition: Order Service Activity $apply\", function () {",
+							"    pm.response.to.have.status(200)",
+							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"OrderServiceParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"OrderServiceActivity\",\n        \"meta\": {\n          \"profile\": [\n            \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-servicerequestactivity\"\n          ]\n        },\n        \"kind\": \"ServiceRequest\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-servicerequest\",\n        \"intent\": \"proposal\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/OrderServiceActivity\",\n        \"name\": \"OrderServiceActivity\",\n        \"title\": \"ActivityDefinition OrderServiceActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"description\": \"Example Activity Definition for a recommendation to order a service\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"order-service\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Order a service\"\n            }\n          ]\n        },\n        \"doNotPerform\": false\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"DetectedIssue\",\n              \"id\": \"DetectedIssue1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"TIME\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\n                    \"display\": \"Time-related Detected Issue\"\n                  }\n                ]\n              },\n              \"severity\": \"high\",\n              \"patient\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"identifiedDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Condition\",\n              \"id\": \"Condition1\",\n              \"clinicalStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"active\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-clinical\"\n                  }\n                ]\n              },\n              \"verificationStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"provisional\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-ver-status\"\n                  }\n                ]\n              },\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"problem-list-item\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/condition-category\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"422504002\",\n                    \"system\": \"http://snomed.info/sct\",\n                    \"display\": \"Ischemic stroke (disorder)\"\n                  }\n                ]\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"recordedDate\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Observation\",\n              \"id\": \"Inference1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"text\": \"Inference\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"effectiveDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Flag\",\n              \"id\": \"Flag1\",\n              \"status\": \"active\",\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"admin\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/flag-category\",\n                      \"display\": \"Administrative\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"text\": \"Flag\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"period\": {\n                \"start\": \"2023-01-01\",\n                \"end\": \"2024-01-01\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityDefinition-ProposeDiagnosisParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"  \"resourceType\": \"Task\",",
+							"  \"id\": \"ProposeDiagnosisExpected\",",
+							"  \"meta\": {",
+							"    \"profile\": [",
+							"      \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-proposediagnosistask\"",
+							"    ]",
+							"  },",
+							"  \"input\": [",
+							"    {",
+							"      \"type\": {",
+							"        \"coding\": [",
+							"          {",
+							"            \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"            \"code\": \"propose-diagnosis\",",
+							"            \"display\": \"Propose a diagnosis\"",
+							"          }",
+							"        ]",
+							"      },",
+							"      \"valueReference\": {",
+							"        \"reference\": \"Condition/Condition1\"",
+							"      }",
+							"    }",
+							"  ],",
+							"  \"status\": \"draft\",",
+							"  \"intent\": \"proposal\",",
+							"  \"instantiatesCanonical\": \"http://example.com/ActivityDefinition/ProposeDiagnosisActivity|0.1.0\",",
+							"  \"code\": {",
+							"    \"coding\": [",
+							"      {",
+							"        \"code\": \"propose-diagnosis\",",
+							"        \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"        \"display\": \"Propose a diagnosis\"",
+							"      }",
+							"    ]",
+							"  },",
+							"  \"for\": {",
+							"    \"reference\": \"Patient/Patient1\"",
+							"  },",
+							"  \"encounter\": {",
+							"    \"reference\": \"Encounter/Encounter1\"",
+							"  },",
+							"  \"requester\": {",
+							"    \"reference\": \"Practitioner/Practitioner1\"",
+							"  }",
+							"}",
+							"",
+							"const response = _.testPrepare(pm.response.json())",
+							"",
+							"pm.test(\"ActivityDefinition: Propose Diagnosis Activity $apply\", function () {",
+							"    pm.response.to.have.status(200)",
+							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"ProposeDiagnosisParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"ProposeDiagnosisActivity\",\n        \"meta\": {\n          \"profile\": [\n            \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-proposediagnosisactivity\"\n          ]\n        },\n        \"kind\": \"Task\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-proposediagnosistask\",\n        \"intent\": \"proposal\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/ProposeDiagnosisActivity\",\n        \"name\": \"ProposeDiagnosisActivity\",\n        \"title\": \"ActivityDefinition ProposeDiagnosisActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"description\": \"Example Activity Definition for a recommendation to propose a diagnosis\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"propose-diagnosis\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Propose a diagnosis\"\n            }\n          ]\n        },\n        \"doNotPerform\": false,\n        \"dynamicValue\": [\n          {\n            \"path\": \"input[0].type\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"code\"\n            }\n          },\n          {\n            \"path\": \"input[0].valueReference\",\n            \"expression\": {\n              \"language\": \"text/cql-identifier\",\n              \"expression\": \"Propose Diagnosis Reference\",\n              \"reference\": \"http://example.com/Library/ProposeDiagnosisLibrary\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"DetectedIssue\",\n              \"id\": \"DetectedIssue1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"TIME\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\n                    \"display\": \"Time-related Detected Issue\"\n                  }\n                ]\n              },\n              \"severity\": \"high\",\n              \"patient\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"identifiedDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Condition\",\n              \"id\": \"Condition1\",\n              \"clinicalStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"active\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-clinical\"\n                  }\n                ]\n              },\n              \"verificationStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"provisional\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-ver-status\"\n                  }\n                ]\n              },\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"problem-list-item\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/condition-category\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"422504002\",\n                    \"system\": \"http://snomed.info/sct\",\n                    \"display\": \"Ischemic stroke (disorder)\"\n                  }\n                ]\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"recordedDate\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Observation\",\n              \"id\": \"Inference1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"text\": \"Inference\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"effectiveDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Flag\",\n              \"id\": \"Flag1\",\n              \"status\": \"active\",\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"admin\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/flag-category\",\n                      \"display\": \"Administrative\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"text\": \"Flag\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"period\": {\n                \"start\": \"2023-01-01\",\n                \"end\": \"2024-01-01\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityDefinition-RecommendImmunizationParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"  \"resourceType\": \"ImmunizationRecommendation\",",
+							"  \"id\": \"RecommendImmunizationExpected\",",
+							"  \"meta\": {",
+							"    \"profile\": [",
+							"      \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-immunizationrecommendation\"",
+							"    ]",
+							"  },",
+							"  \"patient\": {",
+							"    \"reference\": \"Patient/Patient1\"",
+							"  },",
+							"  \"date\": \"2020-12-22\",",
+							"  \"recommendation\": [",
+							"    {",
+							"      \"vaccineCode\": [",
+							"        {",
+							"          \"coding\": [",
+							"            {",
+							"              \"code\": \"14745005\",",
+							"              \"system\": \"http://snomed.info/sct\",",
+							"              \"display\": \"Hepatitis A vaccine\"",
+							"            }",
+							"          ]",
+							"        }",
+							"      ],",
+							"      \"forecastStatus\": {",
+							"        \"coding\": [",
+							"          {",
+							"            \"code\": \"due\",",
+							"            \"system\": \"http://terminology.hl7.org/CodeSystem/immunization-recommendation-status\",",
+							"            \"display\": \"Due\"",
+							"          }",
+							"        ]",
+							"      }",
+							"    }",
+							"  ]",
+							"}",
+							"",
+							"",
+							"//vaccine code returns one object instead of an object at index 0 in an array",
+							"",
+							"const response = _.testPrepare(pm.response.json())",
+							"",
+							"pm.test(\"ActivityDefinition: Recommend Immunization Activity $apply\", function () {",
+							"    pm.response.to.have.status(200)",
+							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"RecommendImmunizationParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"RecommendImmunizationActivity\",\n        \"meta\": {\n          \"profile\": [\n            \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-immunizationactivity\"\n          ]\n        },\n        \"kind\": \"ImmunizationRecommendation\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-immunizationrecommendation\",\n        \"intent\": \"proposal\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/RecommendImmunizationActivity\",\n        \"name\": \"RecommendImmunizationActivity\",\n        \"title\": \"ActivityDefinition RecommendImmunizationActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"description\": \"Example Activity Definition for a recommendation to provide an immunization\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"recommend-immunization\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Recommend an immunization\"\n            }\n          ]\n        },\n        \"priority\": \"routine\",\n        \"doNotPerform\": false,\n        \"date\": \"2023-02-11T20:43:58+00:00\",\n        \"productCodeableConcept\": {\n          \"coding\": [\n            {\n              \"code\": \"14745005\",\n              \"system\": \"http://snomed.info/sct\",\n              \"display\": \"Hepatitis A vaccine\"\n            }\n          ]\n        },\n        \"timingDateTime\": \"2023-02-11T20:43:58+00:00\",\n        \"dynamicValue\": [\n          {\n            \"path\": \"recommendation[0].vaccineCode\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"productCodeableConcept\"\n            }\n          },\n          {\n            \"path\": \"recommendation[0].forecastStatus\",\n            \"expression\": {\n              \"language\": \"text/cql-expression\",\n              \"expression\": \"http://terminology.hl7.org/CodeSystem/immunization-recommendation-status#due \\\"Due\\\"\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"DetectedIssue\",\n              \"id\": \"DetectedIssue1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"TIME\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\n                    \"display\": \"Time-related Detected Issue\"\n                  }\n                ]\n              },\n              \"severity\": \"high\",\n              \"patient\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"identifiedDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Condition\",\n              \"id\": \"Condition1\",\n              \"clinicalStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"active\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-clinical\"\n                  }\n                ]\n              },\n              \"verificationStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"provisional\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-ver-status\"\n                  }\n                ]\n              },\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"problem-list-item\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/condition-category\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"422504002\",\n                    \"system\": \"http://snomed.info/sct\",\n                    \"display\": \"Ischemic stroke (disorder)\"\n                  }\n                ]\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"recordedDate\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Observation\",\n              \"id\": \"Inference1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"text\": \"Inference\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"effectiveDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Flag\",\n              \"id\": \"Flag1\",\n              \"status\": \"active\",\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"admin\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/flag-category\",\n                      \"display\": \"Administrative\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"text\": \"Flag\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"period\": {\n                \"start\": \"2023-01-01\",\n                \"end\": \"2024-01-01\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityDefinition-RecordDetectedIssueParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"  \"resourceType\": \"Task\",",
+							"  \"id\": \"RecordDetectedIssueExpected\",",
+							"  \"meta\": {",
+							"    \"profile\": [",
+							"      \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recorddetectedissuetask\"",
+							"    ]",
+							"  },",
+							"  \"input\": [",
+							"    {",
+							"      \"type\": {",
+							"        \"coding\": [",
+							"          {",
+							"            \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"            \"code\": \"record-detected-issue\",",
+							"            \"display\": \"Record a detected issue\"",
+							"          }",
+							"        ]",
+							"      },",
+							"      \"valueReference\": {",
+							"        \"reference\": \"DetectedIssue/DetectedIssue1\"",
+							"      }",
+							"    }",
+							"  ],",
+							"  \"status\": \"draft\",",
+							"  \"intent\": \"proposal\",",
+							"  \"instantiatesCanonical\": \"http://example.com/ActivityDefinition/RecordDetectedIssueActivity|0.1.0\",",
+							"  \"code\": {",
+							"    \"coding\": [",
+							"      {",
+							"        \"code\": \"record-detected-issue\",",
+							"        \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"        \"display\": \"Record a detected issue\"",
+							"      }",
+							"    ]",
+							"  },",
+							"  \"for\": {",
+							"    \"reference\": \"Patient/Patient1\"",
+							"  },",
+							"  \"encounter\": {",
+							"    \"reference\": \"Encounter/Encounter1\"",
+							"  },",
+							"  \"requester\": {",
+							"    \"reference\": \"Practitioner/Practitioner1\"",
+							"  }",
+							"}",
+							"",
+							"const response = _.testPrepare(pm.response.json())",
+							"",
+							"pm.test(\"ActivityDefinition: Record Detected Issue Activity $apply\", function () {",
+							"    pm.response.to.have.status(200)",
+							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"RecordDetectedIssueParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"RecordDetectedIssueActivity\",\n        \"meta\": {\n          \"profile\": [\n            \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recorddetectedissueactivity\"\n          ]\n        },\n        \"kind\": \"Task\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recorddetectedissuetask\",\n        \"intent\": \"proposal\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/RecordDetectedIssueActivity\",\n        \"name\": \"RecordDetectedIssueActivity\",\n        \"title\": \"ActivityDefinition RecordDetectedIssueActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"description\": \"Example Activity Definition for a recommendation to record a detected issue\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"record-detected-issue\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Record a detected issue\"\n            }\n          ]\n        },\n        \"doNotPerform\": false,\n        \"dynamicValue\": [\n          {\n            \"path\": \"input[0].type\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"code\"\n            }\n          },\n          {\n            \"path\": \"input[0].valueReference\",\n            \"expression\": {\n              \"language\": \"text/cql-identifier\",\n              \"expression\": \"Record Detected Issue Reference\",\n              \"reference\": \"http://example.com/Library/RecordDetectedIssueLibrary\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"DetectedIssue\",\n              \"id\": \"DetectedIssue1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"TIME\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\n                    \"display\": \"Time-related Detected Issue\"\n                  }\n                ]\n              },\n              \"severity\": \"high\",\n              \"patient\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"identifiedDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Condition\",\n              \"id\": \"Condition1\",\n              \"clinicalStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"active\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-clinical\"\n                  }\n                ]\n              },\n              \"verificationStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"provisional\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-ver-status\"\n                  }\n                ]\n              },\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"problem-list-item\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/condition-category\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"422504002\",\n                    \"system\": \"http://snomed.info/sct\",\n                    \"display\": \"Ischemic stroke (disorder)\"\n                  }\n                ]\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"recordedDate\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Observation\",\n              \"id\": \"Inference1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"text\": \"Inference\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"effectiveDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Flag\",\n              \"id\": \"Flag1\",\n              \"status\": \"active\",\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"admin\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/flag-category\",\n                      \"display\": \"Administrative\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"text\": \"Flag\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"period\": {\n                \"start\": \"2023-01-01\",\n                \"end\": \"2024-01-01\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityDefinition-RecordInferenceParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"  \"resourceType\": \"Task\",",
+							"  \"id\": \"RecordInferenceExpected\",",
+							"  \"meta\": {",
+							"    \"profile\": [",
+							"      \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recordinferencetask\"",
+							"    ]",
+							"  },",
+							"  \"input\": [",
+							"    {",
+							"      \"type\": {",
+							"        \"coding\": [",
+							"          {",
+							"            \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"            \"code\": \"record-inference\",",
+							"            \"display\": \"Record an inference\"",
+							"          }",
+							"        ]",
+							"      },",
+							"      \"valueReference\": {",
+							"        \"reference\": \"Observation/Inference1\"",
+							"      }",
+							"    }",
+							"  ],",
+							"  \"status\": \"draft\",",
+							"  \"intent\": \"proposal\",",
+							"  \"instantiatesCanonical\": \"http://example.com/ActivityDefinition/RecordInferenceActivity|0.1.0\",",
+							"  \"code\": {",
+							"    \"coding\": [",
+							"      {",
+							"        \"code\": \"record-inference\",",
+							"        \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"        \"display\": \"Record an inference\"",
+							"      }",
+							"    ]",
+							"  },",
+							"  \"for\": {",
+							"    \"reference\": \"Patient/Patient1\"",
+							"  },",
+							"  \"encounter\": {",
+							"    \"reference\": \"Encounter/Encounter1\"",
+							"  },",
+							"  \"requester\": {",
+							"    \"reference\": \"Practitioner/Practitioner1\"",
+							"  }",
+							"}",
+							"",
+							"const response = _.testPrepare(pm.response.json())",
+							"",
+							"pm.test(\"ActivityDefinition: Record Inference Activity $apply\", function () {",
+							"    pm.response.to.have.status(200)",
+							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"RecordInferenceParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"RecordInferenceActivity\",\n        \"meta\": {\n          \"profile\": [\n            \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recordinferenceactivity\"\n          ]\n        },\n        \"kind\": \"Task\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recordinferencetask\",\n        \"intent\": \"proposal\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/RecordInferenceActivity\",\n        \"name\": \"RecordInferenceActivity\",\n        \"title\": \"ActivityDefinition RecordInferenceActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"description\": \"Example Activity Definition for a recommendation to record an inference\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"record-inference\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Record an inference\"\n            }\n          ]\n        },\n        \"doNotPerform\": false,\n        \"dynamicValue\": [\n          {\n            \"path\": \"input[0].type\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"code\"\n            }\n          },\n          {\n            \"path\": \"input[0].valueReference\",\n            \"expression\": {\n              \"language\": \"text/cql-identifier\",\n              \"expression\": \"Record Inference Reference\",\n              \"reference\": \"http://example.com/Library/RecordInferenceLibrary\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"DetectedIssue\",\n              \"id\": \"DetectedIssue1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"TIME\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\n                    \"display\": \"Time-related Detected Issue\"\n                  }\n                ]\n              },\n              \"severity\": \"high\",\n              \"patient\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"identifiedDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Condition\",\n              \"id\": \"Condition1\",\n              \"clinicalStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"active\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-clinical\"\n                  }\n                ]\n              },\n              \"verificationStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"provisional\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-ver-status\"\n                  }\n                ]\n              },\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"problem-list-item\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/condition-category\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"422504002\",\n                    \"system\": \"http://snomed.info/sct\",\n                    \"display\": \"Ischemic stroke (disorder)\"\n                  }\n                ]\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"recordedDate\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Observation\",\n              \"id\": \"Inference1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"text\": \"Inference\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"effectiveDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Flag\",\n              \"id\": \"Flag1\",\n              \"status\": \"active\",\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"admin\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/flag-category\",\n                      \"display\": \"Administrative\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"text\": \"Flag\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"period\": {\n                \"start\": \"2023-01-01\",\n                \"end\": \"2024-01-01\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityDefinition-ReportFlagParameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expected = {",
+							"  \"resourceType\": \"Task\",",
+							"  \"id\": \"ReportFlagExpected\",",
+							"  \"meta\": {",
+							"    \"profile\": [",
+							"      \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportflagtask\"",
+							"    ]",
+							"  },",
+							"  \"input\": [",
+							"    {",
+							"      \"type\": {",
+							"        \"coding\": [",
+							"          {",
+							"            \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"            \"code\": \"report-flag\",",
+							"            \"display\": \"Report a flag\"",
+							"          }",
+							"        ]",
+							"      },",
+							"      \"valueReference\": {",
+							"        \"reference\": \"Flag/Flag1\"",
+							"      }",
+							"    }",
+							"  ],",
+							"  \"status\": \"draft\",",
+							"  \"intent\": \"proposal\",",
+							"  \"instantiatesCanonical\": \"http://example.com/ActivityDefinition/ReportFlagActivity|0.1.0\",",
+							"  \"code\": {",
+							"    \"coding\": [",
+							"      {",
+							"        \"code\": \"report-flag\",",
+							"        \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",",
+							"        \"display\": \"Report a flag\"",
+							"      }",
+							"    ]",
+							"  },",
+							"  \"for\": {",
+							"    \"reference\": \"Patient/Patient1\"",
+							"  },",
+							"  \"encounter\": {",
+							"    \"reference\": \"Encounter/Encounter1\"",
+							"  },",
+							"  \"requester\": {",
+							"    \"reference\": \"Practitioner/Practitioner1\"",
+							"  }",
+							"}",
+							"",
+							"const response = _.testPrepare(pm.response.json())",
+							"",
+							"pm.test(\"ActivityDefinition: Report Flag Activity $apply\", function () {",
+							"    pm.response.to.have.status(200)",
+							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json+fhir",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"ReportFlagParameters\",\n  \"parameter\": [\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"Patient/Patient1\"\n    },\n    {\n      \"name\": \"practitioner\",\n      \"valueString\": \"Practitioner/Practitioner1\"\n    },\n    {\n      \"name\": \"encounter\",\n      \"valueString\": \"Encounter/Encounter1\"\n    },\n    {\n      \"name\": \"activityDefinition\",\n      \"resource\": {\n        \"resourceType\": \"ActivityDefinition\",\n        \"id\": \"ReportFlagActivity\",\n        \"meta\": {\n          \"profile\": [\n            \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportflagactivity\"\n          ]\n        },\n        \"kind\": \"Task\",\n        \"profile\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportflagtask\",\n        \"intent\": \"proposal\",\n        \"extension\": [\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability\",\n            \"valueCode\": \"publishable\"\n          },\n          {\n            \"url\": \"http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel\",\n            \"valueCode\": \"structured\"\n          }\n        ],\n        \"url\": \"http://example.com/ActivityDefinition/ReportFlagActivity\",\n        \"name\": \"ReportFlagActivity\",\n        \"title\": \"ActivityDefinition ReportFlagActivity\",\n        \"status\": \"draft\",\n        \"experimental\": true,\n        \"publisher\": \"Example\",\n        \"jurisdiction\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"001\",\n                \"system\": \"http://unstats.un.org/unsd/methods/m49/m49.htm\",\n                \"display\": \"World\"\n              }\n            ]\n          }\n        ],\n        \"version\": \"0.1.0\",\n        \"description\": \"Example Activity Definition for a recommendation to report a flag\",\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"report-flag\",\n              \"system\": \"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\",\n              \"display\": \"Report a flag\"\n            }\n          ]\n        },\n        \"doNotPerform\": false,\n        \"dynamicValue\": [\n          {\n            \"path\": \"input[0].type\",\n            \"expression\": {\n              \"language\": \"text/fhirpath\",\n              \"expression\": \"code\"\n            }\n          },\n          {\n            \"path\": \"input[0].valueReference\",\n            \"expression\": {\n              \"language\": \"text/cql-identifier\",\n              \"expression\": \"Report Flag Reference\",\n              \"reference\": \"http://example.com/Library/ReportFlagLibrary\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"data\",\n      \"resource\": {\n        \"resourceType\": \"Bundle\",\n        \"id\": \"PatientTestBundle1\",\n        \"type\": \"collection\",\n        \"entry\": [\n          {\n            \"resource\": {\n              \"resourceType\": \"Patient\",\n              \"id\": \"Patient1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Encounter\",\n              \"id\": \"Encounter1\",\n              \"status\": \"in-progress\",\n              \"class\": {\n                \"code\": \"AMB\",\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"participant\": [\n                {\n                  \"individual\": {\n                    \"reference\": \"Practitioner/Practitioner1\"\n                  }\n                }\n              ]\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Practitioner\",\n              \"id\": \"Practitioner1\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"MedicationRequest\",\n              \"id\": \"PastMedicationRequest\",\n              \"status\": \"active\",\n              \"intent\": \"order\",\n              \"authoredOn\": \"2023-01-01\",\n              \"medicationCodeableConcept\": {\n                \"text\": \"Some medication\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              }\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"DetectedIssue\",\n              \"id\": \"DetectedIssue1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"TIME\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\n                    \"display\": \"Time-related Detected Issue\"\n                  }\n                ]\n              },\n              \"severity\": \"high\",\n              \"patient\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"identifiedDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Condition\",\n              \"id\": \"Condition1\",\n              \"clinicalStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"active\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-clinical\"\n                  }\n                ]\n              },\n              \"verificationStatus\": {\n                \"coding\": [\n                  {\n                    \"code\": \"provisional\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/condition-ver-status\"\n                  }\n                ]\n              },\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"problem-list-item\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/condition-category\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"422504002\",\n                    \"system\": \"http://snomed.info/sct\",\n                    \"display\": \"Ischemic stroke (disorder)\"\n                  }\n                ]\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"recordedDate\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Observation\",\n              \"id\": \"Inference1\",\n              \"status\": \"final\",\n              \"code\": {\n                \"text\": \"Inference\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"effectiveDateTime\": \"2023-01-01\"\n            }\n          },\n          {\n            \"resource\": {\n              \"resourceType\": \"Flag\",\n              \"id\": \"Flag1\",\n              \"status\": \"active\",\n              \"category\": [\n                {\n                  \"coding\": [\n                    {\n                      \"code\": \"admin\",\n                      \"system\": \"http://terminology.hl7.org/CodeSystem/flag-category\",\n                      \"display\": \"Administrative\"\n                    }\n                  ]\n                }\n              ],\n              \"code\": {\n                \"text\": \"Flag\"\n              },\n              \"subject\": {\n                \"reference\": \"Patient/Patient1\"\n              },\n              \"period\": {\n                \"start\": \"2023-01-01\",\n                \"end\": \"2024-01-01\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{cpgServer}}/ActivityDefinition/$apply?",
+					"host": [
+						"{{cpgServer}}"
+					],
+					"path": [
+						"ActivityDefinition",
+						"$apply"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"/**",
+					" * Delete the id and text as this can vary per request",
+					" */",
+					"Object.prototype.testPrepare = function testPrepare(resource) {",
+					"    delete resource.id;",
+					"    delete resource.text;",
+					"",
+					"    return resource;",
+					"}",
+					"",
+					"/**",
+					" * Does a deep equal comparison, uses console.log to show diffs if fails.",
+					" * ",
+					" * @example",
+					" * pm.test(\"My test\", function() {",
+					" *   _.expectToDeepEqual(pm.response.json(), expected, console);",
+					" * });",
+					" */",
+					"Object.prototype.expectToDeepEqual = (actual, expected, console = console) => {",
+					"    try {",
+					"        pm.expect(_.testPrepare(actual)).to.deep.equal(_.testPrepare(expected));",
+					"    } catch (e) {",
+					"        console.log({ actual: e.actual, expected: e.expected});",
+					"        e.message = `*** See Console *** ${e.message}`;",
+					"        throw new Error(e);",
+					"    }",
+					"}"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "cpgServer",
+			"value": "http://localhost:9001",
+			"type": "string"
+		},
+		{
+			"key": "contentEndpointAddress",
+			"value": "http://hapi.fhir.org/baseR4",
+			"type": "string"
+		},
+		{
+			"key": "contentEndpointType",
+			"value": "hl7-fhir-rest",
+			"type": "string"
+		},
+		{
+			"key": "terminologyEndpointAddress",
+			"value": "http://hapi.fhir.org/baseR4",
+			"type": "string"
+		},
+		{
+			"key": "terminologyEndpointType",
+			"value": "hl7-fhir-rest",
+			"type": "string"
+		},
+		{
+			"key": "dataEndpointAddress",
+			"value": "http://hapi.fhir.org/baseR4",
+			"type": "string"
+		},
+		{
+			"key": "dataEndpointType",
+			"value": "hl7-fhir-rest",
+			"type": "string"
+		}
+	]
+}

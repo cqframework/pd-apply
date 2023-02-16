@@ -20,12 +20,6 @@
       "valueCanonical": "http://hl7.org/fhir/uv/cpg/PlanDefinition/activity-example-pathway"
     }
   ],
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-isUnenrollment",
-      "valueBoolean": false
-    }
-  ],
   "status": "draft",
   "intent": "proposal",
   "instantiatesCanonical": "http://example.com/ActivityDefinition/EnrollPatientActivity|0.1.0",

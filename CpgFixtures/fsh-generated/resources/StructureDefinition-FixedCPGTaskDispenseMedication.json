@@ -60,20 +60,20 @@
             }
           ],
           "rules": "open",
-          "description": "Slice based on the component.code pattern"
+          "description": "Slice based on the input.code pattern"
         },
         "min": 1
       },
       {
-        "id": "Task.input:medicationRequest",
+        "id": "Task.input:medicationDispense",
         "path": "Task.input",
-        "sliceName": "medicationRequest",
+        "sliceName": "medicationDispense",
         "min": 1,
         "max": "1",
         "mustSupport": true
       },
       {
-        "id": "Task.input:medicationRequest.type",
+        "id": "Task.input:medicationDispense.type",
         "path": "Task.input.type",
         "fixedCodeableConcept": {
           "coding": [
@@ -86,7 +86,7 @@
         }
       },
       {
-        "id": "Task.input:medicationRequest.valueReference",
+        "id": "Task.input:medicationDispense.valueReference",
         "path": "Task.input.valueReference",
         "min": 1,
         "max": "1",

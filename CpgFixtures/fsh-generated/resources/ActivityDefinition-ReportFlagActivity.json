@@ -57,7 +57,7 @@
       }
     },
     {
-      "path": "input[0].value",
+      "path": "input[0].valueReference",
       "expression": {
         "language": "text/cql-identifier",
         "expression": "Report Flag Reference",

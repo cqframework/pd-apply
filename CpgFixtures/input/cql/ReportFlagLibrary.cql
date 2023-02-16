@@ -13,6 +13,6 @@ define "Flag":
 
 define "Report Flag Reference":
   if "Flag" is not null then
-    Reference { reference: string { value: 'Flag/' + "Flag".id } }
+    Tuple { reference: 'Flag/' + "Flag".id }
   else
-    Reference { reference: string { value: 'Flag/unknown' } }
+    Tuple { reference: 'Flag/unknown' }
