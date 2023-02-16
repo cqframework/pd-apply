@@ -128,13 +128,6 @@
       },
       {
         "reference": {
-          "reference": "TestScript/CollectInformationTest"
-        },
-        "name": "CollectInformationTest",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
           "reference": "ActivityDefinition/DispenseMedicationActivity"
         },
         "name": "DispenseMedicationActivity",

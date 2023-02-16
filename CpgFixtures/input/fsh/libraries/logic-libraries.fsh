@@ -1,3 +1,9 @@
+Instance: FHIRHelpers
+InstanceOf: Library
+* insert KnowledgeArtifactDefinitionMetadata(FHIRHelpers, Library)
+* type = http://terminology.hl7.org/CodeSystem/library-type#logic-library
+* content.id = "ig-loader-FHIRHelpers.cql"
+
 Instance: DispenseMedicationLibrary
 InstanceOf: Library
 * insert KnowledgeArtifactDefinitionMetadata(DispenseMedicationLibrary, Library)
