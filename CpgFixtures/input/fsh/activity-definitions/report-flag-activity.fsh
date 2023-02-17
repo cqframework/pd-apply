@@ -4,7 +4,7 @@ Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(ReportFlagActivity, ActivityDefinition)
 * description = "Example Activity Definition for a recommendation to report a flag"
 * kind = #Task
-* profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportflagtask"
+* profile = $cpg-reportflagtask
 * code = $cpg-activity-type#report-flag "Report a flag"
 * doNotPerform = false
 * intent = #proposal

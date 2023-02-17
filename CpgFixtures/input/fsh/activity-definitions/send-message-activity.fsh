@@ -4,7 +4,7 @@ Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(SendMessageActivity, ActivityDefinition)
 * description = "Example Activity Definition for a recommendation to send a message"
 * kind = #CommunicationRequest
-* profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest"
+* profile = $cpg-communicationrequest
 * code = $cpg-activity-type#send-message "Send a message"
 * doNotPerform = false
 * intent = #proposal
@@ -12,4 +12,4 @@ Usage: #example
   * path = "payload[0].contentString"
   * expression
     * language = #text/fhirpath
-    * expression = "'Patient Greeting: Hello, ' + %subject.name.given + ' Activity Definition Description: ' + description + ' Practinioner's given name: ' + %practioner.name.given"
+    * expression = "'Greeting: Hello! ' + %subject.name.given.first() + ' Message: ' + description + ' Practitioner: ' + %practitioner.name.given.first()"

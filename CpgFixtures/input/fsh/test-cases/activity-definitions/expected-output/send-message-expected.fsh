@@ -7,4 +7,4 @@ Usage: #example
 * encounter = Reference(Encounter1)
 * requester = Reference(Practitioner1)
 * payload
-  * contentString = "Patient Greeting: Hello, Alice Activity Definition Description: Example Activity Definition for a recommendation to send a message Practitioner's given name: Michael"
+  * contentString = "Greeting: Hello! Alice Message: Example Activity Definition for a recommendation to send a message Practitioner: Michael"

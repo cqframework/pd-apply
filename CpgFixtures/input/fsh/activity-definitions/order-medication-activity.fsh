@@ -4,7 +4,7 @@ Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(OrderMedicationActivity, ActivityDefinition)
 * description = "Order a medication activity"
 * kind = #MedicationRequest
-* profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequest"
+* profile = $cpg-medicationrequest
 * code = $cpg-activity-type#order-medication "Order a medication"
 * priority = #routine
 * doNotPerform = false

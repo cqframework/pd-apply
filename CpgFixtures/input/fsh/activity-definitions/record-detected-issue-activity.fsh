@@ -4,7 +4,7 @@ Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(RecordDetectedIssueActivity, ActivityDefinition)
 * description = "Example Activity Definition for a recommendation to record a detected issue"
 * kind = #Task
-* profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recorddetectedissuetask"
+* profile = $cpg-recorddetectedissuetask
 * code = $cpg-activity-type#record-detected-issue "Record a detected issue"
 * doNotPerform = false
 * intent = #proposal

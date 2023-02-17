@@ -61,14 +61,13 @@
           ],
           "rules": "open",
           "description": "Slice based on the input.code pattern"
-        },
-        "min": 1
+        }
       },
       {
         "id": "Task.input:medicationAdministration",
         "path": "Task.input",
         "sliceName": "medicationAdministration",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "mustSupport": true
       },

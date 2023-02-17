@@ -5,7 +5,7 @@ Usage: #example
 * extension[enrollIn].valueCanonical = "http://hl7.org/fhir/uv/cpg/PlanDefinition/activity-example-pathway"
 * description = "Example Activity Definition for a recommendation to enroll a patient in a pathway"
 * kind = #Task
-* profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollmenttask"
+* profile = $cpg-enrollmenttask
 * code = $cpg-activity-type#enrollment "Enroll in a pathway or strategy"
 * doNotPerform = false
 * intent = #proposal

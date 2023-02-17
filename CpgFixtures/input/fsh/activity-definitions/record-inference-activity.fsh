@@ -4,7 +4,7 @@ Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(RecordInferenceActivity, ActivityDefinition)
 * description = "Example Activity Definition for a recommendation to record an inference"
 * kind = #Task
-* profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recordinferencetask"
+* profile = $cpg-recordinferencetask
 * code = $cpg-activity-type#record-inference "Record an inference"
 * doNotPerform = false
 * intent = #proposal

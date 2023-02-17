@@ -53,7 +53,7 @@
       "path": "payload[0].contentString",
       "expression": {
         "language": "text/fhirpath",
-        "expression": "'Patient Greeting: Hello, ' + %subject.name.given + ' Activity Definition Description: ' + description + ' Practinioner's given name: ' + %practioner.name.given"
+        "expression": "'Greeting: Hello! ' + %subject.name.given.first() + ' Message: ' + description + ' Practitioner: ' + %practitioner.name.given.first()"
       }
     }
   ]
