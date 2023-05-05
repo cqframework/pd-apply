@@ -37,7 +37,7 @@ Then you might need to update the collection variables:
 
 Then in postman, from the "CPG Unit Tests - Activity Definitions" collection
 view, press the "Run" button. Failing tests will show in the postman console
-with the actual and expected for review.
+with the actual and expected for review. Same for the Plan Definitions.
 
 ### Using an instance of HAPI as a local content and terminology server:
 
@@ -46,11 +46,12 @@ You could use HAPI as a local content and terminology server:
 docker run -p 8080:8080 hapiproject/hapi:latest
 ```
 
-Then, the sequence of commands to build, bundle, then upload generated content is:
+There is the sequence of scripts provided to build, bundle, then upload
+generated content:
 ```
 ./bin/build-ig
-./bin/bundle-ig
-./bin/upload-bundle ./output/Bundle-generated-bundle.json http://localhost:8080/fhir
+./bin/bundle-artifacts
+./bin/put-artifacts
 ```
 
 ### Test cases
