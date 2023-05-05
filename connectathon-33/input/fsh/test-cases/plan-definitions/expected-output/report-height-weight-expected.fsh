@@ -16,7 +16,7 @@ Usage: #inline
 * subject = Reference(Patient1)
 * author = Reference(Practitioner1)
 * encounter = Reference(Encounter1)
-* instantiatesCanonical = "http://example.com/PlanDefinition/ReportWeightHeightPlan|0.1.0"
+* instantiatesCanonical = "http://example.org/PlanDefinition/ReportWeightHeightPlan|0.1.0"
 * extension
   * url = "http://hl7.org/fhir/StructureDefinition/resource-pertainsToGoal"
   * valueReference = Reference(WeightTargetGoal)

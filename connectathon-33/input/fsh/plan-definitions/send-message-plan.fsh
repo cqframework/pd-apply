@@ -9,4 +9,4 @@ Usage: #example
   * type = http://terminology.hl7.org/CodeSystem/action-type#create
   * description = "Send a message with a greeting"
   * code = $cpg-common-process#alerts-reminders-education "Alerts Reminders Education"
-  * definitionCanonical = "http://example.com/ActivityDefinition/SendMessageActivity"
+  * definitionCanonical = "http://example.org/ActivityDefinition/SendMessageActivity"

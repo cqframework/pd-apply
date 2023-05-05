@@ -1,5 +1,5 @@
 RuleSet: DefinitionMetadata(id, type)
-* url = "http://example.com/{type}/{id}"
+* url = "http://example.org/{type}/{id}"
 * name = "{id}"
 * title = "{type} {id}"
 * status = #draft
@@ -10,7 +10,7 @@ RuleSet: DefinitionMetadata(id, type)
 * status = #draft
 
 RuleSet: KnowledgeArtifactDefinitionMetadata(id, type)
-* url = "http://example.com/{type}/{id}"
+* url = "http://example.org/{type}/{id}"
 * name = "{id}"
 * title = "{type} {id}"
 * status = #draft

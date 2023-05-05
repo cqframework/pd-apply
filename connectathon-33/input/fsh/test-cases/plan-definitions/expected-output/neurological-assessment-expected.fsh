@@ -15,7 +15,7 @@ Usage: #inline
 * intent = #proposal
 * status = #draft
 * subject = Reference(Patient/Patient1)
-* instantiatesCanonical = "http://example.com/PlanDefinition/NeurologicalAssessmentPlan|0.1.0"
+* instantiatesCanonical = "http://example.org/PlanDefinition/NeurologicalAssessmentPlan|0.1.0"
 * author = Reference(Practitioner/Practitioner1)
 * encounter = Reference(Encounter/Encounter1)
 * action.title = "Order neurological exam"
@@ -29,7 +29,7 @@ Usage: #inline
 * meta.profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-servicerequest"
 * status = #draft
 * intent = #option
-* instantiatesCanonical = "http://example.com/ActivityDefinition/OrderServiceActivity|0.1.0"
+* instantiatesCanonical = "http://example.org/ActivityDefinition/OrderServiceActivity|0.1.0"
 * subject = Reference(Patient/Patient1)
 * encounter = Reference(Encounter/Encounter1)
 * requester = Reference(Practitioner/Practitioner1)

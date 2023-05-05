@@ -12,7 +12,7 @@ Usage: #inline
 * intent = #proposal
 * status = #draft
 * subject = Reference(Patient/Patient1)
-* instantiatesCanonical = "http://example.com/PlanDefinition/IschemicStrokePlan|0.1.0"
+* instantiatesCanonical = "http://example.org/PlanDefinition/IschemicStrokePlan|0.1.0"
 * author = Reference(Practitioner/Practitioner1)
 * encounter = Reference(Encounter/Encounter1)
 * action

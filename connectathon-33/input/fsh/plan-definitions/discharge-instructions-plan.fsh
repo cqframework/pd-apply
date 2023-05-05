@@ -12,4 +12,4 @@ Usage: #example
     * expression
       * language = #text/fhirpath
       * expression = "description + ' for ' + %subject.name.given.first()"
-  * definitionCanonical = "http://example.com/ActivityDefinition/SendMessageActivity"
+  * definitionCanonical = "http://example.org/ActivityDefinition/SendMessageActivity"

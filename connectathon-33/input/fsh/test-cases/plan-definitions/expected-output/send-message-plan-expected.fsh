@@ -17,7 +17,7 @@ Usage: #inline
 * subject = Reference(Patient1)
 * author = Reference(Practitioner1)
 * encounter = Reference(Encounter1)
-* instantiatesCanonical = "http://example.com/PlanDefinition/SendMessagePlan|0.1.0"
+* instantiatesCanonical = "http://example.org/PlanDefinition/SendMessagePlan|0.1.0"
 * action
   * title = "Greet the patient"
   * description = "Send a message with a greeting"

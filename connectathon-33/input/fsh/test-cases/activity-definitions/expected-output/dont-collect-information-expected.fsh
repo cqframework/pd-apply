@@ -6,7 +6,7 @@ Usage: #example
 * modifierExtension[doNotPerform]
   * url = "http://hl7.org/fhir/StructureDefinition/request-doNotPerform"
   * valueBoolean = true
-* instantiatesCanonical = "http://example.com/ActivityDefinition/DontCollectInformationActivity|0.1.0"
+* instantiatesCanonical = "http://example.org/ActivityDefinition/DontCollectInformationActivity|0.1.0"
 * code = $cpg-activity-type#collect-information "Collect information"
 * for = Reference(Patient1)
 * encounter = Reference(Encounter1)

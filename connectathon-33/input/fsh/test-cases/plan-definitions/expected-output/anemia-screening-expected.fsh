@@ -14,7 +14,7 @@ Usage: #inline
 * subject = Reference(Patient1)
 * author = Reference(Practitioner1)
 * encounter = Reference(Encounter1)
-* instantiatesCanonical = "http://example.com/PlanDefinition/AnemiaScreeningPlan|0.1.0"
+* instantiatesCanonical = "http://example.org/PlanDefinition/AnemiaScreeningPlan|0.1.0"
 * action
   * title = "Order CBC Lab Panel"
   * description = "Order CBC Lab Panel to screen for anemia"

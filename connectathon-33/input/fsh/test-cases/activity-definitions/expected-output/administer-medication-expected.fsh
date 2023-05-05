@@ -3,7 +3,7 @@ InstanceOf: FixedCPGTaskAdministerMedication
 Usage: #example
 * status = #draft
 * intent = #proposal
-* instantiatesCanonical = "http://example.com/ActivityDefinition/AdministerMedicationActivity|0.1.0"
+* instantiatesCanonical = "http://example.org/ActivityDefinition/AdministerMedicationActivity|0.1.0"
 * code = $cpg-activity-type#administer-medication "Administer a medication"
 * for = Reference(Patient1)
 * encounter = Reference(Encounter1)

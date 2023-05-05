@@ -4,7 +4,7 @@ Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(NeurologicalAssessmentPlan, PlanDefinition)
 * description = "Definition of a plan to recommend nuerological assessment"
 * type = $cpg-plan-type#clinical-protocol "Clinical Protocol"
-* library = "http://example.com/Library/NeurologicalAssessmentLibrary"
+* library = "http://example.org/Library/NeurologicalAssessmentLibrary"
 * action
   * title = "Order neurological exam"
   * dynamicValue
@@ -12,4 +12,4 @@ Usage: #example
     * expression
       * language = #text/cql-identifier
       * expression = "Timing of Service"
-  * definitionCanonical = "http://example.com/ActivityDefinition/OrderServiceActivity"
+  * definitionCanonical = "http://example.org/ActivityDefinition/OrderServiceActivity"

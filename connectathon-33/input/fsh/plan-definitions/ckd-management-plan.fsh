@@ -8,9 +8,9 @@ Usage: #example
   * title = "CKD Education"
   * description = "CKD Education at time of diagnosis"
   * code = $cpg-common-process#provide-counseling "Provide Counseling"
-  * definitionCanonical = "http://example.com/PlanDefinition/CKDEducationPlan"
+  * definitionCanonical = "http://example.org/PlanDefinition/CKDEducationPlan"
 * action[+]
   * title = "Follow Up Plan"
   * description = "Schedule follow up with nephrologist"
   * code = $cpg-common-process#monitor-and-follow-up-of-patient "Monitor and Follow-up of Patient"
-  * definitionCanonical = "http://example.com/PlanDefinition/CKDFollowUpPlan"
+  * definitionCanonical = "http://example.org/PlanDefinition/CKDFollowUpPlan"

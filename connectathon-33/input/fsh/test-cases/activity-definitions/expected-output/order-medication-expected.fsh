@@ -4,7 +4,7 @@ Usage: #example
 * status = #draft
 * doNotPerform = false
 * intent = #proposal
-* instantiatesCanonical = "http://example.com/ActivityDefinition/OrderMedicationActivity|0.1.0"
+* instantiatesCanonical = "http://example.org/ActivityDefinition/OrderMedicationActivity|0.1.0"
 * subject = Reference(Patient1)
 * encounter = Reference(Encounter1)
 * requester = Reference(Practitioner1)

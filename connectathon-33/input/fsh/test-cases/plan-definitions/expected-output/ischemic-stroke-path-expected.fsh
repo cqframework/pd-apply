@@ -21,7 +21,7 @@ Usage: #inline
 * intent = #proposal
 * status = #draft
 * subject = Reference(Patient/Patient1)
-* instantiatesCanonical = "http://example.com/PlanDefinition/IschemicStrokePathway|0.1.0"
+* instantiatesCanonical = "http://example.org/PlanDefinition/IschemicStrokePathway|0.1.0"
 * author = Reference(Practitioner/Practitioner1)
 * encounter = Reference(Encounter/Encounter1)
 * action[+]
@@ -41,7 +41,7 @@ InstanceOf: Task
 Usage: #inline
 * status = #draft
 * intent = #option
-* instantiatesCanonical = "http://example.com/ActivityDefinition/GenerateReportActivity|0.1.0"
+* instantiatesCanonical = "http://example.org/ActivityDefinition/GenerateReportActivity|0.1.0"
 * for = Reference(Patient/Patient1)
 * encounter = Reference(Encounter/Encounter1)
 * requester = Reference(Practitioner/Practitioner1)
@@ -57,7 +57,7 @@ Usage: #inline
 * intent = #option
 * status = #draft
 * subject = Reference(Patient/Patient1)
-* instantiatesCanonical = "http://example.com/PlanDefinition/IschemicStrokePlan|0.1.0"
+* instantiatesCanonical = "http://example.org/PlanDefinition/IschemicStrokePlan|0.1.0"
 * author = Reference(Practitioner/Practitioner1)
 * encounter = Reference(Encounter/Encounter1)
 * action
@@ -71,7 +71,7 @@ InstanceOf: MedicationRequest
 Usage: #inline
 * status = #draft
 * intent = #option
-* instantiatesCanonical = "http://example.com/ActivityDefinition/OrderMedicationActivity|0.1.0"
+* instantiatesCanonical = "http://example.org/ActivityDefinition/OrderMedicationActivity|0.1.0"
 * subject = Reference(Patient/Patient1)
 * requester = Reference(Practitioner/Practitioner1)
 * encounter = Reference(Encounter/Encounter1)
