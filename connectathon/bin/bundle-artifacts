@@ -1,0 +1,73 @@
+#!/usr/bin/env node
+
+const path = require('path')
+const fs = require('fs')
+
+const includePatterns = [
+    /^ActivityDefinition/,
+    /^Library/,
+    /^Measure/,
+    /^PlanDefinition/,
+    /^Questionnaire/,
+    /^StructureDefinition/,
+    /^SturctureMap/
+]
+const bundleFileName = path.resolve(path.join(__dirname), '..', 'temp', 'Bundle-generated.json')
+const outputDirectory = path.resolve(path.join(__dirname), '..', 'output')
+
+const bundle = { 
+    resourceType: 'Bundle', 
+    type: 'transaction', 
+    entry: [] 
+}
+
+const files = walk(outputDirectory)
+
+files.forEach((file) => {
+  let resource = fs.readFileSync(file)
+  let json = ''
+  if (resource) {
+    try {
+      json = JSON.parse(resource)
+    } catch (e) {
+      console.error('Error parsing file: ' + file + e)
+    }
+    if (json.resourceType) {
+      let fullUrl = `${json.resourceType}/${json.id}`
+      let entry = {}
+      entry.fullUrl = fullUrl
+      entry.resource = json
+      const request = {
+        method: 'PUT',
+        url: fullUrl,
+      }
+      entry.request = request
+      bundle.entry.push(entry)
+    }
+  }
+})
+
+fs.writeFileSync(bundleFileName, JSON.stringify(bundle), { force: true })
+console.log(`Bundle with ${bundle.entry.length} resources created: ` + bundleFileName)
+
+function walk(dir) {
+  const results = []
+  const list = fs.readdirSync(dir)
+  list.forEach(function (file) {
+    if (!includePatterns.some(pattern => file.match(pattern))) {
+        return
+    }
+
+    file = dir + '/' + file
+    const stat = fs.statSync(file)
+    if (stat && stat.isDirectory()) {
+      /* Recurse into a subdirectory */
+      results = results.concat(walk(file))
+    } else {
+      /* Is a JSON file */
+      const file_type = file.split('.').pop()
+      if (file_type == 'json') results.push(file)
+    }
+  })
+  return results
+}
