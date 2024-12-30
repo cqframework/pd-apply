@@ -1,0 +1,34 @@
+{
+  "resourceType" : "ActivityDefinition",
+  "id" : "RecommendImmunizationActivity",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-immunizationactivity"]
+  },
+  "url" : "http://example.org/ActivityDefinition/RecommendImmunizationActivity",
+  "version" : "0.2.0",
+  "name" : "RecommendImmunizationActivity",
+  "title" : "ActivityDefinition RecommendImmunizationActivity",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-17T14:41:38-05:00",
+  "publisher" : "Example Publisher",
+  "description" : "Example Activity Definition for a recommendation to provide an immunization",
+  "kind" : "MedicationRequest",
+  "profile" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-immunizationrequest",
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs",
+      "code" : "recommend-immunization"
+    }]
+  },
+  "intent" : "proposal",
+  "priority" : "routine",
+  "doNotPerform" : false,
+  "productCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "14745005",
+      "display" : "Hepatitis A vaccine"
+    }]
+  }
+}

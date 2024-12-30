@@ -9,7 +9,7 @@ name: CpgFixtures
 # title: Example Title
 # description: Example Implementation Guide for getting started with SUSHI
 status: draft # draft | active | retired | unknown
-version: 0.1.0
+version: 0.2.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2023+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
@@ -17,7 +17,7 @@ releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | re
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: Example Publisher
-  url: http://example.org/example-publisher
+  # url: http://example.org/example-publisher
   # email: test@example.org
 
 # The dependencies property corresponds to IG.dependsOn. The key is the
@@ -26,6 +26,7 @@ publisher:
 #
 dependencies:
   hl7.fhir.uv.cpg: 2.0.0
+  hl7.fhir.uv.sdc: current
 
 #   hl7.fhir.us.core: 3.1.0
 #   hl7.fhir.us.mcode:
@@ -69,9 +70,10 @@ dependencies:
 #   validation: [allow-any-extensions, no-broken-links]
 parameters:
   path-binary: ./input/cql
-  generation-off: true
   no-narrative:
     - '*/*'
+  default-version: true
+  apply-version: false
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │ The menu property will be used to generate the input/menu.xml file. The menu is represented    │

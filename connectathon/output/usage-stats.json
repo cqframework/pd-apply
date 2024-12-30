@@ -1,0 +1,101 @@
+{
+  "package": "fhir.example",
+  "version": "0.2.0",
+  "fhirVersion": "4.0.1",
+  "extensions": [],
+  "profiles": {
+    "Observation": [
+      {
+        "url": "http://example.org/StructureDefinition/ActiveRaTreatmentFeature",
+        "title": "Active RA Treatment Feature"
+      }
+    ]
+  },
+  "usage": {
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden": [
+      "Bundle.entry.resource.contained.item.item",
+      "Parameters.parameter.resource.contained.item.item",
+      "Questionnaire.item.item",
+      "QuestionnaireResponse.contained.item.item"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/request-doNotPerform": [
+      "Task"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/resource-pertainsToGoal": [
+      "Bundle.entry.resource"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name": [
+      "ImplementationGuide.definition.page",
+      "ImplementationGuide.definition.page.page"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
+      "ImplementationGuide.dependsOn"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
+      "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-assertionExpression": [
+      "StructureDefinition"
+    ],
+    "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith": [
+      "ActivityDefinition",
+      "Parameters.parameter.resource"
+    ],
+    "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollIn": [
+      "ActivityDefinition",
+      "Parameters.parameter.resource"
+    ],
+    "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-featureExpression": [
+      "StructureDefinition"
+    ],
+    "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-inferenceExpression": [
+      "StructureDefinition"
+    ],
+    "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportWith": [
+      "ActivityDefinition",
+      "Parameters.parameter.resource"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression": [
+      "Bundle.entry.resource.contained.item.item",
+      "Parameters.parameter.resource.contained.item.item",
+      "Questionnaire.item.item",
+      "QuestionnaireResponse.contained.item.item"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext": [
+      "Bundle.entry.resource.contained.item",
+      "Parameters.parameter.resource.contained.item",
+      "Questionnaire.item",
+      "QuestionnaireResponse.contained.item"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext": [
+      "Bundle.entry.resource.contained",
+      "Parameters.parameter.resource.contained",
+      "Questionnaire",
+      "QuestionnaireResponse.contained"
+    ]
+  }
+}

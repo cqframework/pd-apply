@@ -1,0 +1,77 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "DischargeFollowUpExpected",
+  "type" : "collection",
+  "entry" : [{
+    "fullUrl" : "http://apply-processor/RequestGroup/DischargeRequestGroup",
+    "resource" : {
+      "resourceType" : "RequestGroup",
+      "id" : "DischargeRequestGroup",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/resource-pertainsToGoal",
+        "valueReference" : {
+          "reference" : "Goal/PatientMonitoringGoal"
+        }
+      }],
+      "instantiatesCanonical" : ["http://example.org/PlanDefinition/DischargeFollowUpPlan|0.1.0"],
+      "status" : "draft",
+      "intent" : "proposal",
+      "subject" : {
+        "reference" : "Patient/Patient1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/Encounter1"
+      },
+      "author" : {
+        "reference" : "Practitioner/Practitioner1"
+      },
+      "action" : [{
+        "title" : "Monitor patient",
+        "description" : "Monitor patient post discharge",
+        "code" : [{
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process",
+            "code" : "monitor-and-follow-up-of-patient",
+            "display" : "Monitor and Follow-up of Patient"
+          }]
+        }],
+        "action" : [{
+          "title" : "Case management or referral",
+          "code" : [{
+            "coding" : [{
+              "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process",
+              "code" : "discharge-referral-of-patient",
+              "display" : "Discharge/Referral of Patient"
+            }]
+          }]
+        },
+        {
+          "title" : "Schedule follow-up visit",
+          "code" : [{
+            "coding" : [{
+              "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process",
+              "code" : "monitor-and-follow-up-of-patient",
+              "display" : "Monitor and Follow-up of Patient"
+            }]
+          }]
+        }]
+      }]
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Goal",
+      "id" : "PatientMonitoringGoal",
+      "meta" : {
+        "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-goal"]
+      },
+      "lifecycleStatus" : "proposed",
+      "description" : {
+        "text" : "Patient monitoring"
+      },
+      "subject" : {
+        "reference" : "Patient/Patient1"
+      }
+    }
+  }]
+}

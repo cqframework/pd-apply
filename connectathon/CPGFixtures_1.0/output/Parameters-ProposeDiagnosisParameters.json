@@ -1,0 +1,253 @@
+{
+  "resourceType" : "Parameters",
+  "id" : "ProposeDiagnosisParameters",
+  "parameter" : [{
+    "name" : "subject",
+    "valueString" : "Patient/Patient1"
+  },
+  {
+    "name" : "practitioner",
+    "valueString" : "Practitioner/Practitioner1"
+  },
+  {
+    "name" : "encounter",
+    "valueString" : "Encounter/Encounter1"
+  },
+  {
+    "name" : "activityDefinition",
+    "resource" : {
+      "resourceType" : "ActivityDefinition",
+      "id" : "ProposeDiagnosisActivity",
+      "meta" : {
+        "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-proposediagnosisactivity"]
+      },
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+        "valueCode" : "publishable"
+      },
+      {
+        "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+        "valueCode" : "structured"
+      }],
+      "url" : "http://example.org/ActivityDefinition/ProposeDiagnosisActivity",
+      "version" : "0.1.0",
+      "name" : "ProposeDiagnosisActivity",
+      "title" : "ActivityDefinition ProposeDiagnosisActivity",
+      "status" : "draft",
+      "experimental" : true,
+      "publisher" : "Example",
+      "description" : "Example Activity Definition for a recommendation to propose a diagnosis",
+      "jurisdiction" : [{
+        "coding" : [{
+          "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code" : "001",
+          "display" : "World"
+        }]
+      }],
+      "kind" : "Task",
+      "profile" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-proposediagnosistask",
+      "code" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+          "code" : "propose-diagnosis",
+          "display" : "Propose a diagnosis"
+        }]
+      },
+      "intent" : "proposal",
+      "doNotPerform" : false,
+      "dynamicValue" : [{
+        "path" : "input[0].type",
+        "expression" : {
+          "language" : "text/fhirpath",
+          "expression" : "%context.code"
+        }
+      },
+      {
+        "path" : "input[0].valueReference",
+        "expression" : {
+          "language" : "text/cql-identifier",
+          "expression" : "Propose Diagnosis Reference",
+          "reference" : "http://example.org/Library/ProposeDiagnosisLibrary"
+        }
+      }]
+    }
+  },
+  {
+    "name" : "data",
+    "resource" : {
+      "resourceType" : "Bundle",
+      "id" : "PatientTestBundle1",
+      "type" : "collection",
+      "entry" : [{
+        "resource" : {
+          "resourceType" : "Patient",
+          "id" : "Patient1",
+          "name" : [{
+            "given" : ["Alice"]
+          }]
+        }
+      },
+      {
+        "resource" : {
+          "resourceType" : "Encounter",
+          "id" : "Encounter1",
+          "status" : "in-progress",
+          "class" : {
+            "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+            "code" : "AMB"
+          },
+          "subject" : {
+            "reference" : "Patient/Patient1"
+          },
+          "participant" : [{
+            "individual" : {
+              "reference" : "Practitioner/Practitioner1"
+            }
+          }]
+        }
+      },
+      {
+        "resource" : {
+          "resourceType" : "Practitioner",
+          "id" : "Practitioner1",
+          "name" : [{
+            "given" : ["Michael"]
+          }]
+        }
+      },
+      {
+        "resource" : {
+          "resourceType" : "MedicationRequest",
+          "id" : "PastMedicationRequest",
+          "status" : "active",
+          "intent" : "order",
+          "medicationCodeableConcept" : {
+            "text" : "Some medication"
+          },
+          "subject" : {
+            "reference" : "Patient/Patient1"
+          },
+          "authoredOn" : "2023-01-01"
+        }
+      },
+      {
+        "resource" : {
+          "resourceType" : "Medication",
+          "id" : "CurrentMedication",
+          "status" : "active"
+        }
+      },
+      {
+        "resource" : {
+          "resourceType" : "Medication",
+          "id" : "PastMedication",
+          "status" : "inactive",
+          "form" : {
+            "coding" : [{
+              "system" : "http://snomed.info/sct",
+              "code" : "pill",
+              "display" : "Pill"
+            }]
+          }
+        }
+      },
+      {
+        "resource" : {
+          "resourceType" : "DetectedIssue",
+          "id" : "DetectedIssue1",
+          "status" : "final",
+          "code" : {
+            "coding" : [{
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+              "code" : "TIME",
+              "display" : "Time-related Detected Issue"
+            }]
+          },
+          "severity" : "high",
+          "patient" : {
+            "reference" : "Patient/Patient1"
+          },
+          "identifiedDateTime" : "2023-01-01"
+        }
+      },
+      {
+        "resource" : {
+          "resourceType" : "Condition",
+          "id" : "Condition1",
+          "clinicalStatus" : {
+            "coding" : [{
+              "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code" : "active"
+            }]
+          },
+          "verificationStatus" : {
+            "coding" : [{
+              "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code" : "provisional"
+            }]
+          },
+          "category" : [{
+            "coding" : [{
+              "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+              "code" : "problem-list-item"
+            }]
+          }],
+          "code" : {
+            "coding" : [{
+              "system" : "http://snomed.info/sct",
+              "code" : "422504002",
+              "display" : "Ischemic stroke (disorder)"
+            }]
+          },
+          "subject" : {
+            "reference" : "Patient/Patient1"
+          },
+          "recordedDate" : "2023-01-01"
+        }
+      },
+      {
+        "resource" : {
+          "resourceType" : "Observation",
+          "id" : "Inference1",
+          "status" : "final",
+          "code" : {
+            "coding" : [{
+              "system" : "http://snomed.info/sct",
+              "code" : "448765001",
+              "display" : "Unintentional weight loss (finding)"
+            }],
+            "text" : "Inference"
+          },
+          "subject" : {
+            "reference" : "Patient/Patient1"
+          },
+          "effectiveDateTime" : "2023-01-01"
+        }
+      },
+      {
+        "resource" : {
+          "resourceType" : "Flag",
+          "id" : "Flag1",
+          "status" : "active",
+          "category" : [{
+            "coding" : [{
+              "system" : "http://terminology.hl7.org/CodeSystem/flag-category",
+              "code" : "admin",
+              "display" : "Administrative"
+            }]
+          }],
+          "code" : {
+            "text" : "Flag"
+          },
+          "subject" : {
+            "reference" : "Patient/Patient1"
+          },
+          "period" : {
+            "start" : "2023-01-01",
+            "end" : "2024-01-01"
+          }
+        }
+      }]
+    }
+  }]
+}

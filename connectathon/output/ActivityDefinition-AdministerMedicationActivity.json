@@ -1,0 +1,43 @@
+{
+  "resourceType" : "ActivityDefinition",
+  "id" : "AdministerMedicationActivity",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-administermedicationactivity"]
+  },
+  "url" : "http://example.org/ActivityDefinition/AdministerMedicationActivity",
+  "version" : "0.2.0",
+  "name" : "AdministerMedicationActivity",
+  "title" : "ActivityDefinition AdministerMedicationActivity",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-17T14:41:38-05:00",
+  "publisher" : "Example Publisher",
+  "description" : "Example Activity Definition for a recommendation to administer a medication",
+  "kind" : "Task",
+  "profile" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-administermedicationtask",
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs",
+      "code" : "administer-medication",
+      "display" : "Administer a medication"
+    }]
+  },
+  "intent" : "proposal",
+  "doNotPerform" : false,
+  "dynamicValue" : [{
+    "path" : "input[0].type.coding[0]",
+    "expression" : {
+      "language" : "text/cql-identifier",
+      "expression" : "Medication Request Code",
+      "reference" : "http://example.org/Library/AdministerMedicationLibrary|0.2.0"
+    }
+  },
+  {
+    "path" : "input[0].valueReference",
+    "expression" : {
+      "language" : "text/cql-identifier",
+      "expression" : "Medication Proposal Reference",
+      "reference" : "http://example.org/Library/AdministerMedicationLibrary|0.2.0"
+    }
+  }]
+}

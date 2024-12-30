@@ -18,4 +18,4 @@ Usage: #example
   * expression
     * language = #text/cql-identifier
     * expression = "Record Inference Reference"
-    * reference = Canonical(RecordInferenceLibrary)
+    * reference = Canonical(RecordInferenceLibrary|0.2.0)

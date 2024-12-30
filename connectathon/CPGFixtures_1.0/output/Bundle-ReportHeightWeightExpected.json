@@ -1,0 +1,68 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "ReportHeightWeightExpected",
+  "type" : "collection",
+  "entry" : [{
+    "fullUrl" : "http://apply-processor/RequestGroup/ReportHeightWeightRequestGroup",
+    "resource" : {
+      "resourceType" : "RequestGroup",
+      "id" : "ReportHeightWeightRequestGroup",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/resource-pertainsToGoal",
+        "valueReference" : {
+          "reference" : "Goal/WeightTargetGoal"
+        }
+      }],
+      "instantiatesCanonical" : ["http://example.org/PlanDefinition/ReportWeightHeightPlan|0.1.0"],
+      "status" : "draft",
+      "intent" : "proposal",
+      "subject" : {
+        "reference" : "Patient/Patient1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/Encounter1"
+      },
+      "author" : {
+        "reference" : "Practitioner/Practitioner1"
+      },
+      "action" : [{
+        "title" : "Report Weight",
+        "description" : "Report weight metric upon admission",
+        "code" : [{
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process",
+            "code" : "diagnostic-testing",
+            "display" : "Conduct Diagnostic Tests"
+          }]
+        }]
+      },
+      {
+        "title" : "Report Height",
+        "description" : "Report height metric upon admission",
+        "code" : [{
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process",
+            "code" : "diagnostic-testing",
+            "display" : "Conduct Diagnostic Tests"
+          }]
+        }]
+      }]
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Goal",
+      "id" : "WeightTargetGoal",
+      "meta" : {
+        "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-goal"]
+      },
+      "lifecycleStatus" : "proposed",
+      "description" : {
+        "text" : "Weight target"
+      },
+      "subject" : {
+        "reference" : "Patient/Patient1"
+      }
+    }
+  }]
+}

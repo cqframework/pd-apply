@@ -1,0 +1,34 @@
+{
+  "resourceType" : "ActivityDefinition",
+  "id" : "DontSendMessageActivity",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationactivity"]
+  },
+  "url" : "http://example.org/ActivityDefinition/DontSendMessageActivity",
+  "version" : "0.2.0",
+  "name" : "DontSendMessageActivity",
+  "title" : "ActivityDefinition DontSendMessageActivity",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-17T14:41:38-05:00",
+  "publisher" : "Example Publisher",
+  "description" : "Example Activity Definition for a recommendation not to send a message",
+  "kind" : "CommunicationRequest",
+  "profile" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest",
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs",
+      "code" : "send-message",
+      "display" : "Send a message"
+    }]
+  },
+  "intent" : "proposal",
+  "doNotPerform" : true,
+  "dynamicValue" : [{
+    "path" : "payload[0].contentString",
+    "expression" : {
+      "language" : "text/fhirpath",
+      "expression" : "'Hello! ' + %context.description"
+    }
+  }]
+}

@@ -1,0 +1,33 @@
+{
+  "resourceType" : "MedicationRequest",
+  "id" : "RecommendImmunizationExpected",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-immunizationrequest"]
+  },
+  "status" : "draft",
+  "intent" : "proposal",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs",
+      "code" : "recommend-immunization"
+    }]
+  }],
+  "doNotPerform" : false,
+  "medicationCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "14745005",
+      "display" : "Hepatitis A vaccine"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/Patient1"
+  },
+  "encounter" : {
+    "reference" : "Encounter/Encounter1"
+  },
+  "requester" : {
+    "reference" : "Practitioner/Practitioner1"
+  },
+  "instantiatesCanonical" : ["http://example.org/ActivityDefinition/RecommendImmunizationActivity"]
+}

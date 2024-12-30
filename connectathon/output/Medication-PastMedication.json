@@ -1,0 +1,12 @@
+{
+  "resourceType" : "Medication",
+  "id" : "PastMedication",
+  "status" : "inactive",
+  "form" : {
+    "coding" : [{
+      "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code" : "212033",
+      "display" : "Aspirin 325 mg oral tablet"
+    }]
+  }
+}

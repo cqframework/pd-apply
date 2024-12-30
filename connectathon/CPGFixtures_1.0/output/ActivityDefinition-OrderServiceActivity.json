@@ -1,0 +1,42 @@
+{
+  "resourceType" : "ActivityDefinition",
+  "id" : "OrderServiceActivity",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-servicerequestactivity"]
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode" : "publishable"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode" : "structured"
+  }],
+  "url" : "http://example.org/ActivityDefinition/OrderServiceActivity",
+  "version" : "0.1.0",
+  "name" : "OrderServiceActivity",
+  "title" : "ActivityDefinition OrderServiceActivity",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-06T14:19:43-05:00",
+  "publisher" : "Example Publisher",
+  "contact" : [{
+    "name" : "Example Publisher",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://example.org/example-publisher"
+    }]
+  }],
+  "description" : "Example Activity Definition for a recommendation to order a service",
+  "kind" : "ServiceRequest",
+  "profile" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-servicerequest",
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+      "code" : "order-service",
+      "display" : "Order a service"
+    }]
+  },
+  "intent" : "proposal",
+  "doNotPerform" : false
+}

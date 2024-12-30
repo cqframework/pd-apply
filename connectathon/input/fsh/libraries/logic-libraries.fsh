@@ -69,3 +69,15 @@ InstanceOf: Library
 * insert KnowledgeArtifactDefinitionMetadata(NeurologicalAssessmentLibrary, Library)
 * type = http://terminology.hl7.org/CodeSystem/library-type#logic-library
 * content.id = "ig-loader-NeurologicalAssessmentLibrary.cql"
+
+Instance: RaMonitoringRecommendationLibrary
+InstanceOf: Library
+* insert KnowledgeArtifactDefinitionMetadata(RaMonitoringRecommendationLibrary, Library)
+* type = http://terminology.hl7.org/CodeSystem/library-type#logic-library
+* content.id = "ig-loader-RaMonitoringRecommendationLibrary.cql"
+
+Instance: ActiveRaTreatmentFeatureLogic
+InstanceOf: Library
+* insert KnowledgeArtifactDefinitionMetadata(ActiveRaTreatmentFeatureLogic, Library)
+* type = http://terminology.hl7.org/CodeSystem/library-type#logic-library
+* content.id = "ig-loader-ActiveRaTreatmentFeatureLogic.cql"

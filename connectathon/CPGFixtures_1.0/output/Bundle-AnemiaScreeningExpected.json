@@ -1,0 +1,42 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "AnemiaScreeningExpected",
+  "type" : "collection",
+  "entry" : [{
+    "fullUrl" : "http://apply-processor/RequestGroup/AnemiaScreeningRequestGroup",
+    "resource" : {
+      "resourceType" : "RequestGroup",
+      "id" : "AnemiaScreeningRequestGroup",
+      "instantiatesCanonical" : ["http://example.org/PlanDefinition/AnemiaScreeningPlan|0.1.0"],
+      "status" : "draft",
+      "intent" : "proposal",
+      "subject" : {
+        "reference" : "Patient/Patient1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/Encounter1"
+      },
+      "author" : {
+        "reference" : "Practitioner/Practitioner1"
+      },
+      "action" : [{
+        "title" : "Order CBC Lab Panel",
+        "description" : "Order CBC Lab Panel to screen for anemia",
+        "code" : [{
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process",
+            "code" : "diagnostic-testing",
+            "display" : "Conduct Diagnostic Tests"
+          }]
+        }],
+        "condition" : [{
+          "kind" : "applicability",
+          "expression" : {
+            "language" : "text/cql-identifier",
+            "expression" : "Needs CBC"
+          }
+        }]
+      }]
+    }
+  }]
+}

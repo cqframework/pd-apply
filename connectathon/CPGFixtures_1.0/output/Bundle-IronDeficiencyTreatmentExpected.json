@@ -1,0 +1,24 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "IronDeficiencyTreatmentExpected",
+  "type" : "collection",
+  "entry" : [{
+    "fullUrl" : "http://apply-processor/RequestGroup/IronDeficiencyTreatmentRequestGroup",
+    "resource" : {
+      "resourceType" : "RequestGroup",
+      "id" : "IronDeficiencyTreatmentRequestGroup",
+      "instantiatesCanonical" : ["http://example.org/PlanDefinition/IronDeficiencyTreatmentPlan|0.1.0"],
+      "status" : "draft",
+      "intent" : "proposal",
+      "subject" : {
+        "reference" : "Patient/Patient1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/Encounter1"
+      },
+      "author" : {
+        "reference" : "Practitioner/Practitioner1"
+      }
+    }
+  }]
+}

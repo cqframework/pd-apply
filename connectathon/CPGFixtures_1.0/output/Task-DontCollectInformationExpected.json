@@ -1,0 +1,40 @@
+{
+  "resourceType" : "Task",
+  "id" : "DontCollectInformationExpected",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask"]
+  },
+  "modifierExtension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/request-doNotPerform",
+    "valueBoolean" : true
+  }],
+  "instantiatesCanonical" : "http://example.org/ActivityDefinition/DontCollectInformationActivity|0.1.0",
+  "status" : "draft",
+  "intent" : "proposal",
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+      "code" : "collect-information",
+      "display" : "Collect information"
+    }]
+  },
+  "for" : {
+    "reference" : "Patient/Patient1"
+  },
+  "encounter" : {
+    "reference" : "Encounter/Encounter1"
+  },
+  "requester" : {
+    "reference" : "Practitioner/Practitioner1"
+  },
+  "input" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+        "code" : "collect-information",
+        "display" : "Collect information"
+      }]
+    },
+    "valueCanonical" : "http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation"
+  }]
+}

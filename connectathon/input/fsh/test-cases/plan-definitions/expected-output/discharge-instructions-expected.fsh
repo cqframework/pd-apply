@@ -2,12 +2,8 @@ Instance: DischargeInstructionsExpected
 InstanceOf: Bundle
 Usage: #example
 * type = #collection
-* entry[+]
-  * fullUrl = "http://apply-processor/RequestGroup/DischargeInstructionsRequestGroup"
-  * resource = DischargeInstructionsRequestGroup
-* entry[+]
-  * fullUrl = "http://apply-processor/CommunicationRequest/DischargeMessageRequest"
-  * resource = DischargeMessageRequest
+* insert BundleEntry(DischargeInstructionsRequestGroup, RequestGroup)
+* insert BundleEntry(DischargeMessageRequest, CommunicationRequest)
 
 Instance: DischargeInstructionsRequestGroup
 InstanceOf: RequestGroup
@@ -17,11 +13,11 @@ Usage: #inline
 * subject = Reference(Patient1)
 * author = Reference(Practitioner1)
 * encounter = Reference(Encounter1)
-* instantiatesCanonical = "http://example.org/PlanDefinition/DischargeInstructionsPlan|0.1.0"
+* instantiatesCanonical = Canonical(DischargeInstructionsPlan|0.2.0)
 * action
   * title = "Send message with discharge instructions"
   * code = $cpg-common-process#provide-counseling "Provide Counseling"
-  * type = http://terminology.hl7.org/CodeSystem/action-type#create
+  * type = $action-type#create
   * resource = Reference(CommunicationRequest/DischargeMessageRequest)
 
 Instance: DischargeMessageRequest

@@ -18,4 +18,4 @@ Usage: #example
   * expression
     * language = #text/cql-identifier
     * expression = "Record Detected Issue Reference"
-    * reference = Canonical(RecordDetectedIssueLibrary)
+    * reference = Canonical(RecordDetectedIssueLibrary|0.2.0)

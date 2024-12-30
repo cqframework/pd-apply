@@ -1,0 +1,21 @@
+{
+  "resourceType" : "CommunicationRequest",
+  "id" : "DontSendMessageExpected",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest"]
+  },
+  "status" : "draft",
+  "doNotPerform" : true,
+  "subject" : {
+    "reference" : "Patient/Patient1"
+  },
+  "encounter" : {
+    "reference" : "Encounter/Encounter1"
+  },
+  "payload" : [{
+    "contentString" : "Hello! Example Activity Definition for a recommendation not to send a message"
+  }],
+  "requester" : {
+    "reference" : "Practitioner/Practitioner1"
+  }
+}

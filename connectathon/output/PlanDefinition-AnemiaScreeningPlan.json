@@ -1,0 +1,68 @@
+{
+  "resourceType" : "PlanDefinition",
+  "id" : "AnemiaScreeningPlan",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableplandefinition"]
+  },
+  "url" : "http://example.org/PlanDefinition/AnemiaScreeningPlan",
+  "version" : "0.2.0",
+  "name" : "AnemiaScreeningPlan",
+  "title" : "PlanDefinition AnemiaScreeningPlan",
+  "type" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code" : "clinical-protocol",
+      "display" : "Clinical Protocol"
+    }]
+  },
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-17T14:41:38-05:00",
+  "publisher" : "Example Publisher",
+  "description" : "Definition of plan to screen for iron defeciency anemia",
+  "library" : ["http://example.org/Library/AnemiaScreeningLibrary|0.2.0"],
+  "action" : [{
+    "title" : "Recommend CBC Lab Panel",
+    "description" : "Recommend CBC Lab Panel",
+    "code" : [{
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs",
+        "code" : "diagnostic-testing",
+        "display" : "Conduct Diagnostic Tests"
+      }]
+    }],
+    "condition" : [{
+      "kind" : "applicability",
+      "expression" : {
+        "language" : "text/cql-identifier",
+        "expression" : "Needs CBC"
+      }
+    }],
+    "action" : [{
+      "title" : "Order CBC Lab Panel",
+      "description" : "Order CBC Lab Panel to screen for anemia"
+    }]
+  },
+  {
+    "title" : "Recommend serum ferritin",
+    "description" : "Recommend serum ferritin",
+    "code" : [{
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs",
+        "code" : "diagnostic-testing",
+        "display" : "Conduct Diagnostic Tests"
+      }]
+    }],
+    "condition" : [{
+      "kind" : "applicability",
+      "expression" : {
+        "language" : "text/cql-identifier",
+        "expression" : "Needs serum ferritin"
+      }
+    }],
+    "action" : [{
+      "title" : "Order serum ferritin",
+      "description" : "Order serum ferritin to monitor iron status"
+    }]
+  }]
+}

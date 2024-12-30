@@ -1,0 +1,34 @@
+{
+  "resourceType" : "ActivityDefinition",
+  "id" : "SendMessageActivity",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationactivity"]
+  },
+  "url" : "http://example.org/ActivityDefinition/SendMessageActivity",
+  "version" : "0.2.0",
+  "name" : "SendMessageActivity",
+  "title" : "ActivityDefinition SendMessageActivity",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-17T14:41:38-05:00",
+  "publisher" : "Example Publisher",
+  "description" : "Example Activity Definition for a recommendation to send a message",
+  "kind" : "CommunicationRequest",
+  "profile" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest",
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs",
+      "code" : "send-message",
+      "display" : "Send a message"
+    }]
+  },
+  "intent" : "proposal",
+  "doNotPerform" : false,
+  "dynamicValue" : [{
+    "path" : "payload[0].contentString",
+    "expression" : {
+      "language" : "text/fhirpath",
+      "expression" : "'Greeting: Hello! ' + %subject.name.given.first() + ' Message: ' + %context.description + ' Practitioner: ' + %practitioner.name.given.first()"
+    }
+  }]
+}

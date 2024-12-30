@@ -1,0 +1,7 @@
+{
+  "resourceType" : "Patient",
+  "id" : "Patient1",
+  "name" : [{
+    "given" : ["Alice"]
+  }]
+}

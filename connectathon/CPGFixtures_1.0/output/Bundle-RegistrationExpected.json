@@ -1,0 +1,38 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "RegistrationExpected",
+  "type" : "collection",
+  "entry" : [{
+    "fullUrl" : "http://apply-processor/RequestGroup/RegistrationRequestGroup",
+    "resource" : {
+      "resourceType" : "RequestGroup",
+      "id" : "RegistrationRequestGroup",
+      "instantiatesCanonical" : ["http://example.org/$cpg-computableplandefinition/RegistrationPlan|0.1.0"],
+      "status" : "draft",
+      "intent" : "proposal",
+      "subject" : {
+        "reference" : "Patient/Patient1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/Encounter1"
+      },
+      "author" : {
+        "reference" : "Practitioner/Practitioner1"
+      },
+      "action" : [{
+        "title" : "Registration with questionnaire",
+        "description" : "Register patient using questionnaire",
+        "code" : [{
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process",
+            "code" : "registration",
+            "display" : "Registration"
+          }]
+        }],
+        "resource" : {
+          "reference" : "Questionnaire/RegistrationQuestionnaire"
+        }
+      }]
+    }
+  }]
+}

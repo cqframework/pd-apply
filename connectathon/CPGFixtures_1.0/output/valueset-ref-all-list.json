@@ -1,0 +1,266 @@
+{
+  "codeSystems" : [
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/action-participant-role",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ActionParticipantRole",
+      "title" : "Action participant role",
+      "description" : "Either a practitioner role or a relationship type.",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+        "http://terminology.hl7.org/CodeSystem/v2-0131",
+        "http://terminology.hl7.org/CodeSystem/practitioner-role",
+        "http://snomed.info/sct"
+      ],
+      "oids" : ["2.16.840.1.113883.4.642.3.796"],
+      "sources" : ["2.16.840.1.113883.4.642.3.796"],
+      "uses" : {
+      },
+      "StructureDefinition-FixedCPGComputableActivityDefinitionDocumentMedication.html" : "FixedCPGComputableActivityDefinitionDocumentMedication"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/action-participant-type",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ActionParticipantType",
+      "title" : "ActionParticipantType",
+      "description" : "The type of participant for the action.",
+      "systems" : ["http://hl7.org/fhir/action-participant-type"],
+      "oids" : ["2.16.840.1.113883.4.642.3.811"],
+      "sources" : ["2.16.840.1.113883.4.642.3.811"],
+      "uses" : {
+      },
+      "StructureDefinition-FixedCPGComputableActivityDefinitionDocumentMedication.html" : "FixedCPGComputableActivityDefinitionDocumentMedication"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/body-site",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "SNOMEDCTBodyStructures",
+      "title" : "SNOMED CT Body Structures",
+      "description" : "This value set includes all codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 442083009 (Anatomical or acquired body site (body structure)).",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["2.16.840.1.113883.4.642.3.141"],
+      "sources" : ["2.16.840.1.113883.4.642.3.141"],
+      "uses" : {
+      },
+      "StructureDefinition-FixedCPGComputableActivityDefinitionDocumentMedication.html" : "FixedCPGComputableActivityDefinitionDocumentMedication"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/definition-topic",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "DefinitionTopic",
+      "title" : "DefinitionTopic",
+      "description" : "High-level categorization of the definition, used for searching, sorting, and filtering.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/definition-topic"],
+      "oids" : ["2.16.840.1.113883.4.642.3.794"],
+      "sources" : ["2.16.840.1.113883.4.642.3.794"],
+      "uses" : {
+      },
+      "StructureDefinition-FixedCPGComputableActivityDefinitionDocumentMedication.html" : "FixedCPGComputableActivityDefinitionDocumentMedication"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/jurisdiction",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "Jurisdiction ValueSet",
+      "title" : "Jurisdiction",
+      "description" : "This value set defines a base set of codes for country, country subdivision and region    for indicating where a resource is intended to be used.   \r\n   \r\n   Note: The codes for countries and country subdivisions are taken from    [ISO 3166](https://www.iso.org/iso-3166-country-codes.html)    while the codes for \"supra-national\" regions are from    [UN Standard country or area codes for statistical use (M49)](http://unstats.un.org/unsd/methods/m49/m49.htm).",
+      "systems" : [
+        "http://unstats.un.org/unsd/methods/m49/m49.htm",
+        "urn:iso:std:iso:3166",
+        "urn:iso:std:iso:3166:-2"
+      ],
+      "oids" : ["2.16.840.1.113883.4.642.3.48"],
+      "sources" : ["2.16.840.1.113883.4.642.3.48"],
+      "uses" : {
+      },
+      "StructureDefinition-FixedCPGComputableActivityDefinitionDocumentMedication.html" : "FixedCPGComputableActivityDefinitionDocumentMedication"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/languages",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "CommonLanguages",
+      "title" : "Common Languages",
+      "description" : "This value set includes common codes from BCP-47 (http://tools.ietf.org/html/bcp47)",
+      "systems" : ["urn:ietf:bcp:47"],
+      "oids" : ["2.16.840.1.113883.4.642.3.20"],
+      "sources" : ["2.16.840.1.113883.4.642.3.20"],
+      "uses" : {
+      },
+      "StructureDefinition-FixedCPGTaskDispenseMedication.html" : "FixedCPGTaskDispenseMedication",
+      "StructureDefinition-FixedCPGTaskDocumentMedication.html" : "FixedCPGTaskDocumentMedication",
+      "StructureDefinition-FixedCPGComputableActivityDefinitionDocumentMedication.html" : "FixedCPGComputableActivityDefinitionDocumentMedication",
+      "StructureDefinition-FixedCPGTaskAdministerMedication.html" : "FixedCPGTaskAdministerMedication"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/medication-codes",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "SNOMEDCTMedicationCodes",
+      "title" : "SNOMED CT Medication Codes",
+      "description" : "This value set includes all drug or medicament substance codes and all pharmaceutical/biologic products from SNOMED CT - provided as an exemplar value set.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["2.16.840.1.113883.4.642.3.375"],
+      "sources" : ["2.16.840.1.113883.4.642.3.375"],
+      "uses" : {
+      },
+      "StructureDefinition-FixedCPGComputableActivityDefinitionDocumentMedication.html" : "FixedCPGComputableActivityDefinitionDocumentMedication"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/performer-role",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ProcedurePerformerRoleCodes",
+      "title" : "Procedure Performer Role Codes",
+      "description" : "This example value set defines the set of codes that can be used to indicate a role of a procedure performer.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["2.16.840.1.113883.4.642.3.433"],
+      "sources" : ["2.16.840.1.113883.4.642.3.433"],
+      "uses" : {
+      },
+      "StructureDefinition-FixedCPGTaskDispenseMedication.html" : "FixedCPGTaskDispenseMedication",
+      "StructureDefinition-FixedCPGTaskDocumentMedication.html" : "FixedCPGTaskDocumentMedication",
+      "StructureDefinition-FixedCPGTaskAdministerMedication.html" : "FixedCPGTaskAdministerMedication"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/procedure-code",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ProcedureCodes(SNOMEDCT)",
+      "title" : "Procedure Codes (SNOMED CT)",
+      "description" : "Procedure Code: All SNOMED CT procedure codes.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["2.16.840.1.113883.4.642.3.427"],
+      "sources" : ["2.16.840.1.113883.4.642.3.427"],
+      "uses" : {
+      },
+      "StructureDefinition-FixedCPGComputableActivityDefinitionDocumentMedication.html" : "FixedCPGComputableActivityDefinitionDocumentMedication"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/publication-status",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "PublicationStatus",
+      "title" : "PublicationStatus",
+      "description" : "The lifecycle status of an artifact.",
+      "systems" : ["http://hl7.org/fhir/publication-status"],
+      "oids" : ["2.16.840.1.113883.4.642.3.3"],
+      "sources" : ["2.16.840.1.113883.4.642.3.3"],
+      "uses" : {
+      },
+      "StructureDefinition-FixedCPGComputableActivityDefinitionDocumentMedication.html" : "FixedCPGComputableActivityDefinitionDocumentMedication"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/request-intent",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "RequestIntent",
+      "title" : "RequestIntent",
+      "description" : "Codes indicating the degree of authority/intentionality associated with a request.",
+      "systems" : ["http://hl7.org/fhir/request-intent"],
+      "oids" : ["2.16.840.1.113883.4.642.3.113"],
+      "sources" : ["2.16.840.1.113883.4.642.3.113"],
+      "uses" : {
+      },
+      "StructureDefinition-FixedCPGComputableActivityDefinitionDocumentMedication.html" : "FixedCPGComputableActivityDefinitionDocumentMedication"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/request-priority",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "RequestPriority",
+      "title" : "Request priority",
+      "description" : "The clinical priority of a diagnostic order.",
+      "systems" : ["http://hl7.org/fhir/request-priority"],
+      "oids" : ["2.16.840.1.113883.4.642.3.115"],
+      "sources" : ["2.16.840.1.113883.4.642.3.115"],
+      "uses" : {
+      },
+      "StructureDefinition-FixedCPGTaskDispenseMedication.html" : "FixedCPGTaskDispenseMedication",
+      "StructureDefinition-FixedCPGTaskDocumentMedication.html" : "FixedCPGTaskDocumentMedication",
+      "StructureDefinition-FixedCPGComputableActivityDefinitionDocumentMedication.html" : "FixedCPGComputableActivityDefinitionDocumentMedication",
+      "StructureDefinition-FixedCPGTaskAdministerMedication.html" : "FixedCPGTaskAdministerMedication"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/request-resource-types",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "RequestResourceType",
+      "title" : "RequestResourceType",
+      "description" : "A list of all the request resource types defined in this version of the FHIR specification.",
+      "systems" : ["http://hl7.org/fhir/request-resource-types"],
+      "oids" : ["2.16.840.1.113883.4.642.3.1058"],
+      "sources" : ["2.16.840.1.113883.4.642.3.1058"],
+      "uses" : {
+      },
+      "StructureDefinition-FixedCPGComputableActivityDefinitionDocumentMedication.html" : "FixedCPGComputableActivityDefinitionDocumentMedication"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/subject-type",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "SubjectType",
+      "title" : "Subject type",
+      "description" : "Possible types of subjects.",
+      "systems" : ["http://hl7.org/fhir/resource-types"],
+      "oids" : ["2.16.840.1.113883.4.642.3.775"],
+      "sources" : ["2.16.840.1.113883.4.642.3.775"],
+      "uses" : {
+      },
+      "StructureDefinition-FixedCPGComputableActivityDefinitionDocumentMedication.html" : "FixedCPGComputableActivityDefinitionDocumentMedication"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/task-intent",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "TaskIntent",
+      "title" : "TaskIntent",
+      "description" : "Distinguishes whether the task is a proposal, plan or full order.",
+      "systems" : [
+        "http://hl7.org/fhir/request-intent",
+        "http://hl7.org/fhir/task-intent"
+      ],
+      "oids" : ["2.16.840.1.113883.4.642.3.1240"],
+      "sources" : ["2.16.840.1.113883.4.642.3.1240"],
+      "uses" : {
+      },
+      "StructureDefinition-FixedCPGTaskDispenseMedication.html" : "FixedCPGTaskDispenseMedication",
+      "StructureDefinition-FixedCPGTaskDocumentMedication.html" : "FixedCPGTaskDocumentMedication",
+      "StructureDefinition-FixedCPGTaskAdministerMedication.html" : "FixedCPGTaskAdministerMedication"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/task-status",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "TaskStatus",
+      "title" : "TaskStatus",
+      "description" : "The current status of the task.",
+      "systems" : ["http://hl7.org/fhir/task-status"],
+      "oids" : ["2.16.840.1.113883.4.642.3.790"],
+      "sources" : ["2.16.840.1.113883.4.642.3.790"],
+      "uses" : {
+      },
+      "StructureDefinition-FixedCPGTaskDispenseMedication.html" : "FixedCPGTaskDispenseMedication",
+      "StructureDefinition-FixedCPGTaskDocumentMedication.html" : "FixedCPGTaskDocumentMedication",
+      "StructureDefinition-FixedCPGTaskAdministerMedication.html" : "FixedCPGTaskAdministerMedication"
+    },
+    {
+      "url" : "http://hl7.org/fhir/uv/cpg/ValueSet/cpg-activity-type",
+      "version" : "1.0.0",
+      "status" : "active",
+      "name" : "CPGActivityType",
+      "title" : "CPG Activity Type",
+      "description" : "A type of activity that can be performed as part of the delivery of guideline-based care",
+      "systems" : ["http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type"],
+      "uses" : {
+      },
+      "StructureDefinition-FixedCPGTaskDispenseMedication.html" : "FixedCPGTaskDispenseMedication",
+      "StructureDefinition-FixedCPGTaskDocumentMedication.html" : "FixedCPGTaskDocumentMedication",
+      "StructureDefinition-FixedCPGTaskAdministerMedication.html" : "FixedCPGTaskAdministerMedication"
+    }
+  ]
+}

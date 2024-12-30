@@ -1,14 +1,19 @@
 # Testing $apply
 
-Testing $apply operation for ActivityDefinition and PlanDefinition resources,
-as seen in the CPG IG.
+Testing $apply operation for ActivityDefinition and PlanDefinition resources, as seen in the CPG IG.
 
-## Generating content
+## Content
+
+This IG includes example content based on CPG 2.0. To see content using CPG 1.0, refer fo `CPGFixtures_1.0`.
+
+Pre-generated content is included for each IG in respective `output` folders.
+
+### Generating content
 
 This is a sushi project, see https://fshschool.org/docs/sushi for installing
 the required tooling.
 
-To create the full IG, including compile the CQL and update corresponding FHIR,
+To generate the full IG locally, including compile the CQL and update corresponding FHIR,
 and clean the output to only have FHIR json files, use this command from the
 project root:
 
@@ -18,8 +23,8 @@ project root:
 
 ## Testing
 
-Load the postman collection, found in `./postman`. The requests in the
-collection have both the key resource (e.g. the `PlanDefinition` or
+Load the postman collections, found in `./postman`. The requests in the
+collections have both the key resource (e.g. the `PlanDefinition` or
 `ActivityDefinition`) as well as fixture data (as the `data` parameter) copied
 from the generated content.
 
@@ -35,8 +40,7 @@ Then you might need to update the collection variables:
 | contentEndpointType     | Type of server (e.g. `hl7-fhir-rest`) |
 
 
-Then in postman, from the "CPG Unit Tests - Activity Definitions" collection
-view, press the "Run" button. Failing tests will show in the postman console
+Then in postman, press the "Run" button. Failing tests will show in the postman console
 with the actual and expected for review. Same for the Plan Definitions.
 
 ### Using an instance of HAPI as a local content and terminology server:

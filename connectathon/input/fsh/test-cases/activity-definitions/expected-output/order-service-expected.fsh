@@ -4,8 +4,8 @@ Usage: #example
 * status = #draft
 * doNotPerform = false
 * intent = #proposal
-* instantiatesCanonical = "http://example.org/ActivityDefinition/OrderServiceActivity|0.1.0"
-* code = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs#order-service "Order a service"
+* instantiatesCanonical = Canonical(OrderServiceActivity|0.2.0)
+* code = $cpg-activity-type-cs#order-service "Order a service"
 * subject = Reference(Patient1)
 * encounter = Reference(Encounter1)
 * requester = Reference(Practitioner1)

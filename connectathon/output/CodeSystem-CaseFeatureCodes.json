@@ -1,0 +1,18 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "CaseFeatureCodes",
+  "url" : "http://example.org/CodeSystem/CaseFeatureCodes",
+  "version" : "0.2.0",
+  "name" : "CaseFeatureCodes",
+  "title" : "Case Feature Codes",
+  "status" : "active",
+  "date" : "2025-01-17T14:41:38-05:00",
+  "publisher" : "Example Publisher",
+  "content" : "complete",
+  "count" : 1,
+  "concept" : [{
+    "code" : "on-ra-treatment",
+    "display" : "On RA Treatment Feature",
+    "definition" : "Currently taking medication to treat RA"
+  }]
+}

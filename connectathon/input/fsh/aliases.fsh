@@ -1,6 +1,16 @@
+// Vocabulary
+Alias: $rxnorm = http://www.nlm.nih.gov/research/umls/rxnorm
+Alias: $sct = http://snomed.info/sct
+Alias: $cpg-common-process = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs
+Alias: $cpg-activity-type-cs = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs
+Alias: $codesystem-observation-status = http://hl7.org/fhir/observation-status
+Alias: $cpg-plan-type = http://terminology.hl7.org/CodeSystem/plan-definition-type
+Alias: $dose-rate-type = http://terminology.hl7.org/CodeSystem/dose-rate-type
+Alias: $action-type = http://terminology.hl7.org/CodeSystem/action-type
+
+// CPG Profiles and Extensions
 Alias: $cpg-collectWith = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith
 Alias: $cpg-task = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-task
-
 Alias: $cpg-medicationrequestactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequestactivity
 Alias: $cpg-dispensemedicationactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationactivity
 Alias: $cpg-documentmedicationactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-documentmedicationactivity
@@ -16,7 +26,6 @@ Alias: $cpg-recorddetectedissueactivity = http://hl7.org/fhir/uv/cpg/StructureDe
 Alias: $cpg-recordinferenceactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recordinferenceactivity
 Alias: $cpg-reportflagactivity = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportflagactivity
 Alias: $cpg-immunizationrequest = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-immunizationrequest
-
 Alias: $cpg-documentmedicationtask = 	http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-documentmedicationtask
 Alias: $cpg-administermedicationtask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-administermedicationtask
 Alias: $cpg-questionnairetask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask
@@ -32,9 +41,10 @@ Alias: $cpg-immunizationrecommendation = http://hl7.org/fhir/uv/cpg/StructureDef
 Alias: $cpg-recorddetectedissuetask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recorddetectedissuetask
 Alias: $cpg-recordinferencetask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recordinferencetask
 Alias: $cpg-reportflagtask = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportflagtask
-
-Alias: $cpg-activity-type-cs = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs
-Alias: $cpg-common-process = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process
-
-Alias: $cpg-plan-type = http://terminology.hl7.org/CodeSystem/plan-definition-type
 Alias: $cpg-goal = http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-goal
+
+// SDC
+Alias: $launch-context = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
+Alias: $launch-context-codes = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext
+Alias: $item-population-context = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext
+Alias: $initial-expression = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression

@@ -2,11 +2,8 @@ Instance: ReportHeightWeightExpected
 InstanceOf: Bundle
 Usage: #example
 * type = #collection
-* entry[+]
-  * fullUrl = "http://apply-processor/RequestGroup/ReportHeightWeightRequestGroup"
-  * resource = ReportHeightWeightRequestGroup
-* entry[+]
-  * resource = WeightTargetGoal
+* insert BundleEntry(ReportHeightWeightRequestGroup, RequestGroup)
+* insert BundleEntry(WeightTargetGoal, Goal)
 
 Instance: ReportHeightWeightRequestGroup
 InstanceOf: RequestGroup
@@ -16,18 +13,22 @@ Usage: #inline
 * subject = Reference(Patient1)
 * author = Reference(Practitioner1)
 * encounter = Reference(Encounter1)
-* instantiatesCanonical = "http://example.org/PlanDefinition/ReportWeightHeightPlan|0.1.0"
-* extension
-  * url = "http://hl7.org/fhir/StructureDefinition/resource-pertainsToGoal"
-  * valueReference = Reference(WeightTargetGoal)
+* instantiatesCanonical = Canonical(ReportWeightHeightPlan|0.2.0)
+* extension[resource-pertainsToGoal].valueReference = Reference(WeightTargetGoal)
 * action[+]
-  * title = "Report Weight"
-  * description = "Report weight metric upon admission"
+  * title = "Recommend Weight Measurement"
+  * description = "Recommend Weight Measurement"
   * code = $cpg-common-process#diagnostic-testing "Conduct Diagnostic Tests"
+  * action[+]
+    * title = "Report Weight"
+    * description = "Report weight metric upon admission"
 * action[+]
-  * title = "Report Height"
-  * description = "Report height metric upon admission"
+  * title = "Recommend Height Measurement"
+  * description = "Recommend Height Measurement"
   * code = $cpg-common-process#diagnostic-testing "Conduct Diagnostic Tests"
+  * action[+]
+    * title = "Report Height"
+    * description = "Report height metric upon admission"
 
 
 Instance: WeightTargetGoal

@@ -1,0 +1,75 @@
+{
+  "resourceType" : "PlanDefinition",
+  "id" : "AnemiaScreeningPlan",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableplandefinition"]
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode" : "publishable"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode" : "structured"
+  }],
+  "url" : "http://example.org/PlanDefinition/AnemiaScreeningPlan",
+  "version" : "0.1.0",
+  "name" : "AnemiaScreeningPlan",
+  "title" : "PlanDefinition AnemiaScreeningPlan",
+  "type" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code" : "clinical-protocol",
+      "display" : "Clinical Protocol"
+    }]
+  },
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-06T14:19:43-05:00",
+  "publisher" : "Example Publisher",
+  "contact" : [{
+    "name" : "Example Publisher",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://example.org/example-publisher"
+    }]
+  }],
+  "description" : "Definition of plan to screen for iron defeciency anemia",
+  "library" : ["http://example.org/Library/AnemiaScreeningLibrary"],
+  "action" : [{
+    "title" : "Order CBC Lab Panel",
+    "description" : "Order CBC Lab Panel to screen for anemia",
+    "code" : [{
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process",
+        "code" : "diagnostic-testing",
+        "display" : "Conduct Diagnostic Tests"
+      }]
+    }],
+    "condition" : [{
+      "kind" : "applicability",
+      "expression" : {
+        "language" : "text/cql-identifier",
+        "expression" : "Needs CBC"
+      }
+    }]
+  },
+  {
+    "title" : "Order serum ferritin",
+    "description" : "Order serum ferritin to monitor iron status",
+    "code" : [{
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process",
+        "code" : "diagnostic-testing",
+        "display" : "Conduct Diagnostic Tests"
+      }]
+    }],
+    "condition" : [{
+      "kind" : "applicability",
+      "expression" : {
+        "language" : "text/cql-identifier",
+        "expression" : "Needs serum ferritin"
+      }
+    }]
+  }]
+}

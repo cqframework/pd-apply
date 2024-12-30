@@ -8,4 +8,4 @@ Usage: #example
   * title = "Registration with questionnaire"
   * description = "Register patient using questionnaire"
   * code = $cpg-common-process#registration "Registration"
-  * definitionCanonical = "http://example.org/Questionnaire/RegistrationQuestionnaire"
+  * definitionCanonical = Canonical(RegistrationQuestionnaire|0.2.0)

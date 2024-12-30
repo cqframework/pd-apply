@@ -2,9 +2,7 @@ Instance: IronDeficiencyTreatmentExpected
 InstanceOf: Bundle
 Usage: #example
 * type = #collection
-* entry
-  * fullUrl = "http://apply-processor/RequestGroup/IronDeficiencyTreatmentRequestGroup"
-  * resource = IronDeficiencyTreatmentRequestGroup
+* insert BundleEntry(IronDeficiencyTreatmentRequestGroup, RequestGroup)
 
 Instance: IronDeficiencyTreatmentRequestGroup
 InstanceOf: RequestGroup
@@ -14,4 +12,4 @@ Usage: #inline
 * subject = Reference(Patient1)
 * author = Reference(Practitioner1)
 * encounter = Reference(Encounter1)
-* instantiatesCanonical = "http://example.org/PlanDefinition/IronDeficiencyTreatmentPlan|0.1.0"
+* instantiatesCanonical = Canonical(IronDeficiencyTreatmentPlan|0.2.0)

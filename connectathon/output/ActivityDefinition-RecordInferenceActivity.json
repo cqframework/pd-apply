@@ -1,0 +1,42 @@
+{
+  "resourceType" : "ActivityDefinition",
+  "id" : "RecordInferenceActivity",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recordinferenceactivity"]
+  },
+  "url" : "http://example.org/ActivityDefinition/RecordInferenceActivity",
+  "version" : "0.2.0",
+  "name" : "RecordInferenceActivity",
+  "title" : "ActivityDefinition RecordInferenceActivity",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-17T14:41:38-05:00",
+  "publisher" : "Example Publisher",
+  "description" : "Example Activity Definition for a recommendation to record an inference",
+  "kind" : "Task",
+  "profile" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recordinferencetask",
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs",
+      "code" : "record-inference",
+      "display" : "Record an inference"
+    }]
+  },
+  "intent" : "proposal",
+  "doNotPerform" : false,
+  "dynamicValue" : [{
+    "path" : "input[0].type",
+    "expression" : {
+      "language" : "text/fhirpath",
+      "expression" : "%context.code"
+    }
+  },
+  {
+    "path" : "input[0].valueReference",
+    "expression" : {
+      "language" : "text/cql-identifier",
+      "expression" : "Record Inference Reference",
+      "reference" : "http://example.org/Library/RecordInferenceLibrary|0.2.0"
+    }
+  }]
+}

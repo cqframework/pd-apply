@@ -2,11 +2,8 @@ Instance: DischargeFollowUpExpected
 InstanceOf: Bundle
 Usage: #example
 * type = #collection
-* entry[+]
-  * fullUrl = "http://apply-processor/RequestGroup/DischargeRequestGroup"
-  * resource = DischargeRequestGroup
-* entry[+]
-  * resource = PatientMonitoringGoal
+* insert BundleEntry(DischargeRequestGroup, RequestGroup)
+* insert BundleEntry(PatientMonitoringGoal, Goal)
 
 Instance: DischargeRequestGroup
 InstanceOf: RequestGroup
@@ -16,10 +13,8 @@ Usage: #inline
 * subject = Reference(Patient1)
 * author = Reference(Practitioner1)
 * encounter = Reference(Encounter1)
-* instantiatesCanonical = "http://example.org/PlanDefinition/DischargeFollowUpPlan|0.1.0"
-* extension
-  * url = "http://hl7.org/fhir/StructureDefinition/resource-pertainsToGoal"
-  * valueReference = Reference(PatientMonitoringGoal)
+* instantiatesCanonical = Canonical(DischargeFollowUpPlan|0.2.0)
+* extension[resource-pertainsToGoal].valueReference = Reference(PatientMonitoringGoal)
 * action
   * title = "Monitor patient"
   * description = "Monitor patient post discharge"

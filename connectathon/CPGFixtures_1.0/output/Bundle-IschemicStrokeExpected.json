@@ -1,0 +1,43 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "IschemicStrokeExpected",
+  "type" : "collection",
+  "entry" : [{
+    "fullUrl" : "http://apply-processor/RequestGroup/IschemicStrokeRequestGroup",
+    "resource" : {
+      "resourceType" : "RequestGroup",
+      "id" : "IschemicStrokeRequestGroup",
+      "instantiatesCanonical" : ["http://example.org/PlanDefinition/IschemicStrokePlan|0.1.0"],
+      "status" : "draft",
+      "intent" : "proposal",
+      "subject" : {
+        "reference" : "Patient/Patient1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/Encounter1"
+      },
+      "author" : {
+        "reference" : "Practitioner/Practitioner1"
+      },
+      "action" : [{
+        "title" : "Ischemic Stroke Treatment",
+        "description" : "Recommendation to administer TPA if patient had Ischemic Stroke",
+        "textEquivalent" : "Administer TPA intravenously",
+        "code" : [{
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process",
+            "code" : "dispense-medications",
+            "display" : "Dispense Medications"
+          }]
+        }],
+        "condition" : [{
+          "kind" : "applicability",
+          "expression" : {
+            "language" : "text/cql-identifier",
+            "expression" : "Had Ischemic Stroke"
+          }
+        }]
+      }]
+    }
+  }]
+}

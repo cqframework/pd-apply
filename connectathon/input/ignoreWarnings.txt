@@ -3,3 +3,13 @@
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
+
+# These intentionally have the same URL and different IDs in order to test version resolution
+ERROR: ActivityDefinition.url: Resource id/url mismatch: OrderServiceActivityV1/http://example.org/ActivityDefinition/OrderServiceActivityVersionTest
+WARNING: ActivityDefinition/OrderServiceActivityV1: ActivityDefinition: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+ERROR: Resource: The URL 'http://example.org/ActivityDefinition/OrderServiceActivityVersionTest' is also used by OrderServiceActivityV2 in /Users/taylorkingston/projects/pd-apply/connectathon/fsh-generated/resources/ActivityDefinition-OrderServiceActivityV2
+INFORMATION: Resource: The resource ActivityDefinition/OrderServiceActivityV1 could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+== fsh-generated/resources/ActivityDefinition-OrderServiceActivityV2.json ==
+ERROR: ActivityDefinition.url: Resource id/url mismatch: OrderServiceActivityV2/http://example.org/ActivityDefinition/OrderServiceActivityVersionTest
+WARNING: ActivityDefinition/OrderServiceActivityV2: ActivityDefinition: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+ERROR: Resource: The URL 'http://example.org/ActivityDefinition/OrderServiceActivityVersionTest' has already been used by OrderServiceActivityV1 in /Users/taylorkingston/projects/pd-apply/connectathon/fsh-generated/resources/ActivityDefinition-OrderServiceActivityV1

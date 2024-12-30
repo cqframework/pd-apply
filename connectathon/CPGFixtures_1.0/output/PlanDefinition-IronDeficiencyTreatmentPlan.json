@@ -1,0 +1,57 @@
+{
+  "resourceType" : "PlanDefinition",
+  "id" : "IronDeficiencyTreatmentPlan",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableplandefinition"]
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode" : "publishable"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode" : "structured"
+  }],
+  "url" : "http://example.org/PlanDefinition/IronDeficiencyTreatmentPlan",
+  "version" : "0.1.0",
+  "name" : "IronDeficiencyTreatmentPlan",
+  "title" : "PlanDefinition IronDeficiencyTreatmentPlan",
+  "type" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code" : "clinical-protocol",
+      "display" : "Clinical Protocol"
+    }]
+  },
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-06T14:19:43-05:00",
+  "publisher" : "Example Publisher",
+  "contact" : [{
+    "name" : "Example Publisher",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://example.org/example-publisher"
+    }]
+  }],
+  "description" : "Definition of a plan to prescribe iron supplement if patient has diagnosis or iron deficiency anemia",
+  "library" : ["http://example.org/Library/IronDeficiencyTreatmentLibrary"],
+  "action" : [{
+    "title" : "Iron Supplementation",
+    "textEquivalent" : "Daily elemental iron should be prescribed if diagnosed with iron deficiency anemia",
+    "code" : [{
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process",
+        "code" : "dispense-medication",
+        "display" : "Dispense Medications"
+      }]
+    }],
+    "condition" : [{
+      "kind" : "applicability",
+      "expression" : {
+        "language" : "text/cql-identifier",
+        "expression" : "Has Anemia"
+      }
+    }]
+  }]
+}

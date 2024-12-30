@@ -9,4 +9,4 @@ Usage: #example
 * priority = #routine
 * doNotPerform = false
 * intent = #proposal
-* productCodeableConcept = http://snomed.info/sct#14745005 "Hepatitis A vaccine"
+* productCodeableConcept = $sct#14745005 "Hepatitis A vaccine"

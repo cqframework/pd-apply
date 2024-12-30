@@ -1,0 +1,786 @@
+{
+   "library" : {
+      "annotation" : [ {
+         "translatorOptions" : "EnableAnnotations,EnableLocators",
+         "signatureLevel" : "None",
+         "type" : "CqlToElmInfo"
+      }, {
+         "message" : "The function FHIRHelpers.ToDateTime has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "The function FHIRHelpers.ToDateTime has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "The function FHIRHelpers.ToDateTime has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "The function FHIRHelpers.ToDateTime has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "The function FHIRHelpers.ToString has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "The function FHIRHelpers.ToString has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "51",
+            "s" : [ {
+               "value" : [ "","library IschemicStrokeLibrary version '0.1.0'" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "IschemicStrokeLibrary",
+         "system" : "http://example.org",
+         "version" : "0.1.0"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "1",
+            "locator" : "3:1-3:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "1",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "2",
+            "locator" : "5:1-5:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://example.org/FHIRHelpers",
+            "version" : "0.1.0",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "2",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'0.1.0'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "codeSystems" : {
+         "def" : [ {
+            "localId" : "3",
+            "locator" : "7:1-7:45",
+            "name" : "SNOMED",
+            "id" : "http://snomed.info/sct",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "3",
+                  "s" : [ {
+                     "value" : [ "","codesystem ","\"SNOMED\"",": ","'http://snomed.info/sct'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "codes" : {
+         "def" : [ {
+            "localId" : "5",
+            "locator" : "8:1-9:64",
+            "name" : "Ischemic Stroke",
+            "id" : "422504002",
+            "display" : "Ischemic stroke (disorder)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "5",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Ischemic Stroke\"",":\n  ","'422504002'"," from " ]
+                  }, {
+                     "r" : "4",
+                     "s" : [ {
+                        "value" : [ "\"SNOMED\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Ischemic stroke (disorder)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "4",
+               "locator" : "9:20-9:27",
+               "name" : "SNOMED"
+            }
+         } ]
+      },
+      "contexts" : {
+         "def" : [ {
+            "locator" : "11:1-11:15",
+            "name" : "Patient"
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "locator" : "11:1-11:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "type" : "SingletonFrom",
+               "operand" : {
+                  "locator" : "11:1-11:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve"
+               }
+            }
+         }, {
+            "localId" : "8",
+            "locator" : "13:1-14:12",
+            "name" : "Patient id",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "8",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Patient id\"",":\n  " ]
+                  }, {
+                     "r" : "7",
+                     "s" : [ {
+                        "r" : "6",
+                        "s" : [ {
+                           "value" : [ "Patient" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "7",
+                        "s" : [ {
+                           "value" : [ "id" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "7",
+               "locator" : "14:3-14:12",
+               "path" : "id",
+               "type" : "Property",
+               "source" : {
+                  "localId" : "6",
+                  "locator" : "14:3-14:9",
+                  "name" : "Patient",
+                  "type" : "ExpressionRef"
+               }
+            }
+         }, {
+            "localId" : "16",
+            "locator" : "16:1-19:3",
+            "name" : "Condition",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "16",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Condition\"",":\n  " ]
+                  }, {
+                     "r" : "15",
+                     "s" : [ {
+                        "value" : [ "First","(" ]
+                     }, {
+                        "r" : "14",
+                        "s" : [ {
+                           "s" : [ {
+                              "r" : "10",
+                              "s" : [ {
+                                 "r" : "9",
+                                 "s" : [ {
+                                    "r" : "9",
+                                    "s" : [ {
+                                       "value" : [ "[","Condition","]" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " ","M" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    " ]
+                        }, {
+                           "r" : "13",
+                           "s" : [ {
+                              "value" : [ "sort by " ]
+                           }, {
+                              "r" : "12",
+                              "s" : [ {
+                                 "r" : "11",
+                                 "s" : [ {
+                                    "value" : [ "recordedDate" ]
+                                 } ]
+                              } ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n  )" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "15",
+               "locator" : "17:3-19:3",
+               "type" : "First",
+               "source" : {
+                  "localId" : "14",
+                  "locator" : "17:9-18:24",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "10",
+                     "locator" : "17:9-17:21",
+                     "alias" : "M",
+                     "expression" : {
+                        "localId" : "9",
+                        "locator" : "17:9-17:19",
+                        "dataType" : "{http://hl7.org/fhir}Condition",
+                        "templateId" : "http://hl7.org/fhir/StructureDefinition/Condition",
+                        "type" : "Retrieve"
+                     }
+                  } ],
+                  "relationship" : [ ],
+                  "sort" : {
+                     "localId" : "13",
+                     "locator" : "18:5-18:24",
+                     "by" : [ {
+                        "localId" : "12",
+                        "locator" : "18:13-18:24",
+                        "direction" : "asc",
+                        "path" : "recordedDate",
+                        "type" : "ByColumn"
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "22",
+            "locator" : "21:1-22:51",
+            "name" : "Condition Timing",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "22",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Condition Timing\"",":\n  " ]
+                  }, {
+                     "r" : "21",
+                     "s" : [ {
+                        "r" : "19",
+                        "s" : [ {
+                           "value" : [ "ToString","(" ]
+                        }, {
+                           "r" : "18",
+                           "s" : [ {
+                              "r" : "17",
+                              "s" : [ {
+                                 "value" : [ "\"Condition\"" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "18",
+                              "s" : [ {
+                                 "value" : [ "recordedDate" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     }, {
+                        "value" : [ " ","="," " ]
+                     }, {
+                        "r" : "20",
+                        "s" : [ {
+                           "value" : [ "'2023-03-28'" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "21",
+               "locator" : "22:3-22:51",
+               "type" : "Equal",
+               "operand" : [ {
+                  "localId" : "19",
+                  "locator" : "22:3-22:36",
+                  "type" : "ToString",
+                  "operand" : {
+                     "name" : "ToDateTime",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "operand" : [ {
+                        "localId" : "18",
+                        "locator" : "22:12-22:35",
+                        "path" : "recordedDate",
+                        "type" : "Property",
+                        "source" : {
+                           "localId" : "17",
+                           "locator" : "22:12-22:22",
+                           "name" : "Condition",
+                           "type" : "ExpressionRef"
+                        }
+                     } ]
+                  }
+               }, {
+                  "localId" : "20",
+                  "locator" : "22:40-22:51",
+                  "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                  "value" : "2023-03-28",
+                  "type" : "Literal"
+               } ]
+            }
+         }, {
+            "localId" : "27",
+            "locator" : "24:1-25:33",
+            "name" : "Condition Code Value",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "27",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Condition Code Value\"",":\n  " ]
+                  }, {
+                     "r" : "26",
+                     "s" : [ {
+                        "r" : "25",
+                        "s" : [ {
+                           "r" : "24",
+                           "s" : [ {
+                              "r" : "23",
+                              "s" : [ {
+                                 "value" : [ "\"Condition\"" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "24",
+                              "s" : [ {
+                                 "value" : [ "code" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "25",
+                           "s" : [ {
+                              "value" : [ "coding" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "26",
+                        "s" : [ {
+                           "value" : [ "first","()" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "26",
+               "locator" : "25:3-25:33",
+               "type" : "First",
+               "source" : {
+                  "localId" : "25",
+                  "locator" : "25:3-25:25",
+                  "path" : "coding",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "24",
+                     "locator" : "25:3-25:18",
+                     "path" : "code",
+                     "type" : "Property",
+                     "source" : {
+                        "localId" : "23",
+                        "locator" : "25:3-25:13",
+                        "name" : "Condition",
+                        "type" : "ExpressionRef"
+                     }
+                  }
+               }
+            }
+         }, {
+            "localId" : "31",
+            "locator" : "27:1-28:44",
+            "name" : "Had Ischemic Stroke",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "31",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Had Ischemic Stroke\"",":\n  " ]
+                  }, {
+                     "r" : "30",
+                     "s" : [ {
+                        "r" : "28",
+                        "s" : [ {
+                           "value" : [ "\"Condition Code Value\"" ]
+                        } ]
+                     }, {
+                        "value" : [ " ","="," " ]
+                     }, {
+                        "r" : "29",
+                        "s" : [ {
+                           "value" : [ "\"Ischemic Stroke\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "30",
+               "locator" : "28:3-28:44",
+               "type" : "Equal",
+               "operand" : [ {
+                  "name" : "ToCode",
+                  "libraryName" : "FHIRHelpers",
+                  "type" : "FunctionRef",
+                  "operand" : [ {
+                     "localId" : "28",
+                     "locator" : "28:3-28:24",
+                     "name" : "Condition Code Value",
+                     "type" : "ExpressionRef"
+                  } ]
+               }, {
+                  "localId" : "29",
+                  "locator" : "28:28-28:44",
+                  "name" : "Ischemic Stroke",
+                  "type" : "CodeRef"
+               } ]
+            }
+         }, {
+            "localId" : "33",
+            "locator" : "30:1-31:14",
+            "name" : "Medications",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "33",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Medications\"",":\n  " ]
+                  }, {
+                     "r" : "32",
+                     "s" : [ {
+                        "value" : [ "[","Medication","]" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "32",
+               "locator" : "31:3-31:14",
+               "dataType" : "{http://hl7.org/fhir}Medication",
+               "templateId" : "http://hl7.org/fhir/StructureDefinition/Medication",
+               "type" : "Retrieve"
+            }
+         }, {
+            "localId" : "41",
+            "locator" : "33:1-34:41",
+            "name" : "Active Medication",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "41",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Active Medication\"",":\n  " ]
+                  }, {
+                     "r" : "40",
+                     "s" : [ {
+                        "r" : "38",
+                        "s" : [ {
+                           "r" : "34",
+                           "s" : [ {
+                              "value" : [ "Medications" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "38",
+                           "s" : [ {
+                              "value" : [ "where","(" ]
+                           }, {
+                              "r" : "37",
+                              "s" : [ {
+                                 "r" : "35",
+                                 "s" : [ {
+                                    "value" : [ "status" ]
+                                 } ]
+                              }, {
+                                 "value" : [ " ","="," " ]
+                              }, {
+                                 "r" : "36",
+                                 "s" : [ {
+                                    "value" : [ "'active'" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ ")" ]
+                           } ]
+                        } ]
+                     }, {
+                        "r" : "39",
+                        "value" : [ "[","0","]" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "40",
+               "locator" : "34:3-34:41",
+               "type" : "Indexer",
+               "operand" : [ {
+                  "localId" : "38",
+                  "locator" : "34:3-34:38",
+                  "type" : "Query",
+                  "source" : [ {
+                     "alias" : "$this",
+                     "expression" : {
+                        "localId" : "34",
+                        "locator" : "34:3-34:13",
+                        "name" : "Medications",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "where" : {
+                     "localId" : "37",
+                     "locator" : "34:21-34:37",
+                     "type" : "Equal",
+                     "operand" : [ {
+                        "name" : "ToString",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "operand" : [ {
+                           "localId" : "35",
+                           "locator" : "34:21-34:26",
+                           "path" : "status",
+                           "scope" : "$this",
+                           "type" : "Property"
+                        } ]
+                     }, {
+                        "localId" : "36",
+                        "locator" : "34:30-34:37",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "active",
+                        "type" : "Literal"
+                     } ]
+                  }
+               }, {
+                  "localId" : "39",
+                  "locator" : "34:40",
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "0",
+                  "type" : "Literal"
+               } ]
+            }
+         }, {
+            "localId" : "51",
+            "locator" : "36:1-40:8",
+            "name" : "Medication Reference",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "51",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Medication Reference\"",":\n  " ]
+                  }, {
+                     "r" : "50",
+                     "s" : [ {
+                        "value" : [ "if " ]
+                     }, {
+                        "r" : "43",
+                        "s" : [ {
+                           "r" : "42",
+                           "s" : [ {
+                              "value" : [ "\"Active Medication\"" ]
+                           } ]
+                        }, {
+                           "value" : [ " is not null" ]
+                        } ]
+                     }, {
+                        "value" : [ " then\n    " ]
+                     }, {
+                        "r" : "48",
+                        "s" : [ {
+                           "value" : [ "{ " ]
+                        }, {
+                           "s" : [ {
+                              "value" : [ "reference",": " ]
+                           }, {
+                              "r" : "47",
+                              "s" : [ {
+                                 "r" : "44",
+                                 "s" : [ {
+                                    "value" : [ "'Medication/'" ]
+                                 } ]
+                              }, {
+                                 "value" : [ " + " ]
+                              }, {
+                                 "r" : "46",
+                                 "s" : [ {
+                                    "r" : "45",
+                                    "s" : [ {
+                                       "value" : [ "\"Active Medication\"" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "46",
+                                    "s" : [ {
+                                       "value" : [ "id" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " }" ]
+                        } ]
+                     }, {
+                        "r" : "49",
+                        "value" : [ "\n  else\n    ","null" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "50",
+               "locator" : "37:3-40:8",
+               "type" : "If",
+               "condition" : {
+                  "localId" : "43",
+                  "locator" : "37:6-37:36",
+                  "type" : "Not",
+                  "operand" : {
+                     "locator" : "37:6-37:36",
+                     "type" : "IsNull",
+                     "operand" : {
+                        "localId" : "42",
+                        "locator" : "37:6-37:24",
+                        "name" : "Active Medication",
+                        "type" : "ExpressionRef"
+                     }
+                  }
+               },
+               "then" : {
+                  "localId" : "48",
+                  "locator" : "38:5-38:57",
+                  "type" : "Tuple",
+                  "element" : [ {
+                     "name" : "reference",
+                     "value" : {
+                        "localId" : "47",
+                        "locator" : "38:18-38:55",
+                        "type" : "Concatenate",
+                        "operand" : [ {
+                           "localId" : "44",
+                           "locator" : "38:18-38:30",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "Medication/",
+                           "type" : "Literal"
+                        }, {
+                           "name" : "ToString",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "operand" : [ {
+                              "localId" : "46",
+                              "locator" : "38:34-38:55",
+                              "path" : "id",
+                              "type" : "Property",
+                              "source" : {
+                                 "localId" : "45",
+                                 "locator" : "38:34-38:52",
+                                 "name" : "Active Medication",
+                                 "type" : "ExpressionRef"
+                              }
+                           } ]
+                        } ]
+                     }
+                  } ]
+               },
+               "else" : {
+                  "type" : "As",
+                  "operand" : {
+                     "localId" : "49",
+                     "locator" : "40:5-40:8",
+                     "type" : "Null"
+                  },
+                  "asTypeSpecifier" : {
+                     "type" : "TupleTypeSpecifier",
+                     "element" : [ {
+                        "name" : "reference",
+                        "elementType" : {
+                           "name" : "{urn:hl7-org:elm-types:r1}String",
+                           "type" : "NamedTypeSpecifier"
+                        }
+                     } ]
+                  }
+               }
+            }
+         } ]
+      }
+   }
+}

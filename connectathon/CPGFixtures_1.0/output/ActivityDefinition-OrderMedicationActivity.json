@@ -1,0 +1,79 @@
+{
+  "resourceType" : "ActivityDefinition",
+  "id" : "OrderMedicationActivity",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequestactivity"]
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode" : "publishable"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode" : "structured"
+  }],
+  "url" : "http://example.org/ActivityDefinition/OrderMedicationActivity",
+  "version" : "0.1.0",
+  "name" : "OrderMedicationActivity",
+  "title" : "ActivityDefinition OrderMedicationActivity",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-06T14:19:43-05:00",
+  "publisher" : "Example Publisher",
+  "contact" : [{
+    "name" : "Example Publisher",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://example.org/example-publisher"
+    }]
+  }],
+  "description" : "Order a medication activity",
+  "kind" : "MedicationRequest",
+  "profile" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-medicationrequest",
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+      "code" : "order-medication",
+      "display" : "Order a medication"
+    }]
+  },
+  "intent" : "proposal",
+  "priority" : "routine",
+  "doNotPerform" : false,
+  "productReference" : {
+    "reference" : "Medication/PastMedication"
+  },
+  "dosage" : [{
+    "sequence" : 1,
+    "text" : "75mcg daily",
+    "timing" : {
+      "repeat" : {
+        "frequency" : 1,
+        "period" : 1,
+        "periodUnit" : "d"
+      }
+    },
+    "route" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "26643006",
+        "display" : "Oral Route (qualifier value)"
+      }]
+    },
+    "doseAndRate" : [{
+      "type" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+          "code" : "ordered",
+          "display" : "Ordered"
+        }]
+      },
+      "doseQuantity" : {
+        "value" : 75,
+        "unit" : "mcg",
+        "system" : "http://unitsofmeasure.org",
+        "code" : "ug"
+      }
+    }]
+  }]
+}

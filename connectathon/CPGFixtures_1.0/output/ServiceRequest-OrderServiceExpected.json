@@ -1,0 +1,27 @@
+{
+  "resourceType" : "ServiceRequest",
+  "id" : "OrderServiceExpected",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-servicerequest"]
+  },
+  "instantiatesCanonical" : ["http://example.org/ActivityDefinition/OrderServiceActivity|0.1.0"],
+  "status" : "draft",
+  "intent" : "proposal",
+  "doNotPerform" : false,
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+      "code" : "order-service",
+      "display" : "Order a service"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/Patient1"
+  },
+  "encounter" : {
+    "reference" : "Encounter/Encounter1"
+  },
+  "requester" : {
+    "reference" : "Practitioner/Practitioner1"
+  }
+}

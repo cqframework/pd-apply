@@ -1,0 +1,5 @@
+{
+  "resourceType" : "Medication",
+  "id" : "CurrentMedication",
+  "status" : "active"
+}

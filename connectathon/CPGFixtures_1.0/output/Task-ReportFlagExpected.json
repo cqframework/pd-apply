@@ -1,0 +1,38 @@
+{
+  "resourceType" : "Task",
+  "id" : "ReportFlagExpected",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-reportflagtask"]
+  },
+  "instantiatesCanonical" : "http://example.org/ActivityDefinition/ReportFlagActivity|0.1.0",
+  "status" : "draft",
+  "intent" : "proposal",
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+      "code" : "report-flag",
+      "display" : "Report a flag"
+    }]
+  },
+  "for" : {
+    "reference" : "Patient/Patient1"
+  },
+  "encounter" : {
+    "reference" : "Encounter/Encounter1"
+  },
+  "requester" : {
+    "reference" : "Practitioner/Practitioner1"
+  },
+  "input" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+        "code" : "report-flag",
+        "display" : "Report a flag"
+      }]
+    },
+    "valueReference" : {
+      "reference" : "Flag/Flag1"
+    }
+  }]
+}

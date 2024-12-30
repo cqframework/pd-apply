@@ -1,0 +1,47 @@
+{
+  "resourceType" : "PlanDefinition",
+  "id" : "IschemicStrokePlan",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableplandefinition"]
+  },
+  "url" : "http://example.org/PlanDefinition/IschemicStrokePlan",
+  "version" : "0.2.0",
+  "name" : "IschemicStrokePlan",
+  "title" : "PlanDefinition IschemicStrokePlan",
+  "type" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code" : "clinical-protocol",
+      "display" : "Clinical Protocol"
+    }]
+  },
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-17T14:41:38-05:00",
+  "publisher" : "Example Publisher",
+  "description" : "Definition of a plan to administer TPA if patient had ischemic stroke",
+  "library" : ["http://example.org/Library/IschemicStrokeLibrary|0.2.0"],
+  "action" : [{
+    "title" : "Recommend Ischemic Stroke Treatment",
+    "description" : "Recommendation to administer TPA if patient had Ischemic Stroke",
+    "textEquivalent" : "Administer TPA intravenously",
+    "code" : [{
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs",
+        "code" : "dispense-medications",
+        "display" : "Dispense Medications"
+      }]
+    }],
+    "condition" : [{
+      "kind" : "applicability",
+      "expression" : {
+        "language" : "text/cql-identifier",
+        "expression" : "Had Ischemic Stroke"
+      }
+    }],
+    "action" : [{
+      "title" : "Ischemic Stroke Treatment",
+      "description" : "Administer TPA for ischemic stroke"
+    }]
+  }]
+}

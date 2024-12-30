@@ -1,0 +1,42 @@
+{
+  "resourceType" : "ActivityDefinition",
+  "id" : "ProposeDiagnosisActivity",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-proposediagnosisactivity"]
+  },
+  "url" : "http://example.org/ActivityDefinition/ProposeDiagnosisActivity",
+  "version" : "0.2.0",
+  "name" : "ProposeDiagnosisActivity",
+  "title" : "ActivityDefinition ProposeDiagnosisActivity",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-17T14:41:38-05:00",
+  "publisher" : "Example Publisher",
+  "description" : "Example Activity Definition for a recommendation to propose a diagnosis",
+  "kind" : "Task",
+  "profile" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-proposediagnosistask",
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs",
+      "code" : "propose-diagnosis",
+      "display" : "Propose a diagnosis"
+    }]
+  },
+  "intent" : "proposal",
+  "doNotPerform" : false,
+  "dynamicValue" : [{
+    "path" : "input[0].type",
+    "expression" : {
+      "language" : "text/fhirpath",
+      "expression" : "%context.code"
+    }
+  },
+  {
+    "path" : "input[0].valueReference",
+    "expression" : {
+      "language" : "text/cql-identifier",
+      "expression" : "Propose Diagnosis Reference",
+      "reference" : "http://example.org/Library/ProposeDiagnosisLibrary|0.2.0"
+    }
+  }]
+}

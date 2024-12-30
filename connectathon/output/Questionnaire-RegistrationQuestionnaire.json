@@ -1,0 +1,22 @@
+{
+  "resourceType" : "Questionnaire",
+  "id" : "RegistrationQuestionnaire",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablequestionnaire"]
+  },
+  "url" : "http://example.org/Questionnaire/RegistrationQuestionnaire",
+  "version" : "0.2.0",
+  "name" : "RegistrationQuestionnaire",
+  "title" : "Questionnaire RegistrationQuestionnaire",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-17T14:41:38-05:00",
+  "publisher" : "Example Publisher",
+  "description" : "Questionnaire to collect identifying information",
+  "item" : [{
+    "linkId" : "name",
+    "text" : "Name",
+    "type" : "string",
+    "required" : true
+  }]
+}

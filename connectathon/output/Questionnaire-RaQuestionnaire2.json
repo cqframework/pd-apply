@@ -1,0 +1,85 @@
+{
+  "resourceType" : "Questionnaire",
+  "id" : "RaQuestionnaire2",
+  "extension" : [{
+    "extension" : [{
+      "url" : "name",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext",
+        "code" : "patient"
+      }
+    },
+    {
+      "url" : "type",
+      "valueCode" : "Patient"
+    }],
+    "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
+  }],
+  "url" : "http://questionnaire-processor/Questionnaire/RaQuestionnaire2",
+  "version" : "0.2.0",
+  "status" : "draft",
+  "date" : "2025-01-17T14:41:38-05:00",
+  "publisher" : "Example Publisher",
+  "item" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+      "valueExpression" : {
+        "name" : "ActiveRaTreatmentFeature",
+        "language" : "text/cql-identifier",
+        "expression" : "On RA Treatment",
+        "reference" : "http://example.org/Library/ActiveRaTreatmentFeatureLogic"
+      }
+    }],
+    "linkId" : "ActiveRaTreatmentFeature#Observation",
+    "definition" : "http://example.org/StructureDefinition/ActiveRaTreatmentFeature#Observation",
+    "text" : "Measurements and simple assertions",
+    "type" : "group",
+    "item" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+        "valueBoolean" : true
+      }],
+      "linkId" : "ActiveRaTreatmentFeature#Observation.status",
+      "definition" : "http://example.org/StructureDefinition/ActiveRaTreatmentFeature#Observation.status",
+      "text" : "registered | preliminary | final | amended +",
+      "type" : "choice",
+      "required" : true,
+      "initial" : [{
+        "valueCoding" : {
+          "system" : "http://hl7.org/fhir/observation-status",
+          "code" : "final"
+        }
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+        "valueBoolean" : true
+      }],
+      "linkId" : "ActiveRaTreatmentFeature#Observation.code",
+      "definition" : "http://example.org/StructureDefinition/ActiveRaTreatmentFeature#Observation.code",
+      "text" : "Type of observation (code / type)",
+      "type" : "choice",
+      "required" : true,
+      "initial" : [{
+        "valueCoding" : {
+          "system" : "http://example.org/CodeSystem/CaseFeatureCodes",
+          "code" : "on-ra-treatment"
+        }
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+        "valueExpression" : {
+          "language" : "text/cql-expression",
+          "expression" : "%ActiveRaTreatmentFeature.value[x]"
+        }
+      }],
+      "linkId" : "ActiveRaTreatmentFeature#Observation.valueBoolean",
+      "definition" : "http://example.org/StructureDefinition/ActiveRaTreatmentFeature#Observation.valueBoolean",
+      "text" : "Actual result",
+      "type" : "boolean"
+    }]
+  }]
+}

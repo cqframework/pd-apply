@@ -2,12 +2,8 @@ Instance: NeurologicalAssessmentExpected
 InstanceOf: Bundle
 Usage: #example
 * type = #collection
-* entry[+]
-  * fullUrl = "http://apply-processor/RequestGroup/NeurologicalAssessmentRequestGroup"
-  * resource = NeurologicalAssessmentRequestGroup
-* entry[+]
-  * fullUrl = "http://apply-processor/ServiceRequest/InlineServiceRequest"
-  * resource = InlineServiceRequest
+* insert BundleEntry(NeurologicalAssessmentRequestGroup, RequestGroup)
+* insert BundleEntry (InlineServiceRequest, ServiceRequest)
 
 Instance: NeurologicalAssessmentRequestGroup
 InstanceOf: RequestGroup
@@ -15,21 +11,20 @@ Usage: #inline
 * intent = #proposal
 * status = #draft
 * subject = Reference(Patient/Patient1)
-* instantiatesCanonical = "http://example.org/PlanDefinition/NeurologicalAssessmentPlan|0.1.0"
+* instantiatesCanonical = Canonical(NeurologicalAssessmentPlan|0.2.0)
 * author = Reference(Practitioner/Practitioner1)
 * encounter = Reference(Encounter/Encounter1)
 * action.title = "Order neurological exam"
 * action
-  * type = http://terminology.hl7.org/CodeSystem/action-type#create
+  * type = $action-type#create
   * resource = Reference(ServiceRequest/InlineServiceRequest)
 
 Instance: InlineServiceRequest
-InstanceOf: ServiceRequest
+InstanceOf: cpg-servicerequest
 Usage: #inline
-* meta.profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-servicerequest"
 * status = #draft
 * intent = #proposal
-* instantiatesCanonical = "http://example.org/ActivityDefinition/OrderServiceActivity|0.1.0"
+* instantiatesCanonical = Canonical(OrderServiceActivity|0.2.0)
 * subject = Reference(Patient/Patient1)
 * encounter = Reference(Encounter/Encounter1)
 * requester = Reference(Practitioner/Practitioner1)

@@ -1,0 +1,21 @@
+{
+  "resourceType" : "CommunicationRequest",
+  "id" : "SendMessageExpected",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest"]
+  },
+  "status" : "draft",
+  "doNotPerform" : false,
+  "subject" : {
+    "reference" : "Patient/Patient1"
+  },
+  "encounter" : {
+    "reference" : "Encounter/Encounter1"
+  },
+  "payload" : [{
+    "contentString" : "Greeting: Hello! Alice Message: Example Activity Definition for a recommendation to send a message Practitioner: Michael"
+  }],
+  "requester" : {
+    "reference" : "Practitioner/Practitioner1"
+  }
+}

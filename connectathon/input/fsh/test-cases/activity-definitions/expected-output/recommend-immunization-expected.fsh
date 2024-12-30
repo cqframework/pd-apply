@@ -9,4 +9,4 @@ Usage: #example
 * requester = Reference(Practitioner1)
 * instantiatesCanonical = Canonical(RecommendImmunizationActivity)
 * doNotPerform = false
-* medicationCodeableConcept = http://snomed.info/sct#14745005 "Hepatitis A vaccine"
+* medicationCodeableConcept = $sct#14745005 "Hepatitis A vaccine"

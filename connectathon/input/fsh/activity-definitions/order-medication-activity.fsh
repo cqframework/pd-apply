@@ -18,7 +18,7 @@ Usage: #example
       * frequency = 1
       * period = 1
       * periodUnit = #d
-  * route = http://snomed.info/sct#26643006 "Oral Route (qualifier value)"
+  * route = $sct#26643006 "Oral Route (qualifier value)"
   * doseAndRate
-    * type = http://terminology.hl7.org/CodeSystem/dose-rate-type#ordered "Ordered"
+    * type = $dose-rate-type#ordered "Ordered"
     * doseQuantity = 75 'ug' "mcg"

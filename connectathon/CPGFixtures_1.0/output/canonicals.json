@@ -1,0 +1,331 @@
+[
+  {
+    "id" : "RegistrationPlan",
+    "type" : "PlanDefinition",
+    "url" : "http://example.org/$cpg-computableplandefinition/RegistrationPlan",
+    "version" : "0.1.0",
+    "name" : "RegistrationPlan"
+  },
+  {
+    "id" : "AdministerMedicationActivity",
+    "type" : "ActivityDefinition",
+    "url" : "http://example.org/ActivityDefinition/AdministerMedicationActivity",
+    "version" : "0.1.0",
+    "name" : "AdministerMedicationActivity"
+  },
+  {
+    "id" : "CollectInformationActivity",
+    "type" : "ActivityDefinition",
+    "url" : "http://example.org/ActivityDefinition/CollectInformationActivity",
+    "version" : "0.1.0",
+    "name" : "CollectInformationActivity"
+  },
+  {
+    "id" : "DispenseMedicationActivity",
+    "type" : "ActivityDefinition",
+    "url" : "http://example.org/ActivityDefinition/DispenseMedicationActivity",
+    "version" : "0.1.0",
+    "name" : "DispenseMedicationActivity"
+  },
+  {
+    "id" : "DocumentMedicationActivity",
+    "type" : "ActivityDefinition",
+    "url" : "http://example.org/ActivityDefinition/DocumentMedicationActivity",
+    "version" : "0.1.0",
+    "name" : "DocumentMedicationActivity"
+  },
+  {
+    "id" : "DontCollectInformationActivity",
+    "type" : "ActivityDefinition",
+    "url" : "http://example.org/ActivityDefinition/DontCollectInformationActivity",
+    "version" : "0.1.0",
+    "name" : "DontCollectInformationActivity"
+  },
+  {
+    "id" : "DontSendMessageActivity",
+    "type" : "ActivityDefinition",
+    "url" : "http://example.org/ActivityDefinition/DontSendMessageActivity",
+    "version" : "0.1.0",
+    "name" : "DontSendMessageActivity"
+  },
+  {
+    "id" : "EnrollPatientActivity",
+    "type" : "ActivityDefinition",
+    "url" : "http://example.org/ActivityDefinition/EnrollPatientActivity",
+    "version" : "0.1.0",
+    "name" : "EnrollPatientActivity"
+  },
+  {
+    "id" : "GenerateReportActivity",
+    "type" : "ActivityDefinition",
+    "url" : "http://example.org/ActivityDefinition/GenerateReportActivity",
+    "version" : "0.1.0",
+    "name" : "GenerateReportActivity"
+  },
+  {
+    "id" : "OrderMedicationActivity",
+    "type" : "ActivityDefinition",
+    "url" : "http://example.org/ActivityDefinition/OrderMedicationActivity",
+    "version" : "0.1.0",
+    "name" : "OrderMedicationActivity"
+  },
+  {
+    "id" : "OrderServiceActivity",
+    "type" : "ActivityDefinition",
+    "url" : "http://example.org/ActivityDefinition/OrderServiceActivity",
+    "version" : "0.1.0",
+    "name" : "OrderServiceActivity"
+  },
+  {
+    "id" : "ProposeDiagnosisActivity",
+    "type" : "ActivityDefinition",
+    "url" : "http://example.org/ActivityDefinition/ProposeDiagnosisActivity",
+    "version" : "0.1.0",
+    "name" : "ProposeDiagnosisActivity"
+  },
+  {
+    "id" : "RecommendImmunizationActivity",
+    "type" : "ActivityDefinition",
+    "url" : "http://example.org/ActivityDefinition/RecommendImmunizationActivity",
+    "version" : "0.1.0",
+    "name" : "RecommendImmunizationActivity"
+  },
+  {
+    "id" : "RecordDetectedIssueActivity",
+    "type" : "ActivityDefinition",
+    "url" : "http://example.org/ActivityDefinition/RecordDetectedIssueActivity",
+    "version" : "0.1.0",
+    "name" : "RecordDetectedIssueActivity"
+  },
+  {
+    "id" : "RecordInferenceActivity",
+    "type" : "ActivityDefinition",
+    "url" : "http://example.org/ActivityDefinition/RecordInferenceActivity",
+    "version" : "0.1.0",
+    "name" : "RecordInferenceActivity"
+  },
+  {
+    "id" : "ReportFlagActivity",
+    "type" : "ActivityDefinition",
+    "url" : "http://example.org/ActivityDefinition/ReportFlagActivity",
+    "version" : "0.1.0",
+    "name" : "ReportFlagActivity"
+  },
+  {
+    "id" : "SendMessageActivity",
+    "type" : "ActivityDefinition",
+    "url" : "http://example.org/ActivityDefinition/SendMessageActivity",
+    "version" : "0.1.0",
+    "name" : "SendMessageActivity"
+  },
+  {
+    "id" : "fhir.example",
+    "type" : "ImplementationGuide",
+    "url" : "http://example.org/ImplementationGuide/fhir.example",
+    "version" : "0.1.0",
+    "name" : "CpgFixtures"
+  },
+  {
+    "id" : "AdministerMedicationLibrary",
+    "type" : "Library",
+    "url" : "http://example.org/Library/AdministerMedicationLibrary",
+    "version" : "0.1.0",
+    "name" : "AdministerMedicationLibrary"
+  },
+  {
+    "id" : "AnemiaScreeningLibrary",
+    "type" : "Library",
+    "url" : "http://example.org/Library/AnemiaScreeningLibrary",
+    "version" : "0.1.0",
+    "name" : "AnemiaScreeningLibrary"
+  },
+  {
+    "id" : "DispenseMedicationLibrary",
+    "type" : "Library",
+    "url" : "http://example.org/Library/DispenseMedicationLibrary",
+    "version" : "0.1.0",
+    "name" : "DispenseMedicationLibrary"
+  },
+  {
+    "id" : "DocumentMedicationLibrary",
+    "type" : "Library",
+    "url" : "http://example.org/Library/DocumentMedicationLibrary",
+    "version" : "0.1.0",
+    "name" : "DocumentMedicationLibrary"
+  },
+  {
+    "id" : "FHIRHelpers",
+    "type" : "Library",
+    "url" : "http://example.org/Library/FHIRHelpers",
+    "version" : "0.1.0",
+    "name" : "FHIRHelpers"
+  },
+  {
+    "id" : "IronDeficiencyTreatmentLibrary",
+    "type" : "Library",
+    "url" : "http://example.org/Library/IronDeficiencyTreatmentLibrary",
+    "version" : "0.1.0",
+    "name" : "IronDeficiencyTreatmentLibrary"
+  },
+  {
+    "id" : "IschemicStrokeLibrary",
+    "type" : "Library",
+    "url" : "http://example.org/Library/IschemicStrokeLibrary",
+    "version" : "0.1.0",
+    "name" : "IschemicStrokeLibrary"
+  },
+  {
+    "id" : "NeurologicalAssessmentLibrary",
+    "type" : "Library",
+    "url" : "http://example.org/Library/NeurologicalAssessmentLibrary",
+    "version" : "0.1.0",
+    "name" : "NeurologicalAssessmentLibrary"
+  },
+  {
+    "id" : "ProposeDiagnosisLibrary",
+    "type" : "Library",
+    "url" : "http://example.org/Library/ProposeDiagnosisLibrary",
+    "version" : "0.1.0",
+    "name" : "ProposeDiagnosisLibrary"
+  },
+  {
+    "id" : "RecordDetectedIssueLibrary",
+    "type" : "Library",
+    "url" : "http://example.org/Library/RecordDetectedIssueLibrary",
+    "version" : "0.1.0",
+    "name" : "RecordDetectedIssueLibrary"
+  },
+  {
+    "id" : "RecordInferenceLibrary",
+    "type" : "Library",
+    "url" : "http://example.org/Library/RecordInferenceLibrary",
+    "version" : "0.1.0",
+    "name" : "RecordInferenceLibrary"
+  },
+  {
+    "id" : "ReportFlagLibrary",
+    "type" : "Library",
+    "url" : "http://example.org/Library/ReportFlagLibrary",
+    "version" : "0.1.0",
+    "name" : "ReportFlagLibrary"
+  },
+  {
+    "id" : "AnemiaScreeningPlan",
+    "type" : "PlanDefinition",
+    "url" : "http://example.org/PlanDefinition/AnemiaScreeningPlan",
+    "version" : "0.1.0",
+    "name" : "AnemiaScreeningPlan"
+  },
+  {
+    "id" : "CKDEducationPlan",
+    "type" : "PlanDefinition",
+    "url" : "http://example.org/PlanDefinition/CKDEducationPlan",
+    "version" : "0.1.0",
+    "name" : "CKDEducationPlan"
+  },
+  {
+    "id" : "CKDFollowUpPlan",
+    "type" : "PlanDefinition",
+    "url" : "http://example.org/PlanDefinition/CKDFollowUpPlan",
+    "version" : "0.1.0",
+    "name" : "CKDFollowUpPlan"
+  },
+  {
+    "id" : "CKDManagementPlan",
+    "type" : "PlanDefinition",
+    "url" : "http://example.org/PlanDefinition/CKDManagementPlan",
+    "version" : "0.1.0",
+    "name" : "CKDManagementPlan"
+  },
+  {
+    "id" : "CkdPathway",
+    "type" : "PlanDefinition",
+    "url" : "http://example.org/PlanDefinition/CkdPathway",
+    "version" : "0.1.0",
+    "name" : "CkdPathway"
+  },
+  {
+    "id" : "DischargeFollowUpPlan",
+    "type" : "PlanDefinition",
+    "url" : "http://example.org/PlanDefinition/DischargeFollowUpPlan",
+    "version" : "0.1.0",
+    "name" : "DischargeFollowUpPlan"
+  },
+  {
+    "id" : "DischargeInstructionsPlan",
+    "type" : "PlanDefinition",
+    "url" : "http://example.org/PlanDefinition/DischargeInstructionsPlan",
+    "version" : "0.1.0",
+    "name" : "DischargeInstructionsPlan"
+  },
+  {
+    "id" : "IronDeficiencyTreatmentPlan",
+    "type" : "PlanDefinition",
+    "url" : "http://example.org/PlanDefinition/IronDeficiencyTreatmentPlan",
+    "version" : "0.1.0",
+    "name" : "IronDeficiencyTreatmentPlan"
+  },
+  {
+    "id" : "IschemicStrokePlan",
+    "type" : "PlanDefinition",
+    "url" : "http://example.org/PlanDefinition/IschemicStrokePlan",
+    "version" : "0.1.0",
+    "name" : "IschemicStrokePlan"
+  },
+  {
+    "id" : "NeurologicalAssessmentPlan",
+    "type" : "PlanDefinition",
+    "url" : "http://example.org/PlanDefinition/NeurologicalAssessmentPlan",
+    "version" : "0.1.0",
+    "name" : "NeurologicalAssessmentPlan"
+  },
+  {
+    "id" : "ReportWeightHeightPlan",
+    "type" : "PlanDefinition",
+    "url" : "http://example.org/PlanDefinition/ReportWeightHeightPlan",
+    "version" : "0.1.0",
+    "name" : "ReportWeightHeightPlan"
+  },
+  {
+    "id" : "SendMessagePlan",
+    "type" : "PlanDefinition",
+    "url" : "http://example.org/PlanDefinition/SendMessagePlan",
+    "version" : "0.1.0",
+    "name" : "SendMessagePlan"
+  },
+  {
+    "id" : "RegistrationQuestionnaire",
+    "type" : "Questionnaire",
+    "url" : "http://example.org/Questionnaire/RegistrationQuestionnaire",
+    "version" : "0.1.0",
+    "name" : "RegistrationQuestionnaire"
+  },
+  {
+    "id" : "FixedCPGComputableActivityDefinitionDocumentMedication",
+    "type" : "StructureDefinition",
+    "url" : "http://example.org/StructureDefinition/FixedCPGComputableActivityDefinitionDocumentMedication",
+    "version" : "0.1.0",
+    "name" : "FixedCPGComputableActivityDefinitionDocumentMedication"
+  },
+  {
+    "id" : "FixedCPGTaskAdministerMedication",
+    "type" : "StructureDefinition",
+    "url" : "http://example.org/StructureDefinition/FixedCPGTaskAdministerMedication",
+    "version" : "0.1.0",
+    "name" : "FixedCPGTaskAdministerMedication"
+  },
+  {
+    "id" : "FixedCPGTaskDispenseMedication",
+    "type" : "StructureDefinition",
+    "url" : "http://example.org/StructureDefinition/FixedCPGTaskDispenseMedication",
+    "version" : "0.1.0",
+    "name" : "FixedCPGTaskDispenseMedication"
+  },
+  {
+    "id" : "FixedCPGTaskDocumentMedication",
+    "type" : "StructureDefinition",
+    "url" : "http://example.org/StructureDefinition/FixedCPGTaskDocumentMedication",
+    "version" : "0.1.0",
+    "name" : "FixedCPGTaskDocumentMedication"
+  }
+]

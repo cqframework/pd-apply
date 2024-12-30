@@ -1,0 +1,60 @@
+{
+  "resourceType" : "ActivityDefinition",
+  "id" : "DontCollectInformationActivity",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectinformationactivity"]
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode" : "publishable"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode" : "structured"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation"
+  }],
+  "url" : "http://example.org/ActivityDefinition/DontCollectInformationActivity",
+  "version" : "0.1.0",
+  "name" : "DontCollectInformationActivity",
+  "title" : "ActivityDefinition DontCollectInformationActivity",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-06T14:19:43-05:00",
+  "publisher" : "Example Publisher",
+  "contact" : [{
+    "name" : "Example Publisher",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://example.org/example-publisher"
+    }]
+  }],
+  "description" : "Example Activity Definition for a recommendation not to collect information",
+  "kind" : "Task",
+  "profile" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask",
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+      "code" : "collect-information",
+      "display" : "Collect information"
+    }]
+  },
+  "intent" : "proposal",
+  "doNotPerform" : true,
+  "dynamicValue" : [{
+    "path" : "input[0].type",
+    "expression" : {
+      "language" : "text/fhirpath",
+      "expression" : "%context.code"
+    }
+  },
+  {
+    "path" : "input[0].valueCanonical",
+    "expression" : {
+      "language" : "text/fhirpath",
+      "expression" : "%context.extension.where(url='http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith').value"
+    }
+  }]
+}

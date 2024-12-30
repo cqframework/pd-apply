@@ -18,4 +18,4 @@ Usage: #example
   * expression
     * language = #text/cql-identifier
     * expression = "Report Flag Reference"
-    * reference = Canonical(ReportFlagLibrary)
+    * reference = Canonical(ReportFlagLibrary|0.2.0)

@@ -1,0 +1,35 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "CKDEducationExpected",
+  "type" : "collection",
+  "entry" : [{
+    "fullUrl" : "http://apply-processor/RequestGroup/CKDEducationRequestGroup",
+    "resource" : {
+      "resourceType" : "RequestGroup",
+      "id" : "CKDEducationRequestGroup",
+      "instantiatesCanonical" : ["http://example.org/PlanDefinition/CKDEducationPlan|0.1.0"],
+      "status" : "draft",
+      "intent" : "proposal",
+      "subject" : {
+        "reference" : "Patient/Patient1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/Encounter1"
+      },
+      "author" : {
+        "reference" : "Practitioner/Practitioner1"
+      },
+      "action" : [{
+        "title" : "CKD Patient Education",
+        "description" : "Provide verbal and written education on disease state at time of CKD diagnosis",
+        "code" : [{
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process",
+            "code" : "provide-counseling",
+            "display" : "Provide Counseling"
+          }]
+        }]
+      }]
+    }
+  }]
+}

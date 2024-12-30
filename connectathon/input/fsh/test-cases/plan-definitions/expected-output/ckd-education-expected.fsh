@@ -2,9 +2,7 @@ Instance: CKDEducationExpected
 InstanceOf: Bundle
 Usage: #example
 * type = #collection
-* entry
-  * fullUrl = "http://apply-processor/RequestGroup/CKDEducationRequestGroup"
-  * resource = CKDEducationRequestGroup
+* insert BundleEntry(CKDEducationRequestGroup, RequestGroup)
 
 Instance: CKDEducationRequestGroup
 InstanceOf: RequestGroup
@@ -14,8 +12,11 @@ Usage: #inline
 * subject = Reference(Patient1)
 * author = Reference(Practitioner1)
 * encounter = Reference(Encounter1)
-* instantiatesCanonical = "http://example.org/PlanDefinition/CKDEducationPlan|0.1.0"
+* instantiatesCanonical = Canonical(CKDEducationPlan|0.2.0)
 * action
-  * title = "CKD Patient Education"
-  * description = "Provide verbal and written education on disease state at time of CKD diagnosis"
+  * title = "Recommend CKD Patient Education"
+  * description = "Recommend verbal and written education on disease state at time of CKD diagnosis"
   * code = $cpg-common-process#provide-counseling "Provide Counseling"
+  * action
+    * title = "Provide CKD Patient Education"
+    * description = "Provide verbal and written education on disease state at time of CKD diagnosis"

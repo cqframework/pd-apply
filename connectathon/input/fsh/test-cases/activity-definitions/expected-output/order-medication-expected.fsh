@@ -4,7 +4,7 @@ Usage: #example
 * status = #draft
 * doNotPerform = false
 * intent = #proposal
-* instantiatesCanonical = "http://example.org/ActivityDefinition/OrderMedicationActivity|0.1.0"
+* instantiatesCanonical = Canonical(OrderMedicationActivity|0.2.0)
 * subject = Reference(Patient1)
 * encounter = Reference(Encounter1)
 * requester = Reference(Practitioner1)
@@ -17,7 +17,7 @@ Usage: #example
       * frequency = 1
       * period = 1
       * periodUnit = #d
-  * route = http://snomed.info/sct#26643006 "Oral Route (qualifier value)"
+  * route = $sct#26643006 "Oral Route (qualifier value)"
   * doseAndRate
-    * type = http://terminology.hl7.org/CodeSystem/dose-rate-type#ordered "Ordered"
+    * type = $dose-rate-type#ordered "Ordered"
     * doseQuantity = 75 'ug' "mcg"

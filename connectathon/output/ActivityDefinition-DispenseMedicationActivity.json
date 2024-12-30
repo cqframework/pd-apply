@@ -1,0 +1,43 @@
+{
+  "resourceType" : "ActivityDefinition",
+  "id" : "DispenseMedicationActivity",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationactivity"]
+  },
+  "url" : "http://example.org/ActivityDefinition/DispenseMedicationActivity",
+  "version" : "0.2.0",
+  "name" : "DispenseMedicationActivity",
+  "title" : "ActivityDefinition DispenseMedicationActivity",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-17T14:41:38-05:00",
+  "publisher" : "Example Publisher",
+  "description" : "Dispense medication activity",
+  "kind" : "Task",
+  "profile" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-dispensemedicationtask",
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs",
+      "code" : "dispense-medication",
+      "display" : "Dispense a Medication"
+    }]
+  },
+  "intent" : "proposal",
+  "doNotPerform" : false,
+  "dynamicValue" : [{
+    "path" : "input[0].type.coding[0]",
+    "expression" : {
+      "language" : "text/cql-identifier",
+      "expression" : "Medication Request Code",
+      "reference" : "http://example.org/Library/DispenseMedicationLibrary|0.2.0"
+    }
+  },
+  {
+    "path" : "input[0].valueReference",
+    "expression" : {
+      "language" : "text/cql-identifier",
+      "expression" : "Medication Proposal Reference",
+      "reference" : "http://example.org/Library/DispenseMedicationLibrary|0.2.0"
+    }
+  }]
+}

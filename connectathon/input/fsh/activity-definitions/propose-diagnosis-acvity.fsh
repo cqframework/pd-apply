@@ -18,4 +18,4 @@ Usage: #example
   * expression
     * language = #text/cql-identifier
     * expression = "Propose Diagnosis Reference"
-    * reference = Canonical(ProposeDiagnosisLibrary)
+    * reference = Canonical(ProposeDiagnosisLibrary|0.2.0)

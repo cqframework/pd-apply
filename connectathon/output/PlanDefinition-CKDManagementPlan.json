@@ -1,0 +1,47 @@
+{
+  "resourceType" : "PlanDefinition",
+  "id" : "CKDManagementPlan",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableplandefinition"]
+  },
+  "url" : "http://example.org/PlanDefinition/CKDManagementPlan",
+  "version" : "0.2.0",
+  "name" : "CKDManagementPlan",
+  "title" : "PlanDefinition CKDManagementPlan",
+  "type" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code" : "clinical-protocol",
+      "display" : "Clinical Protocol"
+    }]
+  },
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-17T14:41:38-05:00",
+  "publisher" : "Example Publisher",
+  "description" : "Management strategy for patients with newly diagnosed Chronic Kidney Disease",
+  "action" : [{
+    "title" : "CKD Education",
+    "description" : "CKD Education at time of diagnosis",
+    "code" : [{
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs",
+        "code" : "provide-counseling",
+        "display" : "Provide Counseling"
+      }]
+    }],
+    "definitionCanonical" : "http://example.org/PlanDefinition/CKDEducationPlan|0.2.0"
+  },
+  {
+    "title" : "Follow Up Plan",
+    "description" : "Schedule follow up with nephrologist",
+    "code" : [{
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs",
+        "code" : "monitor-and-follow-up-of-patient",
+        "display" : "Monitor and Follow-up of Patient"
+      }]
+    }],
+    "definitionCanonical" : "http://example.org/PlanDefinition/CKDFollowUpPlan|0.2.0"
+  }]
+}

@@ -1,0 +1,37 @@
+{
+  "resourceType" : "Questionnaire",
+  "id" : "RegistrationQuestionnaire",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablequestionnaire"]
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode" : "publishable"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode" : "structured"
+  }],
+  "url" : "http://example.org/Questionnaire/RegistrationQuestionnaire",
+  "version" : "0.1.0",
+  "name" : "RegistrationQuestionnaire",
+  "title" : "Questionnaire RegistrationQuestionnaire",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-06T14:19:43-05:00",
+  "publisher" : "Example Publisher",
+  "contact" : [{
+    "name" : "Example Publisher",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://example.org/example-publisher"
+    }]
+  }],
+  "description" : "Questionnaire to collect identifying infomration",
+  "item" : [{
+    "linkId" : "name",
+    "text" : "Name",
+    "type" : "string",
+    "required" : true
+  }]
+}

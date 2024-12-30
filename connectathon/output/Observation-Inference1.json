@@ -1,0 +1,20 @@
+{
+  "resourceType" : "Observation",
+  "id" : "Inference1",
+  "status" : "final",
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "448765001",
+      "display" : "Unintentional weight loss (finding)"
+    }],
+    "text" : "Inference"
+  },
+  "subject" : {
+    "reference" : "Patient/Patient1"
+  },
+  "effectiveDateTime" : "2025-01-15",
+  "performer" : [{
+    "reference" : "Practitioner/Practitioner1"
+  }]
+}

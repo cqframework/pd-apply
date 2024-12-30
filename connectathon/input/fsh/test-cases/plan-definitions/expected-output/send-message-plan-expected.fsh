@@ -2,12 +2,8 @@ Instance: SendMessagePlanExpected
 InstanceOf: Bundle
 Usage: #example
 * type = #collection
-* entry[+]
-  * fullUrl = "http://apply-processor/RequestGroup/SendMessageRequestGroup"
-  * resource = SendMessageRequestGroup
-* entry[+]
-  * fullUrl = "http://apply-processor/CommunicationRequest/SendMessageRequest"
-  * resource = SendMessageRequest
+* insert BundleEntry(SendMessageRequestGroup, RequestGroup)
+* insert BundleEntry(SendMessageRequest, CommunicationRequest)
 
 Instance: SendMessageRequestGroup
 InstanceOf: RequestGroup
@@ -17,12 +13,12 @@ Usage: #inline
 * subject = Reference(Patient1)
 * author = Reference(Practitioner1)
 * encounter = Reference(Encounter1)
-* instantiatesCanonical = "http://example.org/PlanDefinition/SendMessagePlan|0.1.0"
+* instantiatesCanonical = Canonical(SendMessagePlan|0.2.0)
 * action
   * title = "Greet the patient"
   * description = "Send a message with a greeting"
   * code = $cpg-common-process#alerts-reminders-education "Alerts Reminders Education"
-  * type = http://terminology.hl7.org/CodeSystem/action-type#create
+  * type = $action-type#create
   * resource = Reference(SendMessageRequest)
 
 Instance: SendMessageRequest

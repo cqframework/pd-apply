@@ -1,0 +1,36 @@
+{
+  "resourceType" : "Task",
+  "id" : "EnrollPatientExpected",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollmenttask"]
+  },
+  "instantiatesCanonical" : "http://example.org/ActivityDefinition/EnrollPatientActivity|0.1.0",
+  "status" : "draft",
+  "intent" : "proposal",
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+      "code" : "enrollment",
+      "display" : "Enroll in a pathway or strategy"
+    }]
+  },
+  "for" : {
+    "reference" : "Patient/Patient1"
+  },
+  "encounter" : {
+    "reference" : "Encounter/Encounter1"
+  },
+  "requester" : {
+    "reference" : "Practitioner/Practitioner1"
+  },
+  "input" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+        "code" : "enrollment",
+        "display" : "Enroll in a pathway or strategy"
+      }]
+    },
+    "valueCanonical" : "http://hl7.org/fhir/uv/cpg/PlanDefinition/activity-example-pathway"
+  }]
+}

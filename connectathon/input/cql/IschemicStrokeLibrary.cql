@@ -1,8 +1,8 @@
-library IschemicStrokeLibrary version '0.1.0'
+library IschemicStrokeLibrary version '0.2.0'
 
 using FHIR version '4.0.1'
 
-include FHIRHelpers version '0.1.0'
+include FHIRHelpers version '0.2.0'
 
 codesystem "SNOMED": 'http://snomed.info/sct'
 code "Ischemic Stroke":
@@ -26,15 +26,3 @@ define "Condition Code Value":
 
 define "Had Ischemic Stroke":
   "Condition Code Value" = "Ischemic Stroke"
-
-define "Medications":
-  [Medication]
-
-define "Active Medication":
-  Medications.where(status = 'active')[0]
-
-define "Medication Reference":
-  if "Active Medication" is not null then
-    { reference: 'Medication/' + "Active Medication".id }
-  else
-    null

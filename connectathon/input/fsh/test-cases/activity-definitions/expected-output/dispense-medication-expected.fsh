@@ -1,13 +1,13 @@
 Instance: DispenseMedicationExpected
-InstanceOf: FixedCPGTaskDispenseMedication
+InstanceOf: CPGDispenseMedicationTask
 Usage: #example
 * status = #draft
 * intent = #proposal
-* instantiatesCanonical = "http://example.org/ActivityDefinition/DispenseMedicationActivity|0.1.0"
+* instantiatesCanonical = Canonical(DispenseMedicationActivity|0.2.0)
 * code = $cpg-activity-type-cs#dispense-medication "Dispense a Medication"
 * for = Reference(Patient1)
 * encounter = Reference(Encounter1)
 * requester = Reference(Practitioner1)
-* input[medicationDispense]
-  * type = $cpg-activity-type-cs#dispense-medication "Dispense a Medication"
+* input[medicationRequest]
+  * type = $cpg-activity-type-cs#order-medication "Order a Medication"
   * valueReference = Reference(PastMedicationRequest)

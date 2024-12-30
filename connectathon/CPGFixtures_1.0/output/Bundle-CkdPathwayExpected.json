@@ -1,0 +1,205 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "CkdPathwayExpected",
+  "type" : "collection",
+  "entry" : [{
+    "fullUrl" : "http://apply-processor/RequestGroup/CkdPathwayRequestGroup",
+    "resource" : {
+      "resourceType" : "RequestGroup",
+      "id" : "CkdPathwayRequestGroup",
+      "instantiatesCanonical" : ["http://example.org/PlanDefinition/CkdPathway|0.1.0"],
+      "status" : "draft",
+      "intent" : "proposal",
+      "subject" : {
+        "reference" : "Patient/Patient1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/Encounter1"
+      },
+      "author" : {
+        "reference" : "Practitioner/Practitioner1"
+      },
+      "action" : [{
+        "title" : "CKD Management",
+        "description" : "Definition of plan for new diagnosis of CKD",
+        "resource" : {
+          "reference" : "RequestGroup/InlineCKDManagementRequestGroup"
+        }
+      },
+      {
+        "title" : "Greet patient",
+        "description" : "Greet patient at time of patient portal sign up",
+        "resource" : {
+          "reference" : "RequestGroup/InlineSendMessageRequestGroup"
+        }
+      }]
+    }
+  },
+  {
+    "fullUrl" : "http://apply-processor/RequestGroup/InlineCKDManagementRequestGroup",
+    "resource" : {
+      "resourceType" : "RequestGroup",
+      "id" : "InlineCKDManagementRequestGroup",
+      "instantiatesCanonical" : ["http://example.org/PlanDefinition/CKDManagementPlan|0.1.0"],
+      "status" : "draft",
+      "intent" : "proposal",
+      "subject" : {
+        "reference" : "Patient/Patient1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/Encounter1"
+      },
+      "author" : {
+        "reference" : "Practitioner/Practitioner1"
+      },
+      "action" : [{
+        "title" : "CKD Education",
+        "description" : "CKD Education at time of diagnosis",
+        "code" : [{
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process",
+            "code" : "provide-counseling",
+            "display" : "Provide Counseling"
+          }]
+        }],
+        "resource" : {
+          "reference" : "RequestGroup/InlineCKDEducationRequestGroup"
+        }
+      },
+      {
+        "title" : "Follow Up Plan",
+        "description" : "Schedule follow up with nephrologist",
+        "code" : [{
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process",
+            "code" : "monitor-and-follow-up-of-patient",
+            "display" : "Monitor and Follow-up of Patient"
+          }]
+        }],
+        "resource" : {
+          "reference" : "RequestGroup/InlineCKDFollowUpRequestGroup"
+        }
+      }]
+    }
+  },
+  {
+    "fullUrl" : "http://apply-processor/RequestGroup/InlineCkdEducationRequestGroup",
+    "resource" : {
+      "resourceType" : "RequestGroup",
+      "id" : "InlineCkdEducationRequestGroup",
+      "instantiatesCanonical" : ["http://example.org/PlanDefinition/CKDEducationPlan|0.1.0"],
+      "status" : "draft",
+      "intent" : "proposal",
+      "subject" : {
+        "reference" : "Patient/Patient1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/Encounter1"
+      },
+      "author" : {
+        "reference" : "Practitioner/Practitioner1"
+      },
+      "action" : [{
+        "title" : "CKD Patient Education",
+        "description" : "Provide verbal and written education on disease state at time of CKD diagnosis",
+        "code" : [{
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process",
+            "code" : "provide-counseling",
+            "display" : "Provide Counseling"
+          }]
+        }]
+      }]
+    }
+  },
+  {
+    "fullUrl" : "http://apply-processor/RequestGroup/InlineCKDFollowUpRequestGroup",
+    "resource" : {
+      "resourceType" : "RequestGroup",
+      "id" : "InlineCKDFollowUpRequestGroup",
+      "instantiatesCanonical" : ["http://example.org/PlanDefinition/CKDFollowUpPlan|0.1.0"],
+      "status" : "draft",
+      "intent" : "proposal",
+      "subject" : {
+        "reference" : "Patient/Patient1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/Encounter1"
+      },
+      "author" : {
+        "reference" : "Practitioner/Practitioner1"
+      },
+      "action" : [{
+        "title" : "CKD Follow Up Plan",
+        "description" : "Schedule follow up with a nephrologist at time of CKD diagnosis",
+        "code" : [{
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process",
+            "code" : "monitor-and-follow-up-of-patient",
+            "display" : "Monitor and Follow-up of Patient"
+          }]
+        }]
+      }]
+    }
+  },
+  {
+    "fullUrl" : "http://apply-processor/RequestGroup/InlineSendMessageRequestGroup",
+    "resource" : {
+      "resourceType" : "RequestGroup",
+      "id" : "InlineSendMessageRequestGroup",
+      "instantiatesCanonical" : ["http://example.org/PlanDefinition/SendMessagePlan|0.1.0"],
+      "status" : "draft",
+      "intent" : "proposal",
+      "subject" : {
+        "reference" : "Patient/Patient1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/Encounter1"
+      },
+      "author" : {
+        "reference" : "Practitioner/Practitioner1"
+      },
+      "action" : [{
+        "title" : "Greet the patient",
+        "description" : "Send a message with a greeting",
+        "code" : [{
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process",
+            "code" : "alerts-reminders-education",
+            "display" : "Alerts Reminders Education"
+          }]
+        }],
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/action-type",
+            "code" : "create"
+          }]
+        },
+        "resource" : {
+          "reference" : "CommunicationRequest/InlineCommunicationRequest"
+        }
+      }]
+    }
+  },
+  {
+    "fullUrl" : "http://apply-processor/CommunicationRequest/InlineCommunicationRequest",
+    "resource" : {
+      "resourceType" : "CommunicationRequest",
+      "id" : "InlineCommunicationRequest",
+      "status" : "draft",
+      "doNotPerform" : false,
+      "subject" : {
+        "reference" : "Patient/Patient1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/Encounter1"
+      },
+      "payload" : [{
+        "contentString" : "Greeting: Hello! Alice Message: Example Activity Definition for a recommendation to send a message Practitioner: Michael"
+      }],
+      "requester" : {
+        "reference" : "Practitioner/Practitioner1"
+      }
+    }
+  }]
+}

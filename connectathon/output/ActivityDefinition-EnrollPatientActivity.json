@@ -1,0 +1,45 @@
+{
+  "resourceType" : "ActivityDefinition",
+  "id" : "EnrollPatientActivity",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollmentactivity"]
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollIn",
+    "valueCanonical" : "http://example.org/PlanDefinition/CkdPathway"
+  }],
+  "url" : "http://example.org/ActivityDefinition/EnrollPatientActivity",
+  "version" : "0.2.0",
+  "name" : "EnrollPatientActivity",
+  "title" : "ActivityDefinition EnrollPatientActivity",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-17T14:41:38-05:00",
+  "publisher" : "Example Publisher",
+  "description" : "Example Activity Definition for a recommendation to enroll a patient in a pathway",
+  "kind" : "Task",
+  "profile" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollmenttask",
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs",
+      "code" : "enrollment",
+      "display" : "Enroll in a pathway or strategy"
+    }]
+  },
+  "intent" : "proposal",
+  "doNotPerform" : false,
+  "dynamicValue" : [{
+    "path" : "input[0].type",
+    "expression" : {
+      "language" : "text/fhirpath",
+      "expression" : "%context.code"
+    }
+  },
+  {
+    "path" : "input[0].valueCanonical",
+    "expression" : {
+      "language" : "text/fhirpath",
+      "expression" : "%context.extension.where(url='http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-enrollIn').value"
+    }
+  }]
+}

@@ -1,0 +1,57 @@
+{
+  "resourceType" : "ActivityDefinition",
+  "id" : "DocumentMedicationActivity",
+  "meta" : {
+    "profile" : ["http://example.org/StructureDefinition/FixedCPGComputableActivityDefinitionDocumentMedication"]
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode" : "publishable"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode" : "structured"
+  }],
+  "url" : "http://example.org/ActivityDefinition/DocumentMedicationActivity",
+  "version" : "0.1.0",
+  "name" : "DocumentMedicationActivity",
+  "title" : "ActivityDefinition DocumentMedicationActivity",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-06T14:19:43-05:00",
+  "publisher" : "Example Publisher",
+  "contact" : [{
+    "name" : "Example Publisher",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://example.org/example-publisher"
+    }]
+  }],
+  "description" : "Example Activity Definition for a recommendation to document a medication",
+  "kind" : "Task",
+  "profile" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-documentmedicationtask",
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type",
+      "code" : "document-medication",
+      "display" : "Document a medication"
+    }]
+  },
+  "intent" : "proposal",
+  "doNotPerform" : false,
+  "dynamicValue" : [{
+    "path" : "input[0].type",
+    "expression" : {
+      "language" : "text/fhirpath",
+      "expression" : "%context.code"
+    }
+  },
+  {
+    "path" : "input[0].valueReference",
+    "expression" : {
+      "language" : "text/cql-identifier",
+      "expression" : "Medication Proposal Reference",
+      "reference" : "http://example.org/Library/DocumentMedicationLibrary"
+    }
+  }]
+}

@@ -1,0 +1,71 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "OrderServicePlanExpected",
+  "type" : "collection",
+  "entry" : [{
+    "fullUrl" : "http://apply-processor/RequestGroup/OrderServiceRequestGroup",
+    "resource" : {
+      "resourceType" : "RequestGroup",
+      "id" : "OrderServiceRequestGroup",
+      "instantiatesCanonical" : ["http://example.org/PlanDefinition/OrderServicePlan|0.2.0"],
+      "status" : "draft",
+      "intent" : "proposal",
+      "subject" : {
+        "reference" : "Patient/Patient1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/Encounter1"
+      },
+      "author" : {
+        "reference" : "Practitioner/Practitioner1"
+      },
+      "action" : [{
+        "title" : "Order Service",
+        "description" : "Order Service",
+        "code" : [{
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs",
+            "code" : "guideline-based-care",
+            "display" : "Guideline-based Care"
+          }]
+        }],
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/action-type",
+            "code" : "create"
+          }]
+        },
+        "resource" : {
+          "reference" : "ServiceRequest/OrderServiceVersionTestExpected"
+        }
+      }]
+    }
+  },
+  {
+    "fullUrl" : "http://apply-processor/ServiceRequest/OrderServiceVersionTestExpected",
+    "resource" : {
+      "resourceType" : "ServiceRequest",
+      "id" : "OrderServiceVersionTestExpected",
+      "instantiatesCanonical" : ["http://example.org/ActivityDefinition/OrderServiceActivityVersionTest"],
+      "status" : "draft",
+      "intent" : "proposal",
+      "doNotPerform" : true,
+      "code" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs",
+          "code" : "order-service",
+          "display" : "Order a service"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/Patient1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/Encounter1"
+      },
+      "requester" : {
+        "reference" : "Practitioner/Practitioner1"
+      }
+    }
+  }]
+}

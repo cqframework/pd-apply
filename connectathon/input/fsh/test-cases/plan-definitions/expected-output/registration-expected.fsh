@@ -2,9 +2,7 @@ Instance: RegistrationExpected
 InstanceOf: Bundle
 Usage: #example
 * type = #collection
-* entry
-  * fullUrl = "http://apply-processor/RequestGroup/RegistrationRequestGroup"
-  * resource = RegistrationRequestGroup
+* insert BundleEntry(RegistrationRequestGroup, RequestGroup)
 
 Instance: RegistrationRequestGroup
 InstanceOf: RequestGroup
@@ -14,7 +12,7 @@ Usage: #inline
 * subject = Reference(Patient1)
 * author = Reference(Practitioner1)
 * encounter = Reference(Encounter1)
-* instantiatesCanonical = "http://example.org/PlanDefinition/RegistrationPlan|0.1.0"
+* instantiatesCanonical = Canonical(RegistrationPlan|0.2.0)
 * action
   * title = "Registration with questionnaire"
   * description = "Register patient using questionnaire"

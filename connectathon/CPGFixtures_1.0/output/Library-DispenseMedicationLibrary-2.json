@@ -1,0 +1,417 @@
+{
+   "library" : {
+      "annotation" : [ {
+         "translatorOptions" : "EnableAnnotations,EnableLocators",
+         "signatureLevel" : "None",
+         "type" : "CqlToElmInfo"
+      }, {
+         "message" : "The function FHIRHelpers.ToDateTime has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "The function FHIRHelpers.ToDateTime has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "The function FHIRHelpers.ToString has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "25",
+            "s" : [ {
+               "value" : [ "","library DispenseMedicationLibrary version '0.1.0'" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "DispenseMedicationLibrary",
+         "system" : "http://example.org",
+         "version" : "0.1.0"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "1",
+            "locator" : "3:1-3:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "1",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "2",
+            "locator" : "5:1-5:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://example.org/FHIRHelpers",
+            "version" : "0.1.0",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "2",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'0.1.0'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "contexts" : {
+         "def" : [ {
+            "locator" : "7:1-7:15",
+            "name" : "Patient"
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "locator" : "7:1-7:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "type" : "SingletonFrom",
+               "operand" : {
+                  "locator" : "7:1-7:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve"
+               }
+            }
+         }, {
+            "localId" : "5",
+            "locator" : "9:1-10:12",
+            "name" : "Patient id",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "5",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Patient id\"",":\n  " ]
+                  }, {
+                     "r" : "4",
+                     "s" : [ {
+                        "r" : "3",
+                        "s" : [ {
+                           "value" : [ "Patient" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "4",
+                        "s" : [ {
+                           "value" : [ "id" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "4",
+               "locator" : "10:3-10:12",
+               "path" : "id",
+               "type" : "Property",
+               "source" : {
+                  "localId" : "3",
+                  "locator" : "10:3-10:9",
+                  "name" : "Patient",
+                  "type" : "ExpressionRef"
+               }
+            }
+         }, {
+            "localId" : "7",
+            "locator" : "12:1-13:21",
+            "name" : "Medication Requests",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "7",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Medication Requests\"",":\n  " ]
+                  }, {
+                     "r" : "6",
+                     "s" : [ {
+                        "value" : [ "[","MedicationRequest","]" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "6",
+               "locator" : "13:3-13:21",
+               "dataType" : "{http://hl7.org/fhir}MedicationRequest",
+               "templateId" : "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+               "type" : "Retrieve"
+            }
+         }, {
+            "localId" : "15",
+            "locator" : "15:1-18:3",
+            "name" : "Medication Proposal",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "15",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Medication Proposal\"",":\n  " ]
+                  }, {
+                     "r" : "14",
+                     "s" : [ {
+                        "value" : [ "First","(" ]
+                     }, {
+                        "r" : "13",
+                        "s" : [ {
+                           "s" : [ {
+                              "r" : "9",
+                              "s" : [ {
+                                 "r" : "8",
+                                 "s" : [ {
+                                    "r" : "8",
+                                    "s" : [ {
+                                       "value" : [ "[","MedicationRequest","]" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " ","M" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n      " ]
+                        }, {
+                           "r" : "12",
+                           "s" : [ {
+                              "value" : [ "sort by " ]
+                           }, {
+                              "r" : "11",
+                              "s" : [ {
+                                 "r" : "10",
+                                 "s" : [ {
+                                    "value" : [ "authoredOn" ]
+                                 } ]
+                              } ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n  )" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "14",
+               "locator" : "16:3-18:3",
+               "type" : "First",
+               "source" : {
+                  "localId" : "13",
+                  "locator" : "16:9-17:24",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "9",
+                     "locator" : "16:9-16:29",
+                     "alias" : "M",
+                     "expression" : {
+                        "localId" : "8",
+                        "locator" : "16:9-16:27",
+                        "dataType" : "{http://hl7.org/fhir}MedicationRequest",
+                        "templateId" : "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+                        "type" : "Retrieve"
+                     }
+                  } ],
+                  "relationship" : [ ],
+                  "sort" : {
+                     "localId" : "12",
+                     "locator" : "17:7-17:24",
+                     "by" : [ {
+                        "localId" : "11",
+                        "locator" : "17:15-17:24",
+                        "direction" : "asc",
+                        "path" : "authoredOn",
+                        "type" : "ByColumn"
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "25",
+            "locator" : "20:1-24:8",
+            "name" : "Medication Proposal Reference",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "25",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Medication Proposal Reference\"",":\n  " ]
+                  }, {
+                     "r" : "24",
+                     "s" : [ {
+                        "value" : [ "if " ]
+                     }, {
+                        "r" : "17",
+                        "s" : [ {
+                           "r" : "16",
+                           "s" : [ {
+                              "value" : [ "\"Medication Proposal\"" ]
+                           } ]
+                        }, {
+                           "value" : [ " is not null" ]
+                        } ]
+                     }, {
+                        "value" : [ " then\n    " ]
+                     }, {
+                        "r" : "22",
+                        "s" : [ {
+                           "value" : [ "{ " ]
+                        }, {
+                           "s" : [ {
+                              "value" : [ "reference",": " ]
+                           }, {
+                              "r" : "21",
+                              "s" : [ {
+                                 "r" : "18",
+                                 "s" : [ {
+                                    "value" : [ "'MedicationRequest/'" ]
+                                 } ]
+                              }, {
+                                 "value" : [ " + " ]
+                              }, {
+                                 "r" : "20",
+                                 "s" : [ {
+                                    "r" : "19",
+                                    "s" : [ {
+                                       "value" : [ "\"Medication Proposal\"" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "20",
+                                    "s" : [ {
+                                       "value" : [ "id" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " }" ]
+                        } ]
+                     }, {
+                        "r" : "23",
+                        "value" : [ "\n  else\n    ","null" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "24",
+               "locator" : "21:3-24:8",
+               "type" : "If",
+               "condition" : {
+                  "localId" : "17",
+                  "locator" : "21:6-21:38",
+                  "type" : "Not",
+                  "operand" : {
+                     "locator" : "21:6-21:38",
+                     "type" : "IsNull",
+                     "operand" : {
+                        "localId" : "16",
+                        "locator" : "21:6-21:26",
+                        "name" : "Medication Proposal",
+                        "type" : "ExpressionRef"
+                     }
+                  }
+               },
+               "then" : {
+                  "localId" : "22",
+                  "locator" : "22:5-22:66",
+                  "type" : "Tuple",
+                  "element" : [ {
+                     "name" : "reference",
+                     "value" : {
+                        "localId" : "21",
+                        "locator" : "22:18-22:64",
+                        "type" : "Concatenate",
+                        "operand" : [ {
+                           "localId" : "18",
+                           "locator" : "22:18-22:37",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "MedicationRequest/",
+                           "type" : "Literal"
+                        }, {
+                           "name" : "ToString",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "operand" : [ {
+                              "localId" : "20",
+                              "locator" : "22:41-22:64",
+                              "path" : "id",
+                              "type" : "Property",
+                              "source" : {
+                                 "localId" : "19",
+                                 "locator" : "22:41-22:61",
+                                 "name" : "Medication Proposal",
+                                 "type" : "ExpressionRef"
+                              }
+                           } ]
+                        } ]
+                     }
+                  } ]
+               },
+               "else" : {
+                  "type" : "As",
+                  "operand" : {
+                     "localId" : "23",
+                     "locator" : "24:5-24:8",
+                     "type" : "Null"
+                  },
+                  "asTypeSpecifier" : {
+                     "type" : "TupleTypeSpecifier",
+                     "element" : [ {
+                        "name" : "reference",
+                        "elementType" : {
+                           "name" : "{urn:hl7-org:elm-types:r1}String",
+                           "type" : "NamedTypeSpecifier"
+                        }
+                     } ]
+                  }
+               }
+            }
+         } ]
+      }
+   }
+}

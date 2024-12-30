@@ -1,0 +1,12 @@
+{
+  "codeSystems" : [
+    {
+      "url" : "http://example.org/CodeSystem/CaseFeatureCodes",
+      "version" : "0.2.0",
+      "status" : "active",
+      "name" : "CaseFeatureCodes",
+      "title" : "Case Feature Codes",
+      "description" : null
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "SendMessagePlanExpected",
+  "type" : "collection",
+  "entry" : [{
+    "fullUrl" : "http://apply-processor/RequestGroup/SendMessageRequestGroup",
+    "resource" : {
+      "resourceType" : "RequestGroup",
+      "id" : "SendMessageRequestGroup",
+      "instantiatesCanonical" : ["http://example.org/PlanDefinition/SendMessagePlan|0.1.0"],
+      "status" : "draft",
+      "intent" : "proposal",
+      "subject" : {
+        "reference" : "Patient/Patient1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/Encounter1"
+      },
+      "author" : {
+        "reference" : "Practitioner/Practitioner1"
+      },
+      "action" : [{
+        "title" : "Greet the patient",
+        "description" : "Send a message with a greeting",
+        "code" : [{
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process",
+            "code" : "alerts-reminders-education",
+            "display" : "Alerts Reminders Education"
+          }]
+        }],
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/action-type",
+            "code" : "create"
+          }]
+        },
+        "resource" : {
+          "reference" : "CommunicationRequest/SendMessageRequest"
+        }
+      }]
+    }
+  },
+  {
+    "fullUrl" : "http://apply-processor/CommunicationRequest/SendMessageRequest",
+    "resource" : {
+      "resourceType" : "CommunicationRequest",
+      "id" : "SendMessageRequest",
+      "meta" : {
+        "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-communicationrequest"]
+      },
+      "status" : "draft",
+      "doNotPerform" : false,
+      "subject" : {
+        "reference" : "Patient/Patient1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/Encounter1"
+      },
+      "payload" : [{
+        "contentString" : "Greeting: Hello! Alice Message: Example Activity Definition for a recommendation to send a message Practitioner: Michael"
+      }],
+      "requester" : {
+        "reference" : "Practitioner/Practitioner1"
+      }
+    }
+  }]
+}

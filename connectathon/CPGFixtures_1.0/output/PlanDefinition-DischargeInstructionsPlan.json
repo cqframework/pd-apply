@@ -1,0 +1,62 @@
+{
+  "resourceType" : "PlanDefinition",
+  "id" : "DischargeInstructionsPlan",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableplandefinition"]
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode" : "publishable"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode" : "structured"
+  }],
+  "url" : "http://example.org/PlanDefinition/DischargeInstructionsPlan",
+  "version" : "0.1.0",
+  "name" : "DischargeInstructionsPlan",
+  "title" : "PlanDefinition DischargeInstructionsPlan",
+  "type" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code" : "clinical-protocol",
+      "display" : "Clinical Protocol"
+    }]
+  },
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-06T14:19:43-05:00",
+  "publisher" : "Example Publisher",
+  "contact" : [{
+    "name" : "Example Publisher",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://example.org/example-publisher"
+    }]
+  }],
+  "description" : "Provide patient discharge instructions",
+  "action" : [{
+    "title" : "Send message with discharge instructions",
+    "code" : [{
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process",
+        "code" : "provide-counseling",
+        "display" : "Provide Counseling"
+      }]
+    }],
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/action-type",
+        "code" : "create"
+      }]
+    },
+    "definitionCanonical" : "http://example.org/ActivityDefinition/SendMessageActivity",
+    "dynamicValue" : [{
+      "path" : "payload[0].contentString",
+      "expression" : {
+        "language" : "text/fhirpath",
+        "expression" : "%context.description + ' for ' + %subject.name.given.first()"
+      }
+    }]
+  }]
+}

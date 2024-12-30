@@ -1,0 +1,413 @@
+{
+   "library" : {
+      "annotation" : [ {
+         "translatorOptions" : "EnableAnnotations,EnableLocators",
+         "signatureLevel" : "None",
+         "type" : "CqlToElmInfo"
+      }, {
+         "message" : "The function FHIRHelpers.ToDateTime has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "The function FHIRHelpers.ToDateTime has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "25",
+            "s" : [ {
+               "value" : [ "","library IronDeficiencyTreatmentLibrary version '0.1.0'" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "IronDeficiencyTreatmentLibrary",
+         "system" : "http://example.org",
+         "version" : "0.1.0"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "1",
+            "locator" : "3:1-3:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "1",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "2",
+            "locator" : "5:1-5:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://example.org/FHIRHelpers",
+            "version" : "0.1.0",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "2",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'0.1.0'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "codeSystems" : {
+         "def" : [ {
+            "localId" : "3",
+            "locator" : "7:1-7:45",
+            "name" : "SNOMED",
+            "id" : "http://snomed.info/sct",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "3",
+                  "s" : [ {
+                     "value" : [ "","codesystem ","\"SNOMED\"",": ","'http://snomed.info/sct'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "codes" : {
+         "def" : [ {
+            "localId" : "5",
+            "locator" : "8:1-9:55",
+            "name" : "anemia",
+            "id" : "271737000",
+            "display" : "Anemia (disorder)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "5",
+                  "s" : [ {
+                     "value" : [ "","code ","\"anemia\"",":\n  ","'271737000'"," from " ]
+                  }, {
+                     "r" : "4",
+                     "s" : [ {
+                        "value" : [ "\"SNOMED\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Anemia (disorder)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "4",
+               "locator" : "9:20-9:27",
+               "name" : "SNOMED"
+            }
+         } ]
+      },
+      "contexts" : {
+         "def" : [ {
+            "locator" : "11:1-11:15",
+            "name" : "Patient"
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "locator" : "11:1-11:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "type" : "SingletonFrom",
+               "operand" : {
+                  "locator" : "11:1-11:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve"
+               }
+            }
+         }, {
+            "localId" : "8",
+            "locator" : "13:1-14:12",
+            "name" : "Patient id",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "8",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Patient id\"",":\n  " ]
+                  }, {
+                     "r" : "7",
+                     "s" : [ {
+                        "r" : "6",
+                        "s" : [ {
+                           "value" : [ "Patient" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "7",
+                        "s" : [ {
+                           "value" : [ "id" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "7",
+               "locator" : "14:3-14:12",
+               "path" : "id",
+               "type" : "Property",
+               "source" : {
+                  "localId" : "6",
+                  "locator" : "14:3-14:9",
+                  "name" : "Patient",
+                  "type" : "ExpressionRef"
+               }
+            }
+         }, {
+            "localId" : "16",
+            "locator" : "16:1-19:3",
+            "name" : "Condition",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "16",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Condition\"",":\n  " ]
+                  }, {
+                     "r" : "15",
+                     "s" : [ {
+                        "value" : [ "First","(" ]
+                     }, {
+                        "r" : "14",
+                        "s" : [ {
+                           "s" : [ {
+                              "r" : "10",
+                              "s" : [ {
+                                 "r" : "9",
+                                 "s" : [ {
+                                    "r" : "9",
+                                    "s" : [ {
+                                       "value" : [ "[","Condition","]" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " ","M" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    " ]
+                        }, {
+                           "r" : "13",
+                           "s" : [ {
+                              "value" : [ "sort by " ]
+                           }, {
+                              "r" : "12",
+                              "s" : [ {
+                                 "r" : "11",
+                                 "s" : [ {
+                                    "value" : [ "recordedDate" ]
+                                 } ]
+                              } ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n  )" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "15",
+               "locator" : "17:3-19:3",
+               "type" : "First",
+               "source" : {
+                  "localId" : "14",
+                  "locator" : "17:9-18:24",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "10",
+                     "locator" : "17:9-17:21",
+                     "alias" : "M",
+                     "expression" : {
+                        "localId" : "9",
+                        "locator" : "17:9-17:19",
+                        "dataType" : "{http://hl7.org/fhir}Condition",
+                        "templateId" : "http://hl7.org/fhir/StructureDefinition/Condition",
+                        "type" : "Retrieve"
+                     }
+                  } ],
+                  "relationship" : [ ],
+                  "sort" : {
+                     "localId" : "13",
+                     "locator" : "18:5-18:24",
+                     "by" : [ {
+                        "localId" : "12",
+                        "locator" : "18:13-18:24",
+                        "direction" : "asc",
+                        "path" : "recordedDate",
+                        "type" : "ByColumn"
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "21",
+            "locator" : "21:1-22:33",
+            "name" : "Condition Code Value",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "21",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Condition Code Value\"",":\n  " ]
+                  }, {
+                     "r" : "20",
+                     "s" : [ {
+                        "r" : "19",
+                        "s" : [ {
+                           "r" : "18",
+                           "s" : [ {
+                              "r" : "17",
+                              "s" : [ {
+                                 "value" : [ "\"Condition\"" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "18",
+                              "s" : [ {
+                                 "value" : [ "code" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "19",
+                           "s" : [ {
+                              "value" : [ "coding" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "20",
+                        "s" : [ {
+                           "value" : [ "first","()" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "20",
+               "locator" : "22:3-22:33",
+               "type" : "First",
+               "source" : {
+                  "localId" : "19",
+                  "locator" : "22:3-22:25",
+                  "path" : "coding",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "18",
+                     "locator" : "22:3-22:18",
+                     "path" : "code",
+                     "type" : "Property",
+                     "source" : {
+                        "localId" : "17",
+                        "locator" : "22:3-22:13",
+                        "name" : "Condition",
+                        "type" : "ExpressionRef"
+                     }
+                  }
+               }
+            }
+         }, {
+            "localId" : "25",
+            "locator" : "24:1-25:35",
+            "name" : "Has Anemia",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "25",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Has Anemia\"",":\n  " ]
+                  }, {
+                     "r" : "24",
+                     "s" : [ {
+                        "r" : "22",
+                        "s" : [ {
+                           "value" : [ "\"Condition Code Value\"" ]
+                        } ]
+                     }, {
+                        "value" : [ " ","="," " ]
+                     }, {
+                        "r" : "23",
+                        "s" : [ {
+                           "value" : [ "\"anemia\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "24",
+               "locator" : "25:3-25:35",
+               "type" : "Equal",
+               "operand" : [ {
+                  "name" : "ToCode",
+                  "libraryName" : "FHIRHelpers",
+                  "type" : "FunctionRef",
+                  "operand" : [ {
+                     "localId" : "22",
+                     "locator" : "25:3-25:24",
+                     "name" : "Condition Code Value",
+                     "type" : "ExpressionRef"
+                  } ]
+               }, {
+                  "localId" : "23",
+                  "locator" : "25:28-25:35",
+                  "name" : "anemia",
+                  "type" : "CodeRef"
+               } ]
+            }
+         } ]
+      }
+   }
+}

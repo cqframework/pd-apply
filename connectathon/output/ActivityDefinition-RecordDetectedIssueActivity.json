@@ -1,0 +1,42 @@
+{
+  "resourceType" : "ActivityDefinition",
+  "id" : "RecordDetectedIssueActivity",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recorddetectedissueactivity"]
+  },
+  "url" : "http://example.org/ActivityDefinition/RecordDetectedIssueActivity",
+  "version" : "0.2.0",
+  "name" : "RecordDetectedIssueActivity",
+  "title" : "ActivityDefinition RecordDetectedIssueActivity",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-17T14:41:38-05:00",
+  "publisher" : "Example Publisher",
+  "description" : "Example Activity Definition for a recommendation to record a detected issue",
+  "kind" : "Task",
+  "profile" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recorddetectedissuetask",
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs",
+      "code" : "record-detected-issue",
+      "display" : "Record a detected issue"
+    }]
+  },
+  "intent" : "proposal",
+  "doNotPerform" : false,
+  "dynamicValue" : [{
+    "path" : "input[0].type",
+    "expression" : {
+      "language" : "text/fhirpath",
+      "expression" : "%context.code"
+    }
+  },
+  {
+    "path" : "input[0].valueReference",
+    "expression" : {
+      "language" : "text/cql-identifier",
+      "expression" : "Record Detected Issue Reference",
+      "reference" : "http://example.org/Library/RecordDetectedIssueLibrary|0.2.0"
+    }
+  }]
+}

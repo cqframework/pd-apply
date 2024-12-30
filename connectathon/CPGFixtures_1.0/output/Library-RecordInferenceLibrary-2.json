@@ -1,0 +1,358 @@
+{
+   "library" : {
+      "annotation" : [ {
+         "translatorOptions" : "EnableAnnotations,EnableLocators",
+         "signatureLevel" : "None",
+         "type" : "CqlToElmInfo"
+      }, {
+         "message" : "The function FHIRHelpers.ToDateTime has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "The function FHIRHelpers.ToDateTime has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "The function FHIRHelpers.ToDateTime has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "The function FHIRHelpers.ToDateTime has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "The function FHIRHelpers.ToString has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "20",
+            "s" : [ {
+               "value" : [ "","library RecordInferenceLibrary version '0.1.0'" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "RecordInferenceLibrary",
+         "system" : "http://example.org",
+         "version" : "0.1.0"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "1",
+            "locator" : "3:1-3:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "1",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "2",
+            "locator" : "5:1-5:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://example.org/FHIRHelpers",
+            "version" : "0.1.0",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "2",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'0.1.0'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "contexts" : {
+         "def" : [ {
+            "locator" : "7:1-7:15",
+            "name" : "Patient"
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "locator" : "7:1-7:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "type" : "SingletonFrom",
+               "operand" : {
+                  "locator" : "7:1-7:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve"
+               }
+            }
+         }, {
+            "localId" : "10",
+            "locator" : "9:1-12:3",
+            "name" : "Inference",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "10",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Inference\"",":\n  " ]
+                  }, {
+                     "r" : "9",
+                     "s" : [ {
+                        "value" : [ "First","(" ]
+                     }, {
+                        "r" : "8",
+                        "s" : [ {
+                           "s" : [ {
+                              "r" : "4",
+                              "s" : [ {
+                                 "r" : "3",
+                                 "s" : [ {
+                                    "r" : "3",
+                                    "s" : [ {
+                                       "value" : [ "[","Observation","]" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " ","M" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n      " ]
+                        }, {
+                           "r" : "7",
+                           "s" : [ {
+                              "value" : [ "sort by " ]
+                           }, {
+                              "r" : "6",
+                              "s" : [ {
+                                 "r" : "5",
+                                 "s" : [ {
+                                    "value" : [ "effective" ]
+                                 } ]
+                              } ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n  )" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "9",
+               "locator" : "10:3-12:3",
+               "type" : "First",
+               "source" : {
+                  "localId" : "8",
+                  "locator" : "10:9-11:23",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "4",
+                     "locator" : "10:9-10:23",
+                     "alias" : "M",
+                     "expression" : {
+                        "localId" : "3",
+                        "locator" : "10:9-10:21",
+                        "dataType" : "{http://hl7.org/fhir}Observation",
+                        "templateId" : "http://hl7.org/fhir/StructureDefinition/Observation",
+                        "type" : "Retrieve"
+                     }
+                  } ],
+                  "relationship" : [ ],
+                  "sort" : {
+                     "localId" : "7",
+                     "locator" : "11:7-11:23",
+                     "by" : [ {
+                        "localId" : "6",
+                        "locator" : "11:15-11:23",
+                        "direction" : "asc",
+                        "path" : "effective",
+                        "type" : "ByColumn"
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "20",
+            "locator" : "14:1-18:8",
+            "name" : "Record Inference Reference",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "20",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Record Inference Reference\"",":\n  " ]
+                  }, {
+                     "r" : "19",
+                     "s" : [ {
+                        "value" : [ "if " ]
+                     }, {
+                        "r" : "12",
+                        "s" : [ {
+                           "r" : "11",
+                           "s" : [ {
+                              "value" : [ "\"Inference\"" ]
+                           } ]
+                        }, {
+                           "value" : [ " is not null" ]
+                        } ]
+                     }, {
+                        "value" : [ " then\n    " ]
+                     }, {
+                        "r" : "17",
+                        "s" : [ {
+                           "value" : [ "{ " ]
+                        }, {
+                           "s" : [ {
+                              "value" : [ "reference",": " ]
+                           }, {
+                              "r" : "16",
+                              "s" : [ {
+                                 "r" : "13",
+                                 "s" : [ {
+                                    "value" : [ "'Observation/'" ]
+                                 } ]
+                              }, {
+                                 "value" : [ " + " ]
+                              }, {
+                                 "r" : "15",
+                                 "s" : [ {
+                                    "r" : "14",
+                                    "s" : [ {
+                                       "value" : [ "\"Inference\"" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "15",
+                                    "s" : [ {
+                                       "value" : [ "id" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " }" ]
+                        } ]
+                     }, {
+                        "r" : "18",
+                        "value" : [ "\n  else\n    ","null" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "19",
+               "locator" : "15:3-18:8",
+               "type" : "If",
+               "condition" : {
+                  "localId" : "12",
+                  "locator" : "15:6-15:28",
+                  "type" : "Not",
+                  "operand" : {
+                     "locator" : "15:6-15:28",
+                     "type" : "IsNull",
+                     "operand" : {
+                        "localId" : "11",
+                        "locator" : "15:6-15:16",
+                        "name" : "Inference",
+                        "type" : "ExpressionRef"
+                     }
+                  }
+               },
+               "then" : {
+                  "localId" : "17",
+                  "locator" : "16:5-16:50",
+                  "type" : "Tuple",
+                  "element" : [ {
+                     "name" : "reference",
+                     "value" : {
+                        "localId" : "16",
+                        "locator" : "16:18-16:48",
+                        "type" : "Concatenate",
+                        "operand" : [ {
+                           "localId" : "13",
+                           "locator" : "16:18-16:31",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "Observation/",
+                           "type" : "Literal"
+                        }, {
+                           "name" : "ToString",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "operand" : [ {
+                              "localId" : "15",
+                              "locator" : "16:35-16:48",
+                              "path" : "id",
+                              "type" : "Property",
+                              "source" : {
+                                 "localId" : "14",
+                                 "locator" : "16:35-16:45",
+                                 "name" : "Inference",
+                                 "type" : "ExpressionRef"
+                              }
+                           } ]
+                        } ]
+                     }
+                  } ]
+               },
+               "else" : {
+                  "type" : "As",
+                  "operand" : {
+                     "localId" : "18",
+                     "locator" : "18:5-18:8",
+                     "type" : "Null"
+                  },
+                  "asTypeSpecifier" : {
+                     "type" : "TupleTypeSpecifier",
+                     "element" : [ {
+                        "name" : "reference",
+                        "elementType" : {
+                           "name" : "{urn:hl7-org:elm-types:r1}String",
+                           "type" : "NamedTypeSpecifier"
+                        }
+                     } ]
+                  }
+               }
+            }
+         } ]
+      }
+   }
+}

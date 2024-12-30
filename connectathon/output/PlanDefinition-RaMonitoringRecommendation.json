@@ -1,0 +1,45 @@
+{
+  "resourceType" : "PlanDefinition",
+  "id" : "RaMonitoringRecommendation",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition"]
+  },
+  "url" : "http://example.org/PlanDefinition/RaMonitoringRecommendation",
+  "version" : "0.2.0",
+  "name" : "RaMonitoringRecommendation",
+  "title" : "PlanDefinition RaMonitoringRecommendation",
+  "type" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code" : "eca-rule"
+    }]
+  },
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-01-17T14:41:38-05:00",
+  "publisher" : "Example Publisher",
+  "description" : "Monitoring tests for antirheumatic drug therapy for Ra.",
+  "library" : ["http://example.org/Library/RaMonitoringRecommendationLibrary|0.2.0"],
+  "action" : [{
+    "title" : "Order monitoring tests for antirheumatic drug therapy.",
+    "description" : "Order monitoring tests for antirheumatic drug therapy.",
+    "code" : [{
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs",
+        "code" : "diagnostic-testing"
+      }]
+    }],
+    "condition" : [{
+      "kind" : "applicability",
+      "expression" : {
+        "language" : "text/cql-identifier",
+        "expression" : "Order monitoring tests if on RA treatment"
+      }
+    }],
+    "input" : [{
+      "type" : "Observation",
+      "profile" : ["http://example.org/StructureDefinition/ActiveRaTreatmentFeature"]
+    }],
+    "definitionCanonical" : "http://example.org/ActivityDefinition/OrderServiceActivity|0.2.0"
+  }]
+}

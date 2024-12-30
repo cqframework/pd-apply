@@ -1,0 +1,13 @@
+{
+  "resourceType" : "MedicationRequest",
+  "id" : "PastMedicationRequest",
+  "status" : "active",
+  "intent" : "order",
+  "medicationCodeableConcept" : {
+    "text" : "Some medication"
+  },
+  "subject" : {
+    "reference" : "Patient/Patient1"
+  },
+  "authoredOn" : "2023-01-01"
+}

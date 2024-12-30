@@ -3,7 +3,7 @@ InstanceOf: $cpg-recordinferencetask
 Usage: #example
 * status = #draft
 * intent = #proposal
-* instantiatesCanonical = "http://example.org/ActivityDefinition/RecordInferenceActivity|0.1.0"
+* instantiatesCanonical = Canonical(RecordInferenceActivity|0.2.0)
 * code = $cpg-activity-type-cs#record-inference "Record an inference"
 * for = Reference(Patient1)
 * encounter = Reference(Encounter1)
