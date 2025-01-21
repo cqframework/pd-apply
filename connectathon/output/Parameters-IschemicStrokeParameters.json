@@ -61,10 +61,6 @@
             "language" : "text/cql-identifier",
             "expression" : "Had Ischemic Stroke"
           }
-        }],
-        "action" : [{
-          "title" : "Ischemic Stroke Treatment",
-          "description" : "Administer TPA for ischemic stroke"
         }]
       }]
     }
@@ -256,30 +252,6 @@
             "start" : "2023-01-01",
             "end" : "2024-01-01"
           }
-        }
-      },
-      {
-        "fullUrl" : "http://apply-processor/ActiveRaTreatmentFeature/ActiveRaTreatmentFeature1",
-        "resource" : {
-          "resourceType" : "Observation",
-          "id" : "ActiveRaTreatmentFeature1",
-          "meta" : {
-            "profile" : ["http://example.org/StructureDefinition/ActiveRaTreatmentFeature"]
-          },
-          "status" : "final",
-          "code" : {
-            "coding" : [{
-              "system" : "http://example.org/CodeSystem/CaseFeatureCodes",
-              "code" : "on-ra-treatment"
-            }]
-          },
-          "subject" : {
-            "reference" : "Patient/Patient1"
-          },
-          "valueBoolean" : true,
-          "derivedFrom" : [{
-            "reference" : "QuestionnaireResponse/RaQuestionnaireResponse3"
-          }]
         }
       }]
     }

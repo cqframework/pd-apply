@@ -1,6 +1,6 @@
 {
   "resourceType" : "Bundle",
-  "id" : "DischargeInstructionsExpected2",
+  "id" : "DischargeInstructions2Expected",
   "type" : "collection",
   "entry" : [{
     "fullUrl" : "http://apply-processor/RequestGroup/DischargeInstructionsRequestGroup",

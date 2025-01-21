@@ -22,6 +22,7 @@
       "action" : [{
         "title" : "Recommend CBC Lab Panel",
         "description" : "Recommend CBC Lab Panel",
+        "textEquivalent" : "Recommend CBC Lab Panel",
         "code" : [{
           "coding" : [{
             "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs",
@@ -35,10 +36,6 @@
             "language" : "text/cql-identifier",
             "expression" : "Needs CBC"
           }
-        }],
-        "action" : [{
-          "title" : "Order CBC Lab Panel",
-          "description" : "Order CBC Lab Panel to screen for anemia"
         }]
       }]
     }

@@ -13,4 +13,4 @@ Usage: #example
     * expression
       * language = #text/cql-identifier
       * expression = "Timing of Service"
-  * definitionCanonical = "http://example.org/ActivityDefinition/OrderServiceActivity|0.2.0"
+  * definitionCanonical = Canonical(OrderServiceActivity|0.2.0)

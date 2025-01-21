@@ -38,15 +38,6 @@ Usage: #example
 * form = $rxnorm#212033 "Aspirin 325 mg oral tablet"
 * status = #inactive
 
-Instance: ActiveRaTreatmentFeature1
-InstanceOf: ActiveRaTreatmentFeature
-Usage: #inline
-* derivedFrom = Reference(QuestionnaireResponse/RaQuestionnaireResponse3)
-* status = #final
-* code = CaseFeatureCodes#on-ra-treatment
-* subject = Reference(Patient/Patient1)
-* valueBoolean = true
-
 Instance: DetectedIssue1
 InstanceOf: DetectedIssue
 Usage: #example
@@ -104,4 +95,3 @@ InstanceOf: Bundle
 * insert BundleEntry(Condition1, Condition)
 * insert BundleEntry(Inference1, Inference)
 * insert BundleEntry(Flag1, Flag)
-* insert BundleEntry(ActiveRaTreatmentFeature1, ActiveRaTreatmentFeature)

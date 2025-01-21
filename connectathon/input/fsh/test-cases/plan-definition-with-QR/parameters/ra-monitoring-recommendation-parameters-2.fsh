@@ -1,4 +1,4 @@
-Instance: RaMonitoringRecommendationParameters2
+Instance: RaMonitoringRecommendation2Parameters
 InstanceOf: Parameters
 Usage: #example
 * parameter[+]

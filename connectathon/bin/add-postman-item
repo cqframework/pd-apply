@@ -1,0 +1,148 @@
+#!/usr/bin/env node
+
+/** Must provide via command line:
+ * 1. Parameters resource ID
+ * 2. Expected resource ID
+ * 3. Path to postman file to update
+ */
+
+const path = require('path')
+const fs = require('fs')
+
+const args = process.argv.slice(2)
+if (!args.length) {
+  throw new Error('Must provide parameters resource ID followed by expected resource ID followed by path to postman collection')
+}
+
+const terminologyEndpoint = {
+  "name": "terminologyEndpoint",
+  "resource": {
+    "resourceType": "Endpoint",
+    "address": "{{terminologyEndpointAddress}}",
+    "status": "active",
+    "payloadType": [
+      {
+        "coding": [
+          {
+            "code": "terminology"
+          }
+        ]
+      }
+    ],
+    "connectionType": {
+      "code": "{{terminologyEndpointType}}"
+    }
+  }
+}
+const contentEndpoint = {
+  "name": "contentEndpoint",
+  "resource": {
+    "resourceType": "Endpoint",
+    "address": "{{contentEndpointAddress}}",
+    "status": "active",
+    "payloadType": [
+      {
+        "coding": [
+          {
+            "code": "content"
+          }
+        ]
+      }
+    ],
+    "connectionType": {
+      "code": "{{contentEndpointType}}"
+    }
+  }
+}
+
+
+const postmanFile = path.resolve(path.resolve(args.slice(2).join(' ')))
+let postmanData
+try {
+  const postmanDataRaw = fs.readFileSync(postmanFile).toString()
+  postmanData = JSON.parse(postmanDataRaw)
+} catch (e) {
+  console.log(`Problem reading file ${postmanFile}: ${e}`)
+}
+
+const fshResourcesDirectory = path.resolve(path.join(__dirname), '..', 'fsh-generated', 'resources')
+const resources = fs.readdirSync(fshResourcesDirectory).map(file => {
+  try {
+    const data = fs.readFileSync(`${fshResourcesDirectory}/${file}`, 'utf-8')
+    return JSON.parse(data)
+  } catch (e) {
+    console.log(`Problem reading file ${file}: ${e}`)
+  }
+}).filter(r => r != null)
+
+parameters = resources.find(resource => resource.id === args[0])
+
+expectedResource = resources.find(resource => resource.id === args[1])
+
+if (parameters == null) {
+  throw new Error(`Unable to find parameters in fsh-generated/resources with name ${args[0]}`)
+}
+if (expectedResource == null) {
+  throw new Error(`Unable to find parameters in fsh-generated/resources with name ${args[1]}`)
+}
+
+const testName = parameters.id
+
+if (postmanData.item.find(i => i.name === testName)) {
+  throw new Error(`Test ${testName} already exists.`)
+}
+
+parameters.parameter?.push(terminologyEndpoint)
+parameters.parameter?.push(contentEndpoint)
+const test = `pm.test('${testName} $apply', function () {
+  pm.response.to.have.status(200)
+  _.expectToDeepEqual(pm.response.json(), expected, console)
+})`
+
+const script = (`const expected = ${JSON.stringify(expectedResource, null, 2)}\n` + test).split('\n')
+
+const newItem = {
+  name: testName,
+  event: [{
+    script: {
+      id: testName + 'Script',
+      type: "text/javascript",
+      exec: script
+    }
+  }],
+  request: {
+    url: {
+      path: [
+        "PlanDefinition",
+        "{{applyOperationName}}"
+      ],
+      host: [
+        "{{cpgServer}}"
+      ],
+      query: [],
+      variable: []
+    },
+    header: [
+      {
+        key: "Content-Type",
+        value: "application/json+fhir"
+      }
+    ],
+    method: "POST",
+    body: {
+      mode: "raw",
+      raw: JSON.stringify(parameters, null, 2)
+    }
+  },
+  response: []
+}
+
+if (postmanData != null) {
+  try {
+    fs.writeFileSync(postmanFile, JSON.stringify({...postmanData, item: [...postmanData.item, newItem]}), 'utf-8')
+    console.log(`Updated postman collection ${postmanFile}`)
+  } catch (e) {
+    console.log(`Problem writing to file ${postmanFile}: ${e}`)
+  }
+}
+

@@ -23,7 +23,7 @@
       },
       "extension" : [{
         "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith",
-        "valueCanonical" : "http://example.org/Questionnaire/activity-example-collectinformation-questionnaire"
+        "valueCanonical" : "http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation-questionnaire"
       }],
       "url" : "http://example.org/ActivityDefinition/DontCollectInformationActivity",
       "version" : "0.2.0",
@@ -254,30 +254,6 @@
             "start" : "2023-01-01",
             "end" : "2024-01-01"
           }
-        }
-      },
-      {
-        "fullUrl" : "http://apply-processor/ActiveRaTreatmentFeature/ActiveRaTreatmentFeature1",
-        "resource" : {
-          "resourceType" : "Observation",
-          "id" : "ActiveRaTreatmentFeature1",
-          "meta" : {
-            "profile" : ["http://example.org/StructureDefinition/ActiveRaTreatmentFeature"]
-          },
-          "status" : "final",
-          "code" : {
-            "coding" : [{
-              "system" : "http://example.org/CodeSystem/CaseFeatureCodes",
-              "code" : "on-ra-treatment"
-            }]
-          },
-          "subject" : {
-            "reference" : "Patient/Patient1"
-          },
-          "valueBoolean" : true,
-          "derivedFrom" : [{
-            "reference" : "QuestionnaireResponse/RaQuestionnaireResponse3"
-          }]
         }
       }]
     }

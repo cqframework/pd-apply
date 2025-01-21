@@ -6,3 +6,4 @@ Thumbs.db
 !/output/*.json
 /temp
 /template
+/node_modules

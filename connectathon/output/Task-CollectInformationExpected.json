@@ -31,6 +31,6 @@
         "display" : "Collect information"
       }]
     },
-    "valueCanonical" : "http://example.org/Questionnaire/activity-example-collectinformation-questionnaire"
+    "valueCanonical" : "http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation-questionnaire"
   }]
 }

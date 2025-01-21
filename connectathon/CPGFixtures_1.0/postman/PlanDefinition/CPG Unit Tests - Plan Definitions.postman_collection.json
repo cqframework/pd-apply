@@ -190,7 +190,7 @@
 							"}",
 							"",
 							"",
-							"pm.test(\"PlanDefinition: CKD Education Plan $apply\", function () {",
+							"pm.test(\"PlanDefinition: Report Height Weight Plan $apply\", function () {",
 							"    pm.response.to.have.status(200)",
 							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
 							"})"
@@ -336,7 +336,7 @@
 							"}",
 							"",
 							"",
-							"pm.test(\"PlanDefinition: CKD Education Plan $apply\", function () {",
+							"pm.test(\"PlanDefinition: Discharge Follow Up Plan $apply\", function () {",
 							"    pm.response.to.have.status(200)",
 							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
 							"})"
@@ -408,7 +408,7 @@
 							"  ]",
 							"}",
 							"",
-							"pm.test(\"PlanDefinition: CKD Education Plan $apply\", function () {",
+							"pm.test(\"PlanDefinition: Iron Deficiency Plan $apply\", function () {",
 							"    pm.response.to.have.status(200)",
 							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
 							"})"
@@ -509,7 +509,7 @@
 							"",
 							"",
 							"",
-							"pm.test(\"PlanDefinition: CKD Education Plan $apply\", function () {",
+							"pm.test(\"PlanDefinition: Ischemic Stroke $apply\", function () {",
 							"    pm.response.to.have.status(200)",
 							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
 							"})"
@@ -612,7 +612,7 @@
 							"  ]",
 							"}",
 							"",
-							"pm.test(\"PlanDefinition: CKD Education Plan $apply\", function () {",
+							"pm.test(\"PlanDefinition: Anemia Screening Plan $apply\", function () {",
 							"    pm.response.to.have.status(200)",
 							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
 							"})"
@@ -799,7 +799,7 @@
 							"}",
 							"",
 							"",
-							"pm.test(\"PlanDefinition: CKD Education Plan $apply\", function () {",
+							"pm.test(\"PlanDefinition: CKD Management Plan $apply\", function () {",
 							"    pm.response.to.have.status(200)",
 							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
 							"})"
@@ -927,7 +927,7 @@
 							"  ]",
 							"}",
 							"",
-							"pm.test(\"PlanDefinition: CKD Education Plan $apply\", function () {",
+							"pm.test(\"PlanDefinition: Send Message Plan $apply\", function () {",
 							"    pm.response.to.have.status(200)",
 							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
 							"})"
@@ -1019,7 +1019,7 @@
 							"  ]",
 							"}",
 							"",
-							"pm.test(\"PlanDefinition: CKD Education Plan $apply\", function () {",
+							"pm.test(\"PlanDefinition: Registration Plan $apply\", function () {",
 							"    pm.response.to.have.status(200)",
 							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
 							"})"
@@ -1315,7 +1315,7 @@
 							"}",
 							"",
 							"",
-							"pm.test(\"PlanDefinition: CKD Education Plan $apply\", function () {",
+							"pm.test(\"PlanDefinition: CKD Pathway $apply\", function () {",
 							"    pm.response.to.have.status(200)",
 							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
 							"})"
@@ -1442,7 +1442,7 @@
 							"}",
 							"",
 							"",
-							"pm.test(\"PlanDefinition: CKD Education Plan $apply\", function () {",
+							"pm.test(\"PlanDefinition: Neuro Assessment Plan $apply\", function () {",
 							"    pm.response.to.have.status(200)",
 							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
 							"})"
@@ -1569,7 +1569,7 @@
 							"  ]",
 							"}",
 							"",
-							"pm.test(\"PlanDefinition: CKD Education Plan $apply\", function () {",
+							"pm.test(\"PlanDefinition: Discharge Instructions Plan $apply\", function () {",
 							"    pm.response.to.have.status(200)",
 							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
 							"})"
@@ -1692,7 +1692,7 @@
 							"}",
 							"",
 							"",
-							"pm.test(\"PlanDefinition: CKD Education Plan $apply\", function () {",
+							"pm.test(\"PlanDefinition: Discharge Instructions Plan $apply\", function () {",
 							"    pm.response.to.have.status(200)",
 							"    _.expectToDeepEqual(pm.response.json(), expected, console)",
 							"})"
@@ -1873,27 +1873,27 @@
 	"variable": [
 		{
 			"key": "cpgServer",
-			"value": "https://reason-framework-9830c4af7a50.herokuapp.com",
+			"value": "localhost:9001",
 			"type": "string"
 		},
 		{
 			"key": "contentEndpointAddress",
-			"value": "https://reason-framework-test-content-abdc3f75e0f9.herokuapp.com/fhir",
+			"value": "file:///Users/taylorkingston/projects/pd-apply/connectathon/CPGFixtures_1.0/output",
 			"type": "string"
 		},
 		{
 			"key": "contentEndpointType",
-			"value": "hl7-fhir-rest",
+			"value": "hl7-fhir-file",
 			"type": "string"
 		},
 		{
 			"key": "terminologyEndpointAddress",
-			"value": "https://reason-framework-test-content-abdc3f75e0f9.herokuapp.com/fhir",
+			"value": "file:///Users/taylorkingston/projects/pd-apply/connectathon/CPGFixtures_1.0/output",
 			"type": "string"
 		},
 		{
 			"key": "terminologyEndpointType",
-			"value": "hl7-fhir-rest",
+			"value": "hl7-fhir-file",
 			"type": "string"
 		},
 		{

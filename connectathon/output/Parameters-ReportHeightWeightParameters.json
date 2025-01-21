@@ -51,31 +51,25 @@
       "action" : [{
         "title" : "Recommend Weight Measurement",
         "description" : "Recommend Weight Measurement",
+        "textEquivalent" : "Recommend Weight Measurement",
         "code" : [{
           "coding" : [{
             "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs",
             "code" : "diagnostic-testing",
             "display" : "Conduct Diagnostic Tests"
           }]
-        }],
-        "action" : [{
-          "title" : "Report Weight",
-          "description" : "Report weight metric upon admission"
         }]
       },
       {
         "title" : "Recommend Height Measurement",
         "description" : "Recommend Height Measurement",
+        "textEquivalent" : "Recommend Height Measurement",
         "code" : [{
           "coding" : [{
             "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs",
             "code" : "diagnostic-testing",
             "display" : "Conduct Diagnostic Tests"
           }]
-        }],
-        "action" : [{
-          "title" : "Report Height",
-          "description" : "Report height metric upon admission"
         }]
       }]
     }
@@ -267,30 +261,6 @@
             "start" : "2023-01-01",
             "end" : "2024-01-01"
           }
-        }
-      },
-      {
-        "fullUrl" : "http://apply-processor/ActiveRaTreatmentFeature/ActiveRaTreatmentFeature1",
-        "resource" : {
-          "resourceType" : "Observation",
-          "id" : "ActiveRaTreatmentFeature1",
-          "meta" : {
-            "profile" : ["http://example.org/StructureDefinition/ActiveRaTreatmentFeature"]
-          },
-          "status" : "final",
-          "code" : {
-            "coding" : [{
-              "system" : "http://example.org/CodeSystem/CaseFeatureCodes",
-              "code" : "on-ra-treatment"
-            }]
-          },
-          "subject" : {
-            "reference" : "Patient/Patient1"
-          },
-          "valueBoolean" : true,
-          "derivedFrom" : [{
-            "reference" : "QuestionnaireResponse/RaQuestionnaireResponse3"
-          }]
         }
       }]
     }

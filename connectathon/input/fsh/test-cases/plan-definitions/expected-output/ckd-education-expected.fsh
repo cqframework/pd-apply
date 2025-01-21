@@ -16,7 +16,5 @@ Usage: #inline
 * action
   * title = "Recommend CKD Patient Education"
   * description = "Recommend verbal and written education on disease state at time of CKD diagnosis"
+  * textEquivalent = "Recommend verbal and written education on disease state at time of CKD diagnosis"
   * code = $cpg-common-process#provide-counseling "Provide Counseling"
-  * action
-    * title = "Provide CKD Patient Education"
-    * description = "Provide verbal and written education on disease state at time of CKD diagnosis"

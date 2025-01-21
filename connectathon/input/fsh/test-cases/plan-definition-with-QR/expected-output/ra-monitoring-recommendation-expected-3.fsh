@@ -1,4 +1,4 @@
-Instance: RaMonitoringRecommendationExpected3
+Instance: RaMonitoringRecommendation3Expected
 InstanceOf: Bundle
 Usage: #example
 * type = #collection

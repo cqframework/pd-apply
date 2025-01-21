@@ -2,7 +2,7 @@ Instance: EnrollPatientActivity
 InstanceOf: $cpg-enrollmentactivity
 Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(EnrollPatientActivity, ActivityDefinition)
-* extension[enrollIn].valueCanonical = Canonical(CkdPathway)
+* extension[enrollIn].valueCanonical = "http://hl7.org/fhir/uv/cpg/PlanDefinition/activity-example-pathway-pd"
 * description = "Example Activity Definition for a recommendation to enroll a patient in a pathway"
 * kind = #Task
 * profile = $cpg-enrollmenttask

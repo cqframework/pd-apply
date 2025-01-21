@@ -17,7 +17,7 @@
   },
   "status" : "draft",
   "experimental" : true,
-  "date" : "2025-01-17T14:41:38-05:00",
+  "date" : "2025-01-22T13:50:39-05:00",
   "publisher" : "Example Publisher",
   "description" : "Definition of plan to monitor patient following discharge",
   "goal" : [{
@@ -37,6 +37,7 @@
     }],
     "action" : [{
       "title" : "Case management or referral",
+      "textEquivalent" : "Case management or referral",
       "code" : [{
         "coding" : [{
           "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs",
@@ -47,6 +48,7 @@
     },
     {
       "title" : "Schedule follow-up visit",
+      "textEquivalent" : "Schedule follow-up visit",
       "code" : [{
         "coding" : [{
           "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs",

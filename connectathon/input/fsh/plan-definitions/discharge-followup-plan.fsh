@@ -13,7 +13,9 @@ Usage: #example
   * code = $cpg-common-process#monitor-and-follow-up-of-patient "Monitor and Follow-up of Patient"
   * action[+]
     * title = "Case management or referral"
+    * textEquivalent = "Case management or referral"
     * code = $cpg-common-process#discharge-referral-of-patient "Discharge/Referral of Patient"
   * action[+]
     * title = "Schedule follow-up visit"
+    * textEquivalent = "Schedule follow-up visit"
     * code = $cpg-common-process#monitor-and-follow-up-of-patient "Monitor and Follow-up of Patient"

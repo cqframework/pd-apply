@@ -47,6 +47,7 @@
       "action" : [{
         "title" : "Recommend CBC Lab Panel",
         "description" : "Recommend CBC Lab Panel",
+        "textEquivalent" : "Recommend CBC Lab Panel",
         "code" : [{
           "coding" : [{
             "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs",
@@ -60,15 +61,12 @@
             "language" : "text/cql-identifier",
             "expression" : "Needs CBC"
           }
-        }],
-        "action" : [{
-          "title" : "Order CBC Lab Panel",
-          "description" : "Order CBC Lab Panel to screen for anemia"
         }]
       },
       {
         "title" : "Recommend serum ferritin",
         "description" : "Recommend serum ferritin",
+        "textEquivalent" : "Recommend serum ferritin",
         "code" : [{
           "coding" : [{
             "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs",
@@ -82,10 +80,6 @@
             "language" : "text/cql-identifier",
             "expression" : "Needs serum ferritin"
           }
-        }],
-        "action" : [{
-          "title" : "Order serum ferritin",
-          "description" : "Order serum ferritin to monitor iron status"
         }]
       }]
     }
@@ -277,30 +271,6 @@
             "start" : "2023-01-01",
             "end" : "2024-01-01"
           }
-        }
-      },
-      {
-        "fullUrl" : "http://apply-processor/ActiveRaTreatmentFeature/ActiveRaTreatmentFeature1",
-        "resource" : {
-          "resourceType" : "Observation",
-          "id" : "ActiveRaTreatmentFeature1",
-          "meta" : {
-            "profile" : ["http://example.org/StructureDefinition/ActiveRaTreatmentFeature"]
-          },
-          "status" : "final",
-          "code" : {
-            "coding" : [{
-              "system" : "http://example.org/CodeSystem/CaseFeatureCodes",
-              "code" : "on-ra-treatment"
-            }]
-          },
-          "subject" : {
-            "reference" : "Patient/Patient1"
-          },
-          "valueBoolean" : true,
-          "derivedFrom" : [{
-            "reference" : "QuestionnaireResponse/RaQuestionnaireResponse3"
-          }]
         }
       }]
     }

@@ -28,31 +28,25 @@
       "action" : [{
         "title" : "Recommend Weight Measurement",
         "description" : "Recommend Weight Measurement",
+        "textEquivalent" : "Recommend Weight Measurement",
         "code" : [{
           "coding" : [{
             "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs",
             "code" : "diagnostic-testing",
             "display" : "Conduct Diagnostic Tests"
           }]
-        }],
-        "action" : [{
-          "title" : "Report Weight",
-          "description" : "Report weight metric upon admission"
         }]
       },
       {
         "title" : "Recommend Height Measurement",
         "description" : "Recommend Height Measurement",
+        "textEquivalent" : "Recommend Height Measurement",
         "code" : [{
           "coding" : [{
             "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs",
             "code" : "diagnostic-testing",
             "display" : "Conduct Diagnostic Tests"
           }]
-        }],
-        "action" : [{
-          "title" : "Report Height",
-          "description" : "Report height metric upon admission"
         }]
       }]
     }

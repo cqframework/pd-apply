@@ -24,7 +24,7 @@ Usage: #inline
 Instance: OrderServiceVersionTestExpected
 InstanceOf: ServiceRequest
 Usage: #inline
-* instantiatesCanonical = "http://example.org/ActivityDefinition/OrderServiceActivityVersionTest"
+* instantiatesCanonical = "http://example.org/ActivityDefinition/OrderServiceActivityVersionTest|0.2.0"
 * status = #draft
 * intent = #proposal
 * doNotPerform = true

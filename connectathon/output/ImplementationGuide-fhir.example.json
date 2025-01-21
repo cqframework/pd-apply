@@ -5,7 +5,7 @@
   "version" : "0.2.0",
   "name" : "CpgFixtures",
   "status" : "draft",
-  "date" : "2025-01-17T14:41:38-05:00",
+  "date" : "2025-01-22T13:50:39-05:00",
   "publisher" : "Example Publisher",
   "packageId" : "fhir.example",
   "license" : "CC0-1.0",
@@ -1007,9 +1007,20 @@
         "valueString" : "Bundle"
       }],
       "reference" : {
-        "reference" : "Bundle/DischargeInstructionsExpected"
+        "reference" : "Bundle/DischargeInstructions2Expected"
       },
-      "name" : "DischargeInstructionsExpected",
+      "name" : "DischargeInstructions2Expected",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/DischargeInstructions2Parameters"
+      },
+      "name" : "DischargeInstructions2Parameters",
       "exampleBoolean" : true
     },
     {
@@ -1018,9 +1029,9 @@
         "valueString" : "Bundle"
       }],
       "reference" : {
-        "reference" : "Bundle/DischargeInstructionsExpected2"
+        "reference" : "Bundle/DischargeInstructionsExpected"
       },
-      "name" : "DischargeInstructionsExpected2",
+      "name" : "DischargeInstructionsExpected",
       "exampleBoolean" : true
     },
     {
@@ -1032,17 +1043,6 @@
         "reference" : "Parameters/DischargeInstructionsParameters"
       },
       "name" : "DischargeInstructionsParameters",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Parameters"
-      }],
-      "reference" : {
-        "reference" : "Parameters/DischargeInstructionsParameters2"
-      },
-      "name" : "DischargeInstructionsParameters2",
       "exampleBoolean" : true
     },
     {
@@ -1236,6 +1236,17 @@
         "reference" : "Encounter/Encounter1"
       },
       "name" : "Encounter1",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      }],
+      "reference" : {
+        "reference" : "Encounter/Encounter2"
+      },
+      "name" : "Encounter2",
       "exampleBoolean" : true
     },
     {
@@ -1636,6 +1647,17 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/Patient2"
+      },
+      "name" : "Patient2",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
       }],
       "reference" : {
@@ -1647,12 +1669,34 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/PatientTestBundle2"
+      },
+      "name" : "PatientTestBundle2",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Practitioner"
       }],
       "reference" : {
         "reference" : "Practitioner/Practitioner1"
       },
       "name" : "Practitioner1",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/Practitioner2"
+      },
+      "name" : "Practitioner2",
       "exampleBoolean" : true
     },
     {
@@ -1718,9 +1762,20 @@
         "valueString" : "Bundle"
       }],
       "reference" : {
-        "reference" : "Bundle/RaMonitoringRecommendationExpected1"
+        "reference" : "Bundle/RaMonitoringRecommendation1Expected"
       },
-      "name" : "RaMonitoringRecommendationExpected1",
+      "name" : "RaMonitoringRecommendation1Expected",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/RaMonitoringRecommendation1Parameters"
+      },
+      "name" : "RaMonitoringRecommendation1Parameters",
       "exampleBoolean" : true
     },
     {
@@ -1729,9 +1784,20 @@
         "valueString" : "Bundle"
       }],
       "reference" : {
-        "reference" : "Bundle/RaMonitoringRecommendationExpected2"
+        "reference" : "Bundle/RaMonitoringRecommendation2Expected"
       },
-      "name" : "RaMonitoringRecommendationExpected2",
+      "name" : "RaMonitoringRecommendation2Expected",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/RaMonitoringRecommendation2Parameters"
+      },
+      "name" : "RaMonitoringRecommendation2Parameters",
       "exampleBoolean" : true
     },
     {
@@ -1740,9 +1806,20 @@
         "valueString" : "Bundle"
       }],
       "reference" : {
-        "reference" : "Bundle/RaMonitoringRecommendationExpected3"
+        "reference" : "Bundle/RaMonitoringRecommendation3Expected"
       },
-      "name" : "RaMonitoringRecommendationExpected3",
+      "name" : "RaMonitoringRecommendation3Expected",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/RaMonitoringRecommendation3Parameters"
+      },
+      "name" : "RaMonitoringRecommendation3Parameters",
       "exampleBoolean" : true
     },
     {
@@ -1754,39 +1831,6 @@
         "reference" : "Library/RaMonitoringRecommendationLibrary"
       },
       "name" : "RaMonitoringRecommendationLibrary",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Parameters"
-      }],
-      "reference" : {
-        "reference" : "Parameters/RaMonitoringRecommendationParameters1"
-      },
-      "name" : "RaMonitoringRecommendationParameters1",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Parameters"
-      }],
-      "reference" : {
-        "reference" : "Parameters/RaMonitoringRecommendationParameters2"
-      },
-      "name" : "RaMonitoringRecommendationParameters2",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Parameters"
-      }],
-      "reference" : {
-        "reference" : "Parameters/RaMonitoringRecommendationParameters3"
-      },
-      "name" : "RaMonitoringRecommendationParameters3",
       "exampleBoolean" : true
     },
     {

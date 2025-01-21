@@ -59,10 +59,8 @@ Usage: #inline
 * action
   * title = "Recommend CKD Patient Education"
   * description = "Recommend verbal and written education on disease state at time of CKD diagnosis"
+  * textEquivalent = "Recommend verbal and written education on disease state at time of CKD diagnosis"
   * code = $cpg-common-process#provide-counseling "Provide Counseling"
-  * action
-    * title = "Provide CKD Patient Education"
-    * description = "Provide verbal and written education on disease state at time of CKD diagnosis"
 
 Instance: InlineCKDFollowUpRequestGroup
 InstanceOf: RequestGroup
@@ -76,10 +74,8 @@ Usage: #inline
 * action
   * title = "Recommend CKD Follow Up"
   * description = "Recommend CKD Follow Up"
+  * textEquivalent = "Recommend CKD Follow Up"
   * code = $cpg-common-process#monitor-and-follow-up-of-patient "Monitor and Follow-up of Patient"
-  * action
-    * title = "CKD Follow Up Plan"
-    * description = "Schedule follow up with a nephrologist at time of CKD diagnosis"
 
 Instance: InlineSendMessageRequestGroup
 InstanceOf: RequestGroup

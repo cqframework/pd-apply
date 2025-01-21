@@ -18,18 +18,13 @@ Usage: #inline
 * action[+]
   * title = "Recommend Weight Measurement"
   * description = "Recommend Weight Measurement"
+  * textEquivalent = "Recommend Weight Measurement"
   * code = $cpg-common-process#diagnostic-testing "Conduct Diagnostic Tests"
-  * action[+]
-    * title = "Report Weight"
-    * description = "Report weight metric upon admission"
 * action[+]
   * title = "Recommend Height Measurement"
   * description = "Recommend Height Measurement"
+  * textEquivalent = "Recommend Height Measurement"
   * code = $cpg-common-process#diagnostic-testing "Conduct Diagnostic Tests"
-  * action[+]
-    * title = "Report Height"
-    * description = "Report height metric upon admission"
-
 
 Instance: WeightTargetGoal
 InstanceOf: $cpg-goal

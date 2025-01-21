@@ -17,22 +17,19 @@
   },
   "status" : "draft",
   "experimental" : true,
-  "date" : "2025-01-17T14:41:38-05:00",
+  "date" : "2025-01-22T13:50:39-05:00",
   "publisher" : "Example Publisher",
   "description" : "Plan definition to provide education to a patient with newly diagnosed chronic kidney disease",
   "action" : [{
     "title" : "Recommend CKD Patient Education",
     "description" : "Recommend verbal and written education on disease state at time of CKD diagnosis",
+    "textEquivalent" : "Recommend verbal and written education on disease state at time of CKD diagnosis",
     "code" : [{
       "coding" : [{
         "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs",
         "code" : "provide-counseling",
         "display" : "Provide Counseling"
       }]
-    }],
-    "action" : [{
-      "title" : "Provide CKD Patient Education",
-      "description" : "Provide verbal and written education on disease state at time of CKD diagnosis"
     }]
   }]
 }

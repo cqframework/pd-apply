@@ -1506,27 +1506,27 @@
 	"variable": [
 		{
 			"key": "cpgServer",
-			"value": "https://reason-framework-9830c4af7a50.herokuapp.com",
+			"value": "localhost:9001",
 			"type": "string"
 		},
 		{
 			"key": "contentEndpointAddress",
-			"value": "https://reason-framework-test-content-abdc3f75e0f9.herokuapp.com/fhir",
+			"value": "file:///Users/taylorkingston/projects/pd-apply/connectathon/CPGFixtures_1.0/output",
 			"type": "string"
 		},
 		{
 			"key": "contentEndpointType",
-			"value": "hl7-fhir-rest",
+			"value": "hl7-fhir-file",
 			"type": "string"
 		},
 		{
 			"key": "terminologyEndpointAddress",
-			"value": "https://reason-framework-test-content-abdc3f75e0f9.herokuapp.com/fhir",
+			"value": "file:///Users/taylorkingston/projects/pd-apply/connectathon/CPGFixtures_1.0/output",
 			"type": "string"
 		},
 		{
 			"key": "terminologyEndpointType",
-			"value": "hl7-fhir-rest",
+			"value": "hl7-fhir-file",
 			"type": "string"
 		},
 		{

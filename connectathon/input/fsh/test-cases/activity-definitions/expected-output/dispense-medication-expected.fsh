@@ -9,5 +9,5 @@ Usage: #example
 * encounter = Reference(Encounter1)
 * requester = Reference(Practitioner1)
 * input[medicationRequest]
-  * type = $cpg-activity-type-cs#order-medication "Order a Medication"
+  * type = $cpg-activity-type-cs#order-medication "Order a medication"
   * valueReference = Reference(PastMedicationRequest)

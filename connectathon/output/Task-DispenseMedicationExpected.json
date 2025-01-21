@@ -28,7 +28,7 @@
       "coding" : [{
         "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs",
         "code" : "order-medication",
-        "display" : "Order a Medication"
+        "display" : "Order a medication"
       }]
     },
     "valueReference" : {

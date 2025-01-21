@@ -1,4 +1,4 @@
-Instance: DischargeInstructionsParameters2
+Instance: DischargeInstructions2Parameters
 InstanceOf: Parameters
 Usage: #example
 * parameter[+]

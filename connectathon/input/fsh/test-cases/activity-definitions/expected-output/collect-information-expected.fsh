@@ -9,4 +9,4 @@ InstanceOf: $cpg-questionnairetask
 * requester = Reference(Practitioner1)
 * input[questionnaire]
   * type = $cpg-activity-type-cs#collect-information "Collect information"
-  * valueCanonical = "http://example.org/Questionnaire/activity-example-collectinformation-questionnaire"
+  * valueCanonical = "http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation-questionnaire"

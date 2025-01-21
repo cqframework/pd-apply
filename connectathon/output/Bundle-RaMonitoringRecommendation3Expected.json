@@ -1,6 +1,6 @@
 {
   "resourceType" : "Bundle",
-  "id" : "RaMonitoringRecommendationExpected3",
+  "id" : "RaMonitoringRecommendation3Expected",
   "type" : "collection",
   "entry" : [{
     "fullUrl" : "http://apply-processor/RequestGroup/RaMonitoringRecommendationRequestGroup3",

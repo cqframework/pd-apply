@@ -15,6 +15,3 @@ Usage: #example
     * expression
       * language = #text/cql-identifier
       * expression = "Had Ischemic Stroke"
-  * action
-    * title = "Ischemic Stroke Treatment"
-    * description = "Administer TPA for ischemic stroke"

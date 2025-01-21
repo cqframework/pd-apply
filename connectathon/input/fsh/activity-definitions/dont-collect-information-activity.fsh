@@ -2,7 +2,7 @@ Instance: DontCollectInformationActivity
 InstanceOf: $cpg-collectinformationactivity
 Usage: #example
 * insert KnowledgeArtifactDefinitionMetadata(DontCollectInformationActivity, ActivityDefinition)
-* extension[cpg-collectWith].valueCanonical = "http://example.org/Questionnaire/activity-example-collectinformation-questionnaire"
+* extension[cpg-collectWith].valueCanonical = "http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation-questionnaire"
 * description = "Example Activity Definition for a recommendation not to collect information"
 * kind = #Task
 * profile = $cpg-questionnairetask

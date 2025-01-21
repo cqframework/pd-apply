@@ -14,6 +14,3 @@ Usage: #example
     * expression
       * language = #text/cql-identifier
       * expression = "Has Anemia"
-  * action
-    * title = "Iron Supplementation"
-    * description = "Administer iron supplementation"

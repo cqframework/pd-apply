@@ -6,7 +6,7 @@
   },
   "extension" : [{
     "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith",
-    "valueCanonical" : "http://example.org/Questionnaire/activity-example-collectinformation-questionnaire"
+    "valueCanonical" : "http://hl7.org/fhir/uv/cpg/Questionnaire/activity-example-collectinformation-questionnaire"
   }],
   "url" : "http://example.org/ActivityDefinition/DontCollectInformationActivity",
   "version" : "0.2.0",
@@ -14,7 +14,7 @@
   "title" : "ActivityDefinition DontCollectInformationActivity",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2025-01-17T14:41:38-05:00",
+  "date" : "2025-01-22T13:50:39-05:00",
   "publisher" : "Example Publisher",
   "description" : "Example Activity Definition for a recommendation not to collect information",
   "kind" : "Task",

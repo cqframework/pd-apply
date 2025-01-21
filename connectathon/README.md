@@ -4,7 +4,7 @@ Testing $apply operation for ActivityDefinition and PlanDefinition resources, as
 
 ## Content
 
-This IG includes example content based on CPG 2.0. To see content using CPG 1.0, refer fo `CPGFixtures_1.0`.
+This IG includes example content based on [CPG 2.0](https://hl7.org/fhir/uv/cpg/index.html). To see content using CPG 1.0, refer fo `CPGFixtures_1.0`.
 
 Pre-generated content is included for each IG in respective `output` folders.
 

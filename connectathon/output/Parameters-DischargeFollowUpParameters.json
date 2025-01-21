@@ -60,6 +60,7 @@
         }],
         "action" : [{
           "title" : "Case management or referral",
+          "textEquivalent" : "Case management or referral",
           "code" : [{
             "coding" : [{
               "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs",
@@ -70,6 +71,7 @@
         },
         {
           "title" : "Schedule follow-up visit",
+          "textEquivalent" : "Schedule follow-up visit",
           "code" : [{
             "coding" : [{
               "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs",
@@ -268,30 +270,6 @@
             "start" : "2023-01-01",
             "end" : "2024-01-01"
           }
-        }
-      },
-      {
-        "fullUrl" : "http://apply-processor/ActiveRaTreatmentFeature/ActiveRaTreatmentFeature1",
-        "resource" : {
-          "resourceType" : "Observation",
-          "id" : "ActiveRaTreatmentFeature1",
-          "meta" : {
-            "profile" : ["http://example.org/StructureDefinition/ActiveRaTreatmentFeature"]
-          },
-          "status" : "final",
-          "code" : {
-            "coding" : [{
-              "system" : "http://example.org/CodeSystem/CaseFeatureCodes",
-              "code" : "on-ra-treatment"
-            }]
-          },
-          "subject" : {
-            "reference" : "Patient/Patient1"
-          },
-          "valueBoolean" : true,
-          "derivedFrom" : [{
-            "reference" : "QuestionnaireResponse/RaQuestionnaireResponse3"
-          }]
         }
       }]
     }

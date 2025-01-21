@@ -1,0 +1,117 @@
+#!/usr/bin/env node
+
+/** Must provide path to Postman file via command line
+ * Resource IDs must follow convention:
+ * {Name}{Expected} for Expected Resource
+ * {Name}{Parameters} for Parameters and Postman Test Name
+ */
+
+
+const path = require('path')
+const fs = require('fs')
+
+const args = process.argv.slice(2)
+if (!args.length) {
+  throw new Error('Must provide path to postman file')
+}
+
+const postmanFile = path.resolve(path.resolve(args.join(' ')))
+const fshResourcesDirectory = path.resolve(path.join(__dirname), '..', 'fsh-generated', 'resources')
+
+let postmanData
+if (!fs.existsSync(postmanFile)) {
+  throw new Error(`Postman file ${postmanFile} does not exist`)
+}
+try {
+  const postmanDataRaw = fs.readFileSync(postmanFile)?.toString()
+  postmanData = JSON.parse(postmanDataRaw)
+} catch (e) {
+  console.log(`Problem reading file ${postmanFile}: ${e}`)
+}
+
+const terminologyEndpoint = {
+  "name": "terminologyEndpoint",
+  "resource": {
+    "resourceType": "Endpoint",
+    "address": "{{terminologyEndpointAddress}}",
+    "status": "active",
+    "payloadType": [
+      {
+        "coding": [
+          {
+            "code": "terminology"
+          }
+        ]
+      }
+    ],
+    "connectionType": {
+      "code": "{{terminologyEndpointType}}"
+    }
+  }
+}
+const contentEndpoint = {
+  "name": "contentEndpoint",
+  "resource": {
+    "resourceType": "Endpoint",
+    "address": "{{contentEndpointAddress}}",
+    "status": "active",
+    "payloadType": [
+      {
+        "coding": [
+          {
+            "code": "content"
+          }
+        ]
+      }
+    ],
+    "connectionType": {
+      "code": "{{contentEndpointType}}"
+    }
+  }
+}
+
+const resources = fs.readdirSync(fshResourcesDirectory).map(file => {
+  try {
+    const data = fs.readFileSync(`${fshResourcesDirectory}/${file}`, 'utf-8')
+    return JSON.parse(data)
+  } catch (e) {
+    console.log(`Problem reading file ${file}: ${e}`)
+  }
+}).filter(r => r != null)
+
+const items = postmanData?.item?.map(item => {
+  const {event, request, name} = item
+  const requestBodyRaw = resources.find(resource => name === resource.id)
+  const expectedOutput = resources.find(resource => name.replace('Parameters', 'Expected') === resource.id)
+  if (requestBodyRaw != null && expectedOutput != null) {
+    requestBodyRaw.parameter?.push(terminologyEndpoint)
+    requestBodyRaw.parameter?.push(contentEndpoint)
+    const testIndex = event[0].script?.exec?.findIndex(line => line.includes('pm.test'))
+    const testScriptRaw = event[0].script?.exec?.slice(testIndex)
+    if (testScriptRaw != null) {
+      const script = ((`const expected = ${(JSON.stringify(expectedOutput, null, 2))}\n`).split('\n').concat(testScriptRaw))
+      const newItem = {
+        ...item,
+        event: [{...event[0], script: {...event[0].script, exec: script}}],
+        request: {...request, body: {...request.body, raw: JSON.stringify(requestBodyRaw, null, 2)}}
+      }
+      return newItem
+    } else {
+      console.log(`Unable to update postman item ${name}: problem formatting test script`)
+    }
+  } else {
+    console.log(`Unable to update postman item ${name}: no associated data by resource name or id`)
+  }
+  return item
+})
+
+const newPostmanData = {...postmanData, item: items}
+
+if (newPostmanData != null) {
+  try {
+    fs.writeFileSync(postmanFile, JSON.stringify(newPostmanData), 'utf-8')
+    console.log(`Updated postman collection ${postmanFile}`)
+  } catch (e) {
+    console.log(`Problem writing to file ${postmanFile}: ${e}`)
+  }
+}

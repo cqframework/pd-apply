@@ -17,7 +17,7 @@
   },
   "status" : "draft",
   "experimental" : true,
-  "date" : "2025-01-17T14:41:38-05:00",
+  "date" : "2025-01-22T13:50:39-05:00",
   "publisher" : "Example Publisher",
   "description" : "Definition of a plan to prescribe iron supplement if patient has diagnosis or iron deficiency anemia",
   "library" : ["http://example.org/Library/IronDeficiencyTreatmentLibrary|0.2.0"],
@@ -37,10 +37,6 @@
         "language" : "text/cql-identifier",
         "expression" : "Has Anemia"
       }
-    }],
-    "action" : [{
-      "title" : "Iron Supplementation",
-      "description" : "Administer iron supplementation"
     }]
   }]
 }

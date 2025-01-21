@@ -1,4 +1,4 @@
-Instance: DischargeInstructionsExpected2
+Instance: DischargeInstructions2Expected
 InstanceOf: Bundle
 Usage: #example
 * type = #collection

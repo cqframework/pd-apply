@@ -46,16 +46,13 @@
       "action" : [{
         "title" : "Recommend CKD Patient Education",
         "description" : "Recommend verbal and written education on disease state at time of CKD diagnosis",
+        "textEquivalent" : "Recommend verbal and written education on disease state at time of CKD diagnosis",
         "code" : [{
           "coding" : [{
             "system" : "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process-cs",
             "code" : "provide-counseling",
             "display" : "Provide Counseling"
           }]
-        }],
-        "action" : [{
-          "title" : "Provide CKD Patient Education",
-          "description" : "Provide verbal and written education on disease state at time of CKD diagnosis"
         }]
       }]
     }
@@ -247,30 +244,6 @@
             "start" : "2023-01-01",
             "end" : "2024-01-01"
           }
-        }
-      },
-      {
-        "fullUrl" : "http://apply-processor/ActiveRaTreatmentFeature/ActiveRaTreatmentFeature1",
-        "resource" : {
-          "resourceType" : "Observation",
-          "id" : "ActiveRaTreatmentFeature1",
-          "meta" : {
-            "profile" : ["http://example.org/StructureDefinition/ActiveRaTreatmentFeature"]
-          },
-          "status" : "final",
-          "code" : {
-            "coding" : [{
-              "system" : "http://example.org/CodeSystem/CaseFeatureCodes",
-              "code" : "on-ra-treatment"
-            }]
-          },
-          "subject" : {
-            "reference" : "Patient/Patient1"
-          },
-          "valueBoolean" : true,
-          "derivedFrom" : [{
-            "reference" : "QuestionnaireResponse/RaQuestionnaireResponse3"
-          }]
         }
       }]
     }

@@ -14,8 +14,8 @@ Usage: #inline
 * instantiatesCanonical = Canonical(NeurologicalAssessmentPlan|0.2.0)
 * author = Reference(Practitioner/Practitioner1)
 * encounter = Reference(Encounter/Encounter1)
-* action.title = "Order neurological exam"
 * action
+  * title = "Order neurological exam"
   * type = $action-type#create
   * resource = Reference(ServiceRequest/InlineServiceRequest)
 
