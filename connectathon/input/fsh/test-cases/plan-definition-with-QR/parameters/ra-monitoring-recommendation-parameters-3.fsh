@@ -1,21 +1,21 @@
-Instance: RaMonitoringRecommendation3Parameters
+Instance: RaMonitoringRecommendation2Parameters
 InstanceOf: Parameters
 Usage: #example
 * parameter[+]
   * name = "subject"
-  * valueString = "Patient/Patient1"
+  * valueString = "Patient/Patient2"
 * parameter[+]
   * name = "practitioner"
-  * valueString = "Practitioner/Practitioner1"
+  * valueString = "Practitioner/Practitioner2"
 * parameter[+]
   * name = "encounter"
-  * valueString = "Encounter/Encounter1"
+  * valueString = "Encounter/Encounter2"
 * parameter[+]
   * name = "planDefinition"
   * resource = RaMonitoringRecommendation
 * parameter[+]
   * name = "data"
-  * resource = PatientTestBundle1
+  * resource = PatientTestBundle2
 * parameter[+]
   * name = "questionnaireResponse"
-  * resource = RaQuestionnaireResponse3
+  * resource = RaQuestionnaireResponse2

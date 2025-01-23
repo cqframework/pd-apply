@@ -43,10 +43,10 @@
     }
   },
   {
-    "fullUrl" : "http://apply-processor/ActiveRaTreatmentFeature/ActiveRaTreatmentFeature2",
+    "fullUrl" : "http://apply-processor/ActiveRaTreatmentFeature/ActiveRaTreatmentFeature1",
     "resource" : {
       "resourceType" : "Observation",
-      "id" : "ActiveRaTreatmentFeature2",
+      "id" : "ActiveRaTreatmentFeature1",
       "meta" : {
         "profile" : ["http://example.org/StructureDefinition/ActiveRaTreatmentFeature"]
       },
@@ -60,6 +60,7 @@
       "subject" : {
         "reference" : "Patient/Patient2"
       },
+      "effectiveDateTime" : "2024-01-01",
       "valueBoolean" : true,
       "derivedFrom" : [{
         "reference" : "QuestionnaireResponse/RaQuestionnaireResponse3"

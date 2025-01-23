@@ -2,18 +2,11 @@ Instance: RaMonitoringStrategyExpected
 InstanceOf: Bundle
 Usage: #example
 * type = #collection
-* entry[0]
-  * fullUrl = "http://apply-processor/RequestGroup/RaMonitoringStrategyRequestGroup4"
-  * resource = RaMonitoringStrategyRequestGroup4
-* entry[+]
-  * fullUrl = "http://apply-processor/ServiceRequest/OrderTestingRequest4"
-  * resource = OrderTestingRequest4
-* entry[+]
-  * fullUrl = "http://apply-processor/RequestGroup/RaMonitoringRecommendationRequestGroup4"
-  * resource = RaMonitoringRecommendationRequestGroup4
-* entry[+]
-  * fullUrl = "http://apply-processor/QuestionnaireResponse/OrderTestingRequest1"
-  * resource = RaQuestionnaireResponse4
+* insert BundleEntry(RaMonitoringStrategyRequestGroup4, RequestGroup)
+* insert BundleEntry(RaMonitoringRecommendationRequestGroup4, RequestGroup)
+* insert BundleEntry(RaQuestionnaireResponse4, QuestionnaireResponse)
+* insert BundleEntry(RaQuestionnaire4, Questionnaire)
+* insert BundleEntry(OrderTestingRequest4, ServiceRequest)
 
 Instance: RaMonitoringStrategyRequestGroup4
 InstanceOf: RequestGroup
@@ -45,63 +38,45 @@ Usage: #inline
 Instance: RaQuestionnaireResponse4
 InstanceOf: QuestionnaireResponse
 Usage: #inline
-* insert QuestionnaireResponseMetaData(RaQuestionnaire1)
-* subject = Reference(Patient/Patient1)
-* authored  = "2023-12-06T11:45:33+11:00"
-* author = Reference(Practitioner/Practitioner1)
+* insert QuestionnaireResponseMetaData(RaQuestionnaire4)
+* subject = Reference(Patient/Patient2)
+* authored  = "2025-01-01T11:45:33+11:00"
+* author = Reference(Practitioner/Practitioner2)
 * item[+]
   * insert QuestionnaireItem(ActiveRaTreatmentFeature, Observation)
   * text = "Measurements and simple assertions"
   * item[+]
-    * insert QuestionnaireItem(ActiveRaTreatmentFeature, Observation.valueBoolean)
-    * text = "Actual result"
-    * answer[+].valueBoolean = false
-  * item[+]
-    * insert QuestionnaireItem(ActiveRaTreatmentFeature, Observation.status)
-    * text = "registered | preliminary | final | amended +"
-    * answer[+].valueCoding = http://hl7.org/fhir/observation-status#final
-  * item[+]
     * insert QuestionnaireItem(ActiveRaTreatmentFeature, Observation.code)
     * text = "Type of observation (code / type)"
     * answer[+].valueCoding = CaseFeatureCodes#on-ra-treatment
-* contained[+] = RaQuestionnaire4
 
 Instance: RaQuestionnaire4
 InstanceOf: Questionnaire
 Usage: #inline
 * insert QuestionnaireMetaData(RaQuestionnaire1)
-* extension[+]
-  * url = $launch-context
-  * extension[0]
-    * url = "name"
-    * valueCoding = $launch-context-codes#patient
-  * extension[+]
-    * url = "type"
-    * valueCode = #Patient
+* extension[LaunchContextExtension]
+  * extension[name].valueCoding = $launch-context-codes#patient
+  * extension[type].valueCode = #Patient
 * item[+]
   * insert QuestionnaireItem(ActiveRaTreatmentFeature, Observation)
   * text = "Measurements and simple assertions"
   * type = #group
-  * extension[ItemPopulationContextExtension]
-    * valueExpression
-      * language = #text/cql-identifier
-      * expression = "On RA Treatment"
-      * reference = "http://example.org/Library/ActiveRaTreatmentFeatureLogic"
-      * name = "ActiveRaTreatmentFeature"
-  * item[+]
-    * insert QuestionnaireItem(ActiveRaTreatmentFeature, Observation.status)
-    * insert HiddenExtension
-    * text = "registered | preliminary | final | amended +"
-    * required = true
-    * type = #choice
-    * initial.valueCoding = $codesystem-observation-status#final
-  * item[+]
-    * insert QuestionnaireItem(ActiveRaTreatmentFeature, Observation.code)
-    * insert HiddenExtension
-    * text = "Type of observation (code / type)"
-    * required = true
-    * type = #choice
-    * initial.valueCoding = CaseFeatureCodes#on-ra-treatment
+  * extension[sdc-questionnaire-definitionExtract].extension[definition].valueCanonical = Canonical(ActiveRaTreatmentFeature)
+  * extension[sdc-questionnaire-definitionExtractValue]
+    * extension[definition].valueUri = "http://fhir.org/test/StructureDefinition/ActiveRaTreatmentFeature#Observation.subject"
+    * extension[expression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%resource.subject"
+  * extension[sdc-questionnaire-definitionExtractValue]
+    * extension[definition].valueUri = "http://fhir.org/test/StructureDefinition/ActiveRaTreatmentFeature#Observation.effective[x]"
+    * extension[expression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%resource.authored"
+  * extension[ItemPopulationContextExtension].valueExpression
+    * language = #text/cql-identifier
+    * expression = "On RA Treatment"
+    * reference = Canonical(ActiveRaTreatmentFeatureLogic)
+    * name = "ActiveRaTreatmentFeature"
   * item[+]
     * insert QuestionnaireItem(ActiveRaTreatmentFeature, Observation.valueBoolean)
     * text = "Actual result"

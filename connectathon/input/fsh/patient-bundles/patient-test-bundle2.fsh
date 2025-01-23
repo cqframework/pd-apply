@@ -18,7 +18,7 @@ Usage: #example
 * subject = Reference(Patient2)
 * participant.individual = Reference(Practitioner2)
 
-Instance: ActiveRaTreatmentFeature2
+Instance: ActiveRaTreatmentFeature1
 InstanceOf: ActiveRaTreatmentFeature
 Usage: #inline
 * derivedFrom = Reference(QuestionnaireResponse/RaQuestionnaireResponse3)
@@ -26,6 +26,7 @@ Usage: #inline
 * code = CaseFeatureCodes#on-ra-treatment
 * subject = Reference(Patient/Patient2)
 * valueBoolean = true
+* effectiveDateTime = "2024-01-01"
 
 Instance: PatientTestBundle2
 InstanceOf: Bundle
@@ -33,4 +34,4 @@ InstanceOf: Bundle
 * insert BundleEntry(Patient2, Patient)
 * insert BundleEntry(Encounter2, Encounter)
 * insert BundleEntry(Practitioner2, Practitioner)
-* insert BundleEntry(ActiveRaTreatmentFeature2, ActiveRaTreatmentFeature)
+* insert BundleEntry(ActiveRaTreatmentFeature1, ActiveRaTreatmentFeature)

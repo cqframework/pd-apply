@@ -30,7 +30,7 @@
   "name" : "ActiveRaTreatmentFeature",
   "title" : "Active RA Treatment Feature",
   "status" : "active",
-  "date" : "2025-01-22T13:50:39-05:00",
+  "date" : "2025-01-23T11:26:38-05:00",
   "publisher" : "Example Publisher",
   "description" : "Case feature definition: patient has active RA treatment",
   "fhirVersion" : "4.0.1",
@@ -749,12 +749,26 @@
     },
     {
       "id" : "Observation.subject",
+      "extension" : [{
+        "extension" : [{
+          "url" : "definition",
+          "valueUri" : "http://fhir.org/test/StructureDefinition/ActiveRaTreatmentFeature#Observation.subject"
+        },
+        {
+          "url" : "expression",
+          "valueExpression" : {
+            "language" : "text/fhirpath",
+            "expression" : "%resource.subject"
+          }
+        }],
+        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
+      }],
       "path" : "Observation.subject",
       "short" : "Who and/or what the observation is about",
       "definition" : "The patient, or group of patients, location, or device this observation is about and into whose record the observation is placed. If the actual focus of the observation is different from the subject (or a sample of, part, or region of the subject), the `focus` element or the `code` itself specifies the actual focus of the observation.",
       "comment" : "One would expect this element to be a cardinality of 1..1. The only circumstance in which the subject can be missing is when the observation is made by a device that does not know the patient. In this case, the observation SHALL be matched to a patient through some context/channel matching technique, and at this point, the observation should be updated.",
       "requirements" : "Observations have no value if you don't know who or what they're about.",
-      "min" : 0,
+      "min" : 1,
       "max" : "1",
       "base" : {
         "path" : "Observation.subject",
@@ -776,6 +790,7 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "mustSupport" : true,
       "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
@@ -891,13 +906,27 @@
     },
     {
       "id" : "Observation.effective[x]",
+      "extension" : [{
+        "extension" : [{
+          "url" : "definition",
+          "valueUri" : "http://fhir.org/test/StructureDefinition/ActiveRaTreatmentFeature#Observation.effective[x]"
+        },
+        {
+          "url" : "expression",
+          "valueExpression" : {
+            "language" : "text/fhirpath",
+            "expression" : "%resource.authored"
+          }
+        }],
+        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
+      }],
       "path" : "Observation.effective[x]",
       "short" : "Clinically relevant time/time-period for observation",
       "definition" : "The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the \"physiologically relevant time\". This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself.",
       "comment" : "At least a date should be present unless this observation is a historical report.  For recording imprecise or \"fuzzy\" times (For example, a blood glucose measurement taken \"after breakfast\") use the [Timing](http://hl7.org/fhir/R4/datatypes.html#timing) datatype which allow the measurement to be tied to regular life events.",
       "requirements" : "Knowing when an observation was deemed true is important to its relevance as well as determining trends.",
       "alias" : ["Occurrence"],
-      "min" : 0,
+      "min" : 1,
       "max" : "1",
       "base" : {
         "path" : "Observation.effective[x]",
@@ -906,15 +935,6 @@
       },
       "type" : [{
         "code" : "dateTime"
-      },
-      {
-        "code" : "Period"
-      },
-      {
-        "code" : "Timing"
-      },
-      {
-        "code" : "instant"
       }],
       "constraint" : [{
         "key" : "ele-1",
@@ -924,6 +944,7 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "mustSupport" : true,
       "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
@@ -2297,6 +2318,49 @@
           "code" : "on-ra-treatment"
         }]
       }
+    },
+    {
+      "id" : "Observation.subject",
+      "extension" : [{
+        "extension" : [{
+          "url" : "definition",
+          "valueUri" : "http://fhir.org/test/StructureDefinition/ActiveRaTreatmentFeature#Observation.subject"
+        },
+        {
+          "url" : "expression",
+          "valueExpression" : {
+            "language" : "text/fhirpath",
+            "expression" : "%resource.subject"
+          }
+        }],
+        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
+      }],
+      "path" : "Observation.subject",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.effective[x]",
+      "extension" : [{
+        "extension" : [{
+          "url" : "definition",
+          "valueUri" : "http://fhir.org/test/StructureDefinition/ActiveRaTreatmentFeature#Observation.effective[x]"
+        },
+        {
+          "url" : "expression",
+          "valueExpression" : {
+            "language" : "text/fhirpath",
+            "expression" : "%resource.authored"
+          }
+        }],
+        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
+      }],
+      "path" : "Observation.effective[x]",
+      "min" : 1,
+      "type" : [{
+        "code" : "dateTime"
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "Observation.value[x]",
